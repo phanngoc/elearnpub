@@ -12,10 +12,4 @@ class Cart extends Model {
 		'count',
 		'bill_id',
 	];
-	
-
-	public function employee() {
-		return $this->belongsTo('App\Employee');
-	}
-
 }

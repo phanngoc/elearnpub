@@ -1,0 +1,242 @@
+.content-wrapper{
+	
+	.large-container{
+		
+		.book-list-wrapper{
+			width : 100%;
+			border-top : 1px solid #b7b7b7;
+			padding-top : 35px;
+			box-shadow: -2px -5px 5px #aaaaaa;
+			.list-header{
+				height: 40px;
+				display: block;
+				margin: 0px auto;
+  				width: 90%;
+				.list-title{
+					display: block;
+					width: 65%;
+					float: left;
+					h3{
+						a{
+							text-decoration: none;
+							font-size: 30px;
+						}
+					}
+				}
+				.list-controls{
+					display : block;
+					float : left;
+					width: 35%;
+					text-align: right;
+					a{
+						display: inline-block;
+					}
+					.icon-control{
+						display: inline-block;
+						.icon-button{
+							.icon-prev{
+								  display: inline-block;
+								  vertical-align: sub;
+								  color: #666;
+								  padding: 0 4px;
+							}
+							.icon-next{
+								  display: inline-block;
+								  vertical-align: sub;
+								  color: #666;
+								  padding: 0 4px;
+							}
+							.icon-prev:before{
+								  font-family: FontAwesome;
+								  font-size: 1.25em;
+								  content: "\f053";
+							}
+							.icon-next:before{
+								  font-family: FontAwesome;
+								  font-size: 1.25em;
+								  content: "\f054";
+							}
+						}
+					}
+				}
+			}
+			.list-content{
+				.list-content-wrapper{
+					ul.list-detail{
+						display: block;
+						margin : 0px auto;
+						width: 90%;
+						height: 520px;
+						li{
+							display: block;
+							float : left;
+							width: 220px;
+							.avatar-wrapper{
+								display: block;
+  								text-align: center;
+								img{
+									width : 175px;
+									height : 225px;
+									box-shadow: 0 2px 3px rgba(0,0,0,0.33);
+								}
+							}
+							.info-name{
+								padding-top : 10px;
+								padding-bottom : 10px;
+
+								span{
+								  display: block;
+								  text-align: center;
+								  font-family: "Whitney SSm A","Whitney SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
+								  font-style: normal;
+								  font-weight: 500;
+								  word-wrap: break-word;
+								}
+							}
+							.info-author{
+								span{
+								  display: block;
+								  text-align: center;
+								  word-wrap: break-word;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@heightHeader: 195px;
+@borderInput : 1px solid #848484;
+section.header{
+	display: block;
+	height: @heightHeader;
+	ul.navigation{
+		display: block;
+		li{
+			list-style: none;
+			display: block;
+			float : left;
+			width: 130px;
+			a{
+				font-family: "Archer SSm A","Archer SSm B",Palatino,"Palatino Linotype","Hoefler Text",Times,"Times New Roman";
+  				font-style: normal;
+  				font-weight: 700;
+  				font-size: 24px;
+  				color : black;
+  				display: block;
+  				height: @heightHeader;
+  				text-decoration: none;
+  				line-height: 238px;
+			}
+			
+		}
+	}
+
+	.inner-image-home{
+		height: 195px;
+		a{
+			display: block;
+			text-align: center;
+			padding-top: 36px;
+		}
+	}
+	.navigation-tools{
+		display: block;
+		padding-top: 36px;
+		height: @heightHeader;
+		text-align: right;
+		#main-menu{
+			display: inline-block;
+			padding: 10px;
+			position: relative;
+			button.btn-account{
+				background-color: white;
+				border : 1px solid #bfbfbf;
+				border-radius: 10px;
+				padding : 9px;
+				height: 37px;
+			}
+			.area-dropdown{
+				display: block;
+				position: absolute;
+				width: 200px;
+				min-height: 275px;
+				right: 9px;
+				border : 1px solid #7c7c7c;
+				border-bottom-left-radius: 12px;
+				border-bottom-right-radius: 12px;
+				ul.list-item-menu{
+					display: block;
+					width: 100%;
+					li{
+						list-style: none;
+						color : black;
+						padding : 8px;
+						border-bottom: 1px solid #e2e2e2;
+						a{
+							text-decoration: none;
+							color : #606060;
+						}
+					}
+				}
+			}
+		}
+		.shopping-cart-button{
+			display: inline-block;
+			width : 76px;
+			height : 39px;
+			padding : 10px;
+			background-color: white;
+			border-radius: 20px;
+			border : @borderInput
+		}
+		.search-bar{
+			display: inline-block;
+			height : 33px;
+			width: 100px;
+			border : 0px solid #848484;
+			/*border-radius: 10px;*/
+			.search-and-submit{
+				display: block;
+				height : 37px;
+				border : 1px solid #848484;
+				padding: 0px;
+				border-radius: 9px;
+				form{
+					display: block;
+					height : 33px;
+					position: relative;
+					input{
+						display: block;
+						height : 37px;
+						width: 100px;
+						border : 1px solid #848484;
+						border-radius: 9px;
+					}
+					.search-submit{
+						position: absolute;
+						bottom : 0px;
+						right : 1px;
+						padding : 0px;
+						display: block;
+						height : 30px;
+						width: 30px;
+						background-color: white;
+						border : 0px;
+						.search-icon::before{
+							font-family: FontAwesome;
+							content: '\f002';
+							font-size: 1.125em;
+						}
+					}
+					
+				}
+				
+			}
+			
+		}
+	}
+	
+}

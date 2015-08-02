@@ -12,6 +12,6 @@
 */
 
 
-Route::get('/asdsa','HomeController@index');
+Route::get('/','HomeController@index');
 
 

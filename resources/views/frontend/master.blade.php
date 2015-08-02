@@ -10,15 +10,16 @@
     </style>
 
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <script type="text/javascript" src="{{ Asset('jquery/jquery-1.11.3.js') }}"></script>
     <!-- Bootstrap 3.3.4 -->
     <script type="text/javascript" src="{{ Asset('bootstrap/js/bootstrap.min.js') }}"></script>
-	<link rel="stylesheet" type="text/css" href="{{ Asset('bootstrap/css/bootstrap.min.css') }}"/>
+	  <link rel="stylesheet" type="text/css" href="{{ Asset('bootstrap/css/bootstrap.min.css') }}"/>
     <!-- FontAwesome 4.3.0 -->
     <link href="{!!Asset('Font-Awesome-master/css/font-awesome.min.css')!!}" rel="stylesheet" type="text/css" />
     <!-- Ionicons 2.0.0 -->
     <link href="{!!Asset('font-awesome/ionicons.min.css')!!}" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-  
+    <link href="{!!Asset('lesscss/css/reset.css')!!}" rel="stylesheet" type="text/css" />
     @yield('head.css')
 
   </head>
@@ -29,7 +30,7 @@
 	      @include ('frontend.header')
 
 	        <section class="view">
-	            <div class="">
+	            <div class="inner-view">
 	                @yield('body.content')
 	            </div>
 	        </section>

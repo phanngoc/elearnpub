@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
+use DB;
 
 class Book extends Model {
 
@@ -18,8 +19,17 @@ class Book extends Model {
 	];
 	
 
-	public function employee() {
-		return $this->belongsTo('App\Employee');
+	public function author() {
+		return $this->belongsToMany('App\User','book_author','author_id','book_id');
 	}
-
+	/**
+	 * Get main author of book
+	 * @param  id of book
+	 * @return [type]
+	 */
+	public static function getMainAuthor($book_id)
+	{
+		$item = DB::table('book_author')->where('book_id', $book_id)->where('is_main',1)->join('users', 'users.id', '=', 'book_author.author_id')->first(); 
+		return $item;
+	}
 }

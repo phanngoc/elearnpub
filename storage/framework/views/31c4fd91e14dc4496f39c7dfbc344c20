@@ -1,12 +1,10 @@
-@extends ('frontend.master')
-
-@section ('head.title')
+<?php $__env->startSection('head.title'); ?>
     E learn pub
-@stop
+<?php $__env->stopSection(); ?>
 
-@section ('body.content')
+<?php $__env->startSection('body.content'); ?>
 
-<link href="{!!Asset('lesscss/css/home.css')!!}" rel="stylesheet" type="text/css" />
+<link href="<?php echo Asset('lesscss/css/home.css'); ?>" rel="stylesheet" type="text/css" />
 <div class="content-wrapper">
 
     <!-- Main content -->
@@ -32,13 +30,13 @@
         		<div class="list-content">
         			<div class="list-content-wrapper">
         				<ul class="list-detail">
-        				  	@foreach ($books as $book)
+        				  	<?php foreach($books as $book): ?>
 							    <li class="item-book">
 							    	<div class="avatar-wrapper">
-							    		<a href="#"><img src="{{ Asset('resourcebook/'.$book['avatar']) }}"/></a>
+							    		<a href="#"><img src="<?php echo e(Asset('resourcebook/'.$book['avatar'])); ?>"/></a>
 							    	</div>
                                     <div class="info-name">
-                                        <span>{{ $book['title'] }}</span>
+                                        <span><?php echo e($book['title']); ?></span>
                                     </div>
                                     <div class="info-author">
                                         <span>
@@ -48,7 +46,7 @@
                                         </span>
                                     </div>
 							    </li>
-							@endforeach
+							<?php endforeach; ?>
 
         				</ul>
         			</div>
@@ -58,4 +56,5 @@
     </section>
 
 </div>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

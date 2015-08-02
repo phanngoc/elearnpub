@@ -8,7 +8,7 @@
 		</div>
 		<div class="col-md-2">
 			<div class="inner-image-home">
-				<a href="{{URL::to('/')}}"><img src="{{ Asset('images/leanpub-logo-centred-black-footer.png') }}" /></a>
+				<a href="<?php echo e(URL::to('/')); ?>"><img src="<?php echo e(Asset('images/leanpub-logo-centred-black-footer.png')); ?>" /></a>
 			</div>
 		</div>
 		<div class="col-md-5">
