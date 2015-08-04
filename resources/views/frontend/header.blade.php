@@ -1,41 +1,45 @@
 <section class="header">
-	<div class="inner row">
-		<div class="col-md-5">
-			<ul class="navigation">
-				<li><a href="#">Bookstore</a></li>
-				<li><a href="#">Authors</a></li>
-			</ul>
-		</div>
-		<div class="col-md-2">
+	<div class="inner-header">
+		
+	    <div class="row logo">
 			<div class="inner-image-home">
 				<a href="{{URL::to('/')}}"><img src="{{ Asset('images/leanpub-logo-centred-black-footer.png') }}" /></a>
 			</div>
-		</div>
-		<div class="col-md-5">
-			<div class="navigation-tools">
-				 <div class="dropdown" id="main-menu">
-				    <button class="btn-account">Account
-				    	<span class="caret"></span>
-				    </button>
-				    <div class="area-dropdown">
-				    	<ul class="list-item-menu">
-					      <li><a href="#">HTML</a></li>
-					      <li><a href="#">CSS</a></li>
-					      <li><a href="#">JavaScript</a></li>
-					    </ul>
-				    </div>
-				 </div>
+	    </div>
 
-				  <div class="shopping-cart-button">
-					<a href="/shopping_cart" title="Shopping Cart">
-						<div id="shopping-cart">
-						<i class="fa fa-shopping-cart"></i>
-						<span id="cart-total">0</span>
-						</div>
-					</a>
-				  </div>
+	    <div class="row list-menu">
+	    	<ul class="navigation">
+				<li><a href="#">Bookstore</a></li>
+				<li><a href="#">Authors</a></li>
+				<li>
+					<div class="dropdown" id="main-menu">
+					    <button class="btn-account">Account
+					    	<span class="caret"></span>
+					    </button>
+					    <div class="area-dropdown">
+					    	<ul class="list-item-menu">
+						      <li><a href="#">HTML</a></li>
+						      <li><a href="#">CSS</a></li>
+						      <li><a href="#">JavaScript</a></li>
+						    </ul>
+					    </div>
+					 </div>
+				</li>
+				<li>
+					  <div class="shopping-cart-button">
+						<a href="/shopping_cart" title="Shopping Cart">
+							<div id="shopping-cart">
+							<i class="fa fa-shopping-cart"></i>
+							<span id="cart-total">0</span>
+							</div>
+						</a>
+					  </div>
+				</li>
+			</ul>
+	    </div>	
 
-				  <div class="search-bar">
+		<div class="row">
+				<div class="search-bar">
 					<div class="search-and-submit">
 						<form action="/book_search" method="get">
 							<input name="search" placeholder="Search" type="search" />
@@ -44,11 +48,9 @@
 							</button>
 						</form>
 					</div>
-				  </div>
-			</div>
+				</div>
 		</div>
-	</div>
-
+	</div> <!-- .inner-header -->
 </section>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -81,3 +83,4 @@
 		// });
 	});
 </script>
+<link rel="stylesheet" href="{{ Asset('lesscss/css/header.css') }}">

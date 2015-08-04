@@ -13,5 +13,5 @@
 
 
 Route::get('/','HomeController@index');
-
+Route::get('bo/{param}','HomeController@book');
 

@@ -1,0 +1,134 @@
+@heightHeader: 195px;
+@borderInput : 1px solid #848484;
+section.header{
+		display : block;
+		height : 270px;;
+		.logo{
+			.inner-image-home{
+				height: 150px;
+				a{
+					display: block;
+					text-align: center;
+					padding-top: 30px;
+				}
+			}
+		}
+
+		.list-menu{
+			ul.navigation{
+				display: block;
+				height: 50px;
+				margin : 0px auto;
+				width: 80%;
+				li{
+					list-style: none;
+					display: block;
+					float : left;
+					margin-left : 5px;
+					margin-right: 5px;
+					padding-top : 4px;
+					padding-bottom : 4px;
+					a{
+						font-family: "Archer SSm A","Archer SSm B",Palatino,"Palatino Linotype","Hoefler Text",Times,"Times New Roman";
+		  				font-style: normal;
+		  				font-weight: 700;
+		  				font-size: 24px;
+		  				color : black;
+		  				display: block;
+		  				text-decoration: none;
+					}
+					#main-menu{
+						margin-top: -5px;
+						button.btn-account{
+							background-color: white;
+							border : 1px solid #bfbfbf;
+							border-radius: 10px;
+							padding : 9px;
+							height: 37px;
+						}
+					}
+					.area-dropdown{
+						display: block;
+						position: absolute;
+						width: 200px;
+						min-height: 275px;
+						right: 9px;
+						border : 1px solid #7c7c7c;
+						border-bottom-left-radius: 12px;
+						border-bottom-right-radius: 12px;
+						ul.list-item-menu{
+							display: block;
+							width: 100%;
+							li{
+								list-style: none;
+								color : black;
+								padding : 8px;
+								border-bottom: 1px solid #e2e2e2;
+								a{
+									text-decoration: none;
+									color : #606060;
+								}
+							}
+						}
+					}
+				}/* end li */
+			}
+		}
+
+		.shopping-cart-button{
+			display: inline-block;
+			width : 76px;
+			height : 39px;
+			padding : 10px;
+			background-color: white;
+			border-radius: 20px;
+			border : @borderInput;
+			margin-top: -5px;
+		}
+
+		.search-bar{
+			margin : 0px auto;
+			width: 90%;
+			border : 0px solid #848484;			
+			.search-and-submit{
+				display: block;
+				height : 37px;
+				border : 1px solid #848484;
+				padding: 0px;
+				border-radius: 9px;
+				form{
+					display: block;
+					height : 33px;
+					position: relative;
+					input{
+						display: block;
+						height : 37px;
+						width: 100%;
+						border : 1px solid #848484;
+						border-radius: 9px;
+					}
+					.search-submit{
+						position: absolute;
+						bottom : 0px;
+						right : 1px;
+						padding : 0px;
+						display: block;
+						height : 30px;
+						width: 30px;
+						background-color: white;
+						border : 0px;
+						.search-icon::before{
+							font-family: FontAwesome;
+							content: '\f002';
+							font-size: 1.125em;
+						}
+					}
+					
+				}
+				
+			}
+			
+		}
+
+}
+

@@ -13,9 +13,9 @@ class Price extends Model {
 		'count',
 	];
 	
-
-	public function employee() {
-		return $this->belongsTo('App\Employee');
+	public function getPriceByBookId($id)
+	{
+		$item_id = 'bo|'.$id;
+		return $this->where('item_id',$item_id)->first();
 	}
-
 }

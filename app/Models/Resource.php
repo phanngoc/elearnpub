@@ -11,6 +11,11 @@ class Resource extends Model {
 		'name',
 		'link',
 		'book_id',
+		'function',
+		'type',
 	];
-
+	public function getSampleByBook($id)
+	{
+		return $this->where('book_id',$id)->where('function','sample')->first();
+	}
 }

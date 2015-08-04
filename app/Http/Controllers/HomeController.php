@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use App\Models\Book;
-
+use App\Models\Resource;
+use App\Models\Price;
 
 class HomeController extends Controller
 {
@@ -31,9 +32,25 @@ class HomeController extends Controller
           $currentBook['meta'] = Book::getMainAuthor($currentBook->id);
   	      array_push($books,$currentBook);
   	   }
-       //dd($books);
-       return view('frontend.home',compact('books')); 
+
+       $bookfeature = Book::orderBy('publisted_at')->get();
+       foreach ($bookfeature as $k_b => $v_b) {
+          $bookfeature[$k_b]['meta'] = Book::getMainAuthor($v_b->id);
+       }
+       
+
+       return view('frontend.home',compact('books','bookfeature')); 
     }
 
+    public function book($param)
+    {
+      $book = Book::where('bookurl',$param)->first();
+      $book->meta = Book::getMainAuthor($book->id);
+      $price = new Price;
+      $book->price = $price->getPriceByBookId($book->id);
+      $resource = new Resource;
+      $sample = $resource->getSampleByBook($book->id);
+      return view('frontend.detailbook',compact('book','sample')); 
+    }
     
 }

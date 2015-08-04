@@ -1,0 +1,121 @@
+section.header {
+  display: block;
+  height: 270px;
+}
+section.header .logo .inner-image-home {
+  height: 150px;
+}
+section.header .logo .inner-image-home a {
+  display: block;
+  text-align: center;
+  padding-top: 30px;
+}
+section.header .list-menu ul.navigation {
+  display: block;
+  height: 50px;
+  margin: 0px auto;
+  width: 80%;
+  /* end li */
+}
+section.header .list-menu ul.navigation li {
+  list-style: none;
+  display: block;
+  float: left;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+section.header .list-menu ul.navigation li a {
+  font-family: "Archer SSm A", "Archer SSm B", Palatino, "Palatino Linotype", "Hoefler Text", Times, "Times New Roman";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: black;
+  display: block;
+  text-decoration: none;
+}
+section.header .list-menu ul.navigation li #main-menu {
+  margin-top: -5px;
+}
+section.header .list-menu ul.navigation li #main-menu button.btn-account {
+  background-color: white;
+  border: 1px solid #bfbfbf;
+  border-radius: 10px;
+  padding: 9px;
+  height: 37px;
+}
+section.header .list-menu ul.navigation li .area-dropdown {
+  display: block;
+  position: absolute;
+  width: 200px;
+  min-height: 275px;
+  right: 9px;
+  border: 1px solid #7c7c7c;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+section.header .list-menu ul.navigation li .area-dropdown ul.list-item-menu {
+  display: block;
+  width: 100%;
+}
+section.header .list-menu ul.navigation li .area-dropdown ul.list-item-menu li {
+  list-style: none;
+  color: black;
+  padding: 8px;
+  border-bottom: 1px solid #e2e2e2;
+}
+section.header .list-menu ul.navigation li .area-dropdown ul.list-item-menu li a {
+  text-decoration: none;
+  color: #606060;
+}
+section.header .shopping-cart-button {
+  display: inline-block;
+  width: 76px;
+  height: 39px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #848484;
+  margin-top: -5px;
+}
+section.header .search-bar {
+  margin: 0px auto;
+  width: 90%;
+  border: 0px solid #848484;
+}
+section.header .search-bar .search-and-submit {
+  display: block;
+  height: 37px;
+  border: 1px solid #848484;
+  padding: 0px;
+  border-radius: 9px;
+}
+section.header .search-bar .search-and-submit form {
+  display: block;
+  height: 33px;
+  position: relative;
+}
+section.header .search-bar .search-and-submit form input {
+  display: block;
+  height: 37px;
+  width: 100%;
+  border: 1px solid #848484;
+  border-radius: 9px;
+}
+section.header .search-bar .search-and-submit form .search-submit {
+  position: absolute;
+  bottom: 0px;
+  right: 1px;
+  padding: 0px;
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border: 0px;
+}
+section.header .search-bar .search-and-submit form .search-submit .search-icon::before {
+  font-family: FontAwesome;
+  content: '\f002';
+  font-size: 1.125em;
+}
