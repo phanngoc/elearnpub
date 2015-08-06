@@ -77,6 +77,34 @@
     </div>
 </section>
 
+<section class="aboutbook row">
+    <div class="inner-about-book">
+        <header><h3>About the book</h3></header>
+        <div class="content">
+            <div class="wrap-content row">
+              <div class="col-md-8">
+                  <div class="text-content">
+                      {{ $book->description }}
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="content-control">
+                      <div class="feedback">
+                        <h4>FEEDBACK<i class="fa fa-comments"></i></h4>
+                        <ul>
+                            <li><a href="#">Discuss this book</a></li>
+                            <li><a href="#">Email the Author</a></li>
+                        </ul>    
+                      </div>  
+                      <div class="share">
+                          
+                      </div>
+                  </div>
+              </div>  
+            </div>
+        </div>
+    </div>
+</section>
 <!-- <link href="http://cdn.jsdelivr.net/jquery.owlcarousel/1.31/owl.carousel.css" rel="stylesheet" />
 <link href="http://cdn.jsdelivr.net/jquery.owlcarousel/1.31/owl.theme.css" rel="stylesheet" />
 <script src="http://cdn.jsdelivr.net/jquery.owlcarousel/1.31/owl.carousel.min.js"></script> -->

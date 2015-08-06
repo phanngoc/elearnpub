@@ -119,3 +119,26 @@
 .content-wrapper .large-container .inner-col-right .group-price .inner-group-price .content-slider-price .slider-range-author-earn .ui-slider-handle {
   height: 34px;
 }
+.content-wrapper .large-container .inner-col-right .group-price .inner-group-price .add-ebook-to-cart {
+  margin-top: 26px;
+  background-color: #727272;
+  display: block;
+  padding: 5px;
+  height: 40px;
+  width: 200px;
+  border-radius: 12px;
+}
+.content-wrapper .large-container .inner-col-right .group-price .inner-group-price .add-ebook-to-cart a {
+  color: white;
+  display: block;
+  margin-top: 3px;
+  margin-left: 16px;
+  font-size: 20px;
+}
+.aboutbook .inner-about-book header h3 {
+  font-family: 'Univers_LT_57_Condensed', Georgia, serif;
+}
+.aboutbook .inner-about-book .content .wrap-content .text-content {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
