@@ -25,7 +25,9 @@
         "Illuminate\\View\\ViewServiceProvider",
         "App\\Providers\\AppServiceProvider",
         "App\\Providers\\EventServiceProvider",
-        "App\\Providers\\RouteServiceProvider"
+        "App\\Providers\\RouteServiceProvider",
+        "GrahamCampbell\\Markdown\\MarkdownServiceProvider",
+        "MaxHoffmann\\Parsedown\\ParsedownServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -41,7 +43,9 @@
         "Illuminate\\View\\ViewServiceProvider",
         "App\\Providers\\AppServiceProvider",
         "App\\Providers\\EventServiceProvider",
-        "App\\Providers\\RouteServiceProvider"
+        "App\\Providers\\RouteServiceProvider",
+        "GrahamCampbell\\Markdown\\MarkdownServiceProvider",
+        "MaxHoffmann\\Parsedown\\ParsedownServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

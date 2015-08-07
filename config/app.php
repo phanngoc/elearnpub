@@ -143,6 +143,8 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+        MaxHoffmann\Parsedown\ParsedownServiceProvider::class,
 
     ],
 
@@ -191,6 +193,8 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        // 'Markdown'  => GrahamCampbell\Markdown\Facades\Markdown::class,
+        'Markdown'        => MaxHoffmann\Parsedown\ParsedownFacade::class,
 
     ],
 

@@ -6,6 +6,8 @@ use App\Models\Cart;
 use App\Models\Book;
 use App\Models\Resource;
 use App\Models\Price;
+use Markdown;
+
 
 class HomeController extends Controller
 {
@@ -52,5 +54,17 @@ class HomeController extends Controller
       $sample = $resource->getSampleByBook($book->id);
       return view('frontend.detailbook',compact('book','sample')); 
     }
-    
+
+    public function test()
+    {
+      echo Markdown::parse('# Chapter 1 Hello, world!');
+    }
+
+    public function write($id,$namefile='')
+    {
+      $currentBook = Book::find($id); 
+      $files = Book::getFileFromBook($id);   
+      $filebook = Book::getContentByName($namefile);
+      return view('frontend.writebook',compact('files','filebook'));
+    }
 }

@@ -19,7 +19,7 @@
     <!-- Ionicons 2.0.0 -->
     <link href="{!!Asset('font-awesome/ionicons.min.css')!!}" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="{!!Asset('lesscss/css/reset.css')!!}" rel="stylesheet" type="text/css" />
+    <link href="{!!Asset('normalize.css')!!}" rel="stylesheet" type="text/css" />
     @yield('head.css')
 
   </head>

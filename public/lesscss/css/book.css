@@ -131,14 +131,49 @@
 .content-wrapper .large-container .inner-col-right .group-price .inner-group-price .add-ebook-to-cart a {
   color: white;
   display: block;
-  margin-top: 3px;
+  margin-top: 7px;
   margin-left: 16px;
-  font-size: 20px;
+  font-size: 16px;
 }
-.aboutbook .inner-about-book header h3 {
+.aboutbook {
+  display: block;
+  margin-top: 10px;
+  box-shadow: 0px 20px 34px #E5E4E3 inset;
+}
+.aboutbook .inner-about-book {
+  margin-top: 5px;
+}
+.aboutbook .inner-about-book > header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.aboutbook .inner-about-book > header h3 {
   font-family: 'Univers_LT_57_Condensed', Georgia, serif;
+  text-align: center;
 }
 .aboutbook .inner-about-book .content .wrap-content .text-content {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  padding-bottom: 36px;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+.aboutbook .inner-about-book .content .wrap-content .content-control div.share ul li {
+  list-style: none;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+}
+.aboutbook .inner-about-book .content .wrap-content .content-control div.share ul li i {
+  padding: 10px;
+  padding-left: 12px;
+  font-size: 25px;
+}
+.aboutbook .inner-about-book .content .wrap-content .content-control div.share ul li.facebook {
+  background-color: #95AFED;
+}
+.aboutbook .inner-about-book .content .wrap-content .content-control div.share ul li.twitter {
+  background-color: #34c0d8;
+}
+.aboutbook .inner-about-book .content .wrap-content .content-control div.share ul li.google {
+  background-color: #E85653;
 }

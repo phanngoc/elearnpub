@@ -19,7 +19,7 @@
     <!-- Ionicons 2.0.0 -->
     <link href="<?php echo Asset('font-awesome/ionicons.min.css'); ?>" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="<?php echo Asset('lesscss/css/reset.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo Asset('normalize.css'); ?>" rel="stylesheet" type="text/css" />
     <?php echo $__env->yieldContent('head.css'); ?>
 
   </head>

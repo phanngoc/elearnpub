@@ -14,4 +14,6 @@
 
 Route::get('/','HomeController@index');
 Route::get('bo/{param}','HomeController@book');
+Route::get('test','HomeController@test');
+Route::get('write/{id}/{namefile?}',['as' => 'writebook', 'uses' => 'HomeController@write']);
 

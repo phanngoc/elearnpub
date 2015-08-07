@@ -97,7 +97,18 @@
                         </ul>    
                       </div>  
                       <div class="share">
-                          
+                          <h4>SHARE THIS BOOK<i class="fa fa-share-alt"></i></h4>
+                          <ul>
+                                <li class="facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </li>
+                                <li class="twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </li>
+                                <li class="google">
+                                    <i class="fa fa-google"></i>
+                                </li>
+                          </ul> 
                       </div>
                   </div>
               </div>  
