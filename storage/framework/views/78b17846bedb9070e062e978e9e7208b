@@ -24,7 +24,7 @@
                           foreach ($files as $key => $value) {
                               ?>
                                 <tr <?php if($value->name == $filebook->name) echo 'style="background-color:#D3D3D3";';?> >
-                                    <input type="hidden" value="$value->id"/>
+                                    <input type="hidden" value="<?php echo $value->id; ?>"/>
                                     <td><a href="<?php echo e(route('writebook',array('id'=>$value->book_id,'namefile'=>$value->name))); ?>" ><?php echo $value->name;?></a></td>
                                     <td> 
                                         <div class="action">
@@ -63,16 +63,19 @@
     $(document).ready(function(){
        $('.area-file').find('.edit').on('click',function(){
             var name = $(this).parent().parent().prev().find('a').text();
-            console.log(name);
-           // $(this).parent().parent().prev().find('a').remove();
-            $(this).parent().parent().prev().find('a').html('<input name="edit" value="'+name+'"/>');
+          
+            $(this).parent().parent().prev().find('a').hide();
+            $(this).parent().parent().prev().append('<input name="edit" value="'+name+'"/>');
 
-            // var $input = $(this).parent().parent().prev().find('input');
-            // $input.on('focusout',function(){
-            //     var text = $input.val();
-            //     $(this).parent().parent().prev().find('input').remove();
-            //     $(this).parent().parent().prev().append();
-            // });
+            var $input = $(this).parent().parent().prev().find('input');
+            $input.on('focusout',function(){
+                var text = $(this).val();
+                $(this).parent().find('a').html(text).show();
+                
+                var id = $(this).parent().prev().val();
+                console.log(id);
+                $(this).remove();
+            });
        });
     });
 </script>
