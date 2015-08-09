@@ -1,0 +1,24 @@
+.content-wrapper .content-inner .control {
+  padding: 12px;
+}
+.content-wrapper .content-inner textarea {
+  width: 100%;
+}
+.content-wrapper .content-inner .inner-content-write {
+  margin: 0px auto;
+  width: 90%;
+}
+.content-wrapper .content-inner .inner-content-write .col-md-8 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.content-wrapper .content-inner .inner-control-top {
+  margin: 0px auto;
+  width: 90%;
+}
+#modalPreview .modal-dialog {
+  width: 90%;
+}
+#modalPreview .modal-dialog .content-preview {
+  overflow: hidden;
+}

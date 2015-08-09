@@ -8,6 +8,10 @@ class Filebook extends Model {
 	protected $table = 'filebooks';
 
 	protected $fillable = [
-		'user_id',
+		'name',
+		'link',
+		'content',
+		'book_id',
+		'is_sample',
 	];
 }
