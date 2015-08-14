@@ -76,6 +76,7 @@
                 
                 var id = $(this).parent().prev().val();
                 console.log(id);
+                $.ajax('')
                 $(this).remove();
             });
        });
