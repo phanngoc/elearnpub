@@ -58,39 +58,41 @@
                                  <div class="minimum"><p class="number">${{ $book->price->minimumprice }}</p><span class="suffix">MINIMUM</span></div>
                                  <div class="maximum"><p class="number">${{ $book->price->suggestedprice }}</p><span class="suffix">SUGGESTED</span></div>
                              </header>
-
-                             <div class="content-slider-price">
-                                 <p class="label-message">You pay</p>
-                                 <div class="row">
-                                     <div class="col-md-2 col-sm-2 rmpadding">
-                                         <div class="input-group">
-                                              <span class="input-group-addon" id="basic-addon1">$</span>
-                                              <input type="text" class="form-control" placeholder="00" value="{{ $book->price->minimumprice }}" id="amount-you-pay"/>
+                             <form action="{{ route('cart')}}" method="POST">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="bookid" value="{{ $book->id }}">
+                                 <div class="content-slider-price">
+                                     <p class="label-message">You pay</p>
+                                     <div class="row">
+                                         <div class="col-md-2 col-sm-2 rmpadding">
+                                             <div class="input-group">
+                                                  <span class="input-group-addon" id="basic-addon1">$</span>
+                                                  <input type="text" class="form-control" placeholder="00" value="{{ $book->price->minimumprice }}" id="amount-you-pay" name="amountYouPay"/>
+                                             </div>
+                                         </div>
+                                         <div class="col-md-10 col-sm-10">
+                                             <div class="slider-range-you-pay"></div>
                                          </div>
                                      </div>
-                                     <div class="col-md-10 col-sm-10">
-                                         <div class="slider-range-you-pay"></div>
-                                     </div>
+                                  
+                                     <p class="label-message">Author earns</p>
+                                     <div class="row">
+                                         <div class="col-md-2 col-sm-2 rmpadding">
+                                             <div class="input-group">
+                                                  <span class="input-group-addon" id="basic-addon1">$</span>
+                                                  <input type="text" class="form-control" placeholder="00" value="{{ $book->price->minimumprice * 90/100 }}" id="amount-author-earn" name="amountAuthorEarn"/>
+                                             </div>
+                                         </div>
+                                         <div class="col-md-10 col-sm-10">
+                                             <div class="slider-range-author-earn"></div>
+                                         </div>
+                                     </div>  
                                  </div>
-                              
-                                 <p class="label-message">Author earns</p>
-                                 <div class="row">
-                                     <div class="col-md-2 col-sm-2 rmpadding">
-                                         <div class="input-group">
-                                              <span class="input-group-addon" id="basic-addon1">$</span>
-                                              <input type="text" class="form-control" placeholder="00" value="{{ $book->price->minimumprice * 90/100 }}" id="amount-author-earn"/>
-                                         </div>
-                                     </div>
-                                     <div class="col-md-10 col-sm-10">
-                                         <div class="slider-range-author-earn"></div>
-                                     </div>
-                                 </div>  
-                             </div>
 
-                             <div class="add-ebook-to-cart">
-                                 <a href="#">Add Ebook to Cart</a>
-                             </div>
-
+                                 <div class="add-ebook-to-cart">
+                                     <button href="#" class="inner-add-ebook-to-card">Add Ebook to Cart</button>
+                                 </div>
+                             </form>
                          </div>
                      </div>
                </div>
@@ -186,9 +188,33 @@
 
         $("#amount-you-pay").numeric({negative : false,decimalPlaces : 2});
         $("#amount-author-earn").numeric()
+
         $("#amount-you-pay").keyup(function(event){
             if(event.keyCode == 13){
-               console.log('Da thanh cong');
+               var val = $(this).val();
+               var valmax = $( ".slider-range-you-pay" ).slider('option','max');
+               if(val < valmax)
+               {
+                $( ".slider-range-you-pay" ).slider('option','value',val); 
+               }
+               else
+               {
+                $( ".slider-range-you-pay" ).slider('option','value',valmax); 
+               }
+            }
+        });
+        $("#amount-author-earn").keyup(function(event){
+            if(event.keyCode == 13){
+               var val = $(this).val();
+               var valmax = $( ".slider-range-author-earn" ).slider('option','max');
+               if(val < valmax)
+               {
+                $( ".slider-range-author-earn" ).slider('option','value',val); 
+               }
+               else
+               {
+                $( ".slider-range-author-earn" ).slider('option','value',valmax); 
+               }
             }
         });
 

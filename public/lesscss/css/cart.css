@@ -1,0 +1,29 @@
+.content-wrapper .large-container {
+  display: block;
+  margin: 0px auto;
+  width: 80%;
+}
+.content-wrapper .large-container #inner-wrapper-cart {
+  display: block;
+  margin-top: 30px;
+}
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .navigate-cart .inner-navigate ul li {
+  list-style: none;
+  display: inline-block;
+  background-color: #eee;
+  position: relative;
+  text-align: center;
+  width: 30%;
+  padding: 5px 10px 5px 10px;
+}
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart header p {
+  text-align: center;
+}
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart .content-area-cart table thead tr th {
+  font-size: 18px;
+  color: #43d0e0;
+}
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart .continue {
+  display: block;
+  float: right;
+}

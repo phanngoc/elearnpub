@@ -149,4 +149,72 @@ class HomeController extends Controller
       $filebook->content = $request->content;
       $filebook->save();
     }
+
+    public function cart(Request $request)
+    {
+      
+      $item = array('bookid'=>$request->bookid ,'amount'=>$request->amountYouPay,'quantity'=>1);
+      $carts = $request->session()->get('carts', 'default');
+      if($carts == 'default') 
+      {
+        $carts = array();
+      }
+      // if item exist in array cart , only need increment 
+      $isAdd = false;
+      foreach ($carts as $key_cart => $val_cart) {
+        if($val_cart['bookid'] == $item['bookid'])
+        {
+          $carts[$key_cart]['quantity'] += 1;
+          $isAdd = true;
+        }
+      }
+      if(!$isAdd)
+      {
+        array_push($carts,$item);  
+      }
+      
+      $request->session()->put('carts', $carts);
+
+      // $listItem = array();
+      // foreach ($carts as $key => $value) {
+      //   $book = Book::find($value[0]);
+      //   array_push($listItem,$book);
+      // }
+      // $listItem = json_encode($listItem);
+      return view('frontend.cart');
+    }
+
+    public function getCart(Request $request)
+    {
+      $carts = $request->session()->get('carts', 'default');
+      if($carts == 'default') 
+      {
+        $carts = array();
+      }
+
+      // $listItem = array();
+      // foreach ($carts as $key => $value) {
+      //   $book = Book::find($value[0]);
+      //   array_push($listItem,$book);
+      // }
+      // $listItem = json_encode($listItem);
+      return view('frontend.cart');
+    }
+
+    public function ajax_getCart(Request $request)
+    {
+      $carts = $request->session()->get('carts', 'default');
+      if($carts == 'default') 
+      {
+        $carts = array();
+      }
+      $listItem = array();
+      foreach ($carts as $key => $value) {
+        $book = Book::find($value['bookid']);
+        $book->meta = $value;
+        array_push($listItem,$book);
+      }
+      $listItem = json_encode($listItem);
+      return $listItem;
+    }
 }

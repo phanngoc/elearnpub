@@ -54,7 +54,15 @@
 	  {
 	  	$('.open-menu').css({'display':'none'});
 	  	$('ul.navigation').css({'display':'block','position':'static'});
-	  
+	  }
+
+	  if(width < 605)
+	  {
+	  	$('.logo').hide();
+	  }
+	  else
+	  {
+	  	$('.logo').show();
 	  }
 	}
 	

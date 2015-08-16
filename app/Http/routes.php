@@ -33,3 +33,6 @@ Route::post('ajax_removefile',['as' => 'removefile', 'uses' => 'HomeController@a
 Route::post('ajax_newfile/{id}',['as' => 'newfile', 'uses' => 'HomeController@ajax_newfile'])->where('id', '[0-9]+');
 Route::post('ajax_issample',['as' => 'issamplefile', 'uses' => 'HomeController@ajax_issample']);
 Route::post('ajax_autoSaveContentFile',['as' => 'autoSaveContent', 'uses' => 'HomeController@ajax_autoSaveContentFile']);
+Route::post('cart',['as' => 'cart','uses' => 'HomeController@cart']);
+Route::get('cart',['as' => 'getCart','uses' => 'HomeController@getCart']);
+Route::get('ajax_getCart',['as' => 'ajax_getCart','uses' => 'HomeController@ajax_getCart']);
