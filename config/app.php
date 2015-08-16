@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', 'C1QxEcIUev7lalAzjms2eq5KYuk4XNdu'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -145,7 +145,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         MaxHoffmann\Parsedown\ParsedownServiceProvider::class,
-
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
     ],
 
     /*
@@ -194,7 +194,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         // 'Markdown'  => GrahamCampbell\Markdown\Facades\Markdown::class,
-        'Markdown'        => MaxHoffmann\Parsedown\ParsedownFacade::class,
+        'Markdown'  => MaxHoffmann\Parsedown\ParsedownFacade::class,
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
 
     ],
 

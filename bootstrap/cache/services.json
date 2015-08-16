@@ -27,7 +27,8 @@
         "App\\Providers\\EventServiceProvider",
         "App\\Providers\\RouteServiceProvider",
         "GrahamCampbell\\Markdown\\MarkdownServiceProvider",
-        "MaxHoffmann\\Parsedown\\ParsedownServiceProvider"
+        "MaxHoffmann\\Parsedown\\ParsedownServiceProvider",
+        "Greggilbert\\Recaptcha\\RecaptchaServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -45,7 +46,8 @@
         "App\\Providers\\EventServiceProvider",
         "App\\Providers\\RouteServiceProvider",
         "GrahamCampbell\\Markdown\\MarkdownServiceProvider",
-        "MaxHoffmann\\Parsedown\\ParsedownServiceProvider"
+        "MaxHoffmann\\Parsedown\\ParsedownServiceProvider",
+        "Greggilbert\\Recaptcha\\RecaptchaServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

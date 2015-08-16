@@ -1,57 +1,125 @@
 <section class="header">
 	<div class="inner-header">
 		
-	    <div class="row logo">
+	    <div class="logo">
 			<div class="inner-image-home">
 				<a href="{{URL::to('/')}}"><img src="{{ Asset('images/leanpub-logo-centred-black-footer.png') }}" /></a>
 			</div>
 	    </div>
 
-	    <div class="row list-menu">
+	    <div class="list-menu">
+	    	<div class="open-menu" style="display:none">
+	    		<i class="fa fa-bars"></i>
+	    	</div>
 	    	<ul class="navigation">
-				<li><a href="#">Bookstore</a></li>
-				<li><a href="#">Authors</a></li>
-				<li>
-					<div class="dropdown" id="main-menu">
-					    <button class="btn-account">Account
-					    	<span class="caret"></span>
-					    </button>
-					    <div class="area-dropdown">
-					    	<ul class="list-item-menu">
-						      <li><a href="#">HTML</a></li>
-						      <li><a href="#">CSS</a></li>
-						      <li><a href="#">JavaScript</a></li>
-						    </ul>
-					    </div>
-					 </div>
-				</li>
-				<li>
-					  <div class="shopping-cart-button">
-						<a href="/shopping_cart" title="Shopping Cart">
-							<div id="shopping-cart">
-							<i class="fa fa-shopping-cart"></i>
-							<span id="cart-total">0</span>
-							</div>
-						</a>
-					  </div>
-				</li>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Read</a></li>
+				<li><a href="#">Write</a></li>
 			</ul>
 	    </div>	
 
-		<div class="row">
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		responsive();
+	});
+	$( window ).resize(function() {
+		responsive();
+	});
+
+	function responsive()
+	{	
+	  var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+	  console.log(width);
+	  if(width < 1000)
+	  {
+	  	$('.list-menu').css({'position':'relative'});
+	  	$('.open-menu').css({'display':'block'});
+	  	$('ul.navigation').css({'display':'none','position':'absolute'});
+	  	$('.open-menu').unbind( "click" );
+	  	$('.open-menu').click(function(){
+	  		if($('ul.navigation').css('display') == 'none')
+	  		{
+	  			$('ul.navigation').css({'display':'block'});
+	  			console.log('ul.navigation open');
+	  		}
+	  		else
+	  		{
+	  			console.log('ul.navigation close');
+	  			$('ul.navigation').css({'display':'none'});
+	  		}
+	  	});
+	  }
+	  else
+	  {
+	  	$('.open-menu').css({'display':'none'});
+	  	$('ul.navigation').css({'display':'block','position':'static'});
+	  
+	  }
+	}
+	
+</script>
+		<!-- <div class="col-md-1"></div> -->
+
+		<div class="area-right">
 				<div class="search-bar">
 					<div class="search-and-submit">
 						<form action="/book_search" method="get">
 							<input name="search" placeholder="Search" type="search" />
 							<button class="search-submit" type="submit">
-							  <div class="search-icon"></div>
+							  	<div class="search-icon"></div>
 							</button>
 						</form>
 					</div>
 				</div>
+
+				<div class="shopping-cart-button">
+						<a href="/shopping_cart" title="Shopping Cart">
+							<div id="shopping-cart">
+								<i class="fa fa-shopping-cart"></i>
+								<span id="cart-total">0</span>
+							</div>
+						</a>
+				</div>
+				<?php if(null !==Auth::user()) { ?>
+					<div class="profile">
+						<div class="wrapper-profile">
+							<div class="img-avatar"><img src="<?php echo Asset('avatar/'.Auth::user()->avatar) ?>"/> </div>
+							<div class="dropdown">
+								<div class="inner-dropdown">
+										<div class="column">
+											<h4>Account</h4>
+											<ul>
+												<li><a href="#">Read</a></li>
+												<li><a href="#">Wishlist</a></li>
+												<li><a href="#">Purchase</a></li>
+												<li><a href="#">Invitations</a></li>
+												<li><a href="#">Setting</a></li>
+											</ul>
+										</div>
+										<div class="column">
+											<h4>Author</h4>
+											<ul>
+												<li><a href="#">Books</a></li>
+												<li><a href="#">Bundle</a></li>
+												<li><a href="#">Profile</a></li>
+											</ul>
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php } else { ?>
+					<div class="area-login">
+						<div class="inner-area-login"> 
+							<a href="auth/login" class="btn btn-primary">Sign in</a>
+						</div>		
+					</div>
+				<?php } ?>
 		</div>
 	</div> <!-- .inner-header -->
 </section>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('.area-dropdown').css({'display':'none'});

@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="{!!Asset('jquery-ui/jquery-ui.structure.css')!!}">
 <script type="text/javascript" src="{{ Asset('jquery-ui/jquery-ui.js') }}"></script>
 
+<script type="text/javascript" src="{{ Asset('jquery.numeric.js') }}"></script>
+
 <section class="content-wrapper">
     <!-- Main content -->
     <div class="large-container">
@@ -59,9 +61,30 @@
 
                              <div class="content-slider-price">
                                  <p class="label-message">You pay</p>
-                                 <div class="slider-range-you-pay"></div>
+                                 <div class="row">
+                                     <div class="col-md-2 col-sm-2 rmpadding">
+                                         <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon1">$</span>
+                                              <input type="text" class="form-control" placeholder="00" value="{{ $book->price->minimumprice }}" id="amount-you-pay"/>
+                                         </div>
+                                     </div>
+                                     <div class="col-md-10 col-sm-10">
+                                         <div class="slider-range-you-pay"></div>
+                                     </div>
+                                 </div>
+                              
                                  <p class="label-message">Author earns</p>
-                                 <div class="slider-range-author-earn"></div>
+                                 <div class="row">
+                                     <div class="col-md-2 col-sm-2 rmpadding">
+                                         <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon1">$</span>
+                                              <input type="text" class="form-control" placeholder="00" value="{{ $book->price->minimumprice * 90/100 }}" id="amount-author-earn"/>
+                                         </div>
+                                     </div>
+                                     <div class="col-md-10 col-sm-10">
+                                         <div class="slider-range-author-earn"></div>
+                                     </div>
+                                 </div>  
                              </div>
 
                              <div class="add-ebook-to-cart">
@@ -116,19 +139,101 @@
         </div>
     </div>
 </section>
+<section class="row about-author">
+    <div class="inner-about-author">
+        <header><h3>About the author</h3></header>
+        <div class="content row">
+            <div class="col-md-5">
+                <div class="inner-left">
+                    <div class="wrapper-avatar">
+                        <img src="{{ Asset('avatar/'.$book->meta->avatar) }}" alt="avatar">
+                    </div>
+                    <div class="wrapper-social">
+                        <ul class="list-social">
+                            <li class="facebook">
+                                <i class="fa fa-facebook"></i>
+                            </li>
+                            <li class="twitter">
+                                <i class="fa fa-twitter"></i>
+                            </li>
+                            <li class="google">
+                                <i class="fa fa-google"></i>
+                            </li>
+                            <li class="github">
+                                <i class="fa fa-github-alt"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="inner-right">
+                    <h3>{{ $book->meta->lastname." ".$book->meta->firstname }}</h3>
+                    <div class="description">
+                       {{ $book->meta->blurb }} 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- <link href="http://cdn.jsdelivr.net/jquery.owlcarousel/1.31/owl.carousel.css" rel="stylesheet" />
 <link href="http://cdn.jsdelivr.net/jquery.owlcarousel/1.31/owl.theme.css" rel="stylesheet" />
 <script src="http://cdn.jsdelivr.net/jquery.owlcarousel/1.31/owl.carousel.min.js"></script> -->
 
 <script type="text/javascript">
     $(document).ready(function(){
+
+        $("#amount-you-pay").numeric({negative : false,decimalPlaces : 2});
+        $("#amount-author-earn").numeric()
+        $("#amount-you-pay").keyup(function(event){
+            if(event.keyCode == 13){
+               console.log('Da thanh cong');
+            }
+        });
+
+
         $( ".slider-range-you-pay" ).slider({
               orientation: "horizontal",
               range: "min",
-              max: 255,
-              value: 127,
+              // {{ $book->price->minimumprice }}
+              min: 0,
+              step : 0.5,
+              max: {{ $book->price->suggestedprice * 2 }},
+              value: {{ $book->price->minimumprice * 1.2 }},
+              change: function( event, ui ) {
+                $('#amount-you-pay').val(ui.value);
+              },
+              slide: function( event, ui ) {
+                 if( ui.value < {{ $book->price->minimumprice}} ){
+                       return false;
+                 }
+                 $('#amount-you-pay').val(ui.value);
+                 var value = ui.value * 90/100 ; 
+                 $( ".slider-range-author-earn" ).slider('option','value',value);
+              }
         });
-        $( ".slider-range-author-earn" ).slider();
+
+        $( ".slider-range-author-earn" ).slider({
+              orientation: "horizontal",
+              range: "min",
+              min : 0,
+              step : 0.5,
+              max: {{ $book->price->suggestedprice * 2 * 90/100 }},
+              value: {{ $book->price->minimumprice * 1.2 * 90/100 }},
+              change: function( event, ui ) {
+                $('#amount-author-earn').val(ui.value);
+              },
+              slide: function( event, ui ) {
+                 if( ui.value < {{ $book->price->minimumprice * 90 / 100 }} ){
+
+                       return false;
+                 }
+                 $('#amount-author-earn').val(ui.value);
+                 var value = ui.value * 100/90 ; 
+                 $( ".slider-range-you-pay" ).slider('option','value',value);
+              }
+        });
     });
 </script>
 @stop

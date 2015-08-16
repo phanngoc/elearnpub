@@ -26,6 +26,7 @@ return array(
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
     'League\\CommonMark\\' => array($vendorDir . '/league/commonmark/src'),
     'Illuminate\\' => array($vendorDir . '/laravel/framework/src/Illuminate'),
+    'Greggilbert\\Recaptcha\\' => array($vendorDir . '/greggilbert/recaptcha/src'),
     'GrahamCampbell\\Markdown\\' => array($vendorDir . '/graham-campbell/markdown/src'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),

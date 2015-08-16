@@ -1,3 +1,9 @@
+.content-wrapper .large-container {
+  display: block;
+}
+.content-wrapper .large-container .col-md-7 {
+  padding-right: 64px;
+}
 .content-wrapper .large-container .inner-col-left .wrap-avatar {
   display: block;
   margin: 0px auto;
@@ -91,6 +97,7 @@
 .content-wrapper .large-container .inner-col-right .group-price .inner-group-price header .maximum {
   display: block;
   float: right;
+  margin-right: 14px;
 }
 .content-wrapper .large-container .inner-col-right .group-price .inner-group-price header .maximum .number {
   display: block;
@@ -108,16 +115,16 @@
   text-rendering: optimizeLegibility;
 }
 .content-wrapper .large-container .inner-col-right .group-price .inner-group-price .content-slider-price .slider-range-you-pay {
-  height: 25px;
+  height: 32px;
 }
 .content-wrapper .large-container .inner-col-right .group-price .inner-group-price .content-slider-price .slider-range-you-pay .ui-slider-handle {
-  height: 34px;
+  height: 41px;
 }
 .content-wrapper .large-container .inner-col-right .group-price .inner-group-price .content-slider-price .slider-range-author-earn {
-  height: 25px;
+  height: 32px;
 }
 .content-wrapper .large-container .inner-col-right .group-price .inner-group-price .content-slider-price .slider-range-author-earn .ui-slider-handle {
-  height: 34px;
+  height: 41px;
 }
 .content-wrapper .large-container .inner-col-right .group-price .inner-group-price .add-ebook-to-cart {
   margin-top: 26px;
@@ -139,6 +146,7 @@
   display: block;
   margin-top: 10px;
   box-shadow: 0px 20px 34px #E5E4E3 inset;
+  min-height: 348px;
 }
 .aboutbook .inner-about-book {
   margin-top: 5px;
@@ -176,4 +184,36 @@
 }
 .aboutbook .inner-about-book .content .wrap-content .content-control div.share ul li.google {
   background-color: #E85653;
+}
+.about-author {
+  display: block;
+  box-shadow: 0px 20px 34px #E5E4E3 inset;
+}
+.about-author .inner-about-author header {
+  display: block;
+  margin: 0px auto;
+  width: 80%;
+}
+.about-author .inner-about-author header h3 {
+  margin-top: 40px;
+  text-align: center;
+}
+.about-author .inner-about-author div.content {
+  display: block;
+  margin: 0px auto;
+  width: 80%;
+}
+.about-author .inner-about-author div.content .inner-left {
+  display: block;
+  text-align: center;
+}
+.about-author .inner-about-author div.content .inner-left .wrapper-social ul.list-social {
+  padding-left: 0px;
+  margin-top: 13px;
+}
+.about-author .inner-about-author div.content .inner-left .wrapper-social ul.list-social li {
+  list-style: none;
+  display: inline-block;
+  font-size: 30px;
+  width: 53px;
 }

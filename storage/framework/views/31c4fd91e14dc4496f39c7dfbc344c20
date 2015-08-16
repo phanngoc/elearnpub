@@ -33,7 +33,7 @@
         				  	<?php foreach($books as $book): ?>
 							    <div class="item-book">
 							    	<div class="avatar-wrapper">
-							    		<a href="#"><img src="<?php echo e(Asset('resourcebook/'.$book['avatar'])); ?>"/></a>
+							    		<a href="<?php echo e(route('bookhome',$book['bookurl'])); ?>"><img src="<?php echo e(Asset('resourcebook/'.$book['avatar'])); ?>"/></a>
 							    	</div>
                                     <div class="info-name">
                                         <span><?php echo e($book['title']); ?></span>

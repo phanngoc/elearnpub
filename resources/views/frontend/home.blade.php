@@ -35,7 +35,7 @@
         				  	@foreach ($books as $book)
 							    <div class="item-book">
 							    	<div class="avatar-wrapper">
-							    		<a href="#"><img src="{{ Asset('resourcebook/'.$book['avatar']) }}"/></a>
+							    		<a href="{{ route('bookhome',$book['bookurl']) }}"><img src="{{ Asset('resourcebook/'.$book['avatar']) }}"/></a>
 							    	</div>
                                     <div class="info-name">
                                         <span>{{ $book['title'] }}</span>

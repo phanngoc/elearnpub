@@ -1,0 +1,11 @@
+.content-wrapper .large-container .inner-content form .inner-left {
+  margin: 0px auto;
+  width: 80%;
+}
+.content-wrapper .large-container .inner-content form .inner-right {
+  margin: 0px auto;
+  width: 80%;
+}
+.content-wrapper .large-container .inner-content form .inner-right .submit {
+  margin-top: 20px;
+}

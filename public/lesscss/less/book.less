@@ -1,5 +1,9 @@
 .content-wrapper{
 	.large-container{
+		display: block;
+		.col-md-7{
+			padding-right: 64px;
+		}
 		.inner-col-left{
 			.wrap-avatar{
 				  display: block;
@@ -105,7 +109,7 @@
 						.maximum{
 							display : block;
 							float : right;
-							
+							margin-right: 14px;
 							.number{
 							  display: block;
 							  line-height: 1.125;
@@ -126,16 +130,16 @@
 						}
 						.slider-range-you-pay{
 							// width: 488px;
-							height: 25px;
+							height: 32px;
 							.ui-slider-handle{
-								height: 34px;
+								height: 41px;
 							}
 						}
 						.slider-range-author-earn{
 							// width: 488px;
-							height: 25px;
+							height: 32px;
 							.ui-slider-handle{
-								height: 34px;
+								height: 41px;
 							}
 						}
 
@@ -166,6 +170,7 @@
 	display: block;
 	margin-top: 10px;
 	box-shadow : 0px 20px 34px #E5E4E3 inset;
+	min-height: 348px;
 	.inner-about-book{
 		margin-top : 5px;
 		>header{
@@ -219,6 +224,43 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+.about-author{
+	display: block;
+	box-shadow: 0px 20px 34px #E5E4E3 inset;
+	.inner-about-author{
+		header{
+			  display: block;
+			  margin: 0px auto;
+			  width: 80%;
+			h3{
+			  margin-top: 40px;
+			  text-align: center;
+			}
+		}
+		div.content{
+			display: block;
+			margin: 0px auto;
+ 			width: 80%;
+ 			.inner-left{
+ 				display: block;
+  				text-align: center;
+ 				.wrapper-social{
+ 					ul.list-social{
+ 						padding-left: 0px;
+ 						margin-top: 13px;
+						li{
+							list-style: none;
+							display: inline-block;
+							font-size: 30px;
+  							width: 53px;
+						}
+ 					}
+ 				}
+ 			}
 		}
 	}
 }

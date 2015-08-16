@@ -1,39 +1,61 @@
 section.header {
   display: block;
-  height: 270px;
+  height: 90px;
+  box-shadow: -2px -5px 57px #c3bfbf inset;
+}
+section.header .logo {
+  display: block;
+  float: left;
 }
 section.header .logo .inner-image-home {
-  height: 150px;
+  height: 90px;
 }
 section.header .logo .inner-image-home a {
   display: block;
   text-align: center;
-  padding-top: 30px;
+}
+section.header .list-menu {
+  display: block;
+  float: left;
+  width: 52%;
+}
+@media only screen and (max-width: 1246px) {
+  section.header .list-menu {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  section.header .list-menu {
+    width: 10%;
+  }
 }
 section.header .list-menu ul.navigation {
   display: block;
-  height: 50px;
+  height: 90px;
   margin: 0px auto;
-  width: 80%;
+  width: 90%;
+  padding: 0px;
   /* end li */
 }
 section.header .list-menu ul.navigation li {
   list-style: none;
   display: block;
   float: left;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  height: 90px;
+  width: 108px;
+  padding-top: 27px;
+}
+@media only screen and (max-width: 1100px) {
+  section.header .list-menu ul.navigation li {
+    width: 29%;
+  }
 }
 section.header .list-menu ul.navigation li a {
-  font-family: "Archer SSm A", "Archer SSm B", Palatino, "Palatino Linotype", "Hoefler Text", Times, "Times New Roman";
-  font-style: normal;
-  font-weight: 700;
+  font-family: 'Univers_CE_Medium', Georgia, serif;
+  font-size: 27px;
   font-size: 24px;
   color: black;
   display: block;
-  text-decoration: none;
 }
 section.header .list-menu ul.navigation li #main-menu {
   margin-top: -5px;
@@ -45,65 +67,140 @@ section.header .list-menu ul.navigation li #main-menu button.btn-account {
   padding: 9px;
   height: 37px;
 }
-section.header .list-menu ul.navigation li .area-dropdown {
+@media only screen and (max-width: 1000px) {
+  section.header .list-menu ul.navigation {
+    height: 141px;
+    width: 116px;
+    background-color: white;
+    border: 1px solid #898989;
+    z-index: 999;
+  }
+  section.header .list-menu ul.navigation li {
+    float: none;
+    padding-top: 0px;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #C0C0C0;
+  }
+}
+section.header .area-right {
   display: block;
-  position: absolute;
-  width: 200px;
-  min-height: 275px;
-  right: 9px;
-  border: 1px solid #7c7c7c;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  float: right;
+  width: 393px;
+  height: 90px;
 }
-section.header .list-menu ul.navigation li .area-dropdown ul.list-item-menu {
+section.header .area-right .shopping-cart-button {
   display: block;
-  width: 100%;
-}
-section.header .list-menu ul.navigation li .area-dropdown ul.list-item-menu li {
-  list-style: none;
-  color: black;
-  padding: 8px;
-  border-bottom: 1px solid #e2e2e2;
-}
-section.header .list-menu ul.navigation li .area-dropdown ul.list-item-menu li a {
-  text-decoration: none;
-  color: #606060;
-}
-section.header .shopping-cart-button {
-  display: inline-block;
+  float: left;
   width: 76px;
   height: 39px;
-  padding-left: 15px;
+  /* padding-left: 15px; */
   background-color: white;
   border-radius: 20px;
   border: 1px solid #848484;
-  margin-top: -5px;
+  /* margin-top: -5px; */
+  padding-top: 8px;
+  padding-left: 15px;
+  margin-top: 23px;
+  margin-left: 21px;
 }
-section.header .search-bar {
-  margin: 0px auto;
-  width: 90%;
+section.header .area-right .shopping-cart-button #shopping-cart {
+  color: black;
+  font-size: 20px;
+}
+section.header .area-right .area-login {
+  display: block;
+  float: left;
+  width: 90px;
+  height: 90px;
+  padding-top: 25px;
+  padding-left: 19px;
+}
+section.header .area-right .profile {
+  display: block;
+  float: right;
+  width: 90px;
+  height: 90px;
+}
+section.header .area-right .profile .wrapper-profile {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+section.header .area-right .profile .wrapper-profile .img-avatar img {
+  display: block;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+section.header .area-right .profile .wrapper-profile .dropdown {
+  display: block;
+  width: 392px;
+  height: 296px;
+  position: absolute;
+  right: 0px;
+  background-color: white;
+  z-index: 1000;
+  padding: 13px;
+  border: 1px solid #898989;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0px 1px 40px -13px #898989 inset;
+}
+section.header .area-right .profile .wrapper-profile .dropdown .inner-dropdown .column {
+  display: block;
+  float: left;
+  width: 180px;
+}
+section.header .area-right .profile .wrapper-profile .dropdown .inner-dropdown .column h4 {
+  font-family: 'FonoCompressed', Impact, sans-serif;
+  font-size: 23px;
+}
+section.header .area-right .profile .wrapper-profile .dropdown .inner-dropdown .column ul {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+section.header .area-right .profile .wrapper-profile .dropdown .inner-dropdown .column ul li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+section.header .area-right .profile .wrapper-profile .dropdown .inner-dropdown .column ul li a {
+  font-family: 'Univers_CE_Medium', Georgia, serif;
+  font-size: 17px;
+  color: black;
+}
+section.header .area-right .search-bar {
   border: 0px solid #848484;
+  display: block;
+  float: left;
+  padding-top: 23px;
 }
-section.header .search-bar .search-and-submit {
+section.header .area-right .search-bar .search-and-submit {
   display: block;
   height: 37px;
   border: 1px solid #848484;
   padding: 0px;
   border-radius: 9px;
 }
-section.header .search-bar .search-and-submit form {
+section.header .area-right .search-bar .search-and-submit form {
   display: block;
   height: 33px;
   position: relative;
 }
-section.header .search-bar .search-and-submit form input {
+section.header .area-right .search-bar .search-and-submit form input {
   display: block;
   height: 37px;
   width: 100%;
   border: 1px solid #848484;
   border-radius: 9px;
 }
-section.header .search-bar .search-and-submit form .search-submit {
+section.header .area-right .search-bar .search-and-submit form input:focus {
+  outline-width: 0;
+}
+section.header .area-right .search-bar .search-and-submit form .search-submit {
   position: absolute;
   bottom: 0px;
   right: 1px;
@@ -114,8 +211,26 @@ section.header .search-bar .search-and-submit form .search-submit {
   background-color: white;
   border: 0px;
 }
-section.header .search-bar .search-and-submit form .search-submit .search-icon::before {
+section.header .area-right .search-bar .search-and-submit form .search-submit .search-icon::before {
   font-family: FontAwesome;
   content: '\f002';
   font-size: 1.125em;
+}
+.open-menu {
+  display: block;
+  width: 65px;
+  height: 65px;
+}
+.open-menu i {
+  display: block;
+  width: 65px;
+  height: 65px;
+  margin-top: 18px;
+  margin-left: 27px;
+}
+.open-menu i:before {
+  font-size: 45px;
+}
+.rmpadding {
+  padding: 0px;
 }
