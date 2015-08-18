@@ -10,6 +10,7 @@ use App\Models\Filebook;
 use Markdown;
 use Illuminate\Http\Request;
 use File;
+use Session;
 class HomeController extends Controller
 {
 
@@ -152,19 +153,19 @@ class HomeController extends Controller
 
     public function cart(Request $request)
     {
-      
       $item = array('bookid'=>$request->bookid ,'amount'=>$request->amountYouPay,'quantity'=>1);
       $carts = $request->session()->get('carts', 'default');
       if($carts == 'default') 
       {
         $carts = array();
       }
+
       // if item exist in array cart , only need increment 
       $isAdd = false;
       foreach ($carts as $key_cart => $val_cart) {
         if($val_cart['bookid'] == $item['bookid'])
         {
-          $carts[$key_cart]['quantity'] += 1;
+          $carts[$key_cart]['quantity'] = $carts[$key_cart]['quantity'] + 1;
           $isAdd = true;
         }
       }
@@ -172,9 +173,9 @@ class HomeController extends Controller
       {
         array_push($carts,$item);  
       }
-      
-      $request->session()->put('carts', $carts);
 
+      $request->session()->put('carts', $carts);
+      // dd($carts);
       // $listItem = array();
       // foreach ($carts as $key => $value) {
       //   $book = Book::find($value[0]);
@@ -192,12 +193,12 @@ class HomeController extends Controller
         $carts = array();
       }
 
-      // $listItem = array();
-      // foreach ($carts as $key => $value) {
-      //   $book = Book::find($value[0]);
-      //   array_push($listItem,$book);
-      // }
-      // $listItem = json_encode($listItem);
+      $listItem = array();
+      foreach ($carts as $key => $value) {
+        $book = Book::find($value['bookid']);
+        array_push($listItem,$book);
+      }
+      $listItem = json_encode($listItem);
       return view('frontend.cart');
     }
 
@@ -212,6 +213,8 @@ class HomeController extends Controller
       foreach ($carts as $key => $value) {
         $book = Book::find($value['bookid']);
         $book->meta = $value;
+        $price = new Price;
+        $book->price = $price->getPriceByBookId($book->id);
         array_push($listItem,$book);
       }
       $listItem = json_encode($listItem);

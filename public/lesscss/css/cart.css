@@ -19,6 +19,37 @@
 .content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart header p {
   text-align: center;
 }
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart .wrapper-content img {
+  display: block;
+  width: 103px;
+  height: 132px;
+}
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart .wrapper-content .inner-price .header-price {
+  display: block;
+  height: 63px;
+}
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart .wrapper-content .inner-price .header-price .quantity {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 45px;
+  margin-left: 48px;
+}
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart .wrapper-content .inner-price .header-price .quantity input#quantity {
+  width: 95px;
+}
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart .wrapper-content .inner-price .header-price > span {
+  display: block;
+  height: 45px;
+  width: 106px;
+  float: right;
+}
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart .wrapper-content .inner-price .pick-price .wrap-label {
+  text-align: center;
+}
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart .content-area-cart p {
+  text-align: center;
+}
 .content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart .content-area-cart table thead tr th {
   font-size: 18px;
   color: #43d0e0;

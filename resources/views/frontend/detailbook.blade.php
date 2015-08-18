@@ -187,7 +187,7 @@
     $(document).ready(function(){
 
         $("#amount-you-pay").numeric({negative : false,decimalPlaces : 2});
-        $("#amount-author-earn").numeric()
+        $("#amount-author-earn").numeric({negative : false,decimalPlaces : 2})
 
         $("#amount-you-pay").keyup(function(event){
             if(event.keyCode == 13){
