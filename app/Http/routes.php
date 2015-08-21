@@ -58,3 +58,6 @@ Route::post('settingbook/{id}/pricing',['as'=>'post_pricing','uses'=>'Settingboo
 
 Route::get('settingbook/{id}/package',['as'=>'package','uses'=>'SettingbookController@package']);
 Route::post('settingbook/{id}/package',['as'=>'post_package','uses'=>'SettingbookController@post_package']);
+
+Route::get('settingbook/{id}/extras',['as'=>'extras','uses'=>'SettingbookController@extras']);
+Route::post('settingbook/{id}/upload_extra',['as'=>'upload_extra','uses'=>'SettingbookController@upload_extra']);

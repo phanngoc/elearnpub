@@ -11,5 +11,6 @@ class Extrafile extends Model {
 		'name',
 		'link',
 		'extra_id',
+		'is_attached'
 	];
 }

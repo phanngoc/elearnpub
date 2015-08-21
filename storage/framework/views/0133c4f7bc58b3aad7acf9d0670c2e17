@@ -1,13 +1,12 @@
-@extends ('frontend.settingbook')
-@section ('content')
-<script type="text/javascript" src="{{Asset('dropzone/dropzone.js')}}"></script>
-<link rel="stylesheet" href="{{Asset('dropzone/dropzone.css')}}" charset="utf-8" />
+<?php $__env->startSection('content'); ?>
+<script type="text/javascript" src="<?php echo e(Asset('dropzone/dropzone.js')); ?>"></script>
+<link rel="stylesheet" href="<?php echo e(Asset('dropzone/dropzone.css')); ?>" charset="utf-8" />
 
 <div id="extra">
 <h3>Extras</h3>
 <h4>Add an extra</h4>
-  <form role="form" method="POST" action="{{route('upload_extra',$book->id)}}" enctype="multipart/form-data">
-      <input type="hidden" name="_token" value="{{csrf_token()}}">
+  <form role="form" method="POST" action="<?php echo e(route('upload_extra',$book->id)); ?>" enctype="multipart/form-data">
+      <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
       <div class="form-group" >
         <label for="name">Name</label>
         <input type="text" class="form-control" id="title" value="" name="name"/>
@@ -29,7 +28,7 @@
 <script type="text/javascript">
   Dropzone.autoDiscover = false;
   var myDropzone = new Dropzone("div#area-upload-file", {
-    url: "{{route('upload_extra',$book->id)}}",
+    url: "<?php echo e(route('upload_extra',$book->id)); ?>",
     addRemoveLinks: true,
     sending: function(file, xhr, formData) {
         // Pass token. You can use the same method to pass any other values as well such as a id to associate the image with for example.
@@ -40,10 +39,6 @@
     {
       console.log(file);
     },
-    success : function(file,response)
-    {
-      this.identity = response;
-    }
     init : function(){
       this.on("addedfile", function (file) {
           // Create the remove button
@@ -70,6 +65,8 @@
     }
 
   });
-  // $("div#area-upload-file").dropzone({ url: "{{route('upload_extra',$book->id)}}" });
+  // $("div#area-upload-file").dropzone({ url: "<?php echo e(route('upload_extra',$book->id)); ?>" });
 </script>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('frontend.settingbook', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

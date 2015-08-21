@@ -7,6 +7,7 @@ use Request;
 use App\Models\Price;
 use App\Models\Package;
 use DB;
+use App\Models\Extrafile;
 class SettingbookController extends Controller
 {
 
@@ -184,5 +185,24 @@ class SettingbookController extends Controller
     public function extras($book_id)
     {
       $linkfilecss = 'extra.css';
+      $book = Book::find($book_id);
+      return view('frontend.extras',compact('linkfilecss','book'));
+    }
+    public function upload_extra($book_id,\Illuminate\Http\Request $request)
+    {
+      $file = $request->file('file');
+      $namefileinital = $file->getClientOriginalName();
+      $namefilesave = $this->generateRandomString();
+
+      $extension = $file->getExtension();
+      $dirFile  = public_path().DIRECTORY_SEPARATOR.'resourcebook'.DIRECTORY_SEPARATOR;
+      $filename = $namefilesave.'.'.$extension;
+      $request->file('file')->move($dirFile,$filename);
+      Extrafile::create([
+        'name' => $namefileinital,
+        'link' => $filename,
+
+      ]);
+      dd($request->file('file'));
     }
 }
