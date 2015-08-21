@@ -36,3 +36,25 @@ Route::post('ajax_autoSaveContentFile',['as' => 'autoSaveContent', 'uses' => 'Ho
 Route::post('cart',['as' => 'cart','uses' => 'HomeController@cart']);
 Route::get('cart',['as' => 'getCart','uses' => 'HomeController@getCart']);
 Route::get('ajax_getCart',['as' => 'ajax_getCart','uses' => 'HomeController@ajax_getCart']);
+Route::get('addwishlist/{id}',['as'=>'addwishlist','uses'=>'WishlistController@add_wishlist']);
+Route::get('wishlist',['as'=>'wishlist','uses'=>'WishlistController@index']);
+Route::get('deletewishlist/{id}',['as'=>'deletewishlist','uses'=>'WishlistController@delete_wishlist']);
+Route::get('book',['as'=>'book','uses'=>'BookController@index']);
+
+Route::get('settingbook/{id}',['as'=>'settingbook','uses'=>'SettingbookController@index']);
+Route::post('settingbook/{id}',['as'=>'postsettingbook','uses'=>'SettingbookController@index']);
+
+Route::get('settingbook/{id}/publish_book',['as'=>'publish_book','uses'=>'SettingbookController@publish_book']);
+Route::post('settingbook/{id}/publish_book',['as'=>'post_publish_book','uses'=>'SettingbookController@post_publish_book']);
+
+Route::get('settingbook/{id}/publish_sample_book',['as'=>'publish_sample_book','uses'=>'SettingbookController@publish_sample_book']);
+Route::post('settingbook/{id}/publish_sample_book',['as'=>'post_publish_sample_book','uses'=>'SettingbookController@post_publish_sample_book']);
+
+Route::get('settingbook/{id}/upload_new_title',['as'=>'upload_new_title','uses'=>'SettingbookController@upload_new_title']);
+Route::post('settingbook/{id}/upload_new_title',['as'=>'post_upload_new_title','uses'=>'SettingbookController@post_upload_new_title']);
+
+Route::get('settingbook/{id}/pricing',['as'=>'pricing','uses'=>'SettingbookController@pricing']);
+Route::post('settingbook/{id}/pricing',['as'=>'post_pricing','uses'=>'SettingbookController@post_pricing']);
+
+Route::get('settingbook/{id}/package',['as'=>'package','uses'=>'SettingbookController@package']);
+Route::post('settingbook/{id}/package',['as'=>'post_package','uses'=>'SettingbookController@post_package']);

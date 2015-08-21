@@ -1,0 +1,27 @@
+<?php $__env->startSection('content'); ?>
+<h3>General Setting</h3> 
+<form role="form">
+<div class="form-group" method="POST" action="<?php echo e(route('postsettingbook',$book->id)); ?>">
+  <label for="title">Book title</label>
+  <input type="text" class="form-control" id="title" value="<?php echo e($book->title); ?>" name="booktitle"/>
+</div>
+<div class="form-group">
+  <label for="subtitle">Book subtitle</label>
+  <input type="text" class="form-control" id="subtitle" value="<?php echo e($book->subtitle); ?>" name="subtitle"/>
+</div>
+<div class="form-group">
+  <label for="description">Description</label>
+  <textarea type="text" class="form-control" id="description" name="description" rows="10"><?php echo e($book->description); ?></textarea>
+</div>
+<div class="form-group">
+  <label for="thankyoumessage">Thank you message</label>
+    <textarea type="text" class="form-control" id="thankyoumessage"><?php echo e($book->thankyoumessage); ?></textarea>
+</div>
+<div class="form-group">
+  <label for="copyright">Copyright</label>
+  <input type="text" class="form-control" id="copyright" value="<?php echo e($book->copyright); ?>"/>
+</div>
+<button class="btn btn-primary">Update book</button>  
+</form>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.settingbook', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

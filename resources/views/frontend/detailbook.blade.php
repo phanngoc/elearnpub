@@ -48,7 +48,7 @@
                         <div class="group-sample">
                             <p>Free sample</p>
                             <div class="downloadsample"><a href="#">Download Sample</a></div>
-                            <div class="wishlist"><a href="#">Add to Wish List</a></div>
+                            <div class="wishlist"><a href="{{ route('addwishlist',$book->id) }}">Add to Wish List</a></div>
                         </div>
                         
                      </div>

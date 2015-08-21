@@ -41,7 +41,20 @@
         );
       },
     });
-
+    var RowTable = React.createClass({
+      render : function(){
+        return (
+          <tr>
+            <td>{this.props.item.title}</td>
+            <td>{this.props.item.meta['quantity']}</td>
+            <td>{this.props.item.meta['amount']}</td>
+            <td>{this.props.item.meta['quantity']*this.props.item.meta['amount']}</td>
+            <td><a href="#" onClick={this.props.handleClick.bind(this,this.props.item)} ><i className="fa fa-pencil-square-o"></i></a></td>
+            <td><a href="#" onClick={this.props.handleDelete.bind(this,this.props.item)}><i className="fa fa-times"></i></a></td>
+          </tr>
+        );  
+      },
+    });
     var ShoppingCart = React.createClass({
       getInitialState : function(){
         return { items : [] , isOpen : false , item : {title:'',teaser:'',avatar : '',meta : {quantity:1},price : {minimumprice:0,suggestedprice:0}}};
@@ -114,14 +127,7 @@
                   {
                        this.state.items.map(function (item) {
                           return (
-                            <tr key={item.id}>
-                              <td>{item.title}</td>
-                              <td>{item.meta['quantity']}</td>
-                              <td>{item.meta['amount']}</td>
-                              <td>{item.meta['quantity']*item.meta['amount']}</td>
-                              <td><a href="#" onClick={this.handleClick.bind(this,item)} ><i className="fa fa-pencil-square-o"></i></a></td>
-                              <td><a href="#" onClick={this.handleDelete.bind(this,item)}><i className="fa fa-times"></i></a></td>
-                            </tr>
+                            <RowTable item={item} handleClick={this.handleClick} handleDelete={this.handleDelete}/>
                           );
                        },this) 
                   }

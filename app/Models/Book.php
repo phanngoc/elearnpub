@@ -7,6 +7,7 @@ use URL;
 use File;
 use App\Models\Filebook;
 use Storage;
+use Auth;
 
 class Book extends Model {
 
@@ -105,5 +106,21 @@ class Book extends Model {
 			$name = $default;
 		}
 		return Filebook::where('name',$name)->first();
+	}
+
+	public static function getBookPublished()
+	{
+		$user_id = Auth::user()->id;
+		$book_publist = DB::table('books')->where('is_published',1)->join('book_author', 'book_author.book_id', '=', 'books.id')
+            ->where('author_id', '=', $user_id)->get();
+        return $book_publist;
+	}
+
+	public static function getBookUnPublished()
+	{
+		$user_id = Auth::user()->id;
+		$book_publist = DB::table('books')->where('is_published',0)->join('book_author', 'book_author.book_id', '=', 'books.id')
+            ->where('author_id', '=', $user_id)->get();
+        return $book_publist;
 	}
 }

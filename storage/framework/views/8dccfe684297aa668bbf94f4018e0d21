@@ -1,0 +1,23 @@
+<?php $__env->startSection('content'); ?>
+<div id="uploadtitlebook">
+    <h3>Upload Title Page</h3>
+    <h4>Title Page</h4>
+    <?php if(strcmp($book->avatar,"") != 0) { ?>
+        <img src="<?php echo e(Asset('resourcebook/'.$book->diravatar)); ?>" class="wrap-avatar"/>
+    <?php } else { ?>
+        <img src="<?php echo e(Asset('images/question-mark.png')); ?>" class="wrap-avatar"/>
+    <?php } ?>
+
+    <form role="form" method="POST" action="<?php echo e(route('post_upload_new_title',$book->id)); ?>" enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>"/>
+        <div class="form-group">
+          <label for="release_note">Upload a new title page</label>
+          <input type="file" name="avatar" class="btn btn-default" />
+        </div>
+        <button class="btn btn-primary">Upload</button>
+    </form>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('frontend.settingbook', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

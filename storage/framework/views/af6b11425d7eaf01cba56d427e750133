@@ -1,0 +1,61 @@
+<?php $__env->startSection('head.title'); ?>
+    E learn pub
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body.content'); ?>
+
+<link href="<?php echo Asset('lesscss/css/settingbook.css'); ?>" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<?php echo e(Asset('react/react.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(Asset('react/react-with-addons.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(Asset('react/JSXTransformer.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(Asset('jquery.numeric.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(Asset('underscore.js')); ?>"></script>
+
+
+<link href="<?php echo Asset('lesscss/css/'.$linkfilecss); ?>" rel="stylesheet" type="text/css" />
+
+<div class="content-wrapper">
+    <section class="large-container">
+        <div class="inner-wrapper-settingbook" class="row">
+          <div class="col-md-3">
+            <div class="inner-sidebar">
+              <h3>Action</h3>
+              <ul>
+                <li><a href="#">General Settings</a></li>
+                <li><a href="#">Publish</a>
+                    <ul>
+                        <li><a href="<?php echo e(route('publish_book',$book->id)); ?>">Publish your book</a></li>    
+                        <li><a href="#">Edit title page</a></li>    
+                        <li><a href="<?php echo e(route('publish_sample_book',$book->id)); ?>">Publish your sample book</a></li>    
+                    </ul>        
+                </li>
+                <li><a href="#">Price</a></li>
+                <li>
+                  <a href="#">Packages & Extras</a>
+                  <ul>
+                    <li><a href="#">Create a Package</a></li>
+                    <li><a href="#">Create An Extra</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Landing Page</a>
+                    <ul>
+                      <li><a href="#">General</a></li>
+                      <li><a href="#">Social Media</a></li>
+                    </ul>
+                </li>
+              </ul>    
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="inner-content">
+              <section class="wrapper-content">
+                   <?php echo $__env->yieldContent('content'); ?>
+              </section>
+            </div>
+          </div> 
+        </div>
+    </section>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,6 @@
+#uploadtitlebook > img {
+  display: block;
+  max-width: 325px;
+  max-height: 325px;
+  border: 1px solid #353840;
+}

@@ -1,0 +1,14 @@
+.content-wrapper .large-container #inner-wrapper-wishlist {
+  display: block;
+  margin: 10px auto;
+  width: 60%;
+}
+.content-wrapper .large-container #inner-wrapper-wishlist header {
+  display: block;
+  padding: 10px;
+}
+.content-wrapper .large-container #inner-wrapper-wishlist .content .inner-content .item-wish .wrap-avatar img {
+  display: block;
+  width: 125px;
+  height: 155px;
+}
