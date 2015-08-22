@@ -9,6 +9,8 @@ use App\Models\Package;
 use DB;
 use App\Models\Extrafile;
 use File;
+use App\Models\Extra;
+
 class SettingbookController extends Controller
 {
 
@@ -164,7 +166,7 @@ class SettingbookController extends Controller
     {
       $linkfilecss = 'package.css';
       $book = Book::find($book_id);
-      return view('frontend.package',compact('linkfilecss','book'));
+      return view('frontend.package.package',compact('linkfilecss','book'));
     }
 
     /**
@@ -178,6 +180,14 @@ class SettingbookController extends Controller
         return redirect()->route('package',$book_id);
     }
 
+    public function editPackage($book_id,$pack_id)
+    {
+      $linkfilecss = 'package.css';
+      $book = Book::find($book_id);
+      $package = Package::find($pack_id);
+      $extras = Extra::getExtraByPackageId($pack_id);
+      return view('frontend.package.edit_package',compact('book','package','linkfilecss','extras'));
+    }
     /**
      * [extras description]
      * @param  [type] $book_id [description]
@@ -187,7 +197,31 @@ class SettingbookController extends Controller
     {
       $linkfilecss = 'extra.css';
       $book = Book::find($book_id);
-      return view('frontend.extras',compact('linkfilecss','book'));
+      $t_packages = Package::all();
+      $packages = array();
+      foreach ($t_packages as $key => $value) {
+        $packages += array($value->id => $value->name);
+      }
+      return view('frontend.extras',compact('linkfilecss','book','packages'));
+    }
+
+    /**
+     * [post_extras description]
+     * @param  [type] $book_id [description]
+     * @return [type]          [description]
+     */
+    public function addExtras($book_id,\Illuminate\Http\Request $request)
+    {
+        $name = $request->input('name');
+        $description = $request->input('description');
+        $package_id = $request->input('packages');
+        $extra = Extra::create([
+            'name' => $name,
+            'description' => $description,
+            'package_id' => $package_id,
+        ]);
+        Extrafile::attachFileIsUploadToExtra($extra->id,$book_id);
+        return redirect()->route('extras',$book_id);
     }
 
     /**
@@ -209,12 +243,12 @@ class SettingbookController extends Controller
     }
 
     /**
-     * [upload_extra description]
+     * [uploadFileExtra description]
      * @param  [type]                $book_id [description]
      * @param  IlluminateHttpRequest $request [description]
      * @return [type]                         [description]
      */
-    public function upload_extra($book_id,\Illuminate\Http\Request $request)
+    public function uploadFileExtra($book_id,\Illuminate\Http\Request $request)
     {
       $file = $request->file('file');
       $namefileinital = $file->getClientOriginalName();
@@ -233,6 +267,13 @@ class SettingbookController extends Controller
       ]);
       dd($request->file('file'));
     }
+
+    /**
+     * [deleteFileExtra description]
+     * @param  [type]                $book_id [description]
+     * @param  IlluminateHttpRequest $request [description]
+     * @return [type]                         [description]
+     */
     public function deleteFileExtra($book_id,\Illuminate\Http\Request $request)
     {
       $filename = $request->input('filename');
@@ -240,10 +281,8 @@ class SettingbookController extends Controller
       $dirFile = public_path().DIRECTORY_SEPARATOR.'resourcebook'.DIRECTORY_SEPARATOR.$identityFile;
       if(File::exists($dirFile))
       {
-        echo 'co vao';
         File::delete($dirFile);
       }
       Extrafile::deleteFileInCreateExtra($book_id,$filename);
-      echo 'finish';
     }
 }

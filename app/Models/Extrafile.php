@@ -37,9 +37,22 @@ class Extrafile extends Model {
 		$extra = DB::table('extrafile')->where('is_attached',0)->where('extra_id',$book_id)->where('name',$filename)->delete();
 	}
 
+	/**
+	 * [getIdentityByName description]
+	 * @param  [type] $filename [description]
+	 * @return [type]           [description]
+	 */
 	public static function getIdentityByName($filename)
 	{
 			return DB::table('extrafile')->where('name',$filename)->first()->link;
+	}
+
+	public static function attachFileIsUploadToExtra($extra_id,$book_id)
+	{
+			$extrafile = Extrafile::getFileIsUploaded($book_id);
+			foreach ($extrafile as $key => $value) {
+				Extrafile::find($value->id)->update(['extra_id'=>$extra_id,'is_attached'=>1]);
+			}
 	}
 
 }

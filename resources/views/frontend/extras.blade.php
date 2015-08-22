@@ -3,10 +3,13 @@
 <script type="text/javascript" src="{{Asset('dropzone/dropzone.js')}}"></script>
 <link rel="stylesheet" href="{{Asset('dropzone/dropzone.css')}}" charset="utf-8" />
 
+<script type="text/javascript" src="{{Asset('select2/select2.js')}}"></script>
+<link rel="stylesheet" href="{{Asset('select2/select2.css')}}" charset="utf-8" />
+
 <div id="extra">
 <h3>Extras</h3>
 <h4>Add an extra</h4>
-  <form role="form" method="POST" action="{{route('upload_extra',$book->id)}}" enctype="multipart/form-data">
+  <form role="form" method="POST" action="{{route('add_extra',$book->id)}}" enctype="multipart/form-data">
       <input type="hidden" name="_token" value="{{csrf_token()}}">
       <div class="form-group" >
         <label for="name">Name</label>
@@ -15,6 +18,18 @@
       <div class="form-group">
         <label for="description">Description</label>
         <textarea type="text" class="form-control" id="description" name="description" rows="10"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="packages">Choose package</label>
+        <select class="form-control" id="packages" name="packages">
+          <?php
+            foreach ($packages as $key => $value) {
+              ?>
+                <option value="<?php echo $key; ?>"><?php echo $value;?></option>
+              <?php
+            }
+          ?>
+        </select>
       </div>
       <div class="form-group">
         <label for="files">Files</label>
@@ -27,9 +42,11 @@
 </div>
 
 <script type="text/javascript">
+
+  $("#packages").select2();
   Dropzone.autoDiscover = false;
   var myDropzone = new Dropzone("div#area-upload-file", {
-    url: "{{route('upload_extra',$book->id)}}",
+    url: "{{route('upload_file_extra',$book->id)}}",
     addRemoveLinks: true,
     sending: function(file, xhr, formData) {
         // Pass token. You can use the same method to pass any other values as well such as a id to associate the image with for example.
@@ -40,7 +57,7 @@
     {
       console.log(file);
       $.ajax({
-        url : "{{Asset(route('delete_extra',$book->id))}}",
+        url : "{{Asset(route('delete_file_extra',$book->id))}}",
         method : "GET",
         data : {filename : file.name},
         success : function(data)
