@@ -1,15 +1,16 @@
-<?php $__env->startSection('content'); ?>
-<script type="text/javascript" src="<?php echo e(Asset('dropzone/dropzone.js')); ?>"></script>
-<link rel="stylesheet" href="<?php echo e(Asset('dropzone/dropzone.css')); ?>" charset="utf-8" />
+@extends ('frontend.settingbook')
+@section ('content')
+<script type="text/javascript" src="{{Asset('dropzone/dropzone.js')}}"></script>
+<link rel="stylesheet" href="{{Asset('dropzone/dropzone.css')}}" charset="utf-8" />
 
-<script type="text/javascript" src="<?php echo e(Asset('select2/select2.js')); ?>"></script>
-<link rel="stylesheet" href="<?php echo e(Asset('select2/select2.css')); ?>" charset="utf-8" />
+<script type="text/javascript" src="{{Asset('select2/select2.js')}}"></script>
+<link rel="stylesheet" href="{{Asset('select2/select2.css')}}" charset="utf-8" />
 
 <div id="extra">
 <h3>Extras</h3>
 <h4>Add an extra</h4>
-  <form role="form" method="POST" action="<?php echo e(route('add_extra',$book->id)); ?>" enctype="multipart/form-data">
-      <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+  <form role="form" method="POST" action="{{route('add_extra',$book->id)}}" enctype="multipart/form-data">
+      <input type="hidden" name="_token" value="{{csrf_token()}}">
       <div class="form-group" >
         <label for="name">Name</label>
         <input type="text" class="form-control" id="title" value="" name="name"/>
@@ -45,7 +46,7 @@
   $("#packages").select2();
   Dropzone.autoDiscover = false;
   var myDropzone = new Dropzone("div#area-upload-file", {
-    url: "<?php echo e(route('upload_file_extra',$book->id)); ?>",
+    url: "{{route('upload_file_extra',$book->id)}}",
     addRemoveLinks: true,
     sending: function(file, xhr, formData) {
         // Pass token. You can use the same method to pass any other values as well such as a id to associate the image with for example.
@@ -56,7 +57,7 @@
     {
       console.log(file);
       $.ajax({
-        url : "<?php echo e(Asset(route('delete_file_extra',$book->id))); ?>",
+        url : "{{route('delete_file_extra',$book->id)}}",
         method : "GET",
         data : {filename : file.name},
         success : function(data)
@@ -73,13 +74,13 @@
     },
     init : function(){
       thisDropzone = this;
-       $.get('<?php echo e(route("get_file_upload",$book->id)); ?>', function(data) {
+       $.get('{{route("get_file_upload",$book->id)}}', function(data) {
          var result = jQuery.parseJSON(data);
          console.log(result);
            $.each(result, function(key,value){
                var mockFile = { name: value.name, size: value.size };
                thisDropzone.options.addedfile.call(thisDropzone, mockFile);
-               thisDropzone.options.thumbnail.call(thisDropzone, mockFile, "<?php echo e(Asset('images/very-basic-file-icon.png')); ?>");
+               thisDropzone.options.thumbnail.call(thisDropzone, mockFile, "{{Asset('images/very-basic-file-icon.png')}}");
            });
 
        });
@@ -88,6 +89,4 @@
   });
 
 </script>
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('frontend.settingbook', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@stop

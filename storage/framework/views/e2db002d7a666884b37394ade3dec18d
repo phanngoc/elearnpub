@@ -56,7 +56,7 @@
     {
       console.log(file);
       $.ajax({
-        url : "<?php echo e(Asset(route('delete_file_extra',$book->id))); ?>",
+        url : "<?php echo e(route('delete_file_extra',$book->id)); ?>",
         method : "GET",
         data : {filename : file.name},
         success : function(data)

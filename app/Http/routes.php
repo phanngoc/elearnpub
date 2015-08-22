@@ -60,13 +60,19 @@ Route::get('settingbook/{id}/package',['as'=>'package','uses'=>'SettingbookContr
 Route::post('settingbook/{id}/package',['as'=>'post_package','uses'=>'SettingbookController@post_package']);
 Route::get('settingbook/{id}/edit_package/{package_id}',['as'=>'edit_package','uses'=>'SettingbookController@editPackage']);
 Route::post('settingbook/{id}/update_package/{package_id}',['as'=>'update_package','uses'=>'SettingbookController@updatePackage']);
-Route::post('settingbook/{id}/package/{package_id}/delete_extra/{extra_id}',['as'=>'delete_extra','uses'=>'SettingbookController@deleteExtraInPackage']);
 
-Route::get('settingbook/{id}/extras',['as'=>'extras','uses'=>'SettingbookController@extras']);
-Route::post('settingbook/{id}/add_extra',['as'=>'add_extra','uses'=>'SettingbookController@addExtras']);
-Route::post('settingbook/{id}/upload_file_extra',['as'=>'upload_file_extra','uses'=>'SettingbookController@uploadFileExtra']);
-Route::get('settingbook/{id}/get_file_upload',['as'=>'get_file_upload','uses'=>'SettingbookController@ajax_getFileExtra']);
-Route::get('settingbook/{id}/delete_file_extra',['as'=>'delete_file_extra','uses'=>'SettingbookController@deleteFileExtra']);
 
-Route::get('settingbook/{id}/edit_extra/{extra_id}',['as'=>'edit_extra','uses'=>'SettingbookController@editExtra']);
-Route::post('settingbook/{id}/update_extra/{extra_id}',['as'=>'update_extra','uses'=>'SettingbookController@updateExtra']);
+// create extra
+Route::get('settingbook/{id}/extras',['as'=>'extras','uses'=>'ExtraController@extras']);
+Route::post('settingbook/{id}/add_extra',['as'=>'add_extra','uses'=>'ExtraController@addExtras']);
+Route::post('settingbook/{id}/upload_file_extra',['as'=>'upload_file_extra','uses'=>'ExtraController@uploadFileExtra']);
+Route::get('settingbook/{id}/get_file_upload',['as'=>'get_file_upload','uses'=>'ExtraController@ajax_getFileExtra']);
+Route::get('settingbook/{id}/delete_file_extra',['as'=>'delete_file_extra','uses'=>'ExtraController@deleteFileExtra']);
+
+// edit extra
+Route::get('settingbook/{id}/edit_extra/{extra_id}',['as'=>'edit_extra','uses'=>'ExtraController@editExtra']);
+Route::post('settingbook/{id}/update_extra/{extra_id}',['as'=>'update_extra','uses'=>'ExtraController@updateExtra']);
+Route::post('settingbook/{id}/edit_upload_file_extra/{extra_id}',['as'=>'edit_upload_file_extra','uses'=>'ExtraController@editUploadFileExtra']);
+Route::get('settingbook/{id}/edit_get_file_upload/{extra_id}',['as'=>'edit_get_file_upload','uses'=>'ExtraController@editGetFileExtra']);
+Route::get('settingbook/{id}/edit_delete_file_extra/{extra_id}',['as'=>'edit_delete_file_extra','uses'=>'ExtraController@editDeleteFileExtra']);
+Route::get('settingbook/{id}/package/{package_id}/delete_extra/{extra_id}',['as'=>'delete_extra','uses'=>'ExtraController@deleteExtraInPackage']);

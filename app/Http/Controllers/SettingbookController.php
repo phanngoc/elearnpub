@@ -180,6 +180,12 @@ class SettingbookController extends Controller
         return redirect()->route('package',$book_id);
     }
 
+    /**
+     * [editPackage description]
+     * @param  [type] $book_id [description]
+     * @param  [type] $pack_id [description]
+     * @return [type]          [description]
+     */
     public function editPackage($book_id,$pack_id)
     {
       $linkfilecss = 'package.css';
@@ -188,101 +194,10 @@ class SettingbookController extends Controller
       $extras = Extra::getExtraByPackageId($pack_id);
       return view('frontend.package.edit_package',compact('book','package','linkfilecss','extras'));
     }
-    /**
-     * [extras description]
-     * @param  [type] $book_id [description]
-     * @return [type]          [description]
-     */
-    public function extras($book_id)
+
+    public function updatePackage($book_id,$package_id,\Illuminate\Http\Request $request)
     {
-      $linkfilecss = 'extra.css';
-      $book = Book::find($book_id);
-      $t_packages = Package::all();
-      $packages = array();
-      foreach ($t_packages as $key => $value) {
-        $packages += array($value->id => $value->name);
-      }
-      return view('frontend.extras',compact('linkfilecss','book','packages'));
-    }
-
-    /**
-     * [post_extras description]
-     * @param  [type] $book_id [description]
-     * @return [type]          [description]
-     */
-    public function addExtras($book_id,\Illuminate\Http\Request $request)
-    {
-        $name = $request->input('name');
-        $description = $request->input('description');
-        $package_id = $request->input('packages');
-        $extra = Extra::create([
-            'name' => $name,
-            'description' => $description,
-            'package_id' => $package_id,
-        ]);
-        Extrafile::attachFileIsUploadToExtra($extra->id,$book_id);
-        return redirect()->route('extras',$book_id);
-    }
-
-    /**
-     * [ajax_getFileExtra description]
-     * @param  [type] $book_id [description]
-     * @return [type]          [description]
-     */
-    public function ajax_getFileExtra($book_id)
-    {
-      $fileIsUploaded = Extrafile::getFileIsUploaded($book_id);
-      $result = array();
-      foreach ($fileIsUploaded as $key => $value) {
-        $item = array();
-        $item['name'] = $value->name;
-        $item['size'] = 100;
-        $result[] = $item;
-      }
-      echo json_encode($result);
-    }
-
-    /**
-     * [uploadFileExtra description]
-     * @param  [type]                $book_id [description]
-     * @param  IlluminateHttpRequest $request [description]
-     * @return [type]                         [description]
-     */
-    public function uploadFileExtra($book_id,\Illuminate\Http\Request $request)
-    {
-      $file = $request->file('file');
-      $namefileinital = $file->getClientOriginalName();
-      $namefilesave = $this->generateRandomString();
-
-      $extension = pathinfo($namefileinital)['extension'];
-
-      $dirFile  = public_path().DIRECTORY_SEPARATOR.'resourcebook'.DIRECTORY_SEPARATOR;
-      $filename = $namefilesave.'.'.$extension;
-      $request->file('file')->move($dirFile,$filename);
-      Extrafile::create([
-        'name' => $namefileinital,
-        'link' => $filename,
-        'extra_id' => $book_id,
-        'is_attached' => 0,
-      ]);
-      dd($request->file('file'));
-    }
-
-    /**
-     * [deleteFileExtra description]
-     * @param  [type]                $book_id [description]
-     * @param  IlluminateHttpRequest $request [description]
-     * @return [type]                         [description]
-     */
-    public function deleteFileExtra($book_id,\Illuminate\Http\Request $request)
-    {
-      $filename = $request->input('filename');
-      $identityFile = Extrafile::getIdentityByName($filename);
-      $dirFile = public_path().DIRECTORY_SEPARATOR.'resourcebook'.DIRECTORY_SEPARATOR.$identityFile;
-      if(File::exists($dirFile))
-      {
-        File::delete($dirFile);
-      }
-      Extrafile::deleteFileInCreateExtra($book_id,$filename);
+      Package::find($package_id)->update($request->all());
+      return redirect()->route('edit_package',array('id'=>$book_id,'package_id'=>$package_id));
     }
 }

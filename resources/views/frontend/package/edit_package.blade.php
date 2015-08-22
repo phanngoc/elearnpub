@@ -3,7 +3,7 @@
 <div id="package">
     <h3>Packages</h3>
 
-    <form role="form" method="POST" action="{{route('update_package',$book->id,$package->id)}}">
+    <form role="form" method="POST" action="{{route('update_package',array('id'=>$book->id,'package_id'=>$package->id))}}">
         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
         <input type="hidden" name="book_id" value="{{$book->id}}"/>
         <div class="form-group">
@@ -45,6 +45,7 @@
             <thead>
               <tr>
                 <th>Name</th>
+                <th>Description</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
@@ -54,15 +55,17 @@
                 foreach ($extras as $key => $value) {
                   ?>
                     <tr>
-                      <td>$value->name</td>
-                      <td><a href="{{Asset('edit_extra',$book->id,$value->id)}}"><i class="fa fa-pencil-square-o"></i></a></td>
-                      <td><a href="{{Asset('edit_extra',$book->id,$value->id)}}"><i class="fa fa-times"></i></a></td>
+                      <td>{{$value->name}}</td>
+                      <td>{{$value->description}}</td>
+                      <td><a href="{{route('edit_extra',array('id'=>$book->id,'extra_id'=>$value->id))}}"><i class="fa fa-pencil-square-o"></i></a></td>
+                      <td><a href="{{route('delete_extra',array('id'=>$book->id,'package_id'=>$package->id,'extra_id'=>$value->id))}}"><i class="fa fa-times"></i></a></td>
                     </tr>
                   <?php
                 }
               ?>
             </tbody>
           </table>
+          <a href="{{route('extras',$book->id)}}" class="btn btn-primary">Create new extra</a>
         </div>
         <button class="btn btn-primary">Update Package</button>
     </form>

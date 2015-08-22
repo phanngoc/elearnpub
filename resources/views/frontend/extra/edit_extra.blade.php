@@ -8,16 +8,16 @@
 
 <div id="extra">
 <h3>Extras</h3>
-<h4>Add an extra</h4>
-  <form role="form" method="POST" action="{{route('add_extra',$book->id)}}" enctype="multipart/form-data">
+<h4>Edit extra</h4>
+  <form role="form" method="POST" action="{{route('update_extra',array('id'=>$book->id,'extra_id'=>$extra->id))}}" enctype="multipart/form-data">
       <input type="hidden" name="_token" value="{{csrf_token()}}">
       <div class="form-group" >
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="title" value="" name="name"/>
+        <input type="text" class="form-control" id="title" value="{{$extra->name}}" name="name"/>
       </div>
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea type="text" class="form-control" id="description" name="description" rows="10"></textarea>
+        <textarea type="text" class="form-control" id="description" name="description" rows="10">{{$extra->description}}</textarea>
       </div>
       <div class="form-group">
         <label for="packages">Choose package</label>
@@ -25,7 +25,7 @@
           <?php
             foreach ($packages as $key => $value) {
               ?>
-                <option value="<?php echo $key; ?>"><?php echo $value;?></option>
+                <option value="<?php echo $key; ?>" <?php if($key==$extra->package_id) echo "selected";?> ><?php echo $value;?></option>
               <?php
             }
           ?>
@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <button class="btn btn-primary">Create Extra</button>
+      <button class="btn btn-primary">Update Extra</button>
   </form>
 </div>
 
@@ -46,7 +46,7 @@
   $("#packages").select2();
   Dropzone.autoDiscover = false;
   var myDropzone = new Dropzone("div#area-upload-file", {
-    url: "{{route('upload_file_extra',$book->id)}}",
+    url: "{{route('edit_upload_file_extra',array('id'=>$book->id,'extra_id'=>$extra->id))}}",
     addRemoveLinks: true,
     sending: function(file, xhr, formData) {
         // Pass token. You can use the same method to pass any other values as well such as a id to associate the image with for example.
@@ -57,7 +57,7 @@
     {
       console.log(file);
       $.ajax({
-        url : "{{Asset(route('delete_file_extra',$book->id))}}",
+        url : "{{route('edit_delete_file_extra',array('id'=>$book->id,'extra_id'=>$extra->id))}}",
         method : "GET",
         data : {filename : file.name},
         success : function(data)
@@ -74,7 +74,7 @@
     },
     init : function(){
       thisDropzone = this;
-       $.get('{{route("get_file_upload",$book->id)}}', function(data) {
+       $.get('{{route("edit_get_file_upload",array('id'=>$book->id,'extra_id'=>$extra->id))}}', function(data) {
          var result = jQuery.parseJSON(data);
          console.log(result);
            $.each(result, function(key,value){
@@ -87,6 +87,6 @@
     }
 
   });
-  // $("div#area-upload-file").dropzone({ url: "{{route('upload_extra',$book->id)}}" });
+
 </script>
 @stop

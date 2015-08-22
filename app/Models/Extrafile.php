@@ -47,6 +47,12 @@ class Extrafile extends Model {
 			return DB::table('extrafile')->where('name',$filename)->first()->link;
 	}
 
+	/**
+	 * [attachFileIsUploadToExtra description]
+	 * @param  [type] $extra_id [description]
+	 * @param  [type] $book_id  [description]
+	 * @return [type]           [description]
+	 */
 	public static function attachFileIsUploadToExtra($extra_id,$book_id)
 	{
 			$extrafile = Extrafile::getFileIsUploaded($book_id);
@@ -55,4 +61,36 @@ class Extrafile extends Model {
 			}
 	}
 
+	/**
+	 * [getFileIsUploadedToExtra description]
+	 * @param  [type] $extra_id [description]
+	 * @return [type]           [description]
+	 */
+	public static function getFileIsUploadedToExtra($extra_id)
+	{
+		$extras = DB::table('extrafile')->where('is_attached',1)->where('extra_id',$extra_id)->get();
+		return $extras;
+	}
+
+	/**
+	 * [deleteFileInEditExtra description]
+	 * @param  [type] $book_id  [description]
+	 * @param  [type] $filename [description]
+	 * @return [type]           [description]
+	 */
+	public static function deleteFileInEditExtra($extra_id,$filename)
+	{
+		$extra = DB::table('extrafile')->where('is_attached',1)->where('extra_id',$extra_id)->where('name',$filename)->delete();
+	}
+
+	/**
+	 * [getIdentityByNameAndExtra description]
+	 * @param  [type] $filename [description]
+	 * @param  [type] $extra_id [description]
+	 * @return [type]           [description]
+	 */
+	public static function getIdentityByNameAndExtra($filename,$extra_id)
+	{
+			return DB::table('extrafile')->where('name',$filename)->where('extra_id',$extra_id)->first()->link;
+	}
 }
