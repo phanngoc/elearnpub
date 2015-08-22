@@ -39,34 +39,34 @@
     removedfile : function(file)
     {
       console.log(file);
+      $.ajax({
+        url : "{{Asset(route('delete_extra',$book->id))}}",
+        method : "GET",
+        data : {filename : file.name},
+        success : function(data)
+        {
+
+        }
+      });
+      var _ref;
+      return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
     },
     success : function(file,response)
     {
       this.identity = response;
-    }
+    },
     init : function(){
-      this.on("addedfile", function (file) {
-          // Create the remove button
-          var removeButton = Dropzone.createElement("<a>Remove file</a>");
+      thisDropzone = this;
+       $.get('{{route("get_file_upload",$book->id)}}', function(data) {
+         var result = jQuery.parseJSON(data);
+         console.log(result);
+           $.each(result, function(key,value){
+               var mockFile = { name: value.name, size: value.size };
+               thisDropzone.options.addedfile.call(thisDropzone, mockFile);
+               thisDropzone.options.thumbnail.call(thisDropzone, mockFile, "{{Asset('images/very-basic-file-icon.png')}}");
+           });
 
-          // Capture the Dropzone instance as closure.
-          var _this = this;
-          // Listen to the click event
-          removeButton.addEventListener("click", function (e) {
-            // Make sure the button click doesn't submit the form:
-            console.log('ok');
-            e.preventDefault();
-            e.stopPropagation();
-            // Remove the file preview.
-            _this.removeFile(file);
-            $(this).closest('.dz-preview').remove();
-            // If you want to the delete the file on the server as well,
-            // you can do the AJAX request here.
-          });
-
-          // Add the button to the file preview element.
-          file.previewElement.appendChild(removeButton);
-      });
+       });
     }
 
   });

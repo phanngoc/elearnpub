@@ -61,3 +61,5 @@ Route::post('settingbook/{id}/package',['as'=>'post_package','uses'=>'Settingboo
 
 Route::get('settingbook/{id}/extras',['as'=>'extras','uses'=>'SettingbookController@extras']);
 Route::post('settingbook/{id}/upload_extra',['as'=>'upload_extra','uses'=>'SettingbookController@upload_extra']);
+Route::get('settingbook/{id}/get_file_upload',['as'=>'get_file_upload','uses'=>'SettingbookController@ajax_getFileExtra']);
+Route::get('settingbook/{id}/delete_extra',['as'=>'delete_extra','uses'=>'SettingbookController@deleteFileExtra']);

@@ -8,6 +8,7 @@ use App\Models\Price;
 use App\Models\Package;
 use DB;
 use App\Models\Extrafile;
+use File;
 class SettingbookController extends Controller
 {
 
@@ -188,21 +189,61 @@ class SettingbookController extends Controller
       $book = Book::find($book_id);
       return view('frontend.extras',compact('linkfilecss','book'));
     }
+
+    /**
+     * [ajax_getFileExtra description]
+     * @param  [type] $book_id [description]
+     * @return [type]          [description]
+     */
+    public function ajax_getFileExtra($book_id)
+    {
+      $fileIsUploaded = Extrafile::getFileIsUploaded($book_id);
+      $result = array();
+      foreach ($fileIsUploaded as $key => $value) {
+        $item = array();
+        $item['name'] = $value->name;
+        $item['size'] = 100;
+        $result[] = $item;
+      }
+      echo json_encode($result);
+    }
+
+    /**
+     * [upload_extra description]
+     * @param  [type]                $book_id [description]
+     * @param  IlluminateHttpRequest $request [description]
+     * @return [type]                         [description]
+     */
     public function upload_extra($book_id,\Illuminate\Http\Request $request)
     {
       $file = $request->file('file');
       $namefileinital = $file->getClientOriginalName();
       $namefilesave = $this->generateRandomString();
 
-      $extension = $file->getExtension();
+      $extension = pathinfo($namefileinital)['extension'];
+
       $dirFile  = public_path().DIRECTORY_SEPARATOR.'resourcebook'.DIRECTORY_SEPARATOR;
       $filename = $namefilesave.'.'.$extension;
       $request->file('file')->move($dirFile,$filename);
       Extrafile::create([
         'name' => $namefileinital,
         'link' => $filename,
-
+        'extra_id' => $book_id,
+        'is_attached' => 0,
       ]);
       dd($request->file('file'));
+    }
+    public function deleteFileExtra($book_id,\Illuminate\Http\Request $request)
+    {
+      $filename = $request->input('filename');
+      $identityFile = Extrafile::getIdentityByName($filename);
+      $dirFile = public_path().DIRECTORY_SEPARATOR.'resourcebook'.DIRECTORY_SEPARATOR.$identityFile;
+      if(File::exists($dirFile))
+      {
+        echo 'co vao';
+        File::delete($dirFile);
+      }
+      Extrafile::deleteFileInCreateExtra($book_id,$filename);
+      echo 'finish';
     }
 }
