@@ -23,7 +23,7 @@ class SettingbookController extends Controller
     {
         $book = Book::find($book_id);
         $linkfilecss = 'generalsetting.css';
-        return view('frontend.generalsetting',compact('book'));
+        return view('frontend.generalsetting',compact('book','linkfilecss'));
     }
 
     /**
@@ -199,5 +199,19 @@ class SettingbookController extends Controller
     {
       Package::find($package_id)->update($request->all());
       return redirect()->route('edit_package',array('id'=>$book_id,'package_id'=>$package_id));
+    }
+
+    public function listPackage($book_id)
+    {
+      $book = Book::find($book_id);
+      $packages = Package::all();
+      $linkfilecss = 'list_package.css';
+      return view('frontend.package.list_package',compact('book','packages','linkfilecss'));
+    }
+
+    public function deletePackage($book_id,$package_id)
+    {
+      Package::deletePackage($package_id);
+      return redirect()->route('list_package',$book_id);
     }
 }

@@ -1,6 +1,6 @@
 <section class="header">
 	<div class="inner-header">
-		
+
 	    <div class="logo">
 			<div class="inner-image-home">
 				<a href="<?php echo e(URL::to('/')); ?>"><img src="<?php echo e(Asset('images/leanpub-logo-centred-black-footer.png')); ?>" /></a>
@@ -16,7 +16,7 @@
 				<li><a href="#">Read</a></li>
 				<li><a href="#">Write</a></li>
 			</ul>
-	    </div>	
+	    </div>
 
 <script type="text/javascript">
 
@@ -28,7 +28,7 @@
 	});
 
 	function responsive()
-	{	
+	{
 	  var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 	  console.log(width);
 	  if(width < 1000)
@@ -65,7 +65,7 @@
 	  	$('.logo').show();
 	  }
 	}
-	
+
 </script>
 		<!-- <div class="col-md-1"></div> -->
 
@@ -119,9 +119,9 @@
 					</div>
 				<?php } else { ?>
 					<div class="area-login">
-						<div class="inner-area-login"> 
+						<div class="inner-area-login">
 							<a href="auth/login" class="btn btn-primary">Sign in</a>
-						</div>		
+						</div>
 					</div>
 				<?php } ?>
 		</div>
@@ -130,21 +130,27 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		$('.profile .dropdown').hide();
+		$('.profile .img-avatar').click(function(){
+			console.log('co vao');
+			$(this).parent().find('.dropdown').toggle();
+		});
+
 		$('.area-dropdown').css({'display':'none'});
 		$('.btn-account').click(function(){
 			if($('.area-dropdown').css('display')=='none')
 			{
-				$('.area-dropdown').css({'display' : 'block'});	
+				$('.area-dropdown').css({'display' : 'block'});
 			}
 			else
 			{
-				$('.area-dropdown').css({'display' : 'none'});		
+				$('.area-dropdown').css({'display' : 'none'});
 			}
 		});
 		// $('input[name="search"],.search-and-submit').focus(function(){
 		// 	$(this).animate({
 		// 	    width: "178px",
-			   
+
 		// 	  }, 500, function() {
 		// 	    // Animation complete.
 		// 	  });
@@ -152,7 +158,7 @@
 		// $("input[name='search'],.search-and-submit").focusout(function(){
 		//     $(this).animate({
 		// 	    width: "100px",
-			    
+
 		// 	  }, 500, function() {
 		// 	    // Animation complete.
 		// 	  });

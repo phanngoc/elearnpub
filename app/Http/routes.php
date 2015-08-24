@@ -60,7 +60,8 @@ Route::get('settingbook/{id}/package',['as'=>'package','uses'=>'SettingbookContr
 Route::post('settingbook/{id}/package',['as'=>'post_package','uses'=>'SettingbookController@post_package']);
 Route::get('settingbook/{id}/edit_package/{package_id}',['as'=>'edit_package','uses'=>'SettingbookController@editPackage']);
 Route::post('settingbook/{id}/update_package/{package_id}',['as'=>'update_package','uses'=>'SettingbookController@updatePackage']);
-
+Route::get('settingbook/{id}/list_package',['as'=>'list_package','uses'=>'SettingbookController@listPackage']);
+Route::get('settingbook/{id}/delete_package/{package_id}',['as'=>'delete_package','uses'=>'SettingbookController@deletePackage']);
 
 // create extra
 Route::get('settingbook/{id}/extras',['as'=>'extras','uses'=>'ExtraController@extras']);
@@ -76,3 +77,23 @@ Route::post('settingbook/{id}/edit_upload_file_extra/{extra_id}',['as'=>'edit_up
 Route::get('settingbook/{id}/edit_get_file_upload/{extra_id}',['as'=>'edit_get_file_upload','uses'=>'ExtraController@editGetFileExtra']);
 Route::get('settingbook/{id}/edit_delete_file_extra/{extra_id}',['as'=>'edit_delete_file_extra','uses'=>'ExtraController@editDeleteFileExtra']);
 Route::get('settingbook/{id}/package/{package_id}/delete_extra/{extra_id}',['as'=>'delete_extra','uses'=>'ExtraController@deleteExtraInPackage']);
+
+// landing page
+Route::get('settingbook/{id}/landing_page',['as'=>'landing_page','uses'=>'LandingpageController@index']);
+Route::post('settingbook/{id}/landing_page',['as'=>'update_landing_page','uses'=>'LandingpageController@updateLandingPage']);
+
+// Percent complete
+Route::get('settingbook/{id}/percent_complete',['as'=>'percent_complete','uses'=>'LandingpageController@percentComplete']);
+Route::post('settingbook/{id}/percent_complete',['as'=>'update_percent_complete','uses'=>'LandingpageController@updatePercentComplete']);
+
+// Setting more
+Route::get('settingbook/{id}/category',['as'=>'category','uses'=>'SettingmoreController@category']);
+Route::post('settingbook/{id}/update_category',['as'=>'update_category','uses'=>'SettingmoreController@updateCategory']);
+
+// Language
+Route::get('settingbook/{id}/language',['as'=>'language','uses'=>'SettingmoreController@language']);
+Route::post('settingbook/{id}/update_language',['as'=>'update_language','uses'=>'SettingmoreController@updateLanguage']);
+
+//
+Route::get('settingbook/{id}/custom_author_name',['as'=>'custom_author_name','uses'=>'AuthorController@customAuthorName']);
+Route::post('settingbook/{id}/update_custom_author_name',['as'=>'update_custom_author_name','uses'=>'AuthorController@updateCustomAuthorName']);

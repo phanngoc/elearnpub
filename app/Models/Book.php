@@ -21,11 +21,27 @@ class Book extends Model {
 		'bookurl',
 		'language_id',
 		'google_analytic',
+		'teaser',
+		'meta_description',
+		'custom_about_author',
+		'youtube_url',
+		'vimeo_url',
+		'progress',
+		'custom_author_name'
 	];
-	
+
 
 	public function author() {
 		return $this->belongsToMany('App\User','book_author','author_id','book_id');
+	}
+
+	/**
+	 * Many to Many relation
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\belongsToMany
+	 */
+	public function category() {
+		return $this->belongsToMany('\App\Models\Category', 'book_category');
 	}
 
 	/**
@@ -35,7 +51,7 @@ class Book extends Model {
 	 */
 	public static function getMainAuthor($book_id)
 	{
-		$item = DB::table('book_author')->where('book_id', $book_id)->where('is_main',1)->join('users', 'users.id', '=', 'book_author.author_id')->first(); 
+		$item = DB::table('book_author')->where('book_id', $book_id)->where('is_main',1)->join('users', 'users.id', '=', 'book_author.author_id')->first();
 		return $item;
 	}
 
@@ -74,22 +90,22 @@ class Book extends Model {
 				]
 			]);
 			$content = "#Hello , This is a text sample";
-			
+
 			if(!File::exists(base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$book_id)) {
 			  File::makeDirectory(base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$book_id);
 			}
-			
+
 			$file1 = base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$book_id.DIRECTORY_SEPARATOR.'sample1.txt';
 			$file2 = base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$book_id.DIRECTORY_SEPARATOR.'sample2.txt';
 			$file3 = base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$book_id.DIRECTORY_SEPARATOR.'sample3.txt';
-	
+
 			File::put($file1, $content);
 			File::put($file2, $content);
 			File::put($file3, $content);
 
 			$files = Filebook::where('book_id',$book_id)->get();
 		}
-		
+
 		return $files;
 	}
 
@@ -108,6 +124,10 @@ class Book extends Model {
 		return Filebook::where('name',$name)->first();
 	}
 
+	/**
+	 * [getBookPublished description]
+	 * @return [type] [description]
+	 */
 	public static function getBookPublished()
 	{
 		$user_id = Auth::user()->id;
@@ -116,11 +136,26 @@ class Book extends Model {
         return $book_publist;
 	}
 
+	/**
+	 * [getBookUnPublished description]
+	 * @return [type] [description]
+	 */
 	public static function getBookUnPublished()
 	{
 		$user_id = Auth::user()->id;
 		$book_publist = DB::table('books')->where('is_published',0)->join('book_author', 'book_author.book_id', '=', 'books.id')
             ->where('author_id', '=', $user_id)->get();
         return $book_publist;
+	}
+
+	/**
+	 * [getCategory description]
+	 * @param  [type] $book_id [description]
+	 * @return [type]          [description]
+	 */
+	public static function getCategory($book_id)
+	{
+		$categories = DB::table('category')->join('book_category','book_category.category_id','=','category.id')->where('book_id',$book_id)->get();
+		return $categories;
 	}
 }

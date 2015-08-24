@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <title>@yield('head.title')</title>
     <link rel="shortcut icon" href="http://asiantech.vn/favicon.ico" type="">
-
-    <style type="text/css">
-
-    </style>
+    <link rel="stylesheet" href="{{Asset('lesscss/css/general.css')}}" media="screen" title="no title" charset="utf-8" />
 
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <script type="text/javascript" src="{{ Asset('jquery/jquery-1.11.3.js') }}"></script>
@@ -23,7 +20,7 @@
     @yield('head.css')
 
   </head>
-  
+
   <body class="skin-blue sidebar-mini">
 	    <div class="wrapper">
 
