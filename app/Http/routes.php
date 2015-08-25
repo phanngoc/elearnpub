@@ -94,6 +94,19 @@ Route::post('settingbook/{id}/update_category',['as'=>'update_category','uses'=>
 Route::get('settingbook/{id}/language',['as'=>'language','uses'=>'SettingmoreController@language']);
 Route::post('settingbook/{id}/update_language',['as'=>'update_language','uses'=>'SettingmoreController@updateLanguage']);
 
-//
+// Custom author name
 Route::get('settingbook/{id}/custom_author_name',['as'=>'custom_author_name','uses'=>'AuthorController@customAuthorName']);
 Route::post('settingbook/{id}/update_custom_author_name',['as'=>'update_custom_author_name','uses'=>'AuthorController@updateCustomAuthorName']);
+
+// add co-author
+Route::get('settingbook/{id}/add_coauthor',['as'=>'add_coauthor','uses'=>'AuthorController@addCoAuthor']);
+Route::post('settingbook/{id}/post_add_coauthor',['as'=>'post_add_coauthor','uses'=>'AuthorController@postAddCoAuthor']);
+Route::get('settingbook/{id}/edit_coauthor',['as'=>'edit_coauthor','uses'=>'AuthorController@editCoAuthor']);
+Route::get('settingbook/{id}/delete_coauthor/{author_id}',['as'=>'delete_coauthor','uses'=>'AuthorController@deleteCoAuthor']);
+
+// add contributor
+
+Route::get('settingbook/{id}/add_contributor',['as'=>'add_contributor','uses'=>'AuthorController@addContributor']);
+Route::post('settingbook/{id}/post_add_contributor',['as'=>'post_add_contributor','uses'=>'AuthorController@postAddContributor']);
+Route::get('settingbook/{id}/edit_contributor',['as'=>'edit_contributor','uses'=>'AuthorController@editContributor']);
+Route::get('settingbook/{id}/delete_contributor/{author_id}',['as'=>'delete_contributor','uses'=>'AuthorController@deleteContributor']);

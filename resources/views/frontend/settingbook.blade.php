@@ -56,7 +56,8 @@
                 <li><a href="#">Author</a>
                     <ul>
                       <li><a href="{{route('custom_author_name',$book->id)}}">Custom Author Name Display</a></li>
-                      <li><a href="{{route('language',$book->id)}}">Language & Character Encoding</a></li>
+                      <li><a href="{{route('add_coauthor',$book->id)}}">Add Co-Author</a></li>
+                      <li><a href="{{route('edit_coauthor',$book->id)}}">Edit Co-Author</a></li>
                     </ul>
                 </li>
               </ul>

@@ -37,6 +37,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
+    /**
+     * [addBookToWishlist description]
+     * @param [type] $book_id [description]
+     */
     public static function addBookToWishlist($book_id)
     {
         $user_id = Auth::user()->id;
@@ -47,9 +51,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         {
             DB::table('book_wishlist')->insert(
                 ['book_id' => $book_id, 'user_id' => $user_id]
-            );     
+            );
         }
     }
+
+    /**
+     * [getWishList description]
+     * @return [type] [description]
+     */
     public static function getWishList()
     {
         $user_id = Auth::user()->id;
@@ -57,10 +66,81 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             ->where('user_id', '=', $user_id)->get();
         return $wishlist;
     }
+
+    /**
+     * [removeBookFromWishlist description]
+     * @param  [type] $book_id [description]
+     * @return [type]          [description]
+     */
     public static function removeBookFromWishlist($book_id)
     {
         $user_id = Auth::user()->id;
         DB::table('book_wishlist')->where('user_id', '=', $user_id)
             ->where('book_id', '=', $book_id)->delete();
+    }
+
+    /**
+     * [getUserByUsername description]
+     * @param  [type] $username [description]
+     * @return [type]           [description]
+     */
+    public static function getUserByUsername($username)
+    {
+        return User::where('username',$username)->first();
+    }
+
+    /**
+     * [book description]
+     * @return [type] [description]
+     */
+    public function book() {
+      return $this->belongsToMany('App\Models\Book','book_author','author_id','book_id');
+    }
+
+    /**
+     * [connectCoAuthor description]
+     * @param  [type] $username [description]
+     * @param  [type] $book_id  [description]
+     * @return [type]           [description]
+     */
+    public static function connectCoAuthor($data,$book_id)
+    {
+        $coAuthor = User::where('username',$data['username'])->first();
+        if($coAuthor != null)
+        {
+            DB::table('book_author')->insert([
+                'author_id' => $coAuthor->id,
+                'book_id' => $book_id,
+                'is_main' => 0,
+                'royalty' => $data['royalty'],
+                'is_accepted' => 0,
+                'message' => $data['message']
+            ]);
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public static function createContributorAndConnectBook($book_id,$data,$avatar)
+    {
+        $user = User::create([
+            'lastname' => $data['name'],
+            'blurb' => $data['blurb'],
+            'email' => $data['email'],
+            'twitter_id' => $data['twitter_id'],
+            'github' => $data['github'],
+            'avatar' => $avatar
+        ]);
+
+        DB::table('book_author')->insert([
+            'author_id' => $user->id,
+            'book_id' => $book_id,
+            'is_main' => 2,
+            'royalty' => 0,
+            'is_accepted' => 1,
+            'message' => ''
+        ]);
     }
 }

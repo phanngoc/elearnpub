@@ -8,7 +8,7 @@ use File;
 use App\Models\Filebook;
 use Storage;
 use Auth;
-
+use App\User;
 class Book extends Model {
 
 	protected $table = 'books';
@@ -149,7 +149,7 @@ class Book extends Model {
 	}
 
 	/**
-	 * [getCategory description]
+	 * get all category of book
 	 * @param  [type] $book_id [description]
 	 * @return [type]          [description]
 	 */
@@ -157,5 +157,53 @@ class Book extends Model {
 	{
 		$categories = DB::table('category')->join('book_category','book_category.category_id','=','category.id')->where('book_id',$book_id)->get();
 		return $categories;
+	}
+
+	/**
+	 * find all author who write book with book_id
+	 * @param  [type] $book_id [description]
+	 * @return [type]          [description]
+	 */
+	public static function findCoAuthor($book_id)
+	{
+		$coauthor = DB::table('book_author')->where('book_id',$book_id)->where('is_main','!=',2)->get();
+		foreach ($coauthor as $key => $value) {
+			$user = User::find($value->author_id);
+			$coauthor[$key]->objAuthor = $user;
+		}
+		return $coauthor;
+	}
+
+	/**
+	 * [deleteCoAuthor description]
+	 * @param  [type] $book_id   [description]
+	 * @param  [type] $author_id [description]
+	 * @return [type]            [description]
+	 */
+	public static function deleteCoAuthor($book_id,$author_id)
+	{
+		 DB::table('book_author')->where('book_id',$book_id)->where('author_id',$author_id)->where('is_main',0)->delete();
+	}
+
+	/**
+	 * [addContributorByUsername description]
+	 * @param [type] $book_id  [description]
+	 * @param [type] $username [description]
+	 */
+	public static function addContributorByUsername($book_id,$username)
+	{
+		$user = User::where('username',$username)->first();
+		if($user != null)
+		{
+			DB::table('book_author')->insert([
+                'author_id' => $user->id,
+                'book_id' => $book_id,
+                'is_main' => 2,
+                'royalty' => 0,
+                'is_accepted' => 1,
+                'message' => ''
+        	]);
+		}
+		
 	}
 }
