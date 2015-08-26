@@ -6,20 +6,25 @@
 		.book-list-wrapper{
 			width : 100%;
 			border-top : 1px solid #b7b7b7;
-			padding-top: 29px;
+			// padding-top: 29px;
     		box-shadow: -2px -5px 57px #C3BFBF;
-			height: 445px;
+			height: 485px;
 
 			.list-header{
-				height: 40px;
-				display: block;
-				margin: 0px auto;
-  				width: 90%;
+			    height: 76px;
+			    display: block;
+			    margin: 0px auto;
+			    width: 90%;
+			    padding: 0px;
+			    clear: both;
+			    border-bottom: 1px solid #aaaaaa;
+    			margin-bottom: 23px;
 				.list-title{
-					display: block;
-					width: 65%;
-					float: left;
-					margin-top: -30px;
+				    display: block;
+				    /* width: 65%; */
+				    float: left;
+				    /* margin-top: -30px; */
+				    height: 76px;
 					h3{
 						a{
 							text-decoration: none;
@@ -29,12 +34,19 @@
 					}
 				}
 				.list-controls{
-					display : block;
-					float : left;
-					width: 35%;
-					text-align: right;
+					display: block;
+				    float: right;
+				    width: 35%;
+				    text-align: right;
+				    height: 76px;
+				    position: relative;
 					a{
-						display: inline-block;
+					    font-size: 18px;
+					    color: black;
+					    display: block;
+					    position: absolute;
+					    right: 10px;
+					    top: 28px;
 					}
 					.icon-control{
 						display: inline-block;
@@ -69,46 +81,48 @@
 				display: block;
 
 				.list-content-wrapper{
-					ul.list-detail{
-						display: block;
-						margin : 0px auto;
-						width: 90%;
-						height: 380px;
-						li{
-							display: block;
-							float : left;
-							width: 220px;
-							.avatar-wrapper{
-								display: block;
-  								text-align: center;
-								img{
-									width : 175px;
-									height : 225px;
-									box-shadow: 0 2px 3px rgba(0,0,0,0.33);
-								}
-							}
-							.info-name{
-								padding-top : 10px;
-								padding-bottom : 10px;
+					// ul.list-detail{
+					// 	display: block;
+					// 	margin : 0px auto;
+					// 	width: 90%;
+					// 	height: 380px;
+					// 	li{
+					// 		display: block;
+					// 		float : left;
+					// 		width: 220px;
+					// 		.avatar-wrapper{
+					// 			display: block;
+  			// 					text-align: center;
+					// 			img{
+					// 				width : 175px;
+					// 				height : 225px;
+					// 				box-shadow: 0 2px 3px rgba(0,0,0,0.33);
+					// 			}
+					// 		}
+					// 		.info-name{
+					// 			padding-top : 10px;
+					// 			padding-bottom : 10px;
 
-								span{
-								  display: block;
-								  text-align: center;
-								  font-family: "Whitney SSm A","Whitney SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
-								  font-style: normal;
-								  font-weight: 500;
-								  word-wrap: break-word;
-								}
-							}
-							.info-author{
-								span{
-								  display: block;
-								  text-align: center;
-								  word-wrap: break-word;
-								}
-							}
-						}
-					}
+					// 			span{
+					// 			  display: block;
+					// 			  text-align: center;
+					// 			  // font-family: "Whitney SSm A","Whitney SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
+					// 			  font-family: "Varela Round";
+  			// 					  font-size: 17px;
+					// 			  font-style: normal;
+					// 			  font-weight: 500;
+					// 			  word-wrap: break-word;
+					// 			}
+					// 		}
+					// 		.info-author{
+					// 			span{
+					// 			  display: block;
+					// 			  text-align: center;
+					// 			  word-wrap: break-word;
+					// 			}
+					// 		}
+					// 	}
+					// }
 					.owl-carousel{
 						width: 90%;
   						margin: 0px auto;
@@ -133,10 +147,12 @@
 								span{
 								  display: block;
 								  text-align: center;
-								  font-family: "Whitney SSm A","Whitney SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
+								  // font-family: "Whitney SSm A","Whitney SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
+								  font-family: "Varela Round";
 								  font-style: normal;
-								  font-weight: 500;
+								  font-weight: 600;
 								  word-wrap: break-word;
+								  font-size: 17px;
 								}
 							}
 							.info-author{

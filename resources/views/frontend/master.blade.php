@@ -31,7 +31,7 @@
 	                @yield('body.content')
 	            </div>
 	        </section>
-
+          @include ('frontend.footer')
 	    </div>
     <!-- End Wrapper -->
   </body>

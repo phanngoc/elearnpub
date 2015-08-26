@@ -129,7 +129,7 @@ class AuthorController extends Controller
    */
   public function postAddContributor($book_id,Request $request)
   {
-    if($request->input('username') != '')
+    if ($request->input('username') != '')
     {
       Book::addContributorByUsername($book_id,$request->input('username'));
     }
@@ -140,18 +140,24 @@ class AuthorController extends Controller
           'blurb' => 'required',
           'email' => 'required|email|unique:users,email',
           'twitter_id' => 'required|unique:users,twitter_id',
+          'avatar' => 'image',
       ]);
 
-      if($validator->fails())
+      if ($validator->fails())
       {
         return redirect()->route('add_contributor',$book_id)->withErrors($validator,'cocontributor')->withInput();  
       }
 
-      $destinationPath = public_path().'/avatar/';
-      dd($destinationPath);
-      $fileName = $this->generateRandomString(12);
-      if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {       
-          $request->file('avatar')->move($destinationPath, $fileName);
+      if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) { 
+          $destinationPath = public_path().'/avatar/';
+          $fileName = $this->generateRandomString(12);
+          $original_name = $request->file('avatar')->getClientOriginalName();
+          $extension = '';
+          if(array_key_exists("extension",pathinfo($original_name)))
+          {
+            $extension = pathinfo($original_name)['extension'];
+          }      
+          $request->file('avatar')->move($destinationPath, $fileName.'.'.$extension);
       }
       else
       {
@@ -160,5 +166,89 @@ class AuthorController extends Controller
       User::createContributorAndConnectBook($book_id,$request->all(),$fileName);
     }
     return redirect()->route('add_contributor',$book_id);
+  }
+  
+  /**
+   * [listContributor description]
+   * @param  [type] $book_id [description]
+   * @return [type]          [description]
+   */
+  public function listContributor($book_id)
+  {
+    $book = Book::find($book_id);
+    $linkfilecss = 'list_contributor.css';
+    $contributors = Book::getContributorOfBook($book_id);
+    return view('frontend.author.list_contributor',compact('book','linkfilecss','contributors'));
+  }
+
+  /**
+   * [showEditContributor description]
+   * @param  [type] $book_id   [description]
+   * @param  [type] $author_id [description]
+   * @return [type]            [description]
+   */
+  public function showEditContributor($book_id,$author_id)
+  {
+    $book = Book::find($book_id);
+    $linkfilecss = 'show_edit_contributor.css';
+    $contributor = User::find($author_id);
+    return view('frontend.author.show_edit_contributor',compact('book','linkfilecss','contributor'));
+  }
+
+  /**
+   * [postShowEditContributor description]
+   * @param  [type]  $book_id [description]
+   * @param  [type]  $author_id [description]
+   * @param  Request $request [description]
+   * @return [type]           [description]
+   */
+  public function postShowEditContributor($book_id,$author_id,Request $request)
+  {
+    if ($request->input('username') != '')
+    {
+      Book::editContributorByUsername($book_id,$author_id,$request->input('username'));
+    }
+    else
+    {
+      $validator = Validator::make($request->all(),[
+          'name' => 'required|max:50',
+          'blurb' => 'required',
+          'email' => 'required|email',
+          'twitter_id' => 'required',
+          'avatar' => 'image',
+      ]);
+
+      if ($validator->fails())
+      {
+        return redirect()->route('show_edit_contributor',array('book_id'=>$book_id,'author_id'=>$author_id))->withErrors($validator,'cocontributor')->withInput();  
+      }
+
+      if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) { 
+          $destinationPath = public_path().'/avatar/';
+          $fileName = $this->generateRandomString(12);
+          $original_name = $request->file('avatar')->getClientOriginalName();
+          $extension = '';
+          if(array_key_exists("extension",pathinfo($original_name)))
+          {
+            $extension = pathinfo($original_name)['extension'];
+          }      
+          $request->file('avatar')->move($destinationPath, $fileName.'.'.$extension);
+      }
+      else
+      {
+        $fileName = 'default-avatar.png';
+      }
+      User::updateContributorAndConnectBook($author_id,$request->all(),$fileName);
+    }
+    return redirect()->route('show_edit_contributor',array('book_id'=>$book_id,'author_id'=>$author_id));
+  }
+
+
+  public function addCoupon($book_id)
+  {
+    $book = Book::find($book_id);
+    $linkfilecss = 'add_coupon.css';
+    $packages = Package::getPackageBelongBook($book_id);
+    return view('frontend.author.add_coupon',compact('book','linkfilecss','packages'));
   }
 }

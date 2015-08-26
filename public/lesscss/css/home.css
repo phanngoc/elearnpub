@@ -1,21 +1,25 @@
 .content-wrapper .large-container .book-list-wrapper {
   width: 100%;
   border-top: 1px solid #b7b7b7;
-  padding-top: 29px;
   box-shadow: -2px -5px 57px #c3bfbf;
-  height: 445px;
+  height: 485px;
 }
 .content-wrapper .large-container .book-list-wrapper .list-header {
-  height: 40px;
+  height: 76px;
   display: block;
   margin: 0px auto;
   width: 90%;
+  padding: 0px;
+  clear: both;
+  border-bottom: 1px solid #aaaaaa;
+  margin-bottom: 23px;
 }
 .content-wrapper .large-container .book-list-wrapper .list-header .list-title {
   display: block;
-  width: 65%;
+  /* width: 65%; */
   float: left;
-  margin-top: -30px;
+  /* margin-top: -30px; */
+  height: 76px;
 }
 .content-wrapper .large-container .book-list-wrapper .list-header .list-title h3 a {
   text-decoration: none;
@@ -24,12 +28,19 @@
 }
 .content-wrapper .large-container .book-list-wrapper .list-header .list-controls {
   display: block;
-  float: left;
+  float: right;
   width: 35%;
   text-align: right;
+  height: 76px;
+  position: relative;
 }
 .content-wrapper .large-container .book-list-wrapper .list-header .list-controls a {
-  display: inline-block;
+  font-size: 18px;
+  color: black;
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 28px;
 }
 .content-wrapper .large-container .book-list-wrapper .list-header .list-controls .icon-control {
   display: inline-block;
@@ -59,43 +70,6 @@
 .content-wrapper .large-container .book-list-wrapper .list-content {
   display: block;
 }
-.content-wrapper .large-container .book-list-wrapper .list-content .list-content-wrapper ul.list-detail {
-  display: block;
-  margin: 0px auto;
-  width: 90%;
-  height: 380px;
-}
-.content-wrapper .large-container .book-list-wrapper .list-content .list-content-wrapper ul.list-detail li {
-  display: block;
-  float: left;
-  width: 220px;
-}
-.content-wrapper .large-container .book-list-wrapper .list-content .list-content-wrapper ul.list-detail li .avatar-wrapper {
-  display: block;
-  text-align: center;
-}
-.content-wrapper .large-container .book-list-wrapper .list-content .list-content-wrapper ul.list-detail li .avatar-wrapper img {
-  width: 175px;
-  height: 225px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.33);
-}
-.content-wrapper .large-container .book-list-wrapper .list-content .list-content-wrapper ul.list-detail li .info-name {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.content-wrapper .large-container .book-list-wrapper .list-content .list-content-wrapper ul.list-detail li .info-name span {
-  display: block;
-  text-align: center;
-  font-family: "Whitney SSm A", "Whitney SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  word-wrap: break-word;
-}
-.content-wrapper .large-container .book-list-wrapper .list-content .list-content-wrapper ul.list-detail li .info-author span {
-  display: block;
-  text-align: center;
-  word-wrap: break-word;
-}
 .content-wrapper .large-container .book-list-wrapper .list-content .list-content-wrapper .owl-carousel {
   width: 90%;
   margin: 0px auto;
@@ -117,10 +91,11 @@
 .content-wrapper .large-container .book-list-wrapper .list-content .list-content-wrapper .owl-carousel .item-book .info-name span {
   display: block;
   text-align: center;
-  font-family: "Whitney SSm A", "Whitney SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Varela Round";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   word-wrap: break-word;
+  font-size: 17px;
 }
 .content-wrapper .large-container .book-list-wrapper .list-content .list-content-wrapper .owl-carousel .item-book .info-author span {
   display: block;

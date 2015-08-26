@@ -206,4 +206,49 @@ class Book extends Model {
 		}
 		
 	}
+
+	/**
+	 * [getContributorOfBook description]
+	 * @param  [type] $book_id [description]
+	 * @return [type]          [description]
+	 */
+	public static function getContributorOfBook($book_id)
+	{
+		return DB::table('book_author')
+		->join('books','books.id','=','book_author.book_id')
+		->join('users','users.id','=','book_author.author_id')
+		->where('book_id',$book_id)->where('is_main',2)->get();
+	}
+
+	/**
+	 * [editContributorByUsername description]
+	 * @param  [type] $book_id   [description]
+	 * @param  [type] $author_id [description]
+	 * @param  [type] $username  [description]
+	 * @return [type]            [description]
+	 */
+	public static function editContributorByUsername($book_id,$author_id,$username)
+	{
+		$user = User::where('username',$username)->first();
+		if($user != null)
+		{
+			if($user->id == $author_id)
+			{
+				return;
+			}
+			else
+			{
+				DB::table('book_author')->where('book_id',$book_id)
+					->where('author_id',$author_id)->update([
+		                'author_id' => $user->id,
+	        	]);
+			}
+		}
+	}
+
+	public static function getPackageBelongBook($book_id)
+	{
+		$packages = Package::where('book_id','=',$book_id)->get();
+		return $packages;
+	}
 }

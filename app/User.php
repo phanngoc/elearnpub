@@ -123,6 +123,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         }
     }
 
+    /**
+     * [createContributorAndConnectBook description]
+     * @param  [type] $book_id [description]
+     * @param  [type] $data    [description]
+     * @param  [type] $avatar  [description]
+     * @return [type]          [description]
+     */
     public static function createContributorAndConnectBook($book_id,$data,$avatar)
     {
         $user = User::create([
@@ -143,4 +150,24 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             'message' => ''
         ]);
     }
+
+    /**
+     * [updateContributorAndConnectBook description]
+     * @param  [type] $book_id [description]
+     * @param  [type] $data    [description]
+     * @param  [type] $avatar  [description]
+     * @return [type]          [description]
+     */
+    public static function updateContributorAndConnectBook($author_id,$data,$filename)
+    {
+        User::find($author_id)->update([
+            'lastname'   => $data['name'],
+            'blurb'      => $data['blurb'],
+            'email'      =>  $data['email'],
+            'twitter_id' => $data['twitter_id'],
+            'github'     => $data['github'],
+            'avatar'     => $filename
+        ]);
+    }
+
 }

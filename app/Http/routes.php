@@ -105,8 +105,15 @@ Route::get('settingbook/{id}/edit_coauthor',['as'=>'edit_coauthor','uses'=>'Auth
 Route::get('settingbook/{id}/delete_coauthor/{author_id}',['as'=>'delete_coauthor','uses'=>'AuthorController@deleteCoAuthor']);
 
 // add contributor
-
 Route::get('settingbook/{id}/add_contributor',['as'=>'add_contributor','uses'=>'AuthorController@addContributor']);
 Route::post('settingbook/{id}/post_add_contributor',['as'=>'post_add_contributor','uses'=>'AuthorController@postAddContributor']);
-Route::get('settingbook/{id}/edit_contributor',['as'=>'edit_contributor','uses'=>'AuthorController@editContributor']);
+Route::get('settingbook/{id}/list_contributor',['as'=>'list_contributor','uses'=>'AuthorController@listContributor']);
+
+Route::get('settingbook/{id}/show_edit_contributor/{author_id}',['as'=>'show_edit_contributor','uses'=>'AuthorController@showEditContributor']);
+Route::post('settingbook/{id}/post_show_edit_contributor/{author_id}',['as'=>'post_show_edit_contributor','uses'=>'AuthorController@postShowEditContributor']);
+
 Route::get('settingbook/{id}/delete_contributor/{author_id}',['as'=>'delete_contributor','uses'=>'AuthorController@deleteContributor']);
+
+// add and edit coupon
+Route::get('settingbook/{id}/add_coupon',['as'=>'add_coupon','uses'=>'AuthorController@addCoupon']);
+Route::post('settingbook/{id}/post_add_coupon',['as'=>'post_add_coupon','uses'=>'AuthorController@postAddCoupon']);

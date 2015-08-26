@@ -17,13 +17,7 @@
                       <h3><a href="#">Best Seller</a></h3>    
                     </header>   
                     <div class="list-controls">
-                        <a href="#">View All</a>
-                        <div class="icon-control">
-                            <div class="icon-button">
-                                <div class="icon-prev"></div>
-                                <div class="icon-next"></div>
-                            </div>
-                        </div>
+                        <a href="#" class="view_all">View All</a>
                     </div>
                 </div>
         		
@@ -33,7 +27,7 @@
         				  	<?php foreach($books as $book): ?>
 							    <div class="item-book">
 							    	<div class="avatar-wrapper">
-							    		<a href="<?php echo e(route('bookhome',$book['bookurl'])); ?>"><img src="<?php echo e(Asset('resourcebook/'.$book['avatar'])); ?>"/></a>
+							    		<a href="<?php echo e(route('bookhome',$book['bookurl'])); ?>"><img src="<?php echo e(Asset('resourcebook/'.$book['diravatar'])); ?>"/></a>
 							    	</div>
                                     <div class="info-name">
                                         <span><?php echo e($book['title']); ?></span>
@@ -63,13 +57,7 @@
                       <h3><a href="#">Feature book</a></h3>    
                     </header>   
                     <div class="list-controls">
-                        <a href="#">View All</a>
-                        <div class="icon-control">
-                            <div class="icon-button">
-                                <div class="icon-prev"></div>
-                                <div class="icon-next"></div>
-                            </div>
-                        </div>
+                        <a href="#" class="view-all">View All</a>
                     </div>
                 </div>
                 
@@ -79,7 +67,7 @@
                             <?php foreach($bookfeature as $bofea): ?>
                                 <div class="item-book">
                                     <div class="avatar-wrapper">
-                                        <a href="#"><img src="<?php echo e(Asset('resourcebook/'.$bofea['avatar'])); ?>"/></a>
+                                        <a href="<?php echo e(route('bookhome',$bofea['bookurl'])); ?>"><img src="<?php echo e(Asset('resourcebook/'.$bofea['diravatar'])); ?>"/></a>
                                     </div>
                                     <div class="info-name">
                                         <span><?php echo e($bofea['title']); ?></span>

@@ -19,13 +19,7 @@
                       <h3><a href="#">Best Seller</a></h3>    
                     </header>   
                     <div class="list-controls">
-                        <a href="#">View All</a>
-                        <div class="icon-control">
-                            <div class="icon-button">
-                                <div class="icon-prev"></div>
-                                <div class="icon-next"></div>
-                            </div>
-                        </div>
+                        <a href="#" class="view_all">View All</a>
                     </div>
                 </div>
         		
@@ -35,7 +29,7 @@
         				  	@foreach ($books as $book)
 							    <div class="item-book">
 							    	<div class="avatar-wrapper">
-							    		<a href="{{ route('bookhome',$book['bookurl']) }}"><img src="{{ Asset('resourcebook/'.$book['avatar']) }}"/></a>
+							    		<a href="{{ route('bookhome',$book['bookurl']) }}"><img src="{{ Asset('resourcebook/'.$book['diravatar']) }}"/></a>
 							    	</div>
                                     <div class="info-name">
                                         <span>{{ $book['title'] }}</span>
@@ -65,13 +59,7 @@
                       <h3><a href="#">Feature book</a></h3>    
                     </header>   
                     <div class="list-controls">
-                        <a href="#">View All</a>
-                        <div class="icon-control">
-                            <div class="icon-button">
-                                <div class="icon-prev"></div>
-                                <div class="icon-next"></div>
-                            </div>
-                        </div>
+                        <a href="#" class="view-all">View All</a>
                     </div>
                 </div>
                 
@@ -81,7 +69,7 @@
                             @foreach ($bookfeature as $bofea)
                                 <div class="item-book">
                                     <div class="avatar-wrapper">
-                                        <a href="#"><img src="{{ Asset('resourcebook/'.$bofea['avatar']) }}"/></a>
+                                        <a href="{{ route('bookhome',$bofea['bookurl']) }}"><img src="{{ Asset('resourcebook/'.$bofea['diravatar']) }}"/></a>
                                     </div>
                                     <div class="info-name">
                                         <span>{{ $bofea['title'] }}</span>
