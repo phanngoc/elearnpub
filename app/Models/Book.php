@@ -27,7 +27,9 @@ class Book extends Model {
 		'youtube_url',
 		'vimeo_url',
 		'progress',
-		'custom_author_name'
+		'custom_author_name',
+		'avatar',
+		'diravatar'
 	];
 
 
@@ -246,9 +248,45 @@ class Book extends Model {
 		}
 	}
 
+	/**
+	 * [getPackageBelongBook description]
+	 * @param  [type] $book_id [description]
+	 * @return [type]          [description]
+	 */
 	public static function getPackageBelongBook($book_id)
 	{
 		$packages = Package::where('book_id','=',$book_id)->get();
 		return $packages;
+	}
+
+	/**
+	 * [addNewBook description]
+	 * @param [array] $data array data from request
+	 * @return [type]  $book object book model which has just created
+	 */
+	public static function addNewBook($data)
+	{
+		$book = Book::create([
+            'title' => $data['title'],
+            'bookurl' => $data['bookurl'],
+            'language_id' => 1,
+            'avatar' => 'question-mark.png',
+            'diravatar' => 'question-mark.png',
+        ]);
+		
+        DB::table('book_author')->insert([
+            'book_id' => $book->id,
+            'author_id' => Auth::user()->id,
+            'is_main' => 1,
+            'is_accepted' => 1,
+        ]);
+
+        Price::create([
+        	'item_id' => 'bo|'.$book->id,
+        	'minimumprice' => 0,
+        	'suggestedprice' => 0,
+        ]);
+
+        return $book;
 	}
 }

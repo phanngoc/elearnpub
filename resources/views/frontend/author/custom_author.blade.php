@@ -10,13 +10,10 @@
 
       <div class="form-group">
         <label for="custom_author_name">Name</label><br/>
-        <input type="text" name="custom_author_name" value="{{$book->custom_author_name}}" class="form-control"/>
+        <input type="text" name="custom_author_name" value="{{$book->custom_author_name}}" class="form-control haft-width"/>
       </div>
 
       <button class="btn btn-primary">Change Name</button>
   </form>
 </div>
-<script type="text/javascript">
-  $('.category').select2();
-</script>
 @stop

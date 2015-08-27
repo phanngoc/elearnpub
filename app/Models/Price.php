@@ -8,9 +8,9 @@ class Price extends Model {
 	protected $table = 'prices';
 
 	protected $fillable = [
-		'price',
-		'book_id',
-		'count',
+		'item_id',
+		'minimumprice',
+		'suggestedprice',
 	];
 	
 	public function getPriceByBookId($id)

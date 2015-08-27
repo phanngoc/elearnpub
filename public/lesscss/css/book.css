@@ -8,6 +8,7 @@
   display: block;
   margin: 0px auto;
   width: 50%;
+  padding-top: 38px;
 }
 .content-wrapper .large-container .inner-col-left .wrap-avatar img {
   width: 248px;

@@ -99,7 +99,7 @@
 											<h4>Account</h4>
 											<ul>
 												<li><a href="#">Read</a></li>
-												<li><a href="#">Wishlist</a></li>
+												<li><a href="{{route('wishlist')}}">Wishlist</a></li>
 												<li><a href="#">Purchase</a></li>
 												<li><a href="#">Invitations</a></li>
 												<li><a href="#">Setting</a></li>
@@ -108,7 +108,7 @@
 										<div class="column">
 											<h4>Author</h4>
 											<ul>
-												<li><a href="#">Books</a></li>
+												<li><a href="{{route('book')}}">Books</a></li>
 												<li><a href="#">Bundle</a></li>
 												<li><a href="#">Profile</a></li>
 											</ul>

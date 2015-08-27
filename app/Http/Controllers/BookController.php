@@ -7,8 +7,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Models\Book;
+use Validator;
+
 class BookController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +25,34 @@ class BookController extends Controller
     }
 
     /**
+     * [bookNew description]
+     * @return [type] [description]
+     */
+    public function newBook()
+    {
+        return view('frontend.book.new_book');
+    }
+
+    /**
+     * [postBookNew description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+    public function postNewBook(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'title' => 'required',
+            'bookurl' => 'required',
+        ]);
+        if($validator->fails())
+        {
+          return redirect()->route('new_book')->withErrors($validator,'newbook')->withInput();  
+        }
+        $book = Book::addNewBook($request->all());
+        return redirect()->route('settingbook',$book->id);
+    }
+
+    /**
      * [add_wishlist description]
      * @param [type] $id [description]
      */
@@ -31,11 +62,17 @@ class BookController extends Controller
         return redirect('wishlist');
     }
 
+    /**
+     * [delete_wishlist description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function delete_wishlist($id)
     {
         User::removeBookFromWishlist($id);
         return redirect('wishlist');        
     }
+
     /**
      * Show the form for creating a new resource.
      *

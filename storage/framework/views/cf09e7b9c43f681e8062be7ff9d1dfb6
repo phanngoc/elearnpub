@@ -1,17 +1,15 @@
-@extends ('frontend.master')
-
-@section ('head.title')
+<?php $__env->startSection('head.title'); ?>
     E learn pub
-@stop
+<?php $__env->stopSection(); ?>
 
-@section ('body.content')
+<?php $__env->startSection('body.content'); ?>
 
-<link href="{!!Asset('lesscss/css/dashboardbook.css')!!}" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="{{ Asset('react/react.js') }}"></script>
-<script type="text/javascript" src="{{ Asset('react/react-with-addons.js') }}"></script>
-<script type="text/javascript" src="{{ Asset('react/JSXTransformer.js') }}"></script>
-<script type="text/javascript" src="{{ Asset('jquery.numeric.js') }}"></script>
-<script type="text/javascript" src="{{ Asset('underscore.js') }}"></script>
+<link href="<?php echo Asset('lesscss/css/dashboardbook.css'); ?>" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<?php echo e(Asset('react/react.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(Asset('react/react-with-addons.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(Asset('react/JSXTransformer.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(Asset('jquery.numeric.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(Asset('underscore.js')); ?>"></script>
 
 <div class="content-wrapper">
     <section class="large-container">
@@ -34,7 +32,7 @@
                     <div class="description">
                       You can edit your books by clicking on the  icon. You can also choose which books show up on your profile page by using the  icon. Books which are in stealth mode, embargo or not accepted will not show up, of course...
                     </div>
-                    <a href="{{route('new_book')}}" class="btn btn-primary">Create Another Book</a>
+                    <a href="<?php echo e(route('new_book')); ?>" class="btn btn-primary">Create Another Book</a>
                 </div>
               </section>
               <section class="info-publish">
@@ -46,12 +44,13 @@
                           ?>
                             <li>
                                <div class="wrapper-avatar">
-                                 <a href="{{route('bookhome',$value->bookurl)}}">
-                                    <img src="{{ Asset('resourcebook/'.$value->diravatar) }}" />  
+                                 <a href="<?php echo e(route('bookhome',$value->bookurl)); ?>">
+                                    <img src="<?php echo e(Asset('resourcebook/'.$value->diravatar)); ?>" />  
                                  </a>  
                                </div>
                                <div class="title">
-                                 {{ $value->title }}
+                                 <?php echo e($value->title); ?>
+
                                </div>  
                             </li>
                           <?php
@@ -70,11 +69,12 @@
                               <li>
                                  <div class="wrapper-avatar">
                                    <a href="#">
-                                      <img src="{{ Asset('resourcebook/'.$value->diravatar) }}" />  
+                                      <img src="<?php echo e(Asset('resourcebook/'.$value->diravatar)); ?>" />  
                                    </a>  
                                  </div>
                                  <div class="title">
-                                   {{ $value->title }}
+                                   <?php echo e($value->title); ?>
+
                                  </div>  
                               </li>
                             <?php
@@ -89,4 +89,5 @@
     </section>
 </div>
 
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

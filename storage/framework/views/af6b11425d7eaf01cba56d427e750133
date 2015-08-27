@@ -1,0 +1,83 @@
+<?php $__env->startSection('head.title'); ?>
+    E learn pub
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body.content'); ?>
+
+<link href="<?php echo Asset('lesscss/css/settingbook.css'); ?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo Asset('lesscss/css/'.$linkfilecss); ?>" rel="stylesheet" type="text/css" />
+
+<div class="content-wrapper">
+    <section class="large-container">
+        <div class="inner-wrapper-settingbook" class="row">
+          <div class="col-md-3">
+            <div class="inner-sidebar">
+              <h3>Action</h3>
+              <ul>
+                <li><a href="<?php echo e(route('settingbook',$book->id)); ?>">General Settings</a></li>
+                <li><a  class="parent"><i class="fa fa-plus"></i>Publish</a>
+                    <ul>
+                        <li><a href="<?php echo e(route('publish_book',$book->id)); ?>">Publish your book</a></li>
+                        <li><a href="<?php echo e(route('upload_new_title',$book->id)); ?>">Edit title page</a></li>
+                        <li><a href="<?php echo e(route('publish_sample_book',$book->id)); ?>">Publish your sample book</a></li>
+                    </ul>
+                </li>
+                <li><a href="<?php echo e(route('pricing',$book->id)); ?>">Price</a></li>
+                <li>
+                  <a  class="parent"><i class="fa fa-plus"></i>Packages & Extras</a>
+                  <ul>
+                    <li><a href="<?php echo e(route('package',$book->id)); ?>">Create a Package</a></li>
+                    <li><a href="<?php echo e(route('extras',$book->id)); ?>">Create An Extra</a></li>
+                    <li><a href="<?php echo e(route('list_package',$book->id)); ?>">List Package</a></li>
+                  </ul>
+                </li>
+                <li>
+                    <a  class="parent"><i class="fa fa-plus"></i>Landing Page</a>
+                    <ul>
+                      <li><a href="<?php echo e(route('landing_page',$book->id)); ?>">General</a></li>
+                      <li><a href="<?php echo e(route('landing_page',$book->id)); ?>">Social Media</a></li>
+                      <li><a href="<?php echo e(route('percent_complete',$book->id)); ?>">Percent Complete</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a  class="parent"><i class="fa fa-plus"></i>Settings</a>
+                    <ul>
+                      <li><a href="<?php echo e(route('category',$book->id)); ?>">Categories</a></li>
+                      <li><a href="<?php echo e(route('language',$book->id)); ?>">Language & Character Encoding</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a  class="parent"><i class="fa fa-plus"></i>Author</a>
+                    <ul>
+                      <li><a href="<?php echo e(route('custom_author_name',$book->id)); ?>">Custom Author Name Display</a></li>
+                      <li><a href="<?php echo e(route('add_coauthor',$book->id)); ?>">Add Co-Author</a></li>
+                      <li><a href="<?php echo e(route('edit_coauthor',$book->id)); ?>">Edit Co-Author</a></li>
+                    </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="inner-content">
+              <section class="wrapper-content">
+                   <?php echo $__env->yieldContent('content'); ?>
+              </section>
+            </div>
+          </div>
+        </div>
+    </section>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.parent').next('ul').hide();
+    $('.parent').click(function(ev){
+      ev.preventDefault();
+      ev.stopPropagation();
+      $('.parent').next('ul').slideUp();
+      $(this).next('ul').slideDown();
+    }); 
+  }); 
+</script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('frontend.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

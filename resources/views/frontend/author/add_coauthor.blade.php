@@ -11,18 +11,18 @@
         <label for="custom_author_name">Username</label>
         <div class="input-group">
              <span class="input-group-addon">http://leanpub.com/u/</span>
-             <input type="text" class="form-control form-control-half" name="username"/>
+             <input type="text" class="form-control form-control-half" name="username" value="{{old('username')}}"/>
         </div>
         {{ $errors->coauthor->first('username') }}
       </div>
       <div class="form-group">
         <label for="custom_author_name">Royalty %</label>
-        <input type="text" name="royalty" class="form-control"/>
+        <input type="text" name="royalty" class="form-control" value="{{old('royalty')}}" />
         {{ $errors->coauthor->first('royalty') }}
       </div>
       <div class="form-group">
         <label for="custom_author_name">A Message To The Author (Optional)</label>
-        <textarea type="text" name="message" class="form-control"></textarea>
+        <textarea type="text" name="message" class="form-control">{{old('message')}}</textarea>
         {{ $errors->coauthor->first('message') }}
       </div>
       <button class="btn btn-primary">Add Co-Author</button>

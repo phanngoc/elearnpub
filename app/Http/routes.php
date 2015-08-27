@@ -117,3 +117,7 @@ Route::get('settingbook/{id}/delete_contributor/{author_id}',['as'=>'delete_cont
 // add and edit coupon
 Route::get('settingbook/{id}/add_coupon',['as'=>'add_coupon','uses'=>'AuthorController@addCoupon']);
 Route::post('settingbook/{id}/post_add_coupon',['as'=>'post_add_coupon','uses'=>'AuthorController@postAddCoupon']);
+
+// create new book
+Route::get('new_book',['as'=>'new_book','uses'=>'BookController@newBook']);
+Route::post('new_book',['as'=>'post_new_book','uses'=>'BookController@postNewBook']);
