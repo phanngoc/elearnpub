@@ -44,7 +44,7 @@
                           ?>
                             <li>
                                <div class="wrapper-avatar">
-                                 <a href="<?php echo e(route('bookhome',$value->bookurl)); ?>">
+                                 <a href="<?php echo e(route('settingbook',$value->id)); ?>">
                                     <img src="<?php echo e(Asset('resourcebook/'.$value->diravatar)); ?>" />  
                                  </a>  
                                </div>
@@ -68,7 +68,7 @@
                             ?>
                               <li>
                                  <div class="wrapper-avatar">
-                                   <a href="#">
+                                   <a href="<?php echo e(route('settingbook',$value->id)); ?>">
                                       <img src="<?php echo e(Asset('resourcebook/'.$value->diravatar)); ?>" />  
                                    </a>  
                                  </div>

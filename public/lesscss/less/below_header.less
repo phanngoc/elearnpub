@@ -1,0 +1,123 @@
+	#below-header{
+		display: block;
+		height: 95px;
+		width: 100%;
+		.inner-below-header{
+			margin : 0px auto;
+			width: 95%;
+			height: 100%;
+			.language{
+				display: block;
+				height: 95px;
+				float : right;
+				position: relative;
+				h4{
+					margin-top: 39px;
+					color : #587B9B;
+					&:after{
+						font-family: FontAwesome;
+					    content: "\f107";
+					    margin-left: 0.75em;
+					}
+					&:hover{
+						text-decoration: underline;
+						cursor: pointer;
+					}
+				}
+				.sub-language{
+					display : none;
+					position : absolute;
+					top : 78px;
+					left : -60px;
+					z-index : 1000;
+					height: 320px;
+					overflow-y : scroll;
+
+					padding : 3px;
+					border-radius : 2px;
+					border : 1px solid #e0e0e0;
+					-webkit-box-shadow : 0px 0px 5px 0px #d3d3d3;
+					-moz-box-shadow :    0px 0px 5px 0px #d3d3d3;
+					box-shadow :         0px 0px 5px 0px #d3d3d3;
+					background-color : #FBFBFB;
+					.inner-sub-language{
+						ul{
+							display : block;
+							margin : 0px;
+							padding : 0px;
+							width : 200px;
+							li{
+								list-style : none;
+								padding-left : 13px; 
+								a{
+									display : block;
+									text-decoration : none;
+									padding-bottom : 8px;
+									padding-top : 8px;
+									font-size : 16px;
+								}
+							}
+						}
+					}
+				}
+			}
+			.category{
+				display: block;
+				height: 95px;
+				float : right;
+				position: relative;
+				margin-right: 50px;
+				h4{
+					margin-top: 39px;
+					color : #587B9B;
+					&:after{
+						font-family: FontAwesome;
+					    content: "\f107";
+					    margin-left: 0.75em;
+					}
+					&:hover{
+						text-decoration: underline;
+						cursor: pointer;
+					}
+				}
+				.sub-category{
+					display : none;
+					position : absolute;
+					top : 78px;
+					left : -68px;
+					z-index : 1000;
+					height: 320px;
+					overflow-y : scroll;
+
+					padding : 3px;
+					border-radius : 2px;
+					border : 1px solid #e0e0e0;
+					-webkit-box-shadow : 0px 0px 5px 0px #d3d3d3;
+					-moz-box-shadow :    0px 0px 5px 0px #d3d3d3;
+					box-shadow :         0px 0px 5px 0px #d3d3d3;
+					background-color : #FBFBFB;
+					.inner-sub-category{
+
+						ul{
+							display : block;
+							margin : 0px;
+							padding : 0px;
+							width : 230px;
+							li{
+								list-style : none;
+								padding-left : 13px; 
+								a{
+									display : block;
+									text-decoration : none;
+									padding-bottom : 8px;
+									padding-top : 8px;
+									font-size : 16px;
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}

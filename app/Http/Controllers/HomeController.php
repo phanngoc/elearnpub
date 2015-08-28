@@ -7,13 +7,20 @@ use App\Models\Book;
 use App\Models\Resource;
 use App\Models\Price;
 use App\Models\Filebook;
+use App\Models\Category;
+use App\Models\Language;
 use Markdown;
 use Illuminate\Http\Request;
 use File;
 use Session;
+use DB;
+
 class HomeController extends Controller
 {
-
+    /**
+     * Load page home 
+     * @return [type] [description]
+     */
     public function index()
     {
        $carts = Cart::all();	
@@ -27,7 +34,6 @@ class HomeController extends Controller
        	  {
        	  	$arrIdBooks[$v_ca->id] += $v_ca->count;
        	  }
-
        }
   	   arsort($arrIdBooks);
   	   $books = array();
@@ -42,8 +48,9 @@ class HomeController extends Controller
           $bookfeature[$k_b]['meta'] = Book::getMainAuthor($v_b->id);
        }
        
-
-       return view('frontend.home',compact('books','bookfeature')); 
+       $categories = Category::all();
+       $languages = Language::all();
+       return view('frontend.home',compact('books','bookfeature','categories','languages')); 
     }
 
     public function book($param)
@@ -151,6 +158,11 @@ class HomeController extends Controller
       $filebook->save();
     }
 
+    /**
+     * [cart description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function cart(Request $request)
     {
       $item = array('bookid'=>$request->bookid ,'amount'=>$request->amountYouPay,'quantity'=>1);
@@ -175,16 +187,14 @@ class HomeController extends Controller
       }
 
       $request->session()->put('carts', $carts);
-      // dd($carts);
-      // $listItem = array();
-      // foreach ($carts as $key => $value) {
-      //   $book = Book::find($value[0]);
-      //   array_push($listItem,$book);
-      // }
-      // $listItem = json_encode($listItem);
       return view('frontend.cart');
     }
 
+    /**
+     * [getCart description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function getCart(Request $request)
     {
       $carts = $request->session()->get('carts', 'default');
@@ -202,6 +212,11 @@ class HomeController extends Controller
       return view('frontend.cart');
     }
 
+    /**
+     * [ajax_getCart description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function ajax_getCart(Request $request)
     {
       $carts = $request->session()->get('carts', 'default');
@@ -219,5 +234,42 @@ class HomeController extends Controller
       }
       $listItem = json_encode($listItem);
       return $listItem;
+    }
+
+    public function showPageCategory($cateid)
+    {
+        $categories = Category::all();
+        $languages = Language::all();
+        $category = Category::find($cateid); 
+        $books = DB::table('books')->join('book_category','book_category.book_id','=','books.id')->where('category_id',$cateid)->paginate(8);
+        return view('frontend.category', compact('books','categories','languages','category'));
+    }
+
+    public function searchCateAndLang($cateid,$langid)
+    {
+        $categories = Category::all();
+        $languages = Language::all();
+        $category = null;
+        $book = null;
+        $language = null;
+        if($cateid == 'all' && $langid == 'all')
+        {
+          $books = DB::table('books')->paginate(8);
+        }
+        elseif ($cateid != 'all' && $langid == 'all') {
+           $category = Category::find($cateid); 
+           $books = DB::table('books')->join('book_category','book_category.book_id','=','books.id')->where('category_id',$cateid)->paginate(8);
+        }
+        elseif ($cateid == 'all' && $langid != 'all') {
+           $language = Language::find($langid);
+           $books = DB::table('books')->where('language_id',$langid)->paginate(8);
+        }
+        elseif ($cateid != 'all' && $langid != 'all') {
+           $category = Category::find($cateid); 
+           $language = Language::find($langid);
+           $books = DB::table('books')->join('book_category','book_category.book_id','=','books.id')->where('category_id',$cateid)->where('language_id',$langid)->paginate(8);
+        }
+        
+        return view('frontend.category', compact('books','categories','languages','category'));
     }
 }

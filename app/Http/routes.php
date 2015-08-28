@@ -121,3 +121,7 @@ Route::post('settingbook/{id}/post_add_coupon',['as'=>'post_add_coupon','uses'=>
 // create new book
 Route::get('new_book',['as'=>'new_book','uses'=>'BookController@newBook']);
 Route::post('new_book',['as'=>'post_new_book','uses'=>'BookController@postNewBook']);
+
+// Create page list book belong category
+Route::get('cate/{cate_id}/',['as'=>'category','uses'=>'HomeController@showPageCategory']);
+Route::get('cate/{cate_id}/lang/{language_id}',['as'=>'catelang','uses'=>'HomeController@searchCateAndLang']);

@@ -203,6 +203,7 @@
                }
             }
         });
+
         $("#amount-author-earn").keyup(function(event){
             if(event.keyCode == 13){
                var val = $(this).val();
@@ -218,12 +219,9 @@
             }
         });
 
-
         $( ".slider-range-you-pay" ).slider({
               orientation: "horizontal",
               range: "min",
-              // <?php echo e($book->price->minimumprice); ?>
-
               min: 0,
               step : 0.5,
               max: <?php echo e(($book->price->suggestedprice * 2 == 0) ? 50 : $book->price->suggestedprice); ?>,

@@ -6,7 +6,7 @@
 
 <link href="<?php echo Asset('lesscss/css/home.css'); ?>" rel="stylesheet" type="text/css" />
 <div class="content-wrapper">
-
+    <?php echo $__env->make('frontend.below_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <!-- Main content -->
     <section class="large-container">
         <!-- Best seller -->

@@ -46,7 +46,7 @@
                           ?>
                             <li>
                                <div class="wrapper-avatar">
-                                 <a href="{{route('bookhome',$value->bookurl)}}">
+                                 <a href="{{route('settingbook',$value->id)}}">
                                     <img src="{{ Asset('resourcebook/'.$value->diravatar) }}" />  
                                  </a>  
                                </div>
@@ -69,7 +69,7 @@
                             ?>
                               <li>
                                  <div class="wrapper-avatar">
-                                   <a href="#">
+                                   <a href="{{route('settingbook',$value->id)}}">
                                       <img src="{{ Asset('resourcebook/'.$value->diravatar) }}" />  
                                    </a>  
                                  </div>

@@ -25,7 +25,6 @@
 	    <div class="wrapper">
 
 	      <?php echo $__env->make('frontend.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
 	        <section class="view">
 	            <div class="inner-view">
 	                <?php echo $__env->yieldContent('body.content'); ?>

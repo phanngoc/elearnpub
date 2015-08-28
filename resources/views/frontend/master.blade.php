@@ -25,7 +25,6 @@
 	    <div class="wrapper">
 
 	      @include ('frontend.header')
-
 	        <section class="view">
 	            <div class="inner-view">
 	                @yield('body.content')
