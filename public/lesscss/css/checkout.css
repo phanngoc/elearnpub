@@ -1,0 +1,15 @@
+div.content-wrapper {
+  display: block;
+  width: 100%;
+}
+div.content-wrapper div.inner-content-wrapper {
+  display: block;
+  width: 70%;
+  margin: 20px auto;
+}
+div.content-wrapper div.inner-content-wrapper form input[name="coupon_code"] {
+  width: 170px;
+}
+div.content-wrapper div.inner-content-wrapper form input[name="phone"] {
+  width: 170px;
+}

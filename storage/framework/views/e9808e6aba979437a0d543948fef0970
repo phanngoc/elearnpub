@@ -1,12 +1,10 @@
-@extends ('frontend.master')
-
-@section ('head.title')
+<?php $__env->startSection('head.title'); ?>
     E learn pub
-@stop
+<?php $__env->stopSection(); ?>
 
-@section ('body.content')
+<?php $__env->startSection('body.content'); ?>
 
-<link href="{!!Asset('lesscss/css/login.css')!!}" rel="stylesheet" type="text/css" />
+<link href="<?php echo Asset('lesscss/css/login.css'); ?>" rel="stylesheet" type="text/css" />
 <div class="content-wrapper">
 
     <!-- Main content -->
@@ -16,26 +14,26 @@
     		<h3>Sign in</h3>	
     	</header>
 
- 		<form role="form" method="POST" action="{{ route('login') }}">
+ 		<form role="form" method="POST" action="<?php echo e(route('login')); ?>">
 
  		 	<div class="errors">
-				@if(Session::has('errors'))
+				<?php if(Session::has('errors')): ?>
 					<? $errors = Session::get('errors'); ?>
 					<div class="alert alert-error">
 					    <button type="button" class="close" data-dismiss="alert">&times;</button>
 					    <ul>
-					     	    @if ($errors->has())
+					     	    <?php if($errors->has()): ?>
 							        <div class="alert alert-danger">
-							            @foreach ($errors->all() as $error)
-							                {{ $error }}<br>        
-							            @endforeach
+							            <?php foreach($errors->all() as $error): ?>
+							                <?php echo e($error); ?><br>        
+							            <?php endforeach; ?>
 							        </div>
-						        @endif
+						        <?php endif; ?>
 					    </ul>
 					</div>
-				@endif
+				<?php endif; ?>
  			 </div>
- 		  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+ 		  <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
 
 		  <div class="form-group">
 		    <label for="email">Email address:</label>
@@ -50,7 +48,7 @@
 		  <div class="checkbox">
 		    <label><input type="checkbox" name="remember">Remember me</label>
 		  </div>
-		  <p>Haven't have account , <a href="{{route('getregister')}}">create account</a> </p>
+		  <p>Haven't have account , <a href="<?php echo e(route('getregister')); ?>">create account</a> </p>
 		  <button type="submit" class="btn btn-primary submit">Submit</button>
 		</form>
 
@@ -58,4 +56,5 @@
 
 </div>
 
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

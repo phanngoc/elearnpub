@@ -1,3 +1,14 @@
+.content-wrapper .large-container > h3 {
+  margin-left: 115px;
+}
+.content-wrapper .large-container .inner-content {
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #b5b5b5;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+}
 .content-wrapper .large-container .inner-content form .inner-left {
   margin: 0px auto;
   width: 80%;

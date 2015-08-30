@@ -9,5 +9,9 @@ class Bill extends Model {
 
 	protected $fillable = [
 		'user_id',
+		'phone',
+		'coupon_code',
+		'address_receive_good',
+		'date_purchased'
 	];
 }

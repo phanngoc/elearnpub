@@ -1,0 +1,21 @@
+<?php $__env->startSection('head.title'); ?>
+    E learn pub
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body.content'); ?>
+
+<link href="<?php echo Asset('lesscss/css/checkoutcomplete.css'); ?>" rel="stylesheet" type="text/css" />
+
+<div class="content-wrapper">
+
+    <div class="inner-content-wrapper">
+        <div class="wrap-content">
+            <h3 class="message">Thank you for purchase</h3>
+            <h4>You can continue buy book , return bookstore <a href="#">click here</a></h4>    
+        </div>
+    	
+    </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

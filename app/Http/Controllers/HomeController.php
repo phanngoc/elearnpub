@@ -9,11 +9,16 @@ use App\Models\Price;
 use App\Models\Filebook;
 use App\Models\Category;
 use App\Models\Language;
+use App\Models\Bill;
 use Markdown;
 use Illuminate\Http\Request;
 use File;
 use Session;
 use DB;
+use Auth;
+use Validator;
+use Redirect;
+use URL;
 
 class HomeController extends Controller
 {
@@ -202,7 +207,7 @@ class HomeController extends Controller
       {
         $carts = array();
       }
-
+      
       $listItem = array();
       foreach ($carts as $key => $value) {
         $book = Book::find($value['bookid']);
@@ -236,6 +241,11 @@ class HomeController extends Controller
       return $listItem;
     }
 
+    /**
+     * [showPageCategory description]
+     * @param  [type] $cateid [description]
+     * @return [type]         [description]
+     */
     public function showPageCategory($cateid)
     {
         $categories = Category::all();
@@ -245,6 +255,12 @@ class HomeController extends Controller
         return view('frontend.category', compact('books','categories','languages','category'));
     }
 
+    /**
+     * [searchCateAndLang description]
+     * @param  [type] $cateid [description]
+     * @param  [type] $langid [description]
+     * @return [type]         [description]
+     */
     public function searchCateAndLang($cateid,$langid)
     {
         $categories = Category::all();
@@ -272,4 +288,87 @@ class HomeController extends Controller
         
         return view('frontend.category', compact('books','categories','languages','category'));
     }
+
+    /**
+     * show search page with press search
+     * @param  [type] $keyword [description]
+     * @return [type]          [description]
+     */
+    public function showPageSearch(Request $request)
+    {
+      $keyword = $request->input('search');
+      $categories = Category::all();
+      $languages = Language::all();
+      $books = DB::table('books')
+                ->where('title', 'like', '%'.$keyword.'%')
+                ->paginate(8);
+      return view('frontend.search', compact('books','categories','languages','keyword'));
+    }
+
+    /**
+     * show checkout page
+     * @return [type] [description]
+     */
+    public function showCheckout()
+    {
+
+      if(URL::previous()!=route('getCart'))
+      {
+        return redirect()->route('getCart');
+      }
+
+      if(Auth::user() == null)
+      {
+        return redirect('auth/login');
+      }
+      return view('frontend.checkout');
+    }
+
+    /**
+     * Receive data checkout information
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+    public function postShowCheckout(Request $request)
+    {
+      $validator = Validator::make($request->all(),[
+          'phone' => 'required|digits_between:7,15',
+      ]);
+
+      if ($validator->fails())
+      {
+        return redirect()->route('checkout')->withErrors($validator,'checkout')->withInput();  
+      }
+
+      $date = date('Y-m-d H:i:s');
+      $bill = Bill::create([
+        'user_id' => Auth::user()->id,
+        'phone' => $request->input('phone'),
+        'coupon_code' => $request->input('coupon_code'),
+        'address_receive_good' => $request->input('address_receive_good'),
+        'date_purchased' => $date
+      ]);
+      $carts = $request->session()->get('carts', 'default');
+      if($carts == 'default') 
+      {
+        $carts = array();
+      }
+      $item = array('bookid'=>$request->bookid ,'amount'=>$request->amountYouPay,'quantity'=>1);
+      $listItem = array();
+      foreach ($carts as $key => $value) {
+        DB::table('carts')->insert([
+          'book_id' => $value['bookid'],
+          'count'  => $value['quantity'],
+          'bill_id' => $bill->id,
+          'unit_price' => $value['amount']
+        ]);
+      }
+      return redirect()->route('checkoutcomplete');
+    }
+
+    public function checkoutComplete()
+    {
+      return view('frontend.checkoutcomplete');
+    }
+
 }

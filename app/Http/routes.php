@@ -13,12 +13,12 @@
 
 
 // Authentication routes...
-Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::get('auth/login', ['as' => 'getlogin','uses'=>'Auth\AuthController@getLogin']);
 Route::post('auth/login', ['as' => 'login' ,'uses' => 'Auth\AuthController@postLogin']);
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
-Route::get('auth/register','Auth\AuthController@getRegister');
+Route::get('auth/register',['as' => 'getregister' ,'uses' => 'Auth\AuthController@getRegister']);
 Route::post('auth/register', ['as' => 'register' ,'uses' => 'Auth\AuthController@postRegister']);
 
 
@@ -125,3 +125,14 @@ Route::post('new_book',['as'=>'post_new_book','uses'=>'BookController@postNewBoo
 // Create page list book belong category
 Route::get('cate/{cate_id}/',['as'=>'category','uses'=>'HomeController@showPageCategory']);
 Route::get('cate/{cate_id}/lang/{language_id}',['as'=>'catelang','uses'=>'HomeController@searchCateAndLang']);
+
+// Create page search
+Route::post('search',['as'=>'search','uses'=>'HomeController@showPageSearch']);
+
+// Process checkout page
+Route::get('checkout',['as'=>'checkout','uses' => 'HomeController@showCheckout']);
+Route::post('checkout',['as'=>'postcheckout','uses' => 'HomeController@postShowCheckout']);
+
+// Process thank you page
+// 
+Route::get('checkoutcomplete',['as'=>'checkoutcomplete','uses' => 'HomeController@checkoutComplete']);

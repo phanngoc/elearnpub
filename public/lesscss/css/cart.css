@@ -16,6 +16,10 @@
   width: 30%;
   padding: 5px 10px 5px 10px;
 }
+.content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart {
+  display: block;
+  height: 264px;
+}
 .content-wrapper .large-container #inner-wrapper-cart .wrapper-cart .area-cart header p {
   text-align: center;
 }

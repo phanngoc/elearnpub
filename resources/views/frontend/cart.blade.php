@@ -136,7 +136,7 @@
                 </tbody>
               </table>  
             </div>
-            <button className="btn btn-primary continue">Continue</button>
+            <a className="btn btn-primary continue" href="{{route('checkout')}}">Continue</a>
           </div> 
         );
       },

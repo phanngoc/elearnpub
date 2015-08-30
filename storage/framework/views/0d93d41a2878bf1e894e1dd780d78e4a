@@ -72,7 +72,8 @@
 		<div class="area-right">
 				<div class="search-bar">
 					<div class="search-and-submit">
-						<form action="/book_search" method="get">
+						<form action="<?php echo e(route('search')); ?>" method="POST">
+							<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
 							<input name="search" placeholder="Search" type="search" />
 							<button class="search-submit" type="submit">
 							  	<div class="search-icon"></div>
@@ -82,10 +83,10 @@
 				</div>
 
 				<div class="shopping-cart-button">
-						<a href="/shopping_cart" title="Shopping Cart">
+						<a href="<?php echo e(route('getCart')); ?>" title="Shopping Cart">
 							<div id="shopping-cart">
 								<i class="fa fa-shopping-cart"></i>
-								<span id="cart-total">0</span>
+								<span id="cart-total"><?php echo e(count(Session::get('carts',array()))); ?></span>
 							</div>
 						</a>
 				</div>
