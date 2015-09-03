@@ -289,4 +289,17 @@ class Book extends Model {
 
         return $book;
 	}
+
+	/**
+	 * [isBookBelongUser description]
+	 * @param  [type]  $book_id [description]
+	 * @param  [type]  $user_id [description]
+	 * @return boolean          [description]
+	 */
+	public static function isBookBelongUser($book_id,$user_id)
+	{
+		$bookauthor = DB::table('book_author')->where('book_id',$book_id)->where('author_id',$user_id)->get();
+		return count($bookauthor);
+	}
+
 }

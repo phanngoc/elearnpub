@@ -17,6 +17,7 @@
               <h3>Action</h3>
               <ul>
                 <li><a href="{{route('settingbook',$book->id)}}">General Settings</a></li>
+                <li><a href="{{ route('writebook',$book->id) }}">Write Book</a></li>
                 <li><a  class="parent"><i class="fa fa-plus"></i>Publish</a>
                     <ul>
                         <li><a href="{{route('publish_book',$book->id)}}">Publish your book</a></li>

@@ -6,14 +6,14 @@
 }
 .content-wrapper .content-inner .inner-content-write {
   margin: 0px auto;
-  width: 90%;
+  width: 94%;
 }
 .content-wrapper .content-inner .inner-content-write .col-md-8 {
   padding-left: 0px;
   padding-right: 0px;
 }
 .content-wrapper .content-inner .inner-control-top {
-  margin: 0px auto;
+  margin: 18px auto;
   width: 90%;
 }
 #modalPreview .modal-dialog {

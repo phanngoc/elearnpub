@@ -17,3 +17,27 @@
 .content-wrapper section.large-container div.inner-wrapper-settingbook .inner-sidebar ul li > a i {
   opacity: 0.8;
 }
+section.view {
+  display: block;
+  width: 100%;
+}
+section.view:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+section.view .inner-view {
+  display: block;
+  padding-bottom: 10px;
+}
+section.view .inner-view:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+}

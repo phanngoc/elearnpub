@@ -58,6 +58,11 @@ class HomeController extends Controller
        return view('frontend.home',compact('books','bookfeature','categories','languages')); 
     }
 
+    /**
+     * Show book detail page 
+     * @param  [type] $param [description]
+     * @return [type]        [description]
+     */
     public function book($param)
     {
       $book = Book::where('bookurl',$param)->first();
@@ -74,8 +79,18 @@ class HomeController extends Controller
       echo Markdown::parse('# Chapter 1 Hello, world!');
     }
 
+    /**
+     * Page write book
+     * @param  [type] $id       [description]
+     * @param  string $namefile [description]
+     * @return [type]           [description]
+     */
     public function write($id,$namefile='')
     {
+      if(!Book::isBookBelongUser($id,Auth::user()->id))
+      {
+        return redirect()->route('book');
+      }
       $currentBook = Book::find($id); 
       $files = Book::getFileFromBook($id);   
       $filebook = Book::getContentByName($namefile,$files[0]->name);

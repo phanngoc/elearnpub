@@ -21,7 +21,9 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register',['as' => 'getregister' ,'uses' => 'Auth\AuthController@getRegister']);
 Route::post('auth/register', ['as' => 'register' ,'uses' => 'Auth\AuthController@postRegister']);
 
-
+Route::group(['middleware' => 'auth'], function () {
+    
+});
 
 
 Route::get('/','HomeController@index');
