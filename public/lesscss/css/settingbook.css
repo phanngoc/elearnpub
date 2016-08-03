@@ -1,3 +1,6 @@
+.content-wrapper section.large-container div.inner-wrapper-settingbook .inner-sidebar ul {
+  padding-left: 0px;
+}
 .content-wrapper section.large-container div.inner-wrapper-settingbook .inner-sidebar ul li {
   list-style: none;
   display: block;
@@ -8,14 +11,21 @@
   display: block;
   width: 100%;
   height: 42px;
-  border: 1px solid #adadad;
+  border-top: 1px solid #e5e5e5;
   margin: 1px;
-  text-align: center;
+  text-align: left;
   padding-top: 9px;
-  box-shadow: 0px -2px 10px #c2c2c2 inset;
 }
 .content-wrapper section.large-container div.inner-wrapper-settingbook .inner-sidebar ul li > a i {
-  opacity: 0.8;
+  opacity: 0.5;
+  font-size: 20px;
+  float: right;
+}
+.content-wrapper section.large-container div.inner-wrapper-settingbook .inner-sidebar ul li ul {
+  background-color: #f2f2f2;
+}
+.content-wrapper section.large-container div.inner-wrapper-settingbook .inner-sidebar ul li ul li {
+  padding-left: 5px;
 }
 section.view {
   display: block;

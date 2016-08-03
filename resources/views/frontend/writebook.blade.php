@@ -25,7 +25,7 @@
             <div class="col-md-4">
               <div class="control">
                 <div class="area-file">
-                 <table class="table">
+                 <table class="table table-bordered">
                     <thead>
                       <tr>
                         <th>Name</th>
@@ -35,13 +35,12 @@
                     </thead>
                     <tbody>
                       <?php
-
                           foreach ($files as $key => $value) {
                               ?>
                                 <tr <?php if($value->name == $filebook->name) echo 'class="highlight-row"';?> >
                                     <input type="hidden" value="<?php echo $value->id; ?>"/>
                                     <td><a href="{{ route('writebook',array('id'=>$value->book_id,'namefile'=>$value->name)) }}" ><?php echo $value->name;?></a></td>
-                                    <td> 
+                                    <td>
                                         <div class="action">
                                            <a href="#" class="edit" onclick="return false;"><i class="fa fa-pencil-square-o"></i></a>
                                            <a href="#" class="delete" onclick="return false;"><i class="fa fa-times"></i></a>
@@ -51,19 +50,19 @@
                                 </tr>
                               <?php
                           }
-                      ?>   
+                      ?>
                     </tbody>
                   </table>
                 </div>
 
-                <div class="row control-primary">
+                <div class="control-primary">
                     <a href="#" class="btn btn-primary new-file" onclick="return false;" data-toggle="modal" data-target="#modalNewfile" >New file</a>
                 </div>
               </div> <!-- .control -->
             </div>
             <div class="col-md-8">
                 <div class="inner-area-write">
-                    <textarea rows="40" cols="100" class="content-write"><?php echo $filebook->content; ?></textarea> 
+                    <textarea rows="40" cols="100" class="content-write"><?php echo $filebook->content; ?></textarea>
                 </div>
             </div>
         </div>
@@ -81,7 +80,7 @@
       </div>
       <div class="modal-body">
          <div class="content-preview">
-           
+
          </div>
       </div>
       <div class="modal-footer">
@@ -97,7 +96,7 @@
   <tr class="highlight-row">
       <input type="hidden" value="@{{ id }}" />
       <td><a href="@{{ link }}">@{{ name }}</a></td>
-      <td> 
+      <td>
           <div class="action">
              <a href="#" class="edit" onclick="return false;"><i class="fa fa-pencil-square-o"></i></a>
              <a href="#" class="delete" onclick="return false;"><i class="fa fa-times"></i></a>
@@ -120,7 +119,7 @@
       </div>
       <div class="modal-body">
         <p class="label">File Name</p>
-        <input name="filename" id="filename" class="form-control" /> 
+        <input name="filename" id="filename" class="form-control" />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary accept-new-file" data-dismiss="modal">OK</button>
@@ -145,7 +144,7 @@
 
        $('.area-file').on('click','.edit',function(){
             var name = $(this).parent().parent().prev().find('a').text();
-          
+
             $(this).parent().parent().prev().find('a').hide();
             $(this).parent().parent().prev().append('<input name="edit" value="'+name+'"/>');
 
@@ -181,7 +180,7 @@
           {
             var id = $(this).closest('td').prev().prev().val();
             var $delete = $(this);
-            
+
             $.ajax({
                    method : 'POST',
                    url : '{{ route("removefile") }}',
@@ -208,7 +207,7 @@
             });
           }
       });
-      
+
       // when click button ok in modal set file name
       $('.accept-new-file').click(function(){
           var namenewfile = $('#modalNewfile').find('input').val();
@@ -239,7 +238,7 @@
 
       $('.area-file').on('change','.is_sample',function(){
          var file_id = $(this).parent().parent().children('input').val();
-        
+
          var isSample = 0;
          if($(this).is(":checked")) {
             isSample = 1;
@@ -249,11 +248,11 @@
                    url : '{{ route("issamplefile") }}',
                    data : { file_id : file_id ,isSample : isSample, _token : "{{ csrf_token() }}"}
                 }).done(function(response){
-                   
+
                 });
       });
-      
-      setInterval(function(){ 
+
+      setInterval(function(){
          var content = $('.inner-area-write .content-write').val();
          saveContentAuto({{ $filebook->id }} , content);
       }, 3000);
@@ -265,7 +264,7 @@
                    url : '{{ route("autoSaveContent") }}',
                    data : { file_id : file_id ,content : content , _token : "{{ csrf_token() }}"}
          }).done(function(response){
-                   
+
          });
       }
     });

@@ -146,6 +146,8 @@ return [
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         MaxHoffmann\Parsedown\ParsedownServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+        Chumper\Zipper\ZipperServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
     ],
 
     /*
@@ -196,6 +198,7 @@ return [
         // 'Markdown'  => GrahamCampbell\Markdown\Facades\Markdown::class,
         'Markdown'  => MaxHoffmann\Parsedown\ParsedownFacade::class,
         'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+        'Zipper'    => Chumper\Zipper\Zipper::class,
 
     ],
 

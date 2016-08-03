@@ -1,3 +1,4 @@
+// out: ../css/book.css, compress: false, strictMath: true
 .content-wrapper{
 	.large-container{
 		display: block;
@@ -53,7 +54,7 @@
 							margin-left: 25px;
   							margin-top: 10px;
 							p{
-								font-family: "ff-din-web-pro-1", "ff-din-web-pro-2", "Helvetica Neue", Helvetica, Arial, sans-serif;	
+								font-family: "ff-din-web-pro-1", "ff-din-web-pro-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
 							}
 						}
 					}
@@ -85,7 +86,7 @@
 								background-color: #3694F7;
 								color : white;
 							}
-							
+
 						}
 					}
 				}
@@ -96,7 +97,7 @@
 						.minimum{
 							display : block;
 							float : right;
-							
+
 							.number{
 							  display: block;
 							  line-height: 1.125;
@@ -148,19 +149,13 @@
 					.add-ebook-to-cart{
 						 	margin-top: 26px;
 							// background-color: #727272;
-							
+
 							display: block;
 							// padding : 5px;
 							height: 40px;
 							// width: 200px;
 							border-radius: 12px;
 							button{
-								// color : white;
-								// display: block;
-								// margin-top: 7px;
-								// margin-left: 16px;
-								// font-size: 16px;
-
 								-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
 								-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
 								box-shadow:inset 0px 1px 3px 0px #91b8b3;
@@ -185,7 +180,7 @@
 								padding:11px 23px;
 								text-decoration:none;
 								text-shadow:0px -1px 0px #2b665e;
-								
+
 								&:hover {
 									background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
 									background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
@@ -219,7 +214,7 @@
 			padding-top : 10px;
 			padding-bottom : 10px;
 			// border-top : 1px solid #b2b2b2;
-			
+
 			h3{
 				font-family: 'Univers_LT_57_Condensed',Georgia, serif;
 				text-align: center;
@@ -273,6 +268,7 @@
 .about-author{
 	display: block;
 	box-shadow: 0px 20px 34px #E5E4E3 inset;
+	
 	.inner-about-author{
 		header{
 			  display: block;
@@ -280,6 +276,7 @@
 			  width: 80%;
 			h3{
 			  margin-top: 40px;
+				margin-bottom: 28px;
 			  text-align: center;
 			}
 		}
@@ -289,7 +286,7 @@
  			width: 80%;
  			.inner-left{
  				display: block;
-  				text-align: center;
+  			text-align: center;
  				.wrapper-social{
  					ul.list-social{
  						padding-left: 0px;
@@ -302,7 +299,22 @@
 						}
  					}
  				}
+				.wrapper-avatar {
+					img {
+						width: 200px;
+						height: 200px;
+					}
+				}
  			}
+
+			.inner-right {
+				h3{
+					margin-top : 0px;
+				}
+				.description{
+
+				}
+			}
 		}
 	}
 }

@@ -16,16 +16,9 @@
 <div class="content-wrapper">
     <section class="large-container">
         <div id="inner-wrapper-listbook" class="row">
-          <div class="col-md-3">
-            <div class="inner-sidebar">
-              <h3>Author Dashboard</h3>
-              <ul>
-                <li><a href="#">Books</a></li>
-                <li><a href="#">Bundles</a></li>
-                <li><a href="#">Profile</a></li>
-              </ul>    
-            </div>
-          </div>
+        
+          @include('frontend.author_dashboard')
+
           <div class="col-md-9">
             <div class="inner-content">
               <section class="info-top">

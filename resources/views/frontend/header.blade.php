@@ -13,8 +13,8 @@
 	    	</div>
 	    	<ul class="navigation">
 				<li><a href="#">Home</a></li>
-				<li><a href="#">Read</a></li>
-				<li><a href="#">Write</a></li>
+				<li><a href="{{ route('library') }}">Read</a></li>
+				<li><a href="{{ route('new_book') }}">Write</a></li>
 			</ul>
 	    </div>
 
@@ -93,16 +93,16 @@
 				<?php if(null !==Auth::user()) { ?>
 					<div class="profile">
 						<div class="wrapper-profile">
-							<div class="img-avatar"><img src="<?php echo Asset('avatar/'.Auth::user()->avatar) ?>"/> </div>
+							<div class="img-avatar"><img src="<?php echo showImage(Auth::user()->avatar); ?>"/> </div>
 							<div class="dropdown">
 								<div class="inner-dropdown">
 										<div class="column">
 											<h4>Account</h4>
 											<ul>
-												<li><a href="#">Read</a></li>
-												<li><a href="{{route('wishlist')}}">Wishlist</a></li>
+												<li><a href="{{ route('library') }}">Read</a></li>
+												<li><a href="{{ route('wishlist') }}">Wishlist</a></li>
 												<li><a href="#">Purchase</a></li>
-												<li><a href="#">Invitations</a></li>
+												<li><a href="{{ route('invitation') }}">Invitations</a></li>
 												<li><a href="#">Setting</a></li>
 											</ul>
 										</div>
@@ -110,8 +110,8 @@
 											<h4>Author</h4>
 											<ul>
 												<li><a href="{{route('book')}}">Books</a></li>
-												<li><a href="#">Bundle</a></li>
-												<li><a href="#">Profile</a></li>
+												<li><a href="{{ route('bundles') }}">Bundle</a></li>
+												<li><a href="{{ route('profile') }}">Profile</a></li>
 											</ul>
 										</div>
 								</div>

@@ -1,0 +1,47 @@
+.content-wrapper .large-container #inner-wrapper-library {
+  display: block;
+  margin: 10px auto;
+  width: 60%;
+}
+.content-wrapper .large-container #inner-wrapper-library header {
+  display: block;
+  padding: 10px;
+}
+.content-wrapper .large-container #inner-wrapper-library header h3 {
+  font-weight: bold;
+  font-size: 28px;
+}
+.content-wrapper .large-container #inner-wrapper-library .content .inner-content {
+  padding: 5px;
+  border-radius: 11px 11px 11px 11px;
+  -moz-border-radius: 11px 11px 11px 11px;
+  -webkit-border-radius: 11px 11px 11px 11px;
+  border: 2px dotted #ede8ed;
+}
+.content-wrapper .large-container #inner-wrapper-library .content .inner-content .item-library {
+  margin-bottom: 11px;
+  padding: 10px;
+  background: #feffe8;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #feffe8 0%, #e7edda 96%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #feffe8 0%, #e7edda 96%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #feffe8 0%, #e7edda 96%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#feffe8', endColorstr='#e7edda', GradientType=0);
+}
+.content-wrapper .large-container #inner-wrapper-library .content .inner-content .item-library .wrap-avatar img {
+  display: block;
+  width: 125px;
+  height: 155px;
+}
+.content-wrapper .large-container #inner-wrapper-library .content .inner-content .item-library .wrap-content .author span {
+  display: block;
+  background-color: white;
+  float: left;
+  padding: 3px;
+  border-radius: 8px;
+  margin-right: 8px;
+  border: 1px solid #E0E0E0;
+}

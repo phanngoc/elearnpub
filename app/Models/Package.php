@@ -11,11 +11,17 @@ class Package extends Model {
 		'name',
 		'minimumprice',
 		'suggestedprice',
-    'description',
-    'url',
-    'quantity',
-    'book_id'
+	    'description',
+	    'url',
+	    'quantity',
+	    'book_id'
 	];
+
+	/**
+	 * Delete package.
+	 * @param  [type] $package_id [description]
+	 * @return [type]             [description]
+	 */
 	public static function deletePackage($package_id)
 	{
 		$extras = Extra::where('package_id',$package_id)->get();

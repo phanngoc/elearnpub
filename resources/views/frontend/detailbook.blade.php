@@ -47,7 +47,9 @@
 
                         <div class="group-sample">
                             <p>Free sample</p>
-                            <div class="downloadsample"><a href="#">Download Sample</a></div>
+                            @if ($book->is_publish_sample)
+                              <div class="downloadsample"><a href="{{ route('downloadSample',$book->id) }}">Download Sample</a></div>
+                            @endif
                             <div class="wishlist"><a href="{{ route('addwishlist',$book->id) }}">Add to Wish List</a></div>
                         </div>
                         

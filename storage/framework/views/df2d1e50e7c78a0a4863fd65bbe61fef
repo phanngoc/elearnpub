@@ -46,7 +46,9 @@
 
                         <div class="group-sample">
                             <p>Free sample</p>
-                            <div class="downloadsample"><a href="#">Download Sample</a></div>
+                            <?php if($book->is_publish_sample): ?>
+                              <div class="downloadsample"><a href="<?php echo e(route('downloadSample',$book->id)); ?>">Download Sample</a></div>
+                            <?php endif; ?>
                             <div class="wishlist"><a href="<?php echo e(route('addwishlist',$book->id)); ?>">Add to Wish List</a></div>
                         </div>
                         

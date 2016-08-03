@@ -18,7 +18,8 @@
               <ul>
                 <li><a href="{{route('settingbook',$book->id)}}">General Settings</a></li>
                 <li><a href="{{ route('writebook',$book->id) }}">Write Book</a></li>
-                <li><a  class="parent"><i class="fa fa-plus"></i>Publish</a>
+                <li>
+                    <a  class="parent">Publish<i class="fa fa-plus"></i></a>
                     <ul>
                         <li><a href="{{route('publish_book',$book->id)}}">Publish your book</a></li>
                         <li><a href="{{route('upload_new_title',$book->id)}}">Edit title page</a></li>
@@ -27,7 +28,7 @@
                 </li>
                 <li><a href="{{route('pricing',$book->id)}}">Price</a></li>
                 <li>
-                  <a  class="parent"><i class="fa fa-plus"></i>Packages & Extras</a>
+                  <a class="parent">Packages & Extras<i class="fa fa-plus"></i></a>
                   <ul>
                     <li><a href="{{route('package',$book->id)}}">Create a Package</a></li>
                     <li><a href="{{route('extras',$book->id)}}">Create An Extra</a></li>
@@ -35,7 +36,7 @@
                   </ul>
                 </li>
                 <li>
-                    <a  class="parent"><i class="fa fa-plus"></i>Landing Page</a>
+                    <a  class="parent">Landing Page<i class="fa fa-plus"></i></a>
                     <ul>
                       <li><a href="{{route('landing_page',$book->id)}}">General</a></li>
                       <li><a href="{{route('landing_page',$book->id)}}">Social Media</a></li>
@@ -43,14 +44,14 @@
                     </ul>
                 </li>
                 <li>
-                    <a  class="parent"><i class="fa fa-plus"></i>Settings</a>
+                    <a  class="parent">Settings<i class="fa fa-plus"></i></a>
                     <ul>
                       <li><a href="{{route('category',$book->id)}}">Categories</a></li>
                       <li><a href="{{route('language',$book->id)}}">Language & Character Encoding</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a  class="parent"><i class="fa fa-plus"></i>Author</a>
+                    <a  class="parent">Author<i class="fa fa-plus"></i></a>
                     <ul>
                       <li><a href="{{route('custom_author_name',$book->id)}}">Custom Author Name Display</a></li>
                       <li><a href="{{route('add_coauthor',$book->id)}}">Add Co-Author</a></li>
@@ -70,6 +71,7 @@
         </div>
     </section>
 </div>
+
 <script type="text/javascript">
   $(document).ready(function(){
     $('.parent').next('ul').hide();
@@ -78,7 +80,8 @@
       ev.stopPropagation();
       $('.parent').next('ul').slideUp();
       $(this).next('ul').slideDown();
-    }); 
-  }); 
+    });
+  });
 </script>
+
 @stop

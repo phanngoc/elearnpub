@@ -17,6 +17,8 @@
     <link href="<?php echo Asset('font-awesome/ionicons.min.css'); ?>" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="<?php echo Asset('normalize.css'); ?>" rel="stylesheet" type="text/css" />
+
+    <script src="<?php echo Asset('js/general.js'); ?>"></script>
     <?php echo $__env->yieldContent('head.css'); ?>
 
   </head>

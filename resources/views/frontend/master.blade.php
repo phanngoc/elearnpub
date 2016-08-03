@@ -17,6 +17,8 @@
     <link href="{!!Asset('font-awesome/ionicons.min.css')!!}" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="{!!Asset('normalize.css')!!}" rel="stylesheet" type="text/css" />
+
+    <script src="{!! Asset('js/general.js') !!}"></script>
     @yield('head.css')
 
   </head>

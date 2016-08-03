@@ -9,6 +9,7 @@ use App\Models\Filebook;
 use Storage;
 use Auth;
 use App\User;
+
 class Book extends Model {
 
 	protected $table = 'books';
@@ -44,6 +45,14 @@ class Book extends Model {
 	 */
 	public function category() {
 		return $this->belongsToMany('\App\Models\Category', 'book_category');
+	}
+
+	/**
+	 * One to many relation
+	 * @return [type] [description]
+	 */
+	public function filebooks() {
+		return $this->hasMany('App\Models\Filebook','book_id','id');
 	}
 
 	/**
@@ -302,4 +311,27 @@ class Book extends Model {
 		return count($bookauthor);
 	}
 
+	/**
+	 * Get book user can read
+	 * @param  [type] $user_id [description]
+	 * @return [type]          [description]
+	 */
+	public static function getBookLibraryBelongUser($user_id) {
+		$bookYouWrite = User::find($user_id)->books()->get();
+		$bills = User::find($user_id)->bills()->get();
+
+		$results = $bookYouWrite;
+
+		foreach ($bills as $key => $value) {
+			$carts  = $value->carts()->get();
+			foreach ($carts as $keyCart => $valCart) {
+				$books = $valCart->book()->get();
+				foreach ($books as $keyBook => $valBook) {
+					$bookYouWrite->push($valBook);
+				}
+			}
+		}
+		
+		return $bookYouWrite;
+	}
 }

@@ -14,13 +14,13 @@
         	<div class="book-list-wrapper">
                 <div class="list-header">
                     <header class="list-title">
-                      <h3><a href="#">Best Seller</a></h3>    
-                    </header>   
+                      <h3><a href="#">Best Seller</a></h3>
+                    </header>
                     <div class="list-controls">
                         <a href="#" class="view_all">View All</a>
                     </div>
                 </div>
-        		
+
         		<div class="list-content">
                     <div class="list-content-wrapper">
                         <div class="owl-carousel">
@@ -34,8 +34,8 @@
                                     </div>
                                     <div class="info-author">
                                         <span>
-                                            <?php 
-                                               echo $book['meta']->lastname." ".$book['meta']->firstname;  
+                                            <?php
+                                               echo $book['meta']->lastname." ".$book['meta']->firstname;
                                             ?>
                                         </span>
                                     </div>
@@ -54,17 +54,17 @@
 
                 <div class="list-header">
                     <header class="list-title">
-                      <h3><a href="#">Feature book</a></h3>    
-                    </header>   
+                      <h3><a href="#">Feature book</a></h3>
+                    </header>
                     <div class="list-controls">
                         <a href="#" class="view-all">View All</a>
                     </div>
                 </div>
-                
+
                 <div class="list-content">
                     <div class="list-content-wrapper">
                         <div class="owl-carousel">
-                            <?php foreach($bookfeature as $bofea): ?>
+                            <?php foreach($bookfeatures as $bofea): ?>
                                 <div class="item-book">
                                     <div class="avatar-wrapper">
                                         <a href="<?php echo e(route('bookhome',$bofea['bookurl'])); ?>"><img src="<?php echo e(Asset('resourcebook/'.$bofea['diravatar'])); ?>"/></a>
@@ -74,8 +74,8 @@
                                     </div>
                                     <div class="info-author">
                                         <span>
-                                            <?php 
-                                               echo $bofea['meta']->lastname." ".$bofea['meta']->firstname;  
+                                            <?php
+                                               echo $bofea['meta']->lastname." ".$bofea['meta']->firstname;
                                             ?>
                                         </span>
                                     </div>
@@ -119,11 +119,12 @@
              console.log('da next');
              owl.trigger('next.owl.carousel');
        });
-        
 
-        
+
+
     });
 
 </script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('frontend.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

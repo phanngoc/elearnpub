@@ -11,42 +11,44 @@
     @include ('frontend.below_header')
     <!-- Main content -->
     <section class="large-container">
+
         <!-- Best seller -->
         <div class="row">
         	<div class="book-list-wrapper">
-                <div class="list-header">
-                    <header class="list-title">
-                      <h3><a href="#">Best Seller</a></h3>    
-                    </header>   
-                    <div class="list-controls">
-                        <a href="#" class="view_all">View All</a>
-                    </div>
+
+            <div class="list-header">
+                <header class="list-title">
+                  <h3><a href="#">Best Seller</a></h3>
+                </header>
+                <div class="list-controls">
+                    <a href="#" class="view_all">View All</a>
                 </div>
-        		
+            </div> <!-- .list-header -->
+
         		<div class="list-content">
-                    <div class="list-content-wrapper">
-                        <div class="owl-carousel">
-        				  	@foreach ($books as $book)
-							    <div class="item-book">
-							    	<div class="avatar-wrapper">
-							    		<a href="{{ route('bookhome',$book['bookurl']) }}"><img src="{{ Asset('resourcebook/'.$book['diravatar']) }}"/></a>
-							    	</div>
-                                    <div class="info-name">
-                                        <span>{{ $book['title'] }}</span>
-                                    </div>
-                                    <div class="info-author">
-                                        <span>
-                                            <?php 
-                                               echo $book['meta']->lastname." ".$book['meta']->firstname;  
-                                            ?>
-                                        </span>
-                                    </div>
-							    </div>
-							@endforeach
-        				</div>
-        			</div>
-        		</div>
-        	</div>
+                <div class="list-content-wrapper">
+                    <div class="owl-carousel">
+            				  	@foreach ($books as $book)
+        							    <div class="item-book">
+        							    	<div class="avatar-wrapper">
+        							    		<a href="{{ route('bookhome',$book['bookurl']) }}"><img src="{{ Asset('resourcebook/'.$book['diravatar']) }}"/></a>
+        							    	</div>
+                            <div class="info-name">
+                                <span>{{ $book['title'] }}</span>
+                            </div>
+                            <div class="info-author">
+                                <span>
+                                    <?php
+                                       echo $book['meta']->lastname." ".$book['meta']->firstname;
+                                    ?>
+                                </span>
+                            </div>
+        							    </div>
+          							@endforeach
+    				       </div> <!-- .owl-carousel -->
+    			      </div><!-- .list-content-wrapper -->
+        		</div> <!-- .list-content -->
+        	</div> <!-- .book-list-wrapper -->
         </div>
         <!-- End Best seller -->
 
@@ -56,28 +58,28 @@
 
                 <div class="list-header">
                     <header class="list-title">
-                      <h3><a href="#">Feature book</a></h3>    
-                    </header>   
+                      <h3><a href="#">Feature book</a></h3>
+                    </header>
                     <div class="list-controls">
                         <a href="#" class="view-all">View All</a>
                     </div>
                 </div>
-                
+
                 <div class="list-content">
                     <div class="list-content-wrapper">
                         <div class="owl-carousel">
-                            @foreach ($bookfeature as $bofea)
+                            @foreach ($bookfeatures as $book)
                                 <div class="item-book">
                                     <div class="avatar-wrapper">
-                                        <a href="{{ route('bookhome',$bofea['bookurl']) }}"><img src="{{ Asset('resourcebook/'.$bofea['diravatar']) }}"/></a>
+                                        <a href="{{ route('bookhome',$book['bookurl']) }}"><img src="{{ Asset('resourcebook/'.$book['diravatar']) }}"/></a>
                                     </div>
                                     <div class="info-name">
-                                        <span>{{ $bofea['title'] }}</span>
+                                        <span>{{ $book['title'] }}</span>
                                     </div>
                                     <div class="info-author">
                                         <span>
-                                            <?php 
-                                               echo $bofea['meta']->lastname." ".$bofea['meta']->firstname;  
+                                            <?php
+                                               echo $book['meta']->lastname." ".$book['meta']->firstname;
                                             ?>
                                         </span>
                                     </div>
@@ -86,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- .book-list-wrapper -->
         </div>
         <!-- End feature book -->
 
@@ -121,9 +123,9 @@
              console.log('da next');
              owl.trigger('next.owl.carousel');
        });
-        
 
-        
+
+
     });
 
 </script>

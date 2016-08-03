@@ -38,6 +38,22 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $hidden = ['password', 'remember_token'];
 
     /**
+     * Relation one to many
+     * @return [type] [description]
+     */
+    public function bills() {
+        return $this->hasMany('App\Models\Bill','user_id','id');
+    }
+    
+    /**
+     * Relation one to many
+     * @return [type] [description]
+     */
+    public function bundles() {
+        return $this->hasMany('App\Models\Bundle','user_id','id');
+    }
+
+    /**
      * [addBookToWishlist description]
      * @param [type] $book_id [description]
      */
@@ -93,7 +109,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * [book description]
      * @return [type] [description]
      */
-    public function book() {
+    public function books() {
       return $this->belongsToMany('App\Models\Book','book_author','author_id','book_id');
     }
 

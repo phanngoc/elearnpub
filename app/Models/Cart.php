@@ -12,4 +12,12 @@ class Cart extends Model {
 		'count',
 		'bill_id',
 	];
+
+	/**
+	 * Relation One to One
+	 * @return [type] [description]
+	 */
+	public function book() {
+		return $this->hasOne('App\Models\Book','id','book_id');
+	}
 }

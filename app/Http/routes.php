@@ -22,19 +22,27 @@ Route::get('auth/register',['as' => 'getregister' ,'uses' => 'Auth\AuthControlle
 Route::post('auth/register', ['as' => 'register' ,'uses' => 'Auth\AuthController@postRegister']);
 
 Route::group(['middleware' => 'auth'], function () {
-    
+
+	/*---------------------write file------------------------*/
+    Route::get('write/{id}/{namefile?}',['as' => 'writebook', 'uses' => 'HomeController@write'])->where('id', '[0-9]+');
+    Route::post('ajax_renamefile',['as' => 'renamefile', 'uses' => 'HomeController@ajax_renamefile']);
+		Route::post('ajax_removefile',['as' => 'removefile', 'uses' => 'HomeController@ajax_removefile']);
+		Route::post('ajax_newfile/{id}',['as' => 'newfile', 'uses' => 'HomeController@ajax_newfile'])->where('id', '[0-9]+');
+		Route::post('ajax_issample',['as' => 'issamplefile', 'uses' => 'HomeController@ajax_issample']);
+		Route::post('ajax_autoSaveContentFile',['as' => 'autoSaveContent', 'uses' => 'HomeController@ajax_autoSaveContentFile']);
+	/*------------------------end write file-------------------------------*/
+
 });
 
 
 Route::get('/','HomeController@index');
+
+/*-------------------------Route frontend detail book---------------------------*/
 Route::get('bo/{param}',['as' => 'bookhome', 'uses' => 'HomeController@book']);
+Route::get('downloadSample/{id}',['as'=>'downloadSample','uses'=>'Front\DetailBookController@downloadSample']);
+/*-------------------------------------------------------------------------------*/
 Route::get('test','HomeController@test');
-Route::get('write/{id}/{namefile?}',['as' => 'writebook', 'uses' => 'HomeController@write'])->where('id', '[0-9]+');
-Route::post('ajax_renamefile',['as' => 'renamefile', 'uses' => 'HomeController@ajax_renamefile']);
-Route::post('ajax_removefile',['as' => 'removefile', 'uses' => 'HomeController@ajax_removefile']);
-Route::post('ajax_newfile/{id}',['as' => 'newfile', 'uses' => 'HomeController@ajax_newfile'])->where('id', '[0-9]+');
-Route::post('ajax_issample',['as' => 'issamplefile', 'uses' => 'HomeController@ajax_issample']);
-Route::post('ajax_autoSaveContentFile',['as' => 'autoSaveContent', 'uses' => 'HomeController@ajax_autoSaveContentFile']);
+
 Route::post('cart',['as' => 'cart','uses' => 'HomeController@cart']);
 Route::get('cart',['as' => 'getCart','uses' => 'HomeController@getCart']);
 Route::get('ajax_getCart',['as' => 'ajax_getCart','uses' => 'HomeController@ajax_getCart']);
@@ -136,5 +144,37 @@ Route::get('checkout',['as'=>'checkout','uses' => 'HomeController@showCheckout']
 Route::post('checkout',['as'=>'postcheckout','uses' => 'HomeController@postShowCheckout']);
 
 // Process thank you page
-// 
+
 Route::get('checkoutcomplete',['as'=>'checkoutcomplete','uses' => 'HomeController@checkoutComplete']);
+
+// View to your library
+Route::get('library',['as'=>'library','uses' => 'Front\LibraryController@yourLibrary']);
+
+// View read book on web
+Route::get('read/{id}',['as'=>'readbook','uses' => 'Front\ReadBookController@readbook']);
+
+// Route relevant bundle
+
+Route::get('bundles',['as'=>'bundles','uses' => 'Front\BundleController@bundles']);
+
+Route::get('new_bundle',['as'=>'new_bundle','uses' => 'Front\BundleController@new_bundle']);
+
+Route::post('post_new_bundle',['as'=>'post_new_bundle','uses' => 'Front\BundleController@postNewBundle']);
+
+Route::get('edit_bundle/{id}',['as'=>'edit_bundle','uses' => 'Front\BundleController@editBundle']);
+
+Route::get('delete_bundle/{id}',['as'=>'delete_bundle','uses' => 'Front\BundleController@deleteBundle']);
+
+Route::post('edit_bundle/{id}',['as'=>'post_edit_bundle','uses' => 'Front\BundleController@postUpdateBundle']);
+
+Route::post('edit_bundle/{id}/newbook',['as'=>'add_book_to_bundle','uses' => 'Front\BundleController@addNewBookToBundle']);
+
+Route::get('edit_bundle/{id}/deletebook/{book_bundle_id}',['as'=>'delete_book_from_bundle','uses' => 'Front\BundleController@deleteBookFromBundle']);
+
+Route::get('profile',['as'=>'profile','uses' => 'Front\ProfileController@index']);
+
+Route::post('profile',['as'=>'postprofile','uses' => 'Front\ProfileController@postProfile']);
+
+Route::get('invitation',['as'=>'invitation','uses' => 'Front\ProfileController@invitation']);
+
+Route::get('responseInvitation/{id}/{response}',['as'=>'responseInvitation','uses' => 'Front\ProfileController@responseInvitation']);

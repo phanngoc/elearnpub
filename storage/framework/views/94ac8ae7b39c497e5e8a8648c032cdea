@@ -51,7 +51,7 @@
 		});
 
 		var url = window.location.href;
-		console.log(url);
+
 		$('.select_lang').click(function(){
 			var langid = $(this).data('langid');
 			if (url.search(/lang\/(\d+|all)/) == -1) {
@@ -62,6 +62,7 @@
 			console.log(url);
 			window.location.href = url;
 		});
+
 		$('.select_cate').click(function(){
 			var cateid = $(this).data('cateid');
 			if (url.search(/cate\/(\d+|all)/) == -1) {

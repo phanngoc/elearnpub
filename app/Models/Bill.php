@@ -14,4 +14,12 @@ class Bill extends Model {
 		'address_receive_good',
 		'date_purchased'
 	];
+
+	/**
+	 * Relation one to many
+	 * @return [type] [description]
+	 */
+	public function carts() {
+		return $this->hasMany('App\Models\Cart','bill_id','id');
+	}
 }
