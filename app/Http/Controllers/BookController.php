@@ -7,10 +7,63 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Models\Book;
+use App\Models\Resource;
+use App\Models\Filebook;
+use App\Models\Price;
 use Validator;
 
 class BookController extends Controller
 {
+    /**
+     * Book model.
+     *
+     * @var Book class
+     */
+    protected $book;
+
+    /**
+     * Filebook model.
+     *
+     * @var Filebook class
+     */
+    protected $filebook;
+
+    /**
+     * User model.
+     *
+     * @var User class
+     */
+    protected $user;
+
+    /**
+     * Price model.
+     *
+     * @var Price class
+     */
+    protected $price;
+
+    /**
+     * Resource model.
+     *
+     * @var Price class
+     */
+    protected $resource;
+
+    /**
+     * Construct
+     *
+     * @param Book $book
+     * @param User $user
+     * @param FileBook $filebook
+     */
+    public function __construct(Book $book, User $user, FileBook $filebook, Price $price, Resource $resource)
+    {
+        $this->book = $book;
+        $this->user = $user;
+        $this->filebook = $filebook;
+        $this->price = $price;
+        $this->resource = $resource;
+    }
 
     /**
      * Display a listing of the resource.
@@ -19,13 +72,28 @@ class BookController extends Controller
      */
     public function index()
     {
-        $bookpublish = Book::getBookPublished();
-        $bookunpublish = Book::getBookUnPublished();
-        return view('frontend.book',compact('bookpublish','bookunpublish'));
+        $bookpublish = $this->book->getBookPublished();
+        $bookunpublish = $this->book->getBookUnPublished();
+        return view('frontend.book', compact('bookpublish','bookunpublish'));
     }
 
     /**
-     * [bookNew description]
+     * Show book detail page
+     * @param  [type] $param [description]
+     * @return [type]        [description]
+     */
+    public function book($param)
+    {
+      $book = $this->book->where('bookurl', $param)->first();
+      $book->meta = $this->book->getMainAuthor($book->id);
+      $book->price = $this->price->getPriceByBookId($book->id);
+      $sample = $this->resource->getSampleByBook($book->id);
+
+      return view('frontend.detailbook', compact('book', 'sample'));
+    }
+
+    /**
+     * Create view create book.
      * @return [type] [description]
      */
     public function newBook()
@@ -34,108 +102,152 @@ class BookController extends Controller
     }
 
     /**
-     * [postBookNew description]
+     * Post request to create new book.
      * @param  Request $request [description]
      * @return [type]           [description]
      */
     public function postNewBook(Request $request)
     {
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($request->all(), [
             'title' => 'required',
             'bookurl' => 'required',
         ]);
+
         if($validator->fails())
         {
-          return redirect()->route('new_book')->withErrors($validator,'newbook')->withInput();  
+          return redirect()->route('new_book')->withErrors($validator, 'newbook')->withInput();
         }
-        $book = Book::addNewBook($request->all());
-        return redirect()->route('settingbook',$book->id);
+
+        $book = $this->book->addNewBook($request->all());
+        return redirect()->route('settingbook', $book->id);
     }
 
     /**
-     * [add_wishlist description]
-     * @param [type] $id [description]
+     * Add book to user wishlist.
+     * @param [int] $id [description]
      */
     public function add_wishlist($id)
     {
-        User::addBookToWishlist($id);
+        $this->user->addBookToWishlist($id);
         return redirect('wishlist');
     }
 
     /**
-     * [delete_wishlist description]
-     * @param  [type] $id [description]
+     * Remove book from wishlist.
+     * @param  [int] $id Book id
      * @return [type]     [description]
      */
-    public function delete_wishlist($id)
+    public function delete_wishlist($bookId)
     {
-        User::removeBookFromWishlist($id);
-        return redirect('wishlist');        
+        $this->user->removeBookFromWishlist($bookId);
+        return redirect('wishlist');
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
+     * Page write book.
+     * @param  [int] $bookId   If of book.
+     * @param  string $namefile
+     * @return [type]           [description]
      */
-    public function create()
+    public function write($bookId, $namefile='')
     {
-        //
+      if (!$this->book->isBookBelongUser($bookId, Auth::user()->id))
+      {
+        return redirect()->route('book');
+      }
+
+      $currentBook = $this->book->find($bookId);
+      $files = $this->book->getFileFromBook($bookId);
+      $filebook = $this->book->getContentByName($namefile, $files[0]->name);
+      return view('frontend.writebook', compact('files', 'filebook'));
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  Request  $request
-     * @return Response
+     * Rename name file in page write book.
+     * @param  Request
+     * @return [type]
      */
-    public function store(Request $request)
+    public function ajax_renamefile(Request $request)
     {
-        //
+      $filebook = $this->filebook->find($request->id);
+      $filebook->name = $request->name;
+      $filebook->save();
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
+     * Remove file in page write book.
+     * @param  Request
+     * @return [type]
      */
-    public function show($id)
+    public function ajax_removefile(Request $request)
     {
-        //
+      $filebook = $this->filebook->find($request->id);
+      $dirFile  = base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $filebook->book_id . DIRECTORY_SEPARATOR . $filebook->link;
+      if(File::exists($dirFile))
+      {
+        File::delete($dirFile);
+      }
+      $filebook->delete();
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
+     * Add new file in page write book.
+     * @param  Request
+     * @return [type]
      */
-    public function edit($id)
+    public function ajax_newfile(Request $request,$id)
     {
-        //
+      $namenewfile = $request->namenewfile;
+
+      if (!File::exists(base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $id)) {
+         File::makeDirectory(base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $id);
+      }
+
+      if (pathinfo($namenewfile, PATHINFO_EXTENSION) == '')
+      {
+         $namenewfile .= '.txt';
+      }
+
+      $file = base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $id . DIRECTORY_SEPARATOR . $namenewfile;
+      File::put($file, '# New Chapter');
+
+      $newbook = $this->filebook->create([
+        'name' => $namenewfile,
+        'link' => $namenewfile,
+        'content' => '',
+        'book_id' => $id,
+        'is_sample' => 0,
+      ]);
+
+      $response = $newbook;
+      unset($response['link']);
+      return json_encode($newbook);
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  Request  $request
-     * @param  int  $id
-     * @return Response
+     * Check file is sample.
+     * @param  Request
+     * @return void
      */
-    public function update(Request $request, $id)
+    public function ajax_issample(Request $request)
     {
-        //
+      $file_id = $request->file_id;
+      $isSample = $request->isSample;
+      $filebook = $this->filebook->find($file_id);
+      $filebook->is_sample = $isSample;
+      $filebook->save();
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
+     * Save content of file.
+     * @param  Request $request [description]
+     * @return [type]           [description]
      */
-    public function destroy($id)
+    public function ajax_autoSaveContentFile(Request $request)
     {
-        //
+      $filebook = $this->filebook->find($request->file_id);
+      $filebook->content = $request->content;
+      $filebook->save();
     }
+
 }

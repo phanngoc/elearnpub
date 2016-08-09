@@ -25,9 +25,9 @@ class ReadBookController extends Controller
         $contentCombile = '';
 
         foreach ($filebooks as $key => $value) {
-			$contentCombile .= $value->content;
+			       $contentCombile .= $value->content;
         }
-        
+
         return view('frontend.readbook',compact('book','contentCombile'));
     }
 

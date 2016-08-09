@@ -12,7 +12,8 @@ class Bill extends Model {
 		'phone',
 		'coupon_code',
 		'address_receive_good',
-		'date_purchased'
+		'date_purchased',
+		'transaction_complete'
 	];
 
 	/**
@@ -20,6 +21,6 @@ class Bill extends Model {
 	 * @return [type] [description]
 	 */
 	public function carts() {
-		return $this->hasMany('App\Models\Cart','bill_id','id');
+		return $this->hasMany('App\Models\Cart', 'bill_id', 'id');
 	}
 }

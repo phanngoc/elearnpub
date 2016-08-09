@@ -3,3 +3,24 @@ div.pagination {
   width: 100%;
   text-align: center;
 }
+.inner-content-wrapper {
+  border-top: 1px solid #b7b7b7;
+}
+.inner-content-wrapper .content .row .item {
+  height: 280px;
+  margin-top: 20px;
+}
+.inner-content-wrapper .content .row .item .avatar-wrapper a img {
+  display: block;
+  width: 178px;
+  height: 235px;
+}
+.inner-content-wrapper .content .row .item .content-more .title {
+  display: block;
+  text-align: center;
+  font-family: "Varela Round";
+  font-style: normal;
+  font-weight: 600;
+  word-wrap: break-word;
+  font-size: 17px;
+}

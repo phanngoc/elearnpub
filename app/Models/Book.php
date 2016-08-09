@@ -60,20 +60,20 @@ class Book extends Model {
 	 * @param  id of book
 	 * @return [type]
 	 */
-	public static function getMainAuthor($book_id)
+	public function getMainAuthor($bookId)
 	{
-		$item = DB::table('book_author')->where('book_id', $book_id)->where('is_main',1)->join('users', 'users.id', '=', 'book_author.author_id')->first();
+		$item = DB::table('book_author')->where('book_id', $bookId)->where('is_main',1)->join('users', 'users.id', '=', 'book_author.author_id')->first();
 		return $item;
 	}
 
 	/**
-	 * [getFileFromBook description]
+	 * Get file from book.
 	 * @param  [type] $book_id [description]
 	 * @return [type]          [description]
 	 */
-	public static function getFileFromBook($book_id)
+	public function getFileFromBook($bookId)
 	{
-		$files = Filebook::where('book_id',$book_id)->get();
+		$files = Filebook::where('book_id', $bookId)->get();
 
 		if (count($files) == 0)
 		{
@@ -82,51 +82,52 @@ class Book extends Model {
 					'name' => 'sample1.txt',
 					'link' => 'sample1.txt',
 					'content' => '',
-					'book_id' => $book_id,
+					'book_id' => $bookId,
 					'is_sample' => 0,
 				],
    				[
 					'name' => 'sample2.txt',
 					'link' => 'sample2.txt',
 					'content' => '',
-					'book_id' => $book_id,
+					'book_id' => $bookId,
 					'is_sample' => 0,
 				],
 				[
 					'name' => 'sample3.txt',
 					'link' => 'sample3.txt',
 					'content' => '',
-					'book_id' => $book_id,
+					'book_id' => $bookId,
 					'is_sample' => 0,
 				]
 			]);
+
 			$content = "#Hello , This is a text sample";
 
-			if(!File::exists(base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$book_id)) {
-			  File::makeDirectory(base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$book_id);
+			if(!File::exists(base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$bookId)) {
+			  File::makeDirectory(base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$bookId);
 			}
 
-			$file1 = base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$book_id.DIRECTORY_SEPARATOR.'sample1.txt';
-			$file2 = base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$book_id.DIRECTORY_SEPARATOR.'sample2.txt';
-			$file3 = base_path().DIRECTORY_SEPARATOR.'book'.DIRECTORY_SEPARATOR.$book_id.DIRECTORY_SEPARATOR.'sample3.txt';
+			$file1 = base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $bookId . DIRECTORY_SEPARATOR . 'sample1.txt';
+			$file2 = base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $bookId . DIRECTORY_SEPARATOR . 'sample2.txt';
+			$file3 = base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $bookId . DIRECTORY_SEPARATOR . 'sample3.txt';
 
 			File::put($file1, $content);
 			File::put($file2, $content);
 			File::put($file3, $content);
 
-			$files = Filebook::where('book_id',$book_id)->get();
+			$files = Filebook::where('book_id',$bookId)->get();
 		}
 
 		return $files;
 	}
 
 	/**
-	 * get current file by url
+	 * Get current file by url
 	 * @param  [type] $name    [description]
 	 * @param  [type] $default [description]
 	 * @return [type]          [description]
 	 */
-	public static function getContentByName($name,$default)
+	public function getContentByName($name,$default)
 	{
 		if($name == '')
 		{
@@ -136,15 +137,15 @@ class Book extends Model {
 	}
 
 	/**
-	 * [getBookPublished description]
+	 * Get book is published.
 	 * @return [type] [description]
 	 */
-	public static function getBookPublished()
+	public function getBookPublished()
 	{
 		$user_id = Auth::user()->id;
 		$book_publist = DB::table('books')->where('is_published',1)->join('book_author', 'book_author.book_id', '=', 'books.id')
             ->where('author_id', '=', $user_id)->get();
-        return $book_publist;
+    return $book_publist;
 	}
 
 	/**
@@ -201,9 +202,9 @@ class Book extends Model {
 	 * @param [type] $book_id  [description]
 	 * @param [type] $username [description]
 	 */
-	public static function addContributorByUsername($book_id,$username)
+	public function addContributorByUsername($book_id, $username)
 	{
-		$user = User::where('username',$username)->first();
+		$user = User::where('username', $username)->first();
 		if($user != null)
 		{
 			DB::table('book_author')->insert([
@@ -215,7 +216,7 @@ class Book extends Model {
                 'message' => ''
         	]);
 		}
-		
+
 	}
 
 	/**
@@ -238,7 +239,7 @@ class Book extends Model {
 	 * @param  [type] $username  [description]
 	 * @return [type]            [description]
 	 */
-	public static function editContributorByUsername($book_id,$author_id,$username)
+	public function editContributorByUsername($book_id,$author_id,$username)
 	{
 		$user = User::where('username',$username)->first();
 		if($user != null)
@@ -269,11 +270,11 @@ class Book extends Model {
 	}
 
 	/**
-	 * [addNewBook description]
+	 * Add new book to database.
 	 * @param [array] $data array data from request
 	 * @return [type]  $book object book model which has just created
 	 */
-	public static function addNewBook($data)
+	public function addNewBook($data)
 	{
 		$book = Book::create([
             'title' => $data['title'],
@@ -282,7 +283,7 @@ class Book extends Model {
             'avatar' => 'question-mark.png',
             'diravatar' => 'question-mark.png',
         ]);
-		
+
         DB::table('book_author')->insert([
             'book_id' => $book->id,
             'author_id' => Auth::user()->id,
@@ -300,12 +301,12 @@ class Book extends Model {
 	}
 
 	/**
-	 * [isBookBelongUser description]
+	 * Check book belong user.
 	 * @param  [type]  $book_id [description]
 	 * @param  [type]  $user_id [description]
 	 * @return boolean          [description]
 	 */
-	public static function isBookBelongUser($book_id,$user_id)
+	public function isBookBelongUser($book_id,$user_id)
 	{
 		$bookauthor = DB::table('book_author')->where('book_id',$book_id)->where('author_id',$user_id)->get();
 		return count($bookauthor);
@@ -331,7 +332,7 @@ class Book extends Model {
 				}
 			}
 		}
-		
+
 		return $bookYouWrite;
 	}
 }

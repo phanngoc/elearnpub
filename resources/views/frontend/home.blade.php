@@ -124,8 +124,6 @@
              owl.trigger('next.owl.carousel');
        });
 
-
-
     });
 
 </script>

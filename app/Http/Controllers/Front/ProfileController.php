@@ -39,7 +39,7 @@ class ProfileController extends Controller
 
       if($validator->fails())
       {
-        return redirect()->route('profile')->withErrors($validator,'profile')->withInput();  
+        return redirect()->route('profile')->withErrors($validator,'profile')->withInput();
       }
 
       $user = User::find($id);
@@ -49,21 +49,21 @@ class ProfileController extends Controller
 	    if ($fileAvatar->isValid()) {
 	    	$destinationPath = 'avatar';
 	     	$filename = str_random(10).md5(time()).'.'.$fileAvatar->getClientOriginalExtension();
-	     	
+
       	$fileAvatar->move($destinationPath, $filename);
       	if (File::exists(base_path().'/public/avatar/'.$user->avatar)) {
     		  File::delete(base_path().'/public/avatar/'.$user->avatar);
     	  }
 	    	$user->update(['avatar' => $filename]);
-	    }	
-	    
+	    }
+
     	$user->update([
     		'blurb' => $request->input('blurb'),
     		'twitter_id' => $request->input('twitter_id'),
     		'github' => $request->input('github'),
     		'googleplus' => $request->input('googleplus')
     	]);
-      	
+
       return redirect()->route('profile');
     }
 
@@ -74,18 +74,19 @@ class ProfileController extends Controller
     public function invitation() {
         $authorId = Auth::user()->id;
         $bookbundles = BookBundle::all();
-        $bundles_res = array();
+        $bundlesRes = array();
+        
         foreach ($bookbundles as $key => $value) {
           if (BookAuthor::checkAuthorAndMain($authorId, $value->bundle_id)) {
-            array_push($bundles_res, $value);
+            array_push($bundlesRes, $value);
           }
         }
         return view('frontend.invitation', compact('bundles_res'));
     }
 
     /**
-     * [responseInvitation description]
-     * @param  [type] $bookBundleId [description]
+     * Response to invitation.
+     * @param  [int] $bookBundleId [description]
      * @param  [type] $response [description]
      * @return [type]           [description]
      */

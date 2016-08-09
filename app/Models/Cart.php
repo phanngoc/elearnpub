@@ -11,6 +11,7 @@ class Cart extends Model {
 		'book_id',
 		'count',
 		'bill_id',
+		'unit_price'
 	];
 
 	/**

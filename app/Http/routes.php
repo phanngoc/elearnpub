@@ -24,12 +24,12 @@ Route::post('auth/register', ['as' => 'register' ,'uses' => 'Auth\AuthController
 Route::group(['middleware' => 'auth'], function () {
 
 	/*---------------------write file------------------------*/
-    Route::get('write/{id}/{namefile?}',['as' => 'writebook', 'uses' => 'HomeController@write'])->where('id', '[0-9]+');
-    Route::post('ajax_renamefile',['as' => 'renamefile', 'uses' => 'HomeController@ajax_renamefile']);
-		Route::post('ajax_removefile',['as' => 'removefile', 'uses' => 'HomeController@ajax_removefile']);
-		Route::post('ajax_newfile/{id}',['as' => 'newfile', 'uses' => 'HomeController@ajax_newfile'])->where('id', '[0-9]+');
-		Route::post('ajax_issample',['as' => 'issamplefile', 'uses' => 'HomeController@ajax_issample']);
-		Route::post('ajax_autoSaveContentFile',['as' => 'autoSaveContent', 'uses' => 'HomeController@ajax_autoSaveContentFile']);
+    Route::get('write/{id}/{namefile?}',['as' => 'writebook', 'uses' => 'BookController@write'])->where('id', '[0-9]+');
+    Route::post('ajax_renamefile',['as' => 'renamefile', 'uses' => 'BookController@ajax_renamefile']);
+		Route::post('ajax_removefile',['as' => 'removefile', 'uses' => 'BookController@ajax_removefile']);
+		Route::post('ajax_newfile/{id}',['as' => 'newfile', 'uses' => 'BookController@ajax_newfile'])->where('id', '[0-9]+');
+		Route::post('ajax_issample',['as' => 'issamplefile', 'uses' => 'BookController@ajax_issample']);
+		Route::post('ajax_autoSaveContentFile',['as' => 'autoSaveContent', 'uses' => 'BookController@ajax_autoSaveContentFile']);
 	/*------------------------end write file-------------------------------*/
 
 });
@@ -38,14 +38,22 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/','HomeController@index');
 
 /*-------------------------Route frontend detail book---------------------------*/
-Route::get('bo/{param}',['as' => 'bookhome', 'uses' => 'HomeController@book']);
+Route::get('bo/{param}',['as' => 'bookhome', 'uses' => 'BookController@book']);
 Route::get('downloadSample/{id}',['as'=>'downloadSample','uses'=>'Front\DetailBookController@downloadSample']);
 /*-------------------------------------------------------------------------------*/
 Route::get('test','HomeController@test');
 
-Route::post('cart',['as' => 'cart','uses' => 'HomeController@cart']);
-Route::get('cart',['as' => 'getCart','uses' => 'HomeController@getCart']);
-Route::get('ajax_getCart',['as' => 'ajax_getCart','uses' => 'HomeController@ajax_getCart']);
+// Process cart.
+Route::post('cart', ['as' => 'addItemToCart','uses' => 'Front\CartController@addItemToCart']);
+Route::get('cart', ['as' => 'getCart','uses' => 'Front\CartController@getCart']);
+Route::get('ajax_getCart', ['as' => 'ajax_getCart','uses' => 'Front\CartController@ajax_getCart']);
+
+// Process checkout page
+Route::get('checkout', ['as'=>'checkout','uses' => 'Front\CartController@showCheckout']);
+Route::post('checkout', ['as'=>'postcheckout','uses' => 'Front\CartController@postShowCheckout']);
+// Process thank you page
+Route::get('checkoutcomplete',['as'=>'checkoutcomplete','uses' => 'Front\CartController@checkoutComplete']);
+
 Route::get('addwishlist/{id}',['as'=>'addwishlist','uses'=>'WishlistController@add_wishlist']);
 Route::get('wishlist',['as'=>'wishlist','uses'=>'WishlistController@index']);
 Route::get('deletewishlist/{id}',['as'=>'deletewishlist','uses'=>'WishlistController@delete_wishlist']);
@@ -129,23 +137,14 @@ Route::get('settingbook/{id}/add_coupon',['as'=>'add_coupon','uses'=>'AuthorCont
 Route::post('settingbook/{id}/post_add_coupon',['as'=>'post_add_coupon','uses'=>'AuthorController@postAddCoupon']);
 
 // create new book
-Route::get('new_book',['as'=>'new_book','uses'=>'BookController@newBook']);
-Route::post('new_book',['as'=>'post_new_book','uses'=>'BookController@postNewBook']);
+Route::get('new_book',['as'=>'new_book','uses' => 'BookController@newBook']);
+Route::post('new_book',['as'=>'post_new_book','uses' => 'BookController@postNewBook']);
 
 // Create page list book belong category
-Route::get('cate/{cate_id}/',['as'=>'category','uses'=>'HomeController@showPageCategory']);
 Route::get('cate/{cate_id}/lang/{language_id}',['as'=>'catelang','uses'=>'HomeController@searchCateAndLang']);
 
 // Create page search
 Route::post('search',['as'=>'search','uses'=>'HomeController@showPageSearch']);
-
-// Process checkout page
-Route::get('checkout',['as'=>'checkout','uses' => 'HomeController@showCheckout']);
-Route::post('checkout',['as'=>'postcheckout','uses' => 'HomeController@postShowCheckout']);
-
-// Process thank you page
-
-Route::get('checkoutcomplete',['as'=>'checkoutcomplete','uses' => 'HomeController@checkoutComplete']);
 
 // View to your library
 Route::get('library',['as'=>'library','uses' => 'Front\LibraryController@yourLibrary']);

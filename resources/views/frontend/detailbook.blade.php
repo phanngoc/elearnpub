@@ -24,7 +24,7 @@
                <div class="inner-col-left">
                  <div class="wrap-avatar">
                      <img src="{{ Asset('resourcebook/'.$book->avatar) }}" alt="">
-                 </div>  
+                 </div>
                </div>
            </div>
            <div class="col-md-7">
@@ -34,7 +34,7 @@
                         <p class="subtitle">{{ $book->subtitle }}</p>
                         <div class="line-author">
                             <div class="avatar">
-                                <img src="{{ Asset('avatar/'.$book->meta->avatar) }}" alt=""> 
+                                <img src="{{ Asset('avatar/'.$book->meta->avatar) }}" alt="">
                             </div>
                             <div class="author">
                                 <p>{{ $book->meta->lastname.' '.$book->meta->firstname }}</p>
@@ -52,7 +52,7 @@
                             @endif
                             <div class="wishlist"><a href="{{ route('addwishlist',$book->id) }}">Add to Wish List</a></div>
                         </div>
-                        
+
                      </div>
                      <div class="group-price">
                          <div class="inner-group-price">
@@ -60,7 +60,7 @@
                                  <div class="minimum"><p class="number">${{ $book->price->minimumprice }}</p><span class="suffix">MINIMUM</span></div>
                                  <div class="maximum"><p class="number">${{ $book->price->suggestedprice }}</p><span class="suffix">SUGGESTED</span></div>
                              </header>
-                             <form action="{{ route('cart')}}" method="POST">
+                             <form action="{{ route('addItemToCart')}}" method="POST">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="bookid" value="{{ $book->id }}">
                                  <div class="content-slider-price">
@@ -76,7 +76,7 @@
                                              <div class="slider-range-you-pay"></div>
                                          </div>
                                      </div>
-                                  
+
                                      <p class="label-message">Author earns</p>
                                      <div class="row">
                                          <div class="col-md-2 col-sm-2 rmpadding">
@@ -88,7 +88,7 @@
                                          <div class="col-md-10 col-sm-10">
                                              <div class="slider-range-author-earn"></div>
                                          </div>
-                                     </div>  
+                                     </div>
                                  </div>
 
                                  <div class="add-ebook-to-cart">
@@ -121,8 +121,8 @@
                         <ul>
                             <li><a href="#">Discuss this book</a></li>
                             <li><a href="#">Email the Author</a></li>
-                        </ul>    
-                      </div>  
+                        </ul>
+                      </div>
                       <div class="share">
                           <h4>SHARE THIS BOOK<i class="fa fa-share-alt"></i></h4>
                           <ul>
@@ -135,10 +135,10 @@
                                 <li class="google">
                                     <i class="fa fa-google"></i>
                                 </li>
-                          </ul> 
+                          </ul>
                       </div>
                   </div>
-              </div>  
+              </div>
             </div>
         </div>
     </div>
@@ -174,7 +174,7 @@
                 <div class="inner-right">
                     <h3>{{ $book->meta->lastname." ".$book->meta->firstname }}</h3>
                     <div class="description">
-                       {{ $book->meta->blurb }} 
+                       {{ $book->meta->blurb }}
                     </div>
                 </div>
             </div>
@@ -197,11 +197,11 @@
                var valmax = $( ".slider-range-you-pay" ).slider('option','max');
                if(val < valmax)
                {
-                $( ".slider-range-you-pay" ).slider('option','value',val); 
+                $( ".slider-range-you-pay" ).slider('option','value',val);
                }
                else
                {
-                $( ".slider-range-you-pay" ).slider('option','value',valmax); 
+                $( ".slider-range-you-pay" ).slider('option','value',valmax);
                }
             }
         });
@@ -212,11 +212,11 @@
                var valmax = $( ".slider-range-author-earn" ).slider('option','max');
                if(val < valmax)
                {
-                $( ".slider-range-author-earn" ).slider('option','value',val); 
+                $( ".slider-range-author-earn" ).slider('option','value',val);
                }
                else
                {
-                $( ".slider-range-author-earn" ).slider('option','value',valmax); 
+                $( ".slider-range-author-earn" ).slider('option','value',valmax);
                }
             }
         });
@@ -236,7 +236,7 @@
                        return false;
                  }
                  $('#amount-you-pay').val(ui.value);
-                 var value = ui.value * 90/100 ; 
+                 var value = ui.value * 90/100 ;
                  $( ".slider-range-author-earn" ).slider('option','value',value);
               }
         });
@@ -257,7 +257,7 @@
                        return false;
                  }
                  $('#amount-author-earn').val(ui.value);
-                 var value = ui.value * 100/90 ; 
+                 var value = ui.value * 100/90 ;
                  $( ".slider-range-you-pay" ).slider('option','value',value);
               }
         });

@@ -89,7 +89,8 @@
 								<span id="cart-total">{{count(Session::get('carts',array()))}}</span>
 							</div>
 						</a>
-				</div>
+				</div> <!-- .shopping-cart-button -->
+
 				<?php if(null !==Auth::user()) { ?>
 					<div class="profile">
 						<div class="wrapper-profile">

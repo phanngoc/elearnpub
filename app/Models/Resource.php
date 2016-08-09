@@ -14,6 +14,7 @@ class Resource extends Model {
 		'function',
 		'type',
 	];
+
 	public function getSampleByBook($id)
 	{
 		return $this->where('book_id',$id)->where('function','sample')->first();

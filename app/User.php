@@ -44,7 +44,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function bills() {
         return $this->hasMany('App\Models\Bill','user_id','id');
     }
-    
+
     /**
      * Relation one to many
      * @return [type] [description]
@@ -54,15 +54,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-     * [addBookToWishlist description]
+     * Add book to wishlist.
      * @param [type] $book_id [description]
      */
-    public static function addBookToWishlist($book_id)
+    public function addBookToWishlist($book_id)
     {
         $user_id = Auth::user()->id;
         $existUserWish = DB::table('book_wishlist')
             ->where('user_id', '=', $user_id)
             ->where('book_id', '=', $book_id)->get();
+
         if(count($existUserWish) == 0)
         {
             DB::table('book_wishlist')->insert(
@@ -79,19 +80,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         $user_id = Auth::user()->id;
         $wishlist = DB::table('book_wishlist')->join('books', 'books.id', '=', 'book_wishlist.book_id')
-            ->where('user_id', '=', $user_id)->get();
+                    ->where('user_id', '=', $user_id)->get();
         return $wishlist;
     }
 
     /**
-     * [removeBookFromWishlist description]
+     * Remove book from wishlist.
      * @param  [type] $book_id [description]
      * @return [type]          [description]
      */
-    public static function removeBookFromWishlist($book_id)
+    public function removeBookFromWishlist($bookId)
     {
         $user_id = Auth::user()->id;
-        DB::table('book_wishlist')->where('user_id', '=', $user_id)
+        DB::table('book_wishlist')->where('user_id', '=', $bookId)
             ->where('book_id', '=', $book_id)->delete();
     }
 
@@ -114,14 +115,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-     * [connectCoAuthor description]
-     * @param  [type] $username [description]
-     * @param  [type] $book_id  [description]
-     * @return [type]           [description]
+     * Connect collaborator to book.
+     * @param  [array] $data
+     * @param  [int] $book_id  [description]
+     * @return [bool]           [description]
      */
-    public static function connectCoAuthor($data,$book_id)
+    public function connectCoAuthor($data, $book_id)
     {
-        $coAuthor = User::where('username',$data['username'])->first();
+        $coAuthor = User::where('username', $data['username'])->first();
         if($coAuthor != null)
         {
             DB::table('book_author')->insert([
@@ -132,6 +133,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
                 'is_accepted' => 0,
                 'message' => $data['message']
             ]);
+            return true;
         }
         else
         {
@@ -140,15 +142,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-     * [createContributorAndConnectBook description]
-     * @param  [type] $book_id [description]
+     * Create contributor and connect to book.
+     * @param  [int] $book_id Id of book.
      * @param  [type] $data    [description]
      * @param  [type] $avatar  [description]
      * @return [type]          [description]
      */
-    public static function createContributorAndConnectBook($book_id,$data,$avatar)
+    public function createContributorAndConnectBook($book_id, $data, $avatar)
     {
-        $user = User::create([
+        $user = self::create([
             'lastname' => $data['name'],
             'blurb' => $data['blurb'],
             'email' => $data['email'],
@@ -174,9 +176,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @param  [type] $avatar  [description]
      * @return [type]          [description]
      */
-    public static function updateContributorAndConnectBook($author_id,$data,$filename)
+    public static function updateContributorAndConnectBook($authorId, $data, $filename)
     {
-        User::find($author_id)->update([
+        User::find($authorId)->update([
             'lastname'   => $data['name'],
             'blurb'      => $data['blurb'],
             'email'      =>  $data['email'],

@@ -12,10 +12,10 @@ class Price extends Model {
 		'minimumprice',
 		'suggestedprice',
 	];
-	
+
 	public function getPriceByBookId($id)
 	{
-		$item_id = 'bo|'.$id;
-		return $this->where('item_id',$item_id)->first();
+		$itemId = 'bo|'.$id;
+		return $this->where('item_id', $itemId)->first();
 	}
 }
