@@ -73,10 +73,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-     * [getWishList description]
+     * Get my wishlist.
      * @return [type] [description]
      */
-    public static function getWishList()
+    public function getWishList()
     {
         $user_id = Auth::user()->id;
         $wishlist = DB::table('book_wishlist')->join('books', 'books.id', '=', 'book_wishlist.book_id')
@@ -97,13 +97,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-     * [getUserByUsername description]
-     * @param  [type] $username [description]
+     * Get user by username.
+     * @param  [string] $username [description]
      * @return [type]           [description]
      */
-    public static function getUserByUsername($username)
+    public function getUserByUsername($username)
     {
-        return User::where('username',$username)->first();
+        return self::where('username', $username)->first();
     }
 
     /**
@@ -111,7 +111,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @return [type] [description]
      */
     public function books() {
-      return $this->belongsToMany('App\Models\Book','book_author','author_id','book_id');
+      return $this->belongsToMany('App\Models\Book', 'book_author', 'author_id', 'book_id');
     }
 
     /**
@@ -170,22 +170,58 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-     * [updateContributorAndConnectBook description]
-     * @param  [type] $book_id [description]
-     * @param  [type] $data    [description]
+     * Update contributor of book.
+     * @param  [int] $book_id [description]
+     * @param  [array] $data    [description]
      * @param  [type] $avatar  [description]
      * @return [type]          [description]
      */
-    public static function updateContributorAndConnectBook($authorId, $data, $filename)
+    public function updateContributorAndConnectBook($authorId, $data, $filename)
     {
-        User::find($authorId)->update([
+        self::find($authorId)->update([
             'lastname'   => $data['name'],
             'blurb'      => $data['blurb'],
-            'email'      =>  $data['email'],
+            'email'      => $data['email'],
             'twitter_id' => $data['twitter_id'],
             'github'     => $data['github'],
             'avatar'     => $filename
         ]);
+    }
+
+    /**
+     * Show book of unpublic book.
+     *
+     * @param type $query description
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeBookUnPublish($query)
+    {
+        $query->join('book_author', 'book_author.author_id', '=', 'users.id')
+              ->join('books', 'books.id', '=', 'book_author.book_id')
+              ->where('book_author.is_main', 1)
+              ->where('books.is_published', 0)
+              ->where('users.id', $this->id)
+              ->select(['books.id', 'books.title', 'books.bookurl', 'books.diravatar']);
+        return $query;
+    }
+
+    /**
+     * Show book of publish book.
+     *
+     * @param type $query description
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeBookPublish($query)
+    {
+        $query->join('book_author', 'book_author.author_id', '=', 'users.id')
+              ->join('books', 'books.id', '=', 'book_author.book_id')
+              ->where('book_author.is_main', 1)
+              ->where('books.is_published', 1)
+              ->where('users.id', $this->id)
+              ->select(['books.id', 'books.title', 'books.bookurl', 'books.diravatar']);
+        return $query;
     }
 
 }

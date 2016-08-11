@@ -100,7 +100,7 @@ class AuthorController extends Controller
    */
   public function addCoAuthor($book_id)
   {
-    $book = Book::find($book_id);
+    $book = $this->book->find($book_id);
     $linkfilecss = 'add_coauthor.css';
     return view('frontend.author.add_coauthor',compact('book','linkfilecss'));
   }
@@ -164,21 +164,6 @@ class AuthorController extends Controller
   }
 
   /**
-   * Generate random string.
-   * @param  integer $length [description]
-   * @return [string]          [description]
-   */
-  public function generateRandomString($length = 10) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    return $randomString;
-  }
-
-  /**
    * [postAddContributor description]
    * @param  [type]  $book_id [description]
    * @param  Request $request [description]
@@ -207,7 +192,7 @@ class AuthorController extends Controller
 
       if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
           $destinationPath = public_path().'/avatar/';
-          $fileName = $this->generateRandomString(12);
+          $fileName = generateRandomString(12);
           $original_name = $request->file('avatar')->getClientOriginalName();
           $extension = '';
 

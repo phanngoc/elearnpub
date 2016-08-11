@@ -18,6 +18,41 @@ use App\Models\Bundle;
 
 class ProfileController extends Controller
 {
+
+    /**
+     * Book model.
+     *
+     * @var Filebook class
+     */
+    protected $book;
+
+    /**
+     * BookBundle model.
+     *
+     * @var Filebook class
+     */
+    protected $bookBundle;
+
+    /**
+     * User model.
+     *
+     * @var User class
+     */
+    protected $user;
+
+    /**
+     * Construct
+     *
+     * @param BookBundle $book
+     * @param User $user
+     */
+    public function __construct(BookBundle $bookbundle, User $user, Book $book)
+    {
+        $this->bookbundle = $bookbundle;
+        $this->user = $user;
+        $this->book = $book;
+    }
+
     /**
      * Show page your profile
      * @return [type] [description]
@@ -39,10 +74,10 @@ class ProfileController extends Controller
 
       if($validator->fails())
       {
-        return redirect()->route('profile')->withErrors($validator,'profile')->withInput();
+        return redirect()->route('profile')->withErrors($validator, 'profile')->withInput();
       }
 
-      $user = User::find($id);
+      $user = $this->user->find($id);
 
       $fileAvatar = $request->file('avatar');
 
@@ -73,9 +108,9 @@ class ProfileController extends Controller
      */
     public function invitation() {
         $authorId = Auth::user()->id;
-        $bookbundles = BookBundle::all();
+        $bookbundles = $this->bookbundle->all();
         $bundlesRes = array();
-        
+
         foreach ($bookbundles as $key => $value) {
           if (BookAuthor::checkAuthorAndMain($authorId, $value->bundle_id)) {
             array_push($bundlesRes, $value);
@@ -90,9 +125,19 @@ class ProfileController extends Controller
      * @param  [type] $response [description]
      * @return [type]           [description]
      */
-    public function responseInvitation($bookBundleId, $response) {
-        BookBundle::find($bookBundleId)->update(['accepted' => $response]);
+    public function responseInvitation($bookBundleId, $accepted) {
+        $this->bookbundle->find($bookBundleId)->update(['accepted' => $accepted]);
         return redirect(route('invitation'));
+    }
+
+    /**
+     * Show profile page of author.
+     */
+    public function profileAuthor($authorUsername) {
+        $author = $this->user->where('username', $authorUsername)->first();
+        $bookUnpublish = $author->bookUnPublish()->get();
+        $bookPublish = $author->bookPublish()->get();
+        return view('frontend.author.profile_author', compact('author', 'bookUnpublish', 'bookPublish'));
     }
 
 }

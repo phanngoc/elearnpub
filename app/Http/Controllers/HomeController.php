@@ -59,19 +59,44 @@ class HomeController extends Controller
     protected $resource;
 
     /**
+     * Category model.
+     *
+     * @var Category class
+     */
+    protected $category;
+
+    /**
+     * Language model.
+     *
+     * @var Language class
+     */
+    protected $language;
+
+    /**
+     * Cart model.
+     *
+     * @var Cart class
+     */
+    protected $cart;
+
+    /**
      * Construct
      *
      * @param Book $book
      * @param User $user
      * @param FileBook $filebook
      */
-    public function __construct(Book $book, User $user, FileBook $filebook, Price $price, Resource $resource)
+    public function __construct(Book $book, User $user, FileBook $filebook, Price $price, Resource $resource,
+                                Category $category, Language $language, Cart $cart)
     {
         $this->book = $book;
         $this->user = $user;
         $this->filebook = $filebook;
         $this->price = $price;
         $this->resource = $resource;
+        $this->category = $category;
+        $this->language = $language;
+        $this->cart = $cart;
     }
 
     /**
@@ -80,7 +105,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-       $carts = Cart::all();
+       $carts = $this->cart->all();
        $arrIdBooks = array();
 
        foreach ($carts as $cart) {
@@ -98,18 +123,19 @@ class HomeController extends Controller
   	   $books = array();
 
   	   foreach ($arrIdBooks as $keyIdBook => $valueIdBook) {
-          $currentBook = Book::find($keyIdBook);
+          $currentBook = $this->book->find($keyIdBook);
           $currentBook['meta'] = $this->book->getMainAuthor($currentBook->id);
   	      array_push($books, $currentBook);
   	   }
 
-       $bookfeatures = Book::orderBy('publisted_at')->get();
+       $bookfeatures = $this->book->orderBy('publisted_at')->get();
+
        foreach ($bookfeatures as $keyBookFe => $bookfeature) {
           $bookfeatures[$keyBookFe]['meta'] = $this->book->getMainAuthor($bookfeature->id);
        }
 
-       $categories = Category::all();
-       $languages = Language::all();
+       $categories = $this->category->all();
+       $languages = $this->language->all();
 
        return view('frontend.home', compact('books', 'bookfeatures', 'categories', 'languages'));
     }
@@ -127,27 +153,31 @@ class HomeController extends Controller
      */
     public function searchCateAndLang($cateid, $langid)
     {
-        $categories = Category::all();
-        $languages = Language::all();
+        $categories = $this->category->all();
+        $languages = $this->language->all();
+
         $category = null;
         $book = null;
         $language = null;
 
         if ($cateid == 'all' && $langid == 'all') {
-          $books = DB::table('books')->paginate(8);
+           $books = DB::table('books')->paginate(8);
         }
         elseif ($cateid != 'all' && $langid == 'all') {
-           $category = Category::find($cateid);
-           $books = DB::table('books')->join('book_category', 'book_category.book_id','=','books.id')->where('category_id', $cateid)->paginate(8);
+           $category = $this->category->find($cateid);
+           $books = DB::table('books')->join('book_category', 'book_category.book_id','=','books.id')
+                                      ->where('category_id', $cateid)->paginate(8);
         }
         elseif ($cateid == 'all' && $langid != 'all') {
-           $language = Language::find($langid);
+           $language = $this->language->find($langid);
            $books = DB::table('books')->where('language_id', $langid)->paginate(8);
         }
         elseif ($cateid != 'all' && $langid != 'all') {
-           $category = Category::find($cateid);
-           $language = Language::find($langid);
-           $books = DB::table('books')->join('book_category', 'book_category.book_id', '=', 'books.id')->where('category_id', $cateid)->where('language_id', $langid)->paginate(8);
+           $category = $this->category->find($cateid);
+           $language = $this->language->find($langid);
+           $books = DB::table('books')->join('book_category', 'book_category.book_id', '=', 'books.id')
+                                      ->where('category_id', $cateid)->where('language_id', $langid)
+                                      ->paginate(8);
         }
 
         return view('frontend.category', compact('books', 'categories', 'languages', 'category', 'language'));
@@ -161,8 +191,8 @@ class HomeController extends Controller
     public function showPageSearch(Request $request)
     {
       $keyword = $request->input('search');
-      $categories = Category::all();
-      $languages = Language::all();
+      $categories = $this->category->all();
+      $languages = $this->language->all();
       $books = DB::table('books')
                 ->where('title', 'like', '%'.$keyword.'%')
                 ->paginate(8);

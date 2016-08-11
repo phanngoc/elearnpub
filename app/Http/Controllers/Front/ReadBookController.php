@@ -16,11 +16,30 @@ use File;
 class ReadBookController extends Controller
 {
     /**
+     * Book model.
+     *
+     * @var Book class
+     */
+    protected $book;
+
+    /**
+     * Construct
+     *
+     * @param Book $book
+     * @param User $user
+     * @param FileBook $filebook
+     */
+    public function __construct(Book $book)
+    {
+        $this->book = $book;
+    }
+
+    /**
      * Show page read book
      * @return [type] [description]
      */
     public function readbook($id) {
-        $book = Book::find($id);
+        $book = $this->book->find($id);
         $filebooks = $book->filebooks()->get();
         $contentCombile = '';
 
@@ -28,7 +47,7 @@ class ReadBookController extends Controller
 			       $contentCombile .= $value->content;
         }
 
-        return view('frontend.readbook',compact('book','contentCombile'));
+        return view('frontend.readbook', compact('book', 'contentCombile'));
     }
 
 }

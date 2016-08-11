@@ -11,6 +11,7 @@ use App\Models\Resource;
 use App\Models\Filebook;
 use App\Models\Price;
 use Validator;
+use Auth;
 
 class BookController extends Controller
 {

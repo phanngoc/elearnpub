@@ -33,9 +33,20 @@ class Book extends Model {
 		'diravatar'
 	];
 
-
+	/**
+	 * Many to many author.
+	 * @return [type] [description]
+	 */
 	public function author() {
 		return $this->belongsToMany('App\User','book_author','author_id','book_id');
+	}
+
+	/**
+	 * Many to many bundle.
+	 * @return [type] [description]
+	 */
+	public function bundles() {
+		return $this->belongsToMany('App\Models\Bundle', 'book_bundle', 'bundle_id', 'book_id');
 	}
 
 	/**
@@ -152,7 +163,7 @@ class Book extends Model {
 	 * [getBookUnPublished description]
 	 * @return [type] [description]
 	 */
-	public static function getBookUnPublished()
+	public function getBookUnPublished()
 	{
 		$user_id = Auth::user()->id;
 		$book_publist = DB::table('books')->where('is_published',0)->join('book_author', 'book_author.book_id', '=', 'books.id')
@@ -165,7 +176,7 @@ class Book extends Model {
 	 * @param  [type] $book_id [description]
 	 * @return [type]          [description]
 	 */
-	public static function getCategory($book_id)
+	public function getCategory($book_id)
 	{
 		$categories = DB::table('category')->join('book_category','book_category.category_id','=','category.id')->where('book_id',$book_id)->get();
 		return $categories;
@@ -176,7 +187,7 @@ class Book extends Model {
 	 * @param  [type] $book_id [description]
 	 * @return [type]          [description]
 	 */
-	public static function findCoAuthor($book_id)
+	public function findCoAuthor($book_id)
 	{
 		$coauthor = DB::table('book_author')->where('book_id',$book_id)->where('is_main','!=',2)->get();
 		foreach ($coauthor as $key => $value) {
@@ -313,18 +324,17 @@ class Book extends Model {
 	}
 
 	/**
-	 * Get book user can read
+	 * Get book user can read.
 	 * @param  [type] $user_id [description]
 	 * @return [type]          [description]
 	 */
-	public static function getBookLibraryBelongUser($user_id) {
+	public function getBookLibraryBelongUser($user_id)
+	{
 		$bookYouWrite = User::find($user_id)->books()->get();
 		$bills = User::find($user_id)->bills()->get();
 
-		$results = $bookYouWrite;
-
-		foreach ($bills as $key => $value) {
-			$carts  = $value->carts()->get();
+		foreach ($bills as $key => $bill) {
+			$carts = $bill->carts()->get();
 			foreach ($carts as $keyCart => $valCart) {
 				$books = $valCart->book()->get();
 				foreach ($books as $keyBook => $valBook) {

@@ -13,7 +13,7 @@ class Chapter extends Model {
 		'content',
 		'is_sample'
 	];
-	
+
 
 	public function employee() {
 		return $this->belongsTo('App\Employee');

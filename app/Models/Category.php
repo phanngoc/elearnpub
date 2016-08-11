@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Validator;
 
 class Category extends Model {
 
-	protected $table = 'category';
+	protected $table = 'categories';
 
 	protected $fillable = [
 		'name',
