@@ -30,7 +30,6 @@
 	function responsive()
 	{
 	  var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-	  console.log(width);
 	  if(width < 1000)
 	  {
 	  	$('.list-menu').css({'position':'relative'});
@@ -67,7 +66,6 @@
 	}
 
 </script>
-		<!-- <div class="col-md-1"></div> -->
 
 		<div class="area-right">
 				<div class="search-bar">
@@ -115,8 +113,15 @@
 												<li><a href="{{ route('profile') }}">Profile</a></li>
 											</ul>
 										</div>
+								</div> <!-- .inner-dropdown -->
+								<div class="footer">
+									<div class="in-footer">
+										<p>
+											{{ Auth::user()->email }} (<a href="{{route('logout')}}">Logout</a>)
+										</p>
+									</div>
 								</div>
-							</div>
+							</div> <!-- .dropdown -->
 						</div>
 					</div>
 				<?php } else { ?>

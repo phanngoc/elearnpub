@@ -2,7 +2,9 @@
   width: 100%;
   border-top: 1px solid rgba(174, 174, 174, 0.41);
   box-shadow: -2px -5px 57px rgba(195, 191, 191, 0.46);
-  height: 485px;
+  height: auto;
+  max-height: 650px;
+  padding-bottom: 37px;
 }
 .content-wrapper .large-container .book-list-wrapper .list-header {
   height: 76px;

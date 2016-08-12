@@ -24,3 +24,6 @@ div.pagination {
   word-wrap: break-word;
   font-size: 17px;
 }
+.inner-content-wrapper .content .row .item .content-more span.author {
+  text-align: center;
+}

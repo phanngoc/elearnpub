@@ -9,8 +9,11 @@ use App\Models\Filebook;
 use Storage;
 use Auth;
 use App\User;
+use Carbon\Carbon;
 
 class Book extends Model {
+
+	use TrailFindEloquent;
 
 	protected $table = 'books';
 
@@ -30,7 +33,8 @@ class Book extends Model {
 		'progress',
 		'custom_author_name',
 		'avatar',
-		'diravatar'
+		'diravatar',
+		'copyright'
 	];
 
 	/**
@@ -73,7 +77,8 @@ class Book extends Model {
 	 */
 	public function getMainAuthor($bookId)
 	{
-		$item = DB::table('book_author')->where('book_id', $bookId)->where('is_main',1)->join('users', 'users.id', '=', 'book_author.author_id')->first();
+		$item = DB::table('book_author')->where('book_id', $bookId)->where('is_main', 1)
+						->join('users', 'users.id', '=', 'book_author.author_id')->first();
 		return $item;
 	}
 
@@ -342,7 +347,237 @@ class Book extends Model {
 				}
 			}
 		}
-
 		return $bookYouWrite;
+	}
+
+	/**
+	 * Count view of detail book.
+	 * @param  [int] $bookId [description]
+	 */
+	public function countViewBook($bookId)
+	{
+		$bookYouWrite = User::find($user_id)->books()->get();
+		$bills = User::find($user_id)->bills()->get();
+
+		foreach ($bills as $key => $bill) {
+			$carts = $bill->carts()->get();
+			foreach ($carts as $keyCart => $valCart) {
+				$books = $valCart->book()->get();
+				foreach ($books as $keyBook => $valBook) {
+					$bookYouWrite->push($valBook);
+				}
+			}
+		}
+		return $bookYouWrite;
+	}
+
+	/**
+	 * Query get feature book.
+	 * @param  [Illuminate\Database\Eloquent\Builder] $query
+	 * @return [type]        [description]
+	 */
+	public function scopeFeatureBook($query) {
+		return $query
+								->leftJoin('book_author', 'book_author.book_id', '=', 'books.id')
+								->leftJoin('users', function ($join) {
+										$join->on('users.id', '=', 'book_author.author_id')
+												 ->where('book_author.is_main', '=', 1);
+								})
+								->where('books.is_published', 1)->orderBy('books.updated_at')
+								->select(['books.*', 'users.firstname', 'users.lastname']);
+	}
+
+	/**
+	 * Query get bestseller book.
+	 * @param  [Illuminate\Database\Eloquent\Builder] $query
+	 * @return [type]        [description]
+	 */
+	public function scopeBestsellerBook($query) {
+		return $query
+								->leftJoin('book_author', 'book_author.book_id', '=', 'books.id')
+								->leftJoin('users', function ($join) {
+										$join->on('users.id', '=', 'book_author.author_id')
+													->where('book_author.is_main', '=', 1);
+								})
+								->leftJoin('carts', 'carts.book_id', '=', 'books.id')
+					 			->where('books.is_published', 1)
+								->groupBy('books.id')
+								->select(['books.*', 'users.firstname', 'users.lastname',
+												DB::raw('IF(SUM(count), SUM(count), 0) as sellcount')])
+								->orderBy('sellcount', 'desc');
+	}
+
+	/**
+	 * Query get bestseller book in week.
+	 * @param  [Illuminate\Database\Eloquent\Builder] $query
+	 * @return [Illuminate\Support\Collection]
+	 */
+	public function scopeBestsellerBookInWeek($query) {
+		$dateNow = Carbon::now();
+		$monday = $dateNow->startOfWeek();
+		$sunday = $dateNow->endOfWeek();
+
+		return $query
+								->leftJoin('book_author', 'book_author.book_id', '=', 'books.id')
+								->leftJoin('users', function ($join) {
+										$join->on('users.id', '=', 'book_author.author_id')
+													->where('book_author.is_main', '=', 1);
+								})
+								->leftJoin('carts', function ($join) use ($monday, $sunday) {
+										$join->on('carts.book_id', '=', 'books.id')
+													->where('carts.updated_at', '>=', $monday)
+													->where('carts.updated_at', '<=', $sunday);
+								})
+								->where('books.is_published', 1)
+								->groupBy('books.id')
+								->select(['books.*', 'users.firstname', 'users.lastname',
+												DB::raw('IF(SUM(count), SUM(count), 0) as sellcount')])
+								->orderBy('sellcount', 'desc');
+	}
+
+	/**
+	 * Query get views book in week.
+	 * @param  [Illuminate\Database\Eloquent\Builder] $query
+	 * @return [Illuminate\Support\Collection]
+	 */
+	public function scopePopularBookInWeek($query) {
+		$dateNow = Carbon::now();
+		$monday = $dateNow->startOfWeek();
+		$sunday = $dateNow->endOfWeek();
+		return $query
+								->leftJoin('popularity', function ($join) use ($monday, $sunday) {
+										$join->on('popularity.book_id', '=', 'books.id')
+													->where('popularity.updated_at', '>=', $monday)
+													->where('popularity.updated_at', '<=', $sunday);
+								})
+								->leftJoin('book_author', 'book_author.book_id', '=', 'books.id')
+								->leftJoin('users', function ($join) {
+										$join->on('users.id', '=', 'book_author.author_id')
+													->where('book_author.is_main', '=', 1);
+								})
+								->where('books.is_published', 1)
+								->groupBy('books.id')
+								->select(['books.*', 'users.firstname', 'users.lastname',
+												DB::raw('COUNT(*) as views')])
+								->orderBy('views', 'desc');
+	}
+
+	/**
+	 * Query get views book in week.
+	 * @param  [Illuminate\Database\Eloquent\Builder] $query
+	 * @return [Illuminate\Support\Collection]
+	 */
+	public function scopePopularBookLifetime($query) {
+		return $query
+								->leftJoin('popularity', function ($join) {
+										$join->on('popularity.book_id', '=', 'books.id');
+								})
+								->leftJoin('book_author', 'book_author.book_id', '=', 'books.id')
+								->leftJoin('users', function ($join) {
+										$join->on('users.id', '=', 'book_author.author_id')
+													->where('book_author.is_main', '=', 1);
+								})
+								->where('books.is_published', 1)
+								->groupBy('books.id')
+								->select(['books.*', 'users.firstname', 'users.lastname',
+												DB::raw('COUNT(*) as views')])
+								->orderBy('views', 'desc');
+	}
+
+	/**
+	 * Query get book that is recently updated.
+	 * @param  [Illuminate\Database\Eloquent\Builder] $query
+	 * @return [Illuminate\Support\Collection]
+	 */
+	public function scopeBookRecentlyUpdated($query) {
+		return $query
+								->where('books.is_published', 1)
+								->groupBy('books.id')
+								->leftJoin('book_author', 'book_author.book_id', '=', 'books.id')
+								->leftJoin('users', function ($join) {
+										$join->on('users.id', '=', 'book_author.author_id')
+													->where('book_author.is_main', '=', 1);
+								})
+								->select(['books.*', 'users.firstname', 'users.lastname',
+												DB::raw('COUNT(*) as views')])
+								->orderBy('updated_at', 'desc');
+	}
+
+	/**
+	 * Query get book that is recently published.
+	 * @param  [Illuminate\Database\Eloquent\Builder] $query
+	 * @return [Illuminate\Support\Collection]
+	 */
+	public function scopeBookRecentlyIsPublished($query) {
+		return $query
+								->where('books.is_published', 1)
+								->groupBy('books.id')
+								->leftJoin('book_author', 'book_author.book_id', '=', 'books.id')
+								->leftJoin('users', function ($join) {
+										$join->on('users.id', '=', 'book_author.author_id')
+													->where('book_author.is_main', '=', 1);
+								})
+								->select(['books.*', 'users.firstname', 'users.lastname',
+												DB::raw('COUNT(*) as views')])
+								->orderBy('updated_at', 'desc');
+	}
+
+	/**
+	 * Query get book that is recently published.
+	 * @param  [Illuminate\Database\Eloquent\Builder] $query
+	 * @return [Illuminate\Support\Collection]
+	 */
+	public function scopeBookWithLanguageAndCategory($query, $languageId, $categoryId) {
+		$query->where('books.is_published', 1);
+
+		if ($languageId != "all") {
+			$query->leftJoin('languages', function ($join) use ($languageId) {
+					$join->on('languages.id', '=', 'books.language_id')
+							 ->where('languages.id', '=', $languageId);
+			});
+		}
+
+		if ($categoryId != "all") {
+			$query->leftJoin('book_category', function ($join) use ($categoryId) {
+					$join->on('book_category.book_id', '=', 'books.id')
+								->where('book_category.category_id', '=', $categoryId);
+			});
+		}
+		return $query;
+	}
+
+	/**
+	 * Choose filter for book.
+	 * @param  [type] $filter [description]
+	 * @param  [type] $query  [description]
+	 * @return [type]         [description]
+	 */
+	public function scopeChooseFilter($query, $filter) {
+
+		switch ($filter) {
+			case 'this_week_best_seller':
+				$query->bestsellerBookInWeek();
+				break;
+			case 'lifetime_best_seller':
+				$query->bestsellerBook();
+				break;
+			case 'this_week_popular_book':
+				$query->popularBookInWeek();
+				break;
+			case 'lifetime_popular_book':
+				$query->popularBookLifetime();
+				break;
+			case 'recently_updated':
+				$query->bookRecentlyUpdated();
+				break;
+			case 'first_published':
+				$query->bookRecentlyIsPublished();
+				break;
+
+			default:
+				break;
+		}
+
+		return $query;
 	}
 }

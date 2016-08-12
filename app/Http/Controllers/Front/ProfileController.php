@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\User;
 use App\Models\Book;
@@ -138,6 +137,14 @@ class ProfileController extends Controller
         $bookUnpublish = $author->bookUnPublish()->get();
         $bookPublish = $author->bookPublish()->get();
         return view('frontend.author.profile_author', compact('author', 'bookUnpublish', 'bookPublish'));
+    }
+
+    /**
+     * Logout.
+     */
+    public function logout() {
+        Auth::logout();
+        return redirect()->intended();
     }
 
 }

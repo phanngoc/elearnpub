@@ -21,6 +21,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register',['as' => 'getregister' ,'uses' => 'Auth\AuthController@getRegister']);
 Route::post('auth/register', ['as' => 'register' ,'uses' => 'Auth\AuthController@postRegister']);
 
+/*-----------------------Start middleware auth----------------------------------*/
 Route::group(['middleware' => 'auth'], function () {
 
 	/*---------------------write file------------------------*/
@@ -49,7 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('book',['as'=>'book','uses'=>'BookController@index']);
 
 	Route::get('settingbook/{id}',['as'=>'settingbook','uses'=>'SettingbookController@index']);
-	Route::post('settingbook/{id}',['as'=>'postsettingbook','uses'=>'SettingbookController@index']);
+	Route::post('settingbook/{id}',['as'=>'postsettingbook','uses'=>'SettingbookController@saveSettingbook']);
 
 	Route::get('settingbook/{id}/publish_book',['as'=>'publish_book','uses'=>'SettingbookController@publish_book']);
 	Route::post('settingbook/{id}/publish_book',['as'=>'post_publish_book','uses'=>'SettingbookController@post_publish_book']);
@@ -161,8 +162,11 @@ Route::group(['middleware' => 'auth'], function () {
 	// View read book on web
 	Route::get('read/{id}', ['as'=>'readbook','uses' => 'Front\ReadBookController@readbook']);
 
+	// Logout user.
+	Route::get('logout', ['as'=>'logout','uses' => 'Front\ProfileController@logout']);
 });
 
+/*-----------------------End middleware auth----------------------------------*/
 
 Route::get('/','HomeController@index');
 
@@ -180,3 +184,6 @@ Route::post('search',['as'=> 'search','uses'=>'HomeController@showPageSearch']);
 
 // Watch profile of user.
 Route::get('u/{profile}', ['as' => 'userprofile','uses'=>'Front\ProfileController@profileAuthor']);
+
+// Bestselling page.
+Route::get('fi/{filter}/cate/{cate_id}/lang/{language_id}', ['as' => 'bestselling', 'uses'=>'HomeController@bestSellingBook']);

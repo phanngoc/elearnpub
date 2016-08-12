@@ -3,13 +3,15 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Models\Book;
-use Request;
 use App\Models\Price;
 use App\Models\Package;
-use DB;
 use App\Models\Extrafile;
-use File;
 use App\Models\Extra;
+use App\Http\Requests\SaveSettingBookRequest;
+
+use DB;
+use File;
+use Illuminate\Http\Request;
 
 class SettingbookController extends Controller
 {
@@ -71,27 +73,28 @@ class SettingbookController extends Controller
      * Receive Post data and save general setting book
      * @param integer $book_id  id of book
      */
-    public function saveSettingbook($book_id)
+    public function saveSettingbook(SaveSettingBookRequest $request, $bookId)
     {
-
+      $this->book->find($bookId)->update($request->all());
+      return redirect()->action('SettingbookController@index', $bookId);
     }
 
     /**
-     * Show page publish book
-     * @param [[Type]] $book_id [[Description]]
+     * Show page publish book.
+     * @param [int] $book_id [[Description]]
      * @return [[Type]] [[Description]]
      */
     public function publish_book($book_id)
     {
         $book = $this->book->find($book_id);
         $linkfilecss = 'publish_book.css';
-        return view('frontend.publishbook',compact('book'));
+        return view('frontend.publishbook',compact('book', 'linkfilecss'));
     }
 
 
     /**
      * Save setting publish book
-     * @param [[Type]] $book_id [[Description]]
+     * @param [int] $book_id [[Description]]
      * @return integer [[Description]]
      */
     public function post_publish_book($book_id)
@@ -136,19 +139,19 @@ class SettingbookController extends Controller
 
     /**
      * [post_upload_new_title description]
-     * @param  [type] $book_id [description]
+     * @param  [int] $book_id [description]
      * @return [type]          [description]
      */
     public function post_upload_new_title($book_id, Request $request)
     {
-        $file = $this->request->file('avatar');
+        $file = $request->file('avatar');
         $namefileinital = $file->getClientOriginalName();
         $namefilesave = generateRandomString();
 
         $extension = pathinfo($namefileinital)['extension'];
-        $dirFile  = public_path().DIRECTORY_SEPARATOR.'resourcebook'.DIRECTORY_SEPARATOR;
+        $dirFile  = public_path() . DIRECTORY_SEPARATOR . 'resourcebook' . DIRECTORY_SEPARATOR;
         $filename = $namefilesave.'.'.$extension;
-        $this->request->file('avatar')->move($dirFile,$filename);
+        $request->file('avatar')->move($dirFile, $filename);
 
         $book = $this->book->find($book_id);
         $book->avatar = $namefileinital;
@@ -212,7 +215,7 @@ class SettingbookController extends Controller
      * @param  [type] $pack_id [description]
      * @return [type]          [description]
      */
-    public function editPackage($book_id,$pack_id)
+    public function editPackage($book_id, $pack_id)
     {
       $linkfilecss = 'package.css';
       $book = $this->book->find($book_id);

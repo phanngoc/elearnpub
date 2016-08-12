@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use App\Models\Book;
@@ -105,39 +105,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-       $carts = $this->cart->all();
-       $arrIdBooks = array();
-
-       foreach ($carts as $cart) {
-       	  if (!array_key_exists($cart->book_id, $arrIdBooks))
-       	  {
-       	  	$arrIdBooks += array($cart->book_id => $cart->count);
-       	  }
-       	  else
-       	  {
-       	  	$arrIdBooks[$cart->book_id] += $cart->count;
-       	  }
-       }
-
-  	   arsort($arrIdBooks);
-  	   $books = array();
-
-  	   foreach ($arrIdBooks as $keyIdBook => $valueIdBook) {
-          $currentBook = $this->book->find($keyIdBook);
-          $currentBook['meta'] = $this->book->getMainAuthor($currentBook->id);
-  	      array_push($books, $currentBook);
-  	   }
-
-       $bookfeatures = $this->book->orderBy('publisted_at')->get();
-
-       foreach ($bookfeatures as $keyBookFe => $bookfeature) {
-          $bookfeatures[$keyBookFe]['meta'] = $this->book->getMainAuthor($bookfeature->id);
-       }
+       $bookBestsellers = $this->book->bestsellerBook()->get();
+       $bookfeatures = $this->book->featureBook()->get();
 
        $categories = $this->category->all();
        $languages = $this->language->all();
 
-       return view('frontend.home', compact('books', 'bookfeatures', 'categories', 'languages'));
+       return view('frontend.home', compact('bookBestsellers', 'bookfeatures', 'categories', 'languages'));
     }
 
     public function test()
@@ -148,7 +122,7 @@ class HomeController extends Controller
     /**
      * Return book is searched by category and language.
      * @param  [int] $cateid Category id.
-     * @param  [type] $langid Language id.
+     * @param  [int] $langid Language id.
      * @return [type]         [description]
      */
     public function searchCateAndLang($cateid, $langid)
@@ -184,9 +158,65 @@ class HomeController extends Controller
     }
 
     /**
+     * Show bestselling book page.
+     * @return [type] [description]
+     */
+    public function bestSellingBook($filter, $cateid, $langid) {
+      $categories = $this->category->all();
+      $languages = $this->language->all();
+
+      $category = $this->category->findOrNull($cateid);
+      $language = $this->language->findOrNull($langid);
+
+      $books = $this->book->chooseFilter($filter)
+                          ->bookWithLanguageAndCategory($cateid, $langid)
+                          ->paginate(8);
+
+      $bookFilter = array(
+        'this_week_best_seller' => 'This Week\'s Best Sellers',
+        'lifetime_best_seller' => 'Lifetime Best Sellers',
+        'this_week_popular_book' => 'This Week\'s Popular Books.',
+        'lifetime_popular_book' => 'Lifetime Popular Books.',
+        'recently_updated' => 'Recently Updated',
+        'first_published' => 'First Published'
+      );
+
+      return view('frontend.home.bestselling', compact('books', 'categories', 'languages',
+                                                       'category', 'language', 'bookFilter', 'filter'));
+    }
+
+    /**
+     * Show best selling bundle.
+     * @return [type] [description]
+     */
+    public function bestSellingBundle($filter, $cateid, $langid) {
+      $categories = $this->category->all();
+      $languages = $this->language->all();
+
+      $category = $this->category->findOrNull($cateid);
+      $language = $this->language->findOrNull($langid);
+
+      $books = $this->book->chooseFilter($filter)
+                          ->bookWithLanguageAndCategory($cateid, $langid)
+                          ->paginate(8);
+
+      $bookFilter = array(
+        'this_week_best_seller' => 'This Week\'s Best Sellers',
+        'lifetime_best_seller' => 'Lifetime Best Sellers',
+        'this_week_popular_book' => 'This Week\'s Popular Books.',
+        'lifetime_popular_book' => 'Lifetime Popular Books.',
+        'recently_updated' => 'Recently Updated',
+        'first_published' => 'First Published'
+      );
+
+      return view('frontend.home.bestselling', compact('books', 'categories', 'languages',
+                                                       'category', 'language', 'bookFilter', 'filter'));
+    }
+
+    /**
      * Show search page with press search
      * @param  [string] $keyword Keywork to search.
-     * @return [type]          [description]
+     * @return [Response]          [description]
      */
     public function showPageSearch(Request $request)
     {
@@ -196,6 +226,6 @@ class HomeController extends Controller
       $books = DB::table('books')
                 ->where('title', 'like', '%'.$keyword.'%')
                 ->paginate(8);
-      return view('frontend.search', compact('books','categories','languages','keyword'));
+      return view('frontend.search', compact('books', 'categories', 'languages', 'keyword'));
     }
 }

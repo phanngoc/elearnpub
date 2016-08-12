@@ -21,17 +21,17 @@
                   <h3><a href="#">Best Seller</a></h3>
                 </header>
                 <div class="list-controls">
-                    <a href="#" class="view_all">View All</a>
+                    <a href="{{route('bestselling', array('filter' => 'this_week_best_seller', 'cate_id' => 'all', 'language_id' => 'all'))}}" class="view_all">View All</a>
                 </div>
             </div> <!-- .list-header -->
 
         		<div class="list-content">
                 <div class="list-content-wrapper">
                     <div class="owl-carousel">
-            				  	@foreach ($books as $book)
+            				  	@foreach ($bookBestsellers as $book)
         							    <div class="item-book">
         							    	<div class="avatar-wrapper">
-        							    		<a href="{{ route('bookhome',$book['bookurl']) }}"><img src="{{ Asset('resourcebook/'.$book['diravatar']) }}"/></a>
+        							    		<a href="{{ route('bookhome', $book['bookurl']) }}"><img src="{{ Asset('resourcebook/' . $book['diravatar']) }}"/></a>
         							    	</div>
                             <div class="info-name">
                                 <span>{{ $book['title'] }}</span>
@@ -39,7 +39,7 @@
                             <div class="info-author">
                                 <span>
                                     <?php
-                                       echo $book['meta']->lastname." ".$book['meta']->firstname;
+                                       echo $book['lastname']." ".$book['firstname'];
                                     ?>
                                 </span>
                             </div>
@@ -79,7 +79,7 @@
                                     <div class="info-author">
                                         <span>
                                             <?php
-                                               echo $book['meta']->lastname." ".$book['meta']->firstname;
+                                               echo $book['lastname']." ".$book['firstname'];
                                             ?>
                                         </span>
                                     </div>

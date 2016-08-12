@@ -10,6 +10,7 @@ use App\Models\Book;
 use App\Models\Resource;
 use App\Models\Filebook;
 use App\Models\Price;
+use App\Models\Popularity;
 use Validator;
 use Auth;
 
@@ -51,19 +52,27 @@ class BookController extends Controller
     protected $resource;
 
     /**
+     * Popularity model.
+     *
+     * @var Popularity class
+     */
+    protected $popularity;
+
+    /**
      * Construct
      *
      * @param Book $book
      * @param User $user
      * @param FileBook $filebook
      */
-    public function __construct(Book $book, User $user, FileBook $filebook, Price $price, Resource $resource)
+    public function __construct(Book $book, User $user, FileBook $filebook, Price $price, Resource $resource, Popularity $popularity)
     {
         $this->book = $book;
         $this->user = $user;
         $this->filebook = $filebook;
         $this->price = $price;
         $this->resource = $resource;
+        $this->popularity = $popularity;
     }
 
     /**
@@ -89,8 +98,30 @@ class BookController extends Controller
       $book->meta = $this->book->getMainAuthor($book->id);
       $book->price = $this->price->getPriceByBookId($book->id);
       $sample = $this->resource->getSampleByBook($book->id);
-
+      $this->countViewBook($book->id);
       return view('frontend.detailbook', compact('book', 'sample'));
+    }
+
+    /**
+     * Count vuew book.
+     * @param  int $bookId If of book.
+     * @return [type]         [description]
+     */
+    public function countViewBook($bookId) {
+        $user = Auth::user();
+        if ($user) {
+          $this->popularity->create([
+            'identity' => $user->id,
+            'action' => 1,
+            'book_id' => $bookId
+          ]);
+        } else {
+          $this->popularity->create([
+            'identity' => \Request::ip(),
+            'action' => 1,
+            'book_id' => $bookId
+          ]);
+        }
     }
 
     /**
