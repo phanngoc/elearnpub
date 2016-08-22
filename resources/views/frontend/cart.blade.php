@@ -26,6 +26,8 @@
   var ROUTE_GET_CART = '{{ route("ajax_getCart") }}';
   var LINK_ASSET_RESOURCE_BOOK = '{{ Asset("resourcebook") }}';
   var ROUTE_CHECKOUT = '{{ route("checkout") }}';
+  var ROUTE_UPDATE_CART = '{{ route("updateCart") }}';
+  var TOKEN = '{{ csrf_token() }}';
 </script>
 
 <script type="text/jsx" src="{{ Asset('js/cart.jsx') }}"></script>

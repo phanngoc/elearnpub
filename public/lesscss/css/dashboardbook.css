@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
 .haft-width {
   display: block;
   width: 50% !important;
@@ -13,6 +14,28 @@
   clear: both;
   height: 0;
   font-size: 0;
+}
+.large-container {
+  padding-top: 20px;
+}
+#footer:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+html,
+body {
+  height: 100%;
+}
+div.wrapper {
+  height: 100%;
+}
+section.view {
+  display: block;
+  min-height: 90%;
 }
 .content-wrapper .large-container #inner-wrapper-listbook .inner-sidebar h3 {
   text-align: center;
@@ -33,6 +56,10 @@
   color: black;
   font-family: "Varela Round";
   font-size: 17px;
+}
+.content-wrapper .large-container #inner-wrapper-listbook .inner-content .area-form form > img {
+  width: 200px;
+  height: 200px;
 }
 .content-wrapper .large-container #inner-wrapper-listbook .inner-content .info-publish:after {
   visibility: hidden;

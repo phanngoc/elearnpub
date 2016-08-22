@@ -1,0 +1,1103 @@
+.content-wrapper	/var/www/html/elearnpub/public/lesscss/less/book.less	/^.content-wrapper{$/;"	function	line:2
+.large-container	/var/www/html/elearnpub/public/lesscss/less/book.less	/^	.large-container{$/;"	function	line:3
+.col-md-7	/var/www/html/elearnpub/public/lesscss/less/book.less	/^		.col-md-7{$/;"	function	line:5
+.inner-col-left	/var/www/html/elearnpub/public/lesscss/less/book.less	/^		.inner-col-left{$/;"	function	line:8
+.wrap-avatar	/var/www/html/elearnpub/public/lesscss/less/book.less	/^			.wrap-avatar{$/;"	function	line:9
+img	/var/www/html/elearnpub/public/lesscss/less/book.less	/^				img{$/;"	function	line:14
+.inner-col-right	/var/www/html/elearnpub/public/lesscss/less/book.less	/^		.inner-col-right{$/;"	function	line:22
+.group-header	/var/www/html/elearnpub/public/lesscss/less/book.less	/^				.group-header{$/;"	function	line:23
+h4	/var/www/html/elearnpub/public/lesscss/less/book.less	/^					h4{$/;"	function	line:24
+p.subtitle	/var/www/html/elearnpub/public/lesscss/less/book.less	/^					p.subtitle{$/;"	function	line:29
+.line-author	/var/www/html/elearnpub/public/lesscss/less/book.less	/^					.line-author{$/;"	function	line:34
+.avatar	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						.avatar{$/;"	function	line:40
+img	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							img{$/;"	function	line:43
+.author	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						.author{$/;"	function	line:51
+p	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							p{$/;"	function	line:56
+.blurb	/var/www/html/elearnpub/public/lesscss/less/book.less	/^					.blurb{$/;"	function	line:61
+.group-sample	/var/www/html/elearnpub/public/lesscss/less/book.less	/^					.group-sample{$/;"	function	line:69
+p	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						p{$/;"	function	line:70
+.downloadsample	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						.downloadsample{$/;"	function	line:73
+a	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							a{$/;"	function	line:74
+.wishlist	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						.wishlist{$/;"	function	line:81
+a	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							a{$/;"	function	line:83
+.group-price	/var/www/html/elearnpub/public/lesscss/less/book.less	/^			.group-price{$/;"	function	line:93
+.inner-group-price	/var/www/html/elearnpub/public/lesscss/less/book.less	/^				.inner-group-price{$/;"	function	line:94
+header	/var/www/html/elearnpub/public/lesscss/less/book.less	/^					header{$/;"	function	line:95
+.minimum	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						.minimum{$/;"	function	line:97
+.number	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							.number{$/;"	function	line:101
+.suffix	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							.suffix{$/;"	function	line:107
+.maximum	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						.maximum{$/;"	function	line:111
+.number	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							.number{$/;"	function	line:115
+.suffix	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							.suffix{$/;"	function	line:121
+.content-slider-price	/var/www/html/elearnpub/public/lesscss/less/book.less	/^					.content-slider-price{$/;"	function	line:126
+.label-message	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						.label-message{$/;"	function	line:127
+.slider-range-you-pay	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						.slider-range-you-pay{$/;"	function	line:133
+.ui-slider-handle	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							.ui-slider-handle{$/;"	function	line:136
+.slider-range-author-earn	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						.slider-range-author-earn{$/;"	function	line:140
+.ui-slider-handle	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							.ui-slider-handle{$/;"	function	line:143
+.add-ebook-to-cart	/var/www/html/elearnpub/public/lesscss/less/book.less	/^					.add-ebook-to-cart{$/;"	function	line:149
+button	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							button{$/;"	function	line:158
+&:hover	/var/www/html/elearnpub/public/lesscss/less/book.less	/^								&:hover {$/;"	function	line:184
+&:active	/var/www/html/elearnpub/public/lesscss/less/book.less	/^								&:active {$/;"	function	line:194
+.aboutbook	/var/www/html/elearnpub/public/lesscss/less/book.less	/^.aboutbook{$/;"	function	line:206
+.inner-about-book	/var/www/html/elearnpub/public/lesscss/less/book.less	/^	.inner-about-book{$/;"	function	line:211
+>header	/var/www/html/elearnpub/public/lesscss/less/book.less	/^		>header{$/;"	function	line:213
+h3	/var/www/html/elearnpub/public/lesscss/less/book.less	/^			h3{$/;"	function	line:218
+.content	/var/www/html/elearnpub/public/lesscss/less/book.less	/^		.content{$/;"	function	line:223
+.wrap-content	/var/www/html/elearnpub/public/lesscss/less/book.less	/^			.wrap-content{$/;"	function	line:224
+.text-content	/var/www/html/elearnpub/public/lesscss/less/book.less	/^				.text-content{$/;"	function	line:225
+.content-control	/var/www/html/elearnpub/public/lesscss/less/book.less	/^				.content-control{$/;"	function	line:231
+div.feedback	/var/www/html/elearnpub/public/lesscss/less/book.less	/^					div.feedback{$/;"	function	line:232
+div.share	/var/www/html/elearnpub/public/lesscss/less/book.less	/^					div.share{$/;"	function	line:235
+h4	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						h4{$/;"	function	line:236
+ul	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						ul{$/;"	function	line:239
+li	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							li{$/;"	function	line:240
+i	/var/www/html/elearnpub/public/lesscss/less/book.less	/^								i{$/;"	function	line:245
+li.facebook	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							li.facebook{$/;"	function	line:251
+li.twitter	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							li.twitter{$/;"	function	line:254
+li.google	/var/www/html/elearnpub/public/lesscss/less/book.less	/^							li.google{$/;"	function	line:257
+.about-author	/var/www/html/elearnpub/public/lesscss/less/book.less	/^.about-author{$/;"	function	line:268
+.inner-about-author	/var/www/html/elearnpub/public/lesscss/less/book.less	/^	.inner-about-author{$/;"	function	line:272
+header	/var/www/html/elearnpub/public/lesscss/less/book.less	/^		header{$/;"	function	line:273
+h3	/var/www/html/elearnpub/public/lesscss/less/book.less	/^			h3{$/;"	function	line:277
+div.content	/var/www/html/elearnpub/public/lesscss/less/book.less	/^		div.content{$/;"	function	line:283
+.inner-left	/var/www/html/elearnpub/public/lesscss/less/book.less	/^ 			.inner-left{$/;"	function	line:287
+.wrapper-social	/var/www/html/elearnpub/public/lesscss/less/book.less	/^ 				.wrapper-social{$/;"	function	line:290
+ul.list-social	/var/www/html/elearnpub/public/lesscss/less/book.less	/^ 					ul.list-social{$/;"	function	line:291
+li	/var/www/html/elearnpub/public/lesscss/less/book.less	/^						li{$/;"	function	line:294
+.wrapper-avatar	/var/www/html/elearnpub/public/lesscss/less/book.less	/^				.wrapper-avatar {$/;"	function	line:302
+img	/var/www/html/elearnpub/public/lesscss/less/book.less	/^					img {$/;"	function	line:303
+.inner-right	/var/www/html/elearnpub/public/lesscss/less/book.less	/^			.inner-right {$/;"	function	line:310
+h3	/var/www/html/elearnpub/public/lesscss/less/book.less	/^				h3{$/;"	function	line:311
+.description	/var/www/html/elearnpub/public/lesscss/less/book.less	/^				.description{$/;"	function	line:314
+.responsive(@maxWidth; @rules)	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^.responsive(@maxWidth; @rules) {$/;"	function	line:1
+@media only screen and (max-width: @maxWidth)	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^    @media only screen and (max-width: @maxWidth) {$/;"	function	line:2
+div#footer	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^div#footer{$/;"	function	line:7
+.responsive(645px,	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^	.responsive(645px, {$/;"	function	line:13
+div.wrap-copyright	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^		div.wrap-copyright{$/;"	function	line:15
+div.wrap-footer-menu	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^		div.wrap-footer-menu{$/;"	function	line:19
+div.inner-footer	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^	div.inner-footer{$/;"	function	line:25
+div.wrap-below	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^		div.wrap-below{$/;"	function	line:26
+div.wrap-footer-menu	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^			div.wrap-footer-menu{$/;"	function	line:27
+ul	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^				ul{$/;"	function	line:31
+li	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^					li{$/;"	function	line:33
+a	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^						a{$/;"	function	line:37
+div.wrap-copyright	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^			div.wrap-copyright{$/;"	function	line:43
+p	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^				p{$/;"	function	line:47
+div.wrap-icon	/var/www/html/elearnpub/public/lesscss/less/footer.less	/^		div.wrap-icon{$/;"	function	line:54
+.content-wrapper	/var/www/html/elearnpub/public/lesscss/less/home.less	/^.content-wrapper{$/;"	function	line:2
+.large-container	/var/www/html/elearnpub/public/lesscss/less/home.less	/^	.large-container{$/;"	function	line:4
+.book-list-wrapper	/var/www/html/elearnpub/public/lesscss/less/home.less	/^		.book-list-wrapper{$/;"	function	line:6
+.list-header	/var/www/html/elearnpub/public/lesscss/less/home.less	/^			.list-header{$/;"	function	line:12
+.list-title	/var/www/html/elearnpub/public/lesscss/less/home.less	/^				.list-title{$/;"	function	line:21
+h3	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					h3{$/;"	function	line:25
+a	/var/www/html/elearnpub/public/lesscss/less/home.less	/^						a{$/;"	function	line:26
+.list-controls	/var/www/html/elearnpub/public/lesscss/less/home.less	/^				.list-controls{$/;"	function	line:33
+a	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					a{$/;"	function	line:40
+.icon-control	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					.icon-control{$/;"	function	line:48
+.icon-button	/var/www/html/elearnpub/public/lesscss/less/home.less	/^						.icon-button{$/;"	function	line:50
+.icon-prev	/var/www/html/elearnpub/public/lesscss/less/home.less	/^							.icon-prev{$/;"	function	line:51
+.icon-next	/var/www/html/elearnpub/public/lesscss/less/home.less	/^							.icon-next{$/;"	function	line:57
+.icon-prev:before	/var/www/html/elearnpub/public/lesscss/less/home.less	/^							.icon-prev:before{$/;"	function	line:63
+.icon-next:before	/var/www/html/elearnpub/public/lesscss/less/home.less	/^							.icon-next:before{$/;"	function	line:68
+.list-content	/var/www/html/elearnpub/public/lesscss/less/home.less	/^			.list-content{$/;"	function	line:78
+.list-content-wrapper	/var/www/html/elearnpub/public/lesscss/less/home.less	/^				.list-content-wrapper{$/;"	function	line:81
+// ul.list-detail	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					\/\/ ul.list-detail{$/;"	function	line:82
+// 	li	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					\/\/ 	li{$/;"	function	line:87
+// 		.avatar-wrapper	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					\/\/ 		.avatar-wrapper{$/;"	function	line:91
+// 			img	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					\/\/ 			img{$/;"	function	line:94
+// 		.info-name	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					\/\/ 		.info-name{$/;"	function	line:100
+// 			span	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					\/\/ 			span{$/;"	function	line:104
+// 		.info-author	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					\/\/ 		.info-author{$/;"	function	line:115
+// 			span	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					\/\/ 			span{$/;"	function	line:116
+.owl-carousel	/var/www/html/elearnpub/public/lesscss/less/home.less	/^					.owl-carousel{$/;"	function	line:124
+.item-book	/var/www/html/elearnpub/public/lesscss/less/home.less	/^						.item-book{$/;"	function	line:127
+.avatar-wrapper	/var/www/html/elearnpub/public/lesscss/less/home.less	/^							.avatar-wrapper{$/;"	function	line:128
+a	/var/www/html/elearnpub/public/lesscss/less/home.less	/^								a{$/;"	function	line:131
+img	/var/www/html/elearnpub/public/lesscss/less/home.less	/^									img{$/;"	function	line:132
+.info-name	/var/www/html/elearnpub/public/lesscss/less/home.less	/^							.info-name{$/;"	function	line:141
+span	/var/www/html/elearnpub/public/lesscss/less/home.less	/^								span{$/;"	function	line:145
+.info-author	/var/www/html/elearnpub/public/lesscss/less/home.less	/^							.info-author{$/;"	function	line:156
+span	/var/www/html/elearnpub/public/lesscss/less/home.less	/^								span{$/;"	function	line:157
+change	/var/www/html/elearnpub/resources/views/frontend/detailbook.blade.php	/^              change: function( event, ui ) {$/;"	jsfunction	line:231
+slide	/var/www/html/elearnpub/resources/views/frontend/detailbook.blade.php	/^              slide: function( event, ui ) {$/;"	jsfunction	line:234
+change	/var/www/html/elearnpub/resources/views/frontend/detailbook.blade.php	/^              change: function( event, ui ) {$/;"	jsfunction	line:251
+slide	/var/www/html/elearnpub/resources/views/frontend/detailbook.blade.php	/^              slide: function( event, ui ) {$/;"	jsfunction	line:254
+Price	/var/www/html/elearnpub/app/Models/Price.php	/^class Price extends Model {$/;"	class	line:6
+table	/var/www/html/elearnpub/app/Models/Price.php	/^	protected $table = 'prices';$/;"	variable	line:8
+fillable	/var/www/html/elearnpub/app/Models/Price.php	/^	protected $fillable = [$/;"	variable	line:10
+getPriceByBookId	/var/www/html/elearnpub/app/Models/Price.php	/^	public function getPriceByBookId($id)$/;"	function	line:16
+itemId	/var/www/html/elearnpub/app/Models/Price.php	/^		$itemId = 'bo|'.$id;$/;"	variable	line:18
+Resource	/var/www/html/elearnpub/app/Models/Resource.php	/^class Resource extends Model {$/;"	class	line:6
+table	/var/www/html/elearnpub/app/Models/Resource.php	/^	protected $table = 'resources';$/;"	variable	line:8
+fillable	/var/www/html/elearnpub/app/Models/Resource.php	/^	protected $fillable = [$/;"	variable	line:10
+getSampleByBook	/var/www/html/elearnpub/app/Models/Resource.php	/^	public function getSampleByBook($id)$/;"	function	line:18
+Bill	/var/www/html/elearnpub/app/Models/Bill.php	/^class Bill extends Model {$/;"	class	line:6
+table	/var/www/html/elearnpub/app/Models/Bill.php	/^	protected $table = 'bills';$/;"	variable	line:8
+fillable	/var/www/html/elearnpub/app/Models/Bill.php	/^	protected $fillable = [$/;"	variable	line:10
+carts	/var/www/html/elearnpub/app/Models/Bill.php	/^	public function carts() {$/;"	function	line:23
+Extrafile	/var/www/html/elearnpub/app/Models/Extrafile.php	/^class Extrafile extends Model {$/;"	class	line:7
+table	/var/www/html/elearnpub/app/Models/Extrafile.php	/^	protected $table = 'extrafiles';$/;"	variable	line:9
+fillable	/var/www/html/elearnpub/app/Models/Extrafile.php	/^	protected $fillable = [$/;"	variable	line:11
+getFileIsUploaded	/var/www/html/elearnpub/app/Models/Extrafile.php	/^	public function getFileIsUploaded($book_id)$/;"	function	line:23
+extras	/var/www/html/elearnpub/app/Models/Extrafile.php	/^	  $extras = DB::table('extrafile')->where('is_attached', 0)->where('extra_id', $book_id)->get();$/;"	variable	line:25
+deleteFileInCreateExtra	/var/www/html/elearnpub/app/Models/Extrafile.php	/^	public function deleteFileInCreateExtra($book_id, $filename)$/;"	function	line:35
+extra	/var/www/html/elearnpub/app/Models/Extrafile.php	/^		$extra = DB::table('extrafile')->where('is_attached', 0)->where('extra_id', $book_id)->where('name', $filename)->delete();$/;"	variable	line:37
+getIdentityByName	/var/www/html/elearnpub/app/Models/Extrafile.php	/^	public function getIdentityByName($filename)$/;"	function	line:45
+attachFileIsUploadToExtra	/var/www/html/elearnpub/app/Models/Extrafile.php	/^	public function attachFileIsUploadToExtra($extra_id, $book_id)$/;"	function	line:56
+extrafile	/var/www/html/elearnpub/app/Models/Extrafile.php	/^			$extrafile = $this->getFileIsUploaded($book_id);$/;"	variable	line:58
+getFileIsUploadedToExtra	/var/www/html/elearnpub/app/Models/Extrafile.php	/^	public function getFileIsUploadedToExtra($extra_id)$/;"	function	line:69
+extras	/var/www/html/elearnpub/app/Models/Extrafile.php	/^		$extras = DB::table('extrafile')->where('is_attached', 1)->where('extra_id', $extra_id)->get();$/;"	variable	line:71
+deleteFileInEditExtra	/var/www/html/elearnpub/app/Models/Extrafile.php	/^	public function deleteFileInEditExtra($extra_id, $filename)$/;"	function	line:81
+extra	/var/www/html/elearnpub/app/Models/Extrafile.php	/^		$extra = DB::table('extrafile')->where('is_attached', 1)->where('extra_id', $extra_id)->where('name', $filename)->delete();$/;"	variable	line:83
+getIdentityByNameAndExtra	/var/www/html/elearnpub/app/Models/Extrafile.php	/^	public function getIdentityByNameAndExtra($filename,$extra_id)$/;"	function	line:92
+Chapter	/var/www/html/elearnpub/app/Models/Chapter.php	/^class Chapter extends Model {$/;"	class	line:6
+table	/var/www/html/elearnpub/app/Models/Chapter.php	/^	protected $table = 'chapters';$/;"	variable	line:8
+fillable	/var/www/html/elearnpub/app/Models/Chapter.php	/^	protected $fillable = [$/;"	variable	line:10
+employee	/var/www/html/elearnpub/app/Models/Chapter.php	/^	public function employee() {$/;"	function	line:18
+LandingpageController	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^class LandingpageController extends Controller$/;"	class	line:14
+book	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^  protected $book;$/;"	variable	line:22
+__construct	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^  public function __construct(Book $book)$/;"	function	line:28
+book	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^      $this->book = $book;$/;"	variable	line:30
+index	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^  public function index($book_id)$/;"	function	line:38
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^    $linkfilecss = 'landingpage.css';$/;"	variable	line:40
+book	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:41
+updateLandingPage	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^  public function updateLandingPage($book_id,Request $request)$/;"	function	line:51
+percentComplete	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^  public function percentComplete($book_id)$/;"	function	line:62
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^    $linkfilecss = 'percent_complete.css';$/;"	variable	line:64
+book	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:65
+updatePercentComplete	/var/www/html/elearnpub/app/Http/Controllers/LandingpageController.php	/^  public function updatePercentComplete($book_id, Request $request)$/;"	function	line:75
+Extra	/var/www/html/elearnpub/app/Models/Extra.php	/^class Extra extends Model {$/;"	class	line:7
+table	/var/www/html/elearnpub/app/Models/Extra.php	/^	protected $table = 'extras';$/;"	variable	line:9
+fillable	/var/www/html/elearnpub/app/Models/Extra.php	/^	protected $fillable = [$/;"	variable	line:11
+getExtraByPackageId	/var/www/html/elearnpub/app/Models/Extra.php	/^  public function getExtraByPackageId($pack_id)$/;"	function	line:17
+ExtraController	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^class ExtraController extends Controller$/;"	class	line:17
+book	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  protected $book;$/;"	variable	line:24
+filebook	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  protected $filebook;$/;"	variable	line:31
+user	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  protected $user;$/;"	variable	line:38
+price	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  protected $price;$/;"	variable	line:45
+resource	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  protected $resource;$/;"	variable	line:52
+package	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  protected $package;$/;"	variable	line:59
+extra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  protected $extra;$/;"	variable	line:66
+extrafile	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  protected $extrafile;$/;"	variable	line:73
+__construct	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function __construct(Book $book, User $user, Filebook $filebook, Price $price,$/;"	function	line:85
+book	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $this->book = $book;$/;"	variable	line:88
+user	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $this->user = $user;$/;"	variable	line:89
+filebook	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $this->filebook = $filebook;$/;"	variable	line:90
+price	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $this->price = $price;$/;"	variable	line:91
+resource	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $this->resource = $resource;$/;"	variable	line:92
+package	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $this->package = $package;$/;"	variable	line:93
+extrafile	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $this->extrafile = $extrafile;$/;"	variable	line:94
+extra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $this->extra = $extra;$/;"	variable	line:95
+extras	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function extras($book_id)$/;"	function	line:103
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $linkfilecss = 'extra.css';$/;"	variable	line:105
+book	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:106
+listPackage	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $listPackage = $this->package->all();$/;"	variable	line:107
+packages	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $packages = array();$/;"	variable	line:108
+addExtras	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function addExtras($bookId, Request $request)$/;"	function	line:120
+name	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $name = $request->input('name');$/;"	variable	line:122
+description	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $description = $request->input('description');$/;"	variable	line:123
+packageId	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $packageId = $request->input('packages');$/;"	variable	line:124
+extra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $extra = $this->extra->create([$/;"	variable	line:125
+ajax_getFileExtra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function ajax_getFileExtra($book_id)$/;"	function	line:139
+fileIsUploaded	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $fileIsUploaded = $this->extrafile->getFileIsUploaded($book_id);$/;"	variable	line:141
+result	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $result = array();$/;"	variable	line:142
+item	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $item = array();$/;"	variable	line:144
+uploadFileExtra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function uploadFileExtra($book_id, Request $request)$/;"	function	line:158
+file	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $file = $request->file('file');$/;"	variable	line:160
+namefileinital	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $namefileinital = $file->getClientOriginalName();$/;"	variable	line:161
+namefilesave	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $namefilesave = $this->generateRandomString();$/;"	variable	line:162
+extension	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $extension = pathinfo($namefileinital)['extension'];$/;"	variable	line:163
+dirFile	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $dirFile  = public_path() . DIRECTORY_SEPARATOR . 'resourcebook' . DIRECTORY_SEPARATOR;$/;"	variable	line:165
+filename	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $filename = $namefilesave . '.' . $extension;$/;"	variable	line:166
+deleteFileExtra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function deleteFileExtra($book_id, Request $request)$/;"	function	line:183
+filename	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $filename = $request->input('filename');$/;"	variable	line:185
+identityFile	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $identityFile = $this->getIdentityByName($filename);$/;"	variable	line:186
+dirFile	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $dirFile = public_path() . DIRECTORY_SEPARATOR . 'resourcebook' . DIRECTORY_SEPARATOR . $identityFile;$/;"	variable	line:187
+editExtra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function editExtra($book_id, $extra_id)$/;"	function	line:203
+extra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $extra = $this->extra->find($extra_id);$/;"	variable	line:205
+book	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:206
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $linkfilecss = 'extra.css';$/;"	variable	line:208
+t_packages	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $t_packages = $this->package->all();$/;"	variable	line:209
+packages	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $packages = array();$/;"	variable	line:210
+updateExtra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function updateExtra($book_id, $extra_id, Request $request)$/;"	function	line:225
+name	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $name = $request->input('name');$/;"	variable	line:227
+description	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $description = $request->input('description');$/;"	variable	line:228
+package_id	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $package_id = $request->input('packages');$/;"	variable	line:229
+extra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $extra = $this->extrafile->find($extra_id)->update([$/;"	variable	line:231
+editUploadFileExtra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function editUploadFileExtra($book_id, $extra_id, Request $request)$/;"	function	line:247
+file	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $file = $request->file('file');$/;"	variable	line:249
+namefileinital	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $namefileinital = $file->getClientOriginalName();$/;"	variable	line:250
+namefilesave	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $namefilesave = generateRandomString();$/;"	variable	line:251
+extension	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $extension = pathinfo($namefileinital)['extension'];$/;"	variable	line:253
+dirFile	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $dirFile  = public_path() . DIRECTORY_SEPARATOR . 'resourcebook' . DIRECTORY_SEPARATOR;$/;"	variable	line:255
+filename	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $filename = $namefilesave.'.'.$extension;$/;"	variable	line:256
+editGetFileExtra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function editGetFileExtra($book_id,$extra_id)$/;"	function	line:273
+fileIsUploaded	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $fileIsUploaded = $this->extrafile->getFileIsUploadedToExtra($extra_id);$/;"	variable	line:275
+result	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $result = array();$/;"	variable	line:276
+item	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^      $item = array();$/;"	variable	line:279
+editDeleteFileExtra	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function editDeleteFileExtra($book_id, $extra_id, Request $request)$/;"	function	line:294
+filename	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $filename = $request->input('filename');$/;"	variable	line:296
+identityFile	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $identityFile = $this->extrafile->getIdentityByNameAndExtra($filename,$extra_id);$/;"	variable	line:297
+dirFile	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^    $dirFile = public_path() . DIRECTORY_SEPARATOR . 'resourcebook' . DIRECTORY_SEPARATOR . $identityFile;$/;"	variable	line:298
+deleteExtraInPackage	/var/www/html/elearnpub/app/Http/Controllers/ExtraController.php	/^  public function deleteExtraInPackage($book_id, $package_id, $extra_id)$/;"	function	line:315
+Package	/var/www/html/elearnpub/app/Models/Package.php	/^class Package extends Model {$/;"	class	line:6
+table	/var/www/html/elearnpub/app/Models/Package.php	/^	protected $table = 'package';$/;"	variable	line:8
+fillable	/var/www/html/elearnpub/app/Models/Package.php	/^	protected $fillable = [$/;"	variable	line:10
+deletePackage	/var/www/html/elearnpub/app/Models/Package.php	/^	public function deletePackage($package_id)$/;"	function	line:25
+extras	/var/www/html/elearnpub/app/Models/Package.php	/^		$extras = Extra::where('package_id',$package_id)->get();$/;"	variable	line:27
+WishlistController	/var/www/html/elearnpub/app/Http/Controllers/WishlistController.php	/^class WishlistController extends Controller$/;"	class	line:10
+user	/var/www/html/elearnpub/app/Http/Controllers/WishlistController.php	/^    protected $user;$/;"	variable	line:17
+__construct	/var/www/html/elearnpub/app/Http/Controllers/WishlistController.php	/^    public function __construct(User $user)$/;"	function	line:26
+user	/var/www/html/elearnpub/app/Http/Controllers/WishlistController.php	/^        $this->user = $user;$/;"	variable	line:28
+index	/var/www/html/elearnpub/app/Http/Controllers/WishlistController.php	/^    public function index()$/;"	function	line:36
+wishlist	/var/www/html/elearnpub/app/Http/Controllers/WishlistController.php	/^        $wishlist = $this->user->getWishList();$/;"	variable	line:38
+add_wishlist	/var/www/html/elearnpub/app/Http/Controllers/WishlistController.php	/^    public function add_wishlist($id)$/;"	function	line:46
+delete_wishlist	/var/www/html/elearnpub/app/Http/Controllers/WishlistController.php	/^    public function delete_wishlist($id)$/;"	function	line:52
+SettingmoreController	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^class SettingmoreController extends Controller$/;"	class	line:18
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^  protected $book;$/;"	variable	line:26
+category	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^  protected $category;$/;"	variable	line:33
+language	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^  protected $language;$/;"	variable	line:40
+__construct	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^  public function __construct(Book $book, Language $language, Category $category)$/;"	function	line:49
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^      $this->book = $book;$/;"	variable	line:51
+language	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^      $this->language = $language;$/;"	variable	line:52
+category	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^      $this->category = $category;$/;"	variable	line:53
+category	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^  public function category($book_id)$/;"	function	line:61
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^    $linkfilecss = 'settingmore.css';$/;"	variable	line:63
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:64
+categories	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^    $categories = $this->category->all();$/;"	variable	line:65
+categoriesBelongBook	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^    $categoriesBelongBook = $this->book->getCategory($book_id);$/;"	variable	line:67
+cateSelect	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^    $cateSelect = array();$/;"	variable	line:68
+updateCategory	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^  public function updateCategory($book_id, Request $request)$/;"	function	line:81
+categories	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^    $categories = $request->input('category');$/;"	variable	line:83
+language	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^  public function language($book_id)$/;"	function	line:88
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^    $linkfilecss = 'language.css';$/;"	variable	line:90
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:91
+languages	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^    $languages = $this->language->all();$/;"	variable	line:92
+updateLanguage	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^  public function updateLanguage($book_id, Request $request)$/;"	function	line:96
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingmoreController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:98
+Repository	/var/www/html/elearnpub/app/Repositories/Repository.php	/^abstract class Repository implements RepositoryInterface$/;"	class	line:9
+app	/var/www/html/elearnpub/app/Repositories/Repository.php	/^    private $app;$/;"	variable	line:16
+model	/var/www/html/elearnpub/app/Repositories/Repository.php	/^    protected $model;$/;"	variable	line:23
+__construct	/var/www/html/elearnpub/app/Repositories/Repository.php	/^    public function __construct(App $app)$/;"	function	line:32
+app	/var/www/html/elearnpub/app/Repositories/Repository.php	/^        $this->app = $app;$/;"	variable	line:34
+all	/var/www/html/elearnpub/app/Repositories/Repository.php	/^    public function all($columns = array('*'))$/;"	function	line:45
+delete	/var/www/html/elearnpub/app/Repositories/Repository.php	/^    public function delete($id)$/;"	function	line:57
+find	/var/www/html/elearnpub/app/Repositories/Repository.php	/^    public function find($id, $columns = array('*'))$/;"	function	line:70
+findBy	/var/www/html/elearnpub/app/Repositories/Repository.php	/^    public function findBy($attribute, $value, $columns = array('*'))$/;"	function	line:84
+findListBy	/var/www/html/elearnpub/app/Repositories/Repository.php	/^    public function findListBy($attribute, $value, $columns = array())$/;"	function	line:98
+save	/var/www/html/elearnpub/app/Repositories/Repository.php	/^    public function save(array $input)$/;"	function	line:110
+update	/var/www/html/elearnpub/app/Repositories/Repository.php	/^    public function update(array $input, $id, $attribute = 'id')$/;"	function	line:124
+makeModel	/var/www/html/elearnpub/app/Repositories/Repository.php	/^    public function makeModel()$/;"	function	line:136
+model	/var/www/html/elearnpub/app/Repositories/Repository.php	/^        $model = $this->app->make($this->model());$/;"	variable	line:138
+UserRepository	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^class UserRepository extends Repository$/;"	class	line:21
+model	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^    public function model()$/;"	function	line:28
+addBookToWishlist	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^    public function addBookToWishlist($book_id)$/;"	function	line:37
+user_id	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^        $user_id = Auth::user()->id;$/;"	variable	line:39
+existUserWish	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^        $existUserWish = DB::table('book_wishlist')$/;"	variable	line:40
+getWishList	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^    public function getWishList()$/;"	function	line:56
+user_id	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^        $user_id = Auth::user()->id;$/;"	variable	line:58
+wishlist	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^        $wishlist = DB::table('book_wishlist')->join('books', 'books.id', '=', 'book_wishlist.book_id')$/;"	variable	line:59
+removeBookFromWishlist	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^    public function removeBookFromWishlist($bookId)$/;"	function	line:69
+user_id	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^        $user_id = Auth::user()->id;$/;"	variable	line:71
+getUserByUsername	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^    public function getUserByUsername($username)$/;"	function	line:81
+books	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^    public function books() {$/;"	function	line:90
+connectCoAuthor	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^    public function connectCoAuthor($data, $book_id)$/;"	function	line:100
+coAuthor	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^        $coAuthor = User::where('username', $data['username'])->first();$/;"	variable	line:102
+createContributorAndConnectBook	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^    public function createContributorAndConnectBook($book_id, $data, $avatar)$/;"	function	line:128
+user	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^        $user = $this->model->create([$/;"	variable	line:130
+updateContributorAndConnectBook	/var/www/html/elearnpub/app/Repositories/UserRepository.php	/^    public function updateContributorAndConnectBook($authorId, $data, $filename)$/;"	function	line:156
+UserRepository	/var/www/html/elearnpub/app/Services/UserService.php	/^class UserRepository extends Repository$/;"	class	line:7
+model	/var/www/html/elearnpub/app/Services/UserService.php	/^    public function model()$/;"	function	line:14
+addBookToWishlist	/var/www/html/elearnpub/app/Services/UserService.php	/^    public function addBookToWishlist($book_id)$/;"	function	line:23
+user_id	/var/www/html/elearnpub/app/Services/UserService.php	/^        $user_id = Auth::user()->id;$/;"	variable	line:25
+existUserWish	/var/www/html/elearnpub/app/Services/UserService.php	/^        $existUserWish = DB::table('book_wishlist')$/;"	variable	line:26
+getWishList	/var/www/html/elearnpub/app/Services/UserService.php	/^    public function getWishList()$/;"	function	line:42
+user_id	/var/www/html/elearnpub/app/Services/UserService.php	/^        $user_id = Auth::user()->id;$/;"	variable	line:44
+wishlist	/var/www/html/elearnpub/app/Services/UserService.php	/^        $wishlist = DB::table('book_wishlist')->join('books', 'books.id', '=', 'book_wishlist.book_id')$/;"	variable	line:45
+removeBookFromWishlist	/var/www/html/elearnpub/app/Services/UserService.php	/^    public function removeBookFromWishlist($bookId)$/;"	function	line:55
+user_id	/var/www/html/elearnpub/app/Services/UserService.php	/^        $user_id = Auth::user()->id;$/;"	variable	line:57
+getUserByUsername	/var/www/html/elearnpub/app/Services/UserService.php	/^    public function getUserByUsername($username)$/;"	function	line:67
+books	/var/www/html/elearnpub/app/Services/UserService.php	/^    public function books() {$/;"	function	line:76
+connectCoAuthor	/var/www/html/elearnpub/app/Services/UserService.php	/^    public function connectCoAuthor($data, $book_id)$/;"	function	line:86
+coAuthor	/var/www/html/elearnpub/app/Services/UserService.php	/^        $coAuthor = User::where('username', $data['username'])->first();$/;"	variable	line:88
+createContributorAndConnectBook	/var/www/html/elearnpub/app/Services/UserService.php	/^    public function createContributorAndConnectBook($book_id, $data, $avatar)$/;"	function	line:114
+user	/var/www/html/elearnpub/app/Services/UserService.php	/^        $user = $this->model->create([$/;"	variable	line:116
+updateContributorAndConnectBook	/var/www/html/elearnpub/app/Services/UserService.php	/^    public function updateContributorAndConnectBook($authorId, $data, $filename)$/;"	function	line:142
+User	/var/www/html/elearnpub/app/User.php	/^class User extends Model implements AuthenticatableContract, CanResetPasswordContract$/;"	class	line:15
+table	/var/www/html/elearnpub/app/User.php	/^    protected $table = 'users';$/;"	variable	line:24
+fillable	/var/www/html/elearnpub/app/User.php	/^    protected $fillable = ['username', 'firstname', 'lastname','email','role_id','avatar','blurb','twitter_id','github','googleplus','remember_token'];$/;"	variable	line:31
+hidden	/var/www/html/elearnpub/app/User.php	/^    protected $hidden = ['password', 'remember_token'];$/;"	variable	line:38
+bills	/var/www/html/elearnpub/app/User.php	/^    public function bills() {$/;"	function	line:44
+bundles	/var/www/html/elearnpub/app/User.php	/^    public function bundles() {$/;"	function	line:52
+addBookToWishlist	/var/www/html/elearnpub/app/User.php	/^    public function addBookToWishlist($book_id)$/;"	function	line:60
+user_id	/var/www/html/elearnpub/app/User.php	/^        $user_id = Auth::user()->id;$/;"	variable	line:62
+existUserWish	/var/www/html/elearnpub/app/User.php	/^        $existUserWish = DB::table('book_wishlist')$/;"	variable	line:63
+getWishList	/var/www/html/elearnpub/app/User.php	/^    public function getWishList()$/;"	function	line:79
+user_id	/var/www/html/elearnpub/app/User.php	/^        $user_id = Auth::user()->id;$/;"	variable	line:81
+wishlist	/var/www/html/elearnpub/app/User.php	/^        $wishlist = DB::table('book_wishlist')->join('books', 'books.id', '=', 'book_wishlist.book_id')$/;"	variable	line:82
+removeBookFromWishlist	/var/www/html/elearnpub/app/User.php	/^    public function removeBookFromWishlist($bookId)$/;"	function	line:92
+user_id	/var/www/html/elearnpub/app/User.php	/^        $user_id = Auth::user()->id;$/;"	variable	line:94
+getUserByUsername	/var/www/html/elearnpub/app/User.php	/^    public function getUserByUsername($username)$/;"	function	line:104
+books	/var/www/html/elearnpub/app/User.php	/^    public function books() {$/;"	function	line:113
+connectCoAuthor	/var/www/html/elearnpub/app/User.php	/^    public function connectCoAuthor($data, $book_id)$/;"	function	line:123
+coAuthor	/var/www/html/elearnpub/app/User.php	/^        $coAuthor = User::where('username', $data['username'])->first();$/;"	variable	line:125
+createContributorAndConnectBook	/var/www/html/elearnpub/app/User.php	/^    public function createContributorAndConnectBook($book_id, $data, $avatar)$/;"	function	line:151
+user	/var/www/html/elearnpub/app/User.php	/^        $user = self::create([$/;"	variable	line:153
+updateContributorAndConnectBook	/var/www/html/elearnpub/app/User.php	/^    public function updateContributorAndConnectBook($authorId, $data, $filename)$/;"	function	line:179
+scopeBookUnPublish	/var/www/html/elearnpub/app/User.php	/^    public function scopeBookUnPublish($query)$/;"	function	line:198
+scopeBookPublish	/var/www/html/elearnpub/app/User.php	/^    public function scopeBookPublish($query)$/;"	function	line:215
+.content-wrapper	/var/www/html/elearnpub/public/lesscss/less/profile_author.less	/^.content-wrapper {$/;"	function	line:3
+.large-container	/var/www/html/elearnpub/public/lesscss/less/profile_author.less	/^  .large-container{$/;"	function	line:4
+.sec-intro	/var/www/html/elearnpub/public/lesscss/less/profile_author.less	/^    .sec-intro{$/;"	function	line:5
+.sec-publish-book	/var/www/html/elearnpub/public/lesscss/less/profile_author.less	/^    .sec-publish-book{$/;"	function	line:8
+.sec-unpublish-book	/var/www/html/elearnpub/public/lesscss/less/profile_author.less	/^    .sec-unpublish-book{$/;"	function	line:11
+heightHeader	/var/www/html/elearnpub/public/lesscss/less/header.less	/^@heightHeader: 195px;$/;"	function	line:5
+borderInput	/var/www/html/elearnpub/public/lesscss/less/header.less	/^@borderInput : 1px solid #848484;$/;"	function	line:6
+.responsive(@maxWidth; @rules)	/var/www/html/elearnpub/public/lesscss/less/header.less	/^.responsive(@maxWidth; @rules) {$/;"	function	line:8
+@media only screen and (max-width: @maxWidth)	/var/www/html/elearnpub/public/lesscss/less/header.less	/^    @media only screen and (max-width: @maxWidth) {$/;"	function	line:9
+section.header	/var/www/html/elearnpub/public/lesscss/less/header.less	/^section.header{$/;"	function	line:15
+.logo	/var/www/html/elearnpub/public/lesscss/less/header.less	/^		.logo{$/;"	function	line:19
+.inner-image-home	/var/www/html/elearnpub/public/lesscss/less/header.less	/^			.inner-image-home{$/;"	function	line:23
+a	/var/www/html/elearnpub/public/lesscss/less/header.less	/^				a{$/;"	function	line:25
+.list-menu	/var/www/html/elearnpub/public/lesscss/less/header.less	/^		.list-menu{$/;"	function	line:33
+.responsive(1246px,	/var/www/html/elearnpub/public/lesscss/less/header.less	/^			  .responsive(1246px, {$/;"	function	line:37
+.responsive(1000px,	/var/www/html/elearnpub/public/lesscss/less/header.less	/^		    .responsive(1000px, {$/;"	function	line:40
+ul.navigation	/var/www/html/elearnpub/public/lesscss/less/header.less	/^			ul.navigation{$/;"	function	line:44
+li	/var/www/html/elearnpub/public/lesscss/less/header.less	/^				li{$/;"	function	line:50
+.responsive(1100px,	/var/www/html/elearnpub/public/lesscss/less/header.less	/^					.responsive(1100px, {$/;"	function	line:57
+a	/var/www/html/elearnpub/public/lesscss/less/header.less	/^					a{$/;"	function	line:61
+#main-menu	/var/www/html/elearnpub/public/lesscss/less/header.less	/^					#main-menu{$/;"	function	line:70
+button.btn-account	/var/www/html/elearnpub/public/lesscss/less/header.less	/^						button.btn-account{$/;"	function	line:72
+.responsive(1000px,	/var/www/html/elearnpub/public/lesscss/less/header.less	/^				.responsive(1000px, {$/;"	function	line:83
+li	/var/www/html/elearnpub/public/lesscss/less/header.less	/^					  li{$/;"	function	line:88
+.area-right	/var/www/html/elearnpub/public/lesscss/less/header.less	/^		.area-right{$/;"	function	line:101
+.shopping-cart-button	/var/www/html/elearnpub/public/lesscss/less/header.less	/^			.shopping-cart-button{$/;"	function	line:107
+#shopping-cart	/var/www/html/elearnpub/public/lesscss/less/header.less	/^				#shopping-cart{$/;"	function	line:121
+.area-login	/var/www/html/elearnpub/public/lesscss/less/header.less	/^			.area-login{$/;"	function	line:127
+.inner-area-login	/var/www/html/elearnpub/public/lesscss/less/header.less	/^				.inner-area-login{$/;"	function	line:134
+.profile	/var/www/html/elearnpub/public/lesscss/less/header.less	/^			.profile{$/;"	function	line:139
+.wrapper-profile	/var/www/html/elearnpub/public/lesscss/less/header.less	/^				.wrapper-profile{$/;"	function	line:145
+.img-avatar	/var/www/html/elearnpub/public/lesscss/less/header.less	/^					.img-avatar{$/;"	function	line:150
+img	/var/www/html/elearnpub/public/lesscss/less/header.less	/^						img{$/;"	function	line:151
+.dropdown	/var/www/html/elearnpub/public/lesscss/less/header.less	/^					.dropdown {$/;"	function	line:158
+.inner-dropdown	/var/www/html/elearnpub/public/lesscss/less/header.less	/^						.inner-dropdown {$/;"	function	line:172
+.column	/var/www/html/elearnpub/public/lesscss/less/header.less	/^							.column {$/;"	function	line:174
+h4	/var/www/html/elearnpub/public/lesscss/less/header.less	/^								h4 {$/;"	function	line:178
+ul	/var/www/html/elearnpub/public/lesscss/less/header.less	/^								ul {$/;"	function	line:182
+li	/var/www/html/elearnpub/public/lesscss/less/header.less	/^									li {$/;"	function	line:186
+a	/var/www/html/elearnpub/public/lesscss/less/header.less	/^										a{$/;"	function	line:189
+.footer	/var/www/html/elearnpub/public/lesscss/less/header.less	/^            .footer{$/;"	function	line:198
+.in-footer	/var/www/html/elearnpub/public/lesscss/less/header.less	/^              .in-footer {$/;"	function	line:199
+p	/var/www/html/elearnpub/public/lesscss/less/header.less	/^                p{$/;"	function	line:200
+.search-bar	/var/www/html/elearnpub/public/lesscss/less/header.less	/^			.search-bar{$/;"	function	line:210
+.search-and-submit	/var/www/html/elearnpub/public/lesscss/less/header.less	/^				.search-and-submit{$/;"	function	line:215
+form	/var/www/html/elearnpub/public/lesscss/less/header.less	/^					form{$/;"	function	line:221
+input	/var/www/html/elearnpub/public/lesscss/less/header.less	/^						input{$/;"	function	line:225
+&:focus	/var/www/html/elearnpub/public/lesscss/less/header.less	/^							&:focus{$/;"	function	line:231
+.search-submit	/var/www/html/elearnpub/public/lesscss/less/header.less	/^						.search-submit{$/;"	function	line:235
+.search-icon::before	/var/www/html/elearnpub/public/lesscss/less/header.less	/^							.search-icon::before{$/;"	function	line:246
+.open-menu	/var/www/html/elearnpub/public/lesscss/less/header.less	/^.open-menu{$/;"	function	line:262
+i	/var/www/html/elearnpub/public/lesscss/less/header.less	/^	i{$/;"	function	line:266
+&:before	/var/www/html/elearnpub/public/lesscss/less/header.less	/^  	  &:before{$/;"	function	line:272
+.rmpadding	/var/www/html/elearnpub/public/lesscss/less/header.less	/^.rmpadding{$/;"	function	line:278
+BookController	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^class BookController extends Controller$/;"	class	line:17
+book	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    protected $book;$/;"	variable	line:24
+filebook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    protected $filebook;$/;"	variable	line:31
+user	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    protected $user;$/;"	variable	line:38
+price	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    protected $price;$/;"	variable	line:45
+resource	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    protected $resource;$/;"	variable	line:52
+popularity	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    protected $popularity;$/;"	variable	line:59
+__construct	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function __construct(Book $book, User $user, FileBook $filebook, Price $price, Resource $resource, Popularity $popularity)$/;"	function	line:68
+book	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^        $this->book = $book;$/;"	variable	line:70
+user	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^        $this->user = $user;$/;"	variable	line:71
+filebook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^        $this->filebook = $filebook;$/;"	variable	line:72
+price	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^        $this->price = $price;$/;"	variable	line:73
+resource	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^        $this->resource = $resource;$/;"	variable	line:74
+popularity	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^        $this->popularity = $popularity;$/;"	variable	line:75
+index	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function index()$/;"	function	line:83
+bookpublish	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^        $bookpublish = $this->book->getBookPublished();$/;"	variable	line:85
+bookunpublish	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^        $bookunpublish = $this->book->getBookUnPublished();$/;"	variable	line:86
+book	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function book($param)$/;"	function	line:95
+book	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $book = $this->book->where('bookurl', $param)->first();$/;"	variable	line:97
+sample	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $sample = $this->resource->getSampleByBook($book->id);$/;"	variable	line:100
+countViewBook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function countViewBook($bookId) {$/;"	function	line:110
+user	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^        $user = Auth::user();$/;"	variable	line:111
+newBook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function newBook()$/;"	function	line:131
+postNewBook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function postNewBook(Request $request)$/;"	function	line:141
+validator	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^        $validator = Validator::make($request->all(), [$/;"	variable	line:143
+book	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^        $book = $this->book->addNewBook($request->all());$/;"	variable	line:153
+add_wishlist	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function add_wishlist($id)$/;"	function	line:161
+delete_wishlist	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function delete_wishlist($bookId)$/;"	function	line:172
+write	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function write($bookId, $namefile='')$/;"	function	line:184
+currentBook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $currentBook = $this->book->find($bookId);$/;"	variable	line:191
+files	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $files = $this->book->getFileFromBook($bookId);$/;"	variable	line:192
+filebook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $filebook = $this->book->getContentByName($namefile, $files[0]->name);$/;"	variable	line:193
+ajax_renamefile	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function ajax_renamefile(Request $request)$/;"	function	line:202
+filebook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $filebook = $this->filebook->find($request->id);$/;"	variable	line:204
+ajax_removefile	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function ajax_removefile(Request $request)$/;"	function	line:214
+filebook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $filebook = $this->filebook->find($request->id);$/;"	variable	line:216
+dirFile	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $dirFile  = base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $filebook->book_id . DIRECTORY_SEPARATOR . $filebook->link;$/;"	variable	line:217
+ajax_newfile	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function ajax_newfile(Request $request,$id)$/;"	function	line:230
+namenewfile	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $namenewfile = $request->namenewfile;$/;"	variable	line:232
+file	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $file = base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $id . DIRECTORY_SEPARATOR . $namenewfile;$/;"	variable	line:243
+newbook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $newbook = $this->filebook->create([$/;"	variable	line:246
+response	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $response = $newbook;$/;"	variable	line:254
+ajax_issample	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function ajax_issample(Request $request)$/;"	function	line:264
+file_id	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $file_id = $request->file_id;$/;"	variable	line:266
+isSample	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $isSample = $request->isSample;$/;"	variable	line:267
+filebook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $filebook = $this->filebook->find($file_id);$/;"	variable	line:268
+ajax_autoSaveContentFile	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^    public function ajax_autoSaveContentFile(Request $request)$/;"	function	line:278
+filebook	/var/www/html/elearnpub/app/Http/Controllers/BookController.php	/^      $filebook = $this->filebook->find($request->file_id);$/;"	variable	line:280
+ProfileController	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^class ProfileController extends Controller$/;"	class	line:18
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    protected $book;$/;"	variable	line:26
+bookBundle	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    protected $bookBundle;$/;"	variable	line:33
+user	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    protected $user;$/;"	variable	line:40
+__construct	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    public function __construct(BookBundle $bookbundle, User $user, Book $book)$/;"	function	line:48
+bookbundle	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^        $this->bookbundle = $bookbundle;$/;"	variable	line:50
+user	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^        $this->user = $user;$/;"	variable	line:51
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^        $this->book = $book;$/;"	variable	line:52
+index	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    public function index() {$/;"	function	line:59
+user	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^        $user = Auth::user();$/;"	variable	line:60
+postProfile	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    public function postProfile(Request $request) {$/;"	function	line:68
+id	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    	$id = Auth::user()->id;$/;"	variable	line:69
+validator	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    	$validator = Validator::make($request->all(),[$/;"	variable	line:70
+user	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^      $user = $this->user->find($id);$/;"	variable	line:79
+fileAvatar	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^      $fileAvatar = $request->file('avatar');$/;"	variable	line:81
+destinationPath	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^	    	$destinationPath = 'avatar';$/;"	variable	line:84
+filename	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^	     	$filename = str_random(10).md5(time()).'.'.$fileAvatar->getClientOriginalExtension();$/;"	variable	line:85
+invitation	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    public function invitation() {$/;"	function	line:108
+authorId	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^        $authorId = Auth::user()->id;$/;"	variable	line:109
+bookbundles	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^        $bookbundles = $this->bookbundle->all();$/;"	variable	line:110
+bundlesRes	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^        $bundlesRes = array();$/;"	variable	line:111
+responseInvitation	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    public function responseInvitation($bookBundleId, $accepted) {$/;"	function	line:127
+profileAuthor	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    public function profileAuthor($authorUsername) {$/;"	function	line:135
+author	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^        $author = $this->user->where('username', $authorUsername)->first();$/;"	variable	line:136
+bookUnpublish	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^        $bookUnpublish = $author->bookUnPublish()->get();$/;"	variable	line:137
+bookPublish	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^        $bookPublish = $author->bookPublish()->get();$/;"	variable	line:138
+logout	/var/www/html/elearnpub/app/Http/Controllers/Front/ProfileController.php	/^    public function logout() {$/;"	function	line:145
+findOrNull	/var/www/html/elearnpub/app/Models/TrailFindEloquent.php	/^  	public function findOrNull($id) {$/;"	function	line:11
+Category	/var/www/html/elearnpub/app/Models/Category.php	/^class Category extends Model {$/;"	class	line:6
+table	/var/www/html/elearnpub/app/Models/Category.php	/^	protected $table = 'categories';$/;"	variable	line:10
+fillable	/var/www/html/elearnpub/app/Models/Category.php	/^	protected $fillable = [$/;"	variable	line:12
+Language	/var/www/html/elearnpub/app/Models/Language.php	/^class Language extends Model {$/;"	class	line:6
+table	/var/www/html/elearnpub/app/Models/Language.php	/^	protected $table = 'languages';$/;"	variable	line:10
+fillable	/var/www/html/elearnpub/app/Models/Language.php	/^	protected $fillable = [$/;"	variable	line:12
+#below-header	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^	#below-header{$/;"	function	line:1
+.inner-below-header	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^		.inner-below-header{$/;"	function	line:5
+.language	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^			.language{$/;"	function	line:9
+h4	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^				h4{$/;"	function	line:14
+&:after	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^					&:after{$/;"	function	line:17
+&:hover	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^					&:hover{$/;"	function	line:22
+.sub-language	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^				.sub-language{$/;"	function	line:27
+.inner-sub-language	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^					.inner-sub-language{$/;"	function	line:43
+ul	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^						ul{$/;"	function	line:44
+li	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^							li{$/;"	function	line:49
+a	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^								a{$/;"	function	line:52
+.category	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^			.category{$/;"	function	line:64
+h4	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^				h4{$/;"	function	line:70
+&:after	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^					&:after{$/;"	function	line:73
+&:hover	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^					&:hover{$/;"	function	line:78
+.sub-category	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^				.sub-category{$/;"	function	line:83
+.inner-sub-category	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^					.inner-sub-category{$/;"	function	line:99
+ul	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^						ul{$/;"	function	line:101
+li	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^							li{$/;"	function	line:106
+a	/var/www/html/elearnpub/public/lesscss/less/below_header.less	/^								a{$/;"	function	line:109
+div.pagination	/var/www/html/elearnpub/public/lesscss/less/category.less	/^div.pagination{$/;"	function	line:3
+.inner-content-wrapper	/var/www/html/elearnpub/public/lesscss/less/category.less	/^.inner-content-wrapper{$/;"	function	line:9
+.content	/var/www/html/elearnpub/public/lesscss/less/category.less	/^		 .content {$/;"	function	line:12
+.row	/var/www/html/elearnpub/public/lesscss/less/category.less	/^			 .row {$/;"	function	line:13
+.item	/var/www/html/elearnpub/public/lesscss/less/category.less	/^				 .item {$/;"	function	line:14
+.avatar-wrapper	/var/www/html/elearnpub/public/lesscss/less/category.less	/^					 .avatar-wrapper {$/;"	function	line:17
+a	/var/www/html/elearnpub/public/lesscss/less/category.less	/^						 a {$/;"	function	line:18
+img	/var/www/html/elearnpub/public/lesscss/less/category.less	/^							 img {$/;"	function	line:19
+.content-more	/var/www/html/elearnpub/public/lesscss/less/category.less	/^					 .content-more {$/;"	function	line:26
+.title	/var/www/html/elearnpub/public/lesscss/less/category.less	/^						 .title {$/;"	function	line:27
+span.author	/var/www/html/elearnpub/public/lesscss/less/category.less	/^						 span.author{$/;"	function	line:36
+div.pagination	/var/www/html/elearnpub/public/lesscss/less/bestselling.less	/^div.pagination{$/;"	function	line:4
+.inner-content-wrapper	/var/www/html/elearnpub/public/lesscss/less/bestselling.less	/^.inner-content-wrapper{$/;"	function	line:10
+.content	/var/www/html/elearnpub/public/lesscss/less/bestselling.less	/^		 .content {$/;"	function	line:13
+.row	/var/www/html/elearnpub/public/lesscss/less/bestselling.less	/^			 .row {$/;"	function	line:14
+.item	/var/www/html/elearnpub/public/lesscss/less/bestselling.less	/^				 .item {$/;"	function	line:15
+.avatar-wrapper	/var/www/html/elearnpub/public/lesscss/less/bestselling.less	/^					 .avatar-wrapper {$/;"	function	line:18
+a	/var/www/html/elearnpub/public/lesscss/less/bestselling.less	/^						 a {$/;"	function	line:19
+img	/var/www/html/elearnpub/public/lesscss/less/bestselling.less	/^							 img {$/;"	function	line:20
+.content-more	/var/www/html/elearnpub/public/lesscss/less/bestselling.less	/^					 .content-more {$/;"	function	line:27
+.title	/var/www/html/elearnpub/public/lesscss/less/bestselling.less	/^						 .title {$/;"	function	line:28
+span.author	/var/www/html/elearnpub/public/lesscss/less/bestselling.less	/^             span.author{$/;"	function	line:38
+#below-header	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^#below-header{$/;"	function	line:3
+.inner-below-header	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^  .inner-below-header{$/;"	function	line:7
+.language	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^    .language{$/;"	function	line:11
+h4	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^      h4{$/;"	function	line:16
+&:after	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^        &:after{$/;"	function	line:19
+&:hover	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^        &:hover{$/;"	function	line:24
+.sub-language	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^      .sub-language{$/;"	function	line:29
+.inner-sub-language	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^        .inner-sub-language{$/;"	function	line:45
+ul	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^          ul{$/;"	function	line:46
+li	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^            li{$/;"	function	line:51
+a	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^              a{$/;"	function	line:54
+.category	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^    .category{$/;"	function	line:66
+h4	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^      h4{$/;"	function	line:72
+&:after	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^        &:after{$/;"	function	line:75
+&:hover	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^        &:hover{$/;"	function	line:80
+.sub-category	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^      .sub-category{$/;"	function	line:85
+.inner-sub-category	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^        .inner-sub-category{$/;"	function	line:101
+ul	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^          ul{$/;"	function	line:103
+li	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^            li{$/;"	function	line:108
+a	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^              a{$/;"	function	line:111
+.title_header	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^    .title_header{$/;"	function	line:124
+h3	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^      h3{$/;"	function	line:128
+div.wrap_filter	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^      div.wrap_filter{$/;"	function	line:135
+div.dropdown	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^        div.dropdown{$/;"	function	line:141
+p.dropdown-toggle	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^          p.dropdown-toggle{$/;"	function	line:143
+.caret	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^          .caret{$/;"	function	line:148
+div#filterDropdown	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^          div#filterDropdown{$/;"	function	line:152
+ul	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^            ul{$/;"	function	line:153
+li	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^              li{$/;"	function	line:155
+a	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^                a {$/;"	function	line:159
+a.active	/var/www/html/elearnpub/public/lesscss/less/bestselling_below_header.less	/^                a.active {$/;"	function	line:163
+Authenticate	/var/www/html/elearnpub/app/Http/Middleware/Authenticate.php	/^class Authenticate$/;"	class	line:8
+auth	/var/www/html/elearnpub/app/Http/Middleware/Authenticate.php	/^    protected $auth;$/;"	variable	line:15
+__construct	/var/www/html/elearnpub/app/Http/Middleware/Authenticate.php	/^    public function __construct(Guard $auth)$/;"	function	line:23
+auth	/var/www/html/elearnpub/app/Http/Middleware/Authenticate.php	/^        $this->auth = $auth;$/;"	variable	line:25
+handle	/var/www/html/elearnpub/app/Http/Middleware/Authenticate.php	/^    public function handle($request, Closure $next)$/;"	function	line:35
+.content-wrapper	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^.content-wrapper{$/;"	function	line:5
+.large-container	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^  .large-container{$/;"	function	line:6
+#inner-wrapper-listbook	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^    #inner-wrapper-listbook{$/;"	function	line:7
+.inner-sidebar	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^      .inner-sidebar{$/;"	function	line:8
+h3	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^        h3{$/;"	function	line:9
+ul	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^        ul{$/;"	function	line:14
+li	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^          li{$/;"	function	line:15
+a	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^            a{$/;"	function	line:23
+.inner-content	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^      .inner-content{$/;"	function	line:32
+.info-top	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^        .info-top{$/;"	function	line:33
+h3	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^          h3{$/;"	function	line:34
+div.action	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^          div.action{$/;"	function	line:37
+.area-form	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^        .area-form {$/;"	function	line:42
+form	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^            form {$/;"	function	line:43
+>img	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^              >img {$/;"	function	line:44
+.info-publish	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^        .info-publish{$/;"	function	line:51
+&:after	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^          &:after {$/;"	function	line:52
+h3	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^          h3{$/;"	function	line:60
+.list-book	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^          .list-book{$/;"	function	line:63
+ul	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^            ul{$/;"	function	line:67
+li	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^              li{$/;"	function	line:68
+.wrapper-avatar	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^                .wrapper-avatar{$/;"	function	line:75
+img	/var/www/html/elearnpub/public/lesscss/less/dashboardbook.less	/^                  img{$/;"	function	line:76
+confirm	/var/www/html/elearnpub/resources/views/frontend/bundle/edit_bundle.blade.php	/^    confirm: function(button) {$/;"	jsfunction	line:131
+cancel	/var/www/html/elearnpub/resources/views/frontend/bundle/edit_bundle.blade.php	/^    cancel: function(button) {$/;"	jsfunction	line:136
+section.large-container	/var/www/html/elearnpub/public/lesscss/less/edit_bundle.less	/^section.large-container{$/;"	function	line:5
+div#inner-wrapper-listbook	/var/www/html/elearnpub/public/lesscss/less/edit_bundle.less	/^  div#inner-wrapper-listbook{$/;"	function	line:6
+div.col-md-9	/var/www/html/elearnpub/public/lesscss/less/edit_bundle.less	/^    div.col-md-9{$/;"	function	line:7
+div.inner-content	/var/www/html/elearnpub/public/lesscss/less/edit_bundle.less	/^      div.inner-content{$/;"	function	line:8
+section.info-top	/var/www/html/elearnpub/public/lesscss/less/edit_bundle.less	/^        section.info-top{$/;"	function	line:9
+h3	/var/www/html/elearnpub/public/lesscss/less/edit_bundle.less	/^          h3{$/;"	function	line:10
+div.area_publish_bundle	/var/www/html/elearnpub/public/lesscss/less/edit_bundle.less	/^          div.area_publish_bundle{$/;"	function	line:13
+h3	/var/www/html/elearnpub/public/lesscss/less/edit_bundle.less	/^            h3{$/;"	function	line:14
+CartController	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^class CartController extends Controller$/;"	class	line:21
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  protected $book;$/;"	variable	line:29
+cart	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  protected $cart;$/;"	variable	line:36
+user	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  protected $user;$/;"	variable	line:43
+price	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  protected $price;$/;"	variable	line:50
+bill	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  protected $bill;$/;"	variable	line:57
+__construct	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function __construct(Book $book, User $user, Cart $cart, Price $price, Bill $bill)$/;"	function	line:67
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $this->book = $book;$/;"	variable	line:69
+user	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $this->user = $user;$/;"	variable	line:70
+cart	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $this->cart = $cart;$/;"	variable	line:71
+price	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $this->price = $price;$/;"	variable	line:72
+bill	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $this->bill = $bill;$/;"	variable	line:73
+getCart	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function getCart(Request $request)$/;"	function	line:81
+ajax_getCart	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function ajax_getCart(Request $request)$/;"	function	line:91
+carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $carts = $request->session()->get('carts', 'default');$/;"	variable	line:93
+carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $carts = array();$/;"	variable	line:97
+listItem	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $listItem = array();$/;"	variable	line:100
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^        $book = $this->cart->findItem($cart['item_id'], $cart['type']);$/;"	variable	line:103
+listItem	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $listItem = json_encode($listItem);$/;"	variable	line:108
+addItemToCart	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function addItemToCart(Request $request)$/;"	function	line:117
+item	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $item = array('item_id' => $request->item_id, 'type' => $request->type,$/;"	variable	line:119
+addItemCartSession	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  private function addItemCartSession($item) {$/;"	function	line:131
+carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $carts = request()->session()->get('carts', 'default');$/;"	variable	line:132
+carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $carts = array();$/;"	variable	line:136
+isAdd	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $isAdd = false;$/;"	variable	line:139
+isAdd	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^        $isAdd = true;$/;"	variable	line:146
+updateCart	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function updateCart(Request $request)$/;"	function	line:163
+data	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $data = $request->data;$/;"	variable	line:165
+carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $carts = array_pluck($data, 'meta');$/;"	variable	line:166
+showCheckout	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function showCheckout()$/;"	function	line:176
+postShowCheckout	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function postShowCheckout(Request $request)$/;"	function	line:195
+validator	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $validator = Validator::make($request->all(),[$/;"	variable	line:197
+date	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $date = date('Y-m-d H:i:s');$/;"	variable	line:206
+bill	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $bill = $this->bill->create([$/;"	variable	line:208
+carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $carts = $request->session()->get('carts', 'default');$/;"	variable	line:216
+carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $carts = array();$/;"	variable	line:220
+checkoutComplete	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function checkoutComplete()$/;"	function	line:240
+Cart	/var/www/html/elearnpub/app/Models/Cart.php	/^class Cart extends Model {$/;"	class	line:9
+table	/var/www/html/elearnpub/app/Models/Cart.php	/^	protected $table = 'carts';$/;"	variable	line:11
+fillable	/var/www/html/elearnpub/app/Models/Cart.php	/^	protected $fillable = [$/;"	variable	line:17
+findItem	/var/www/html/elearnpub/app/Models/Cart.php	/^	public function findItem($id, $type) {$/;"	function	line:31
+query	/var/www/html/elearnpub/app/Models/Cart.php	/^		$query = $this;$/;"	variable	line:32
+query	/var/www/html/elearnpub/app/Models/Cart.php	/^			  $query = Book::join('prices', function($query) use ($id) {$/;"	variable	line:34
+query	/var/www/html/elearnpub/app/Models/Cart.php	/^				$query = Bundle::join('prices', function($query){$/;"	variable	line:43
+SettingbookController	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^class SettingbookController extends Controller$/;"	class	line:16
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    protected $book;$/;"	variable	line:23
+package	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    protected $package;$/;"	variable	line:30
+extra	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    protected $extra;$/;"	variable	line:37
+price	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    protected $price;$/;"	variable	line:44
+__construct	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function __construct(Book $book, Package $package, Extra $extra, Price $price)$/;"	function	line:52
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $this->book = $book;$/;"	variable	line:54
+package	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $this->package = $package;$/;"	variable	line:55
+extra	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $this->extra = $extra;$/;"	variable	line:56
+price	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $this->price = $price;$/;"	variable	line:57
+index	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function index($book_id)$/;"	function	line:65
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $book = $this->book->find($book_id);$/;"	variable	line:67
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $linkfilecss = 'generalsetting.css';$/;"	variable	line:68
+saveSettingbook	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function saveSettingbook(SaveSettingBookRequest $request, $bookId)$/;"	function	line:76
+publishBook	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function publishBook($book_id)$/;"	function	line:87
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $book = $this->book->find($book_id);$/;"	variable	line:89
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $linkfilecss = 'publish_book.css';$/;"	variable	line:90
+postPublishBook	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function postPublishBook(Request $request, $bookId)$/;"	function	line:100
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $book = $this->book->find($bookId);$/;"	variable	line:102
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $linkfilecss = 'publish_book.css';$/;"	variable	line:108
+publish_sample_book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function publish_sample_book($book_id)$/;"	function	line:116
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $book = $this->book->find($book_id);$/;"	variable	line:118
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $linkfilecss = 'uploadtitlebook.css';$/;"	variable	line:119
+post_publish_sample_book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function post_publish_sample_book($book_id)$/;"	function	line:127
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $book = $this->book->find($book_id);$/;"	variable	line:129
+upload_new_title	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function upload_new_title($book_id)$/;"	function	line:140
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $book = $this->book->find($book_id);$/;"	variable	line:142
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $linkfilecss = 'uploadtitlebook.css';$/;"	variable	line:143
+post_upload_new_title	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function post_upload_new_title($book_id, Request $request)$/;"	function	line:152
+file	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $file = $request->file('avatar');$/;"	variable	line:154
+namefileinital	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $namefileinital = $file->getClientOriginalName();$/;"	variable	line:155
+namefilesave	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $namefilesave = generateRandomString();$/;"	variable	line:156
+extension	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $extension = pathinfo($namefileinital)['extension'];$/;"	variable	line:158
+dirFile	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $dirFile  = public_path() . DIRECTORY_SEPARATOR . 'resourcebook' . DIRECTORY_SEPARATOR;$/;"	variable	line:159
+filename	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $filename = $namefilesave.'.'.$extension;$/;"	variable	line:160
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $book = $this->book->find($book_id);$/;"	variable	line:163
+pricing	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function pricing($book_id)$/;"	function	line:176
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $book = $this->book->find($book_id);$/;"	variable	line:178
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $linkfilecss = 'pricing.css';$/;"	variable	line:179
+post_pricing	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function post_pricing($book_id)$/;"	function	line:189
+key	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $key = 'bo|'.$book_id;$/;"	variable	line:191
+package	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function package($book_id)$/;"	function	line:201
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $linkfilecss = 'package.css';$/;"	variable	line:203
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $book = $this->book->find($book_id);$/;"	variable	line:204
+post_package	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function post_package($book_id, Request $request)$/;"	function	line:213
+packages	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^        $packages = $this->package->create($request->all());$/;"	variable	line:215
+editPackage	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function editPackage($book_id, $pack_id)$/;"	function	line:225
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $linkfilecss = 'package.css';$/;"	variable	line:227
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $book = $this->book->find($book_id);$/;"	variable	line:228
+package	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $package = $this->package->find($pack_id);$/;"	variable	line:229
+extras	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $extras = $this->extra->getExtraByPackageId($pack_id);$/;"	variable	line:230
+updatePackage	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function updatePackage($book_id, $package_id, Request $request)$/;"	function	line:241
+listPackage	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function listPackage($book_id)$/;"	function	line:252
+book	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $book = $this->book->find($book_id);$/;"	variable	line:254
+packages	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $packages = $this->package->all();$/;"	variable	line:255
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^      $linkfilecss = 'list_package.css';$/;"	variable	line:256
+deletePackage	/var/www/html/elearnpub/app/Http/Controllers/SettingbookController.php	/^    public function deletePackage($book_id, $package_id)$/;"	function	line:266
+BaseController	/var/www/html/elearnpub/app/Http/Controllers/BaseController.php	/^class BaseController extends Controller$/;"	class	line:4
+__construct	/var/www/html/elearnpub/app/Http/Controllers/BaseController.php	/^    public function __construct()$/;"	function	line:16
+afterMove	/var/www/html/elearnpub/resources/views/frontend/home.blade.php	/^            afterMove: function (elem) {$/;"	jsfunction	line:108
+AuthorController	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^class AuthorController extends Controller$/;"	class	line:20
+book	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  protected $book;$/;"	variable	line:27
+filebook	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  protected $filebook;$/;"	variable	line:34
+user	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  protected $user;$/;"	variable	line:41
+price	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  protected $price;$/;"	variable	line:48
+resource	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  protected $resource;$/;"	variable	line:55
+__construct	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function __construct(Book $book, User $user, FileBook $filebook, Price $price, Resource $resource)$/;"	function	line:64
+book	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^      $this->book = $book;$/;"	variable	line:66
+user	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^      $this->user = $user;$/;"	variable	line:67
+filebook	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^      $this->filebook = $filebook;$/;"	variable	line:68
+price	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^      $this->price = $price;$/;"	variable	line:69
+resource	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^      $this->resource = $resource;$/;"	variable	line:70
+customAuthorName	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function customAuthorName($book_id)$/;"	function	line:78
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $linkfilecss = 'custom_author_name.css';$/;"	variable	line:80
+book	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:81
+updateCustomAuthorName	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function updateCustomAuthorName($book_id, Request $request)$/;"	function	line:90
+addCoAuthor	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function addCoAuthor($book_id)$/;"	function	line:101
+book	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:103
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $linkfilecss = 'add_coauthor.css';$/;"	variable	line:104
+postAddCoAuthor	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function postAddCoAuthor($book_id, Request $request)$/;"	function	line:113
+validator	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $validator = Validator::make($request->all(),[$/;"	variable	line:115
+book	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:125
+editCoAuthor	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function editCoAuthor($book_id)$/;"	function	line:135
+book	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:137
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $linkfilecss = 'edit_coauthor.css';$/;"	variable	line:138
+infoCoAuthor	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $infoCoAuthor = $this->book->findCoAuthor($book_id);$/;"	variable	line:139
+deleteCoAuthor	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function deleteCoAuthor($book_id, $author_id)$/;"	function	line:149
+addContributor	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function addContributor($book_id)$/;"	function	line:159
+book	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:161
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $linkfilecss = 'add_contributor.css';$/;"	variable	line:162
+postAddContributor	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function postAddContributor($book_id, Request $request)$/;"	function	line:172
+validator	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^      $validator = Validator::make($request->all(),[$/;"	variable	line:180
+destinationPath	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^          $destinationPath = public_path().'\/avatar\/';$/;"	variable	line:194
+fileName	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^          $fileName = generateRandomString(12);$/;"	variable	line:195
+original_name	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^          $original_name = $request->file('avatar')->getClientOriginalName();$/;"	variable	line:196
+extension	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^          $extension = '';$/;"	variable	line:197
+extension	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^            $extension = pathinfo($original_name)['extension'];$/;"	variable	line:201
+fileName	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^        $fileName = 'default-avatar.png';$/;"	variable	line:207
+listContributor	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function listContributor($book_id)$/;"	function	line:219
+book	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:221
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $linkfilecss = 'list_contributor.css';$/;"	variable	line:222
+contributors	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $contributors = $this->book->getContributorOfBook($book_id);$/;"	variable	line:223
+showEditContributor	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function showEditContributor($book_id, $author_id)$/;"	function	line:233
+book	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $book = $this->book->find($book_id);$/;"	variable	line:235
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $linkfilecss = 'show_edit_contributor.css';$/;"	variable	line:236
+contributor	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $contributor = $this->user->find($author_id);$/;"	variable	line:237
+postShowEditContributor	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function postShowEditContributor($book_id,$author_id,Request $request)$/;"	function	line:248
+validator	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^      $validator = Validator::make($request->all(),[$/;"	variable	line:256
+destinationPath	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^          $destinationPath = public_path().'\/avatar\/';$/;"	variable	line:271
+fileName	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^          $fileName = $this->generateRandomString(12);$/;"	variable	line:272
+original_name	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^          $original_name = $request->file('avatar')->getClientOriginalName();$/;"	variable	line:273
+extension	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^          $extension = '';$/;"	variable	line:274
+extension	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^            $extension = pathinfo($original_name)['extension'];$/;"	variable	line:277
+fileName	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^        $fileName = 'default-avatar.png';$/;"	variable	line:283
+addCoupon	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^  public function addCoupon($book_id)$/;"	function	line:291
+book	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $book = Book::find($book_id);$/;"	variable	line:293
+linkfilecss	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $linkfilecss = 'add_coupon.css';$/;"	variable	line:294
+packages	/var/www/html/elearnpub/app/Http/Controllers/AuthorController.php	/^    $packages = Package::getPackageBelongBook($book_id);$/;"	variable	line:295
+HomeController	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^class HomeController extends Controller$/;"	class	line:25
+book	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    protected $book;$/;"	variable	line:32
+filebook	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    protected $filebook;$/;"	variable	line:39
+user	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    protected $user;$/;"	variable	line:46
+price	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    protected $price;$/;"	variable	line:53
+resource	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    protected $resource;$/;"	variable	line:60
+category	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    protected $category;$/;"	variable	line:67
+language	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    protected $language;$/;"	variable	line:74
+cart	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    protected $cart;$/;"	variable	line:81
+bundle	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    protected $bundle;$/;"	variable	line:88
+__construct	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    public function __construct(Book $book, User $user, FileBook $filebook, Price $price, Resource $resource,$/;"	function	line:97
+book	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $this->book = $book;$/;"	variable	line:100
+user	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $this->user = $user;$/;"	variable	line:101
+filebook	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $this->filebook = $filebook;$/;"	variable	line:102
+price	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $this->price = $price;$/;"	variable	line:103
+resource	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $this->resource = $resource;$/;"	variable	line:104
+category	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $this->category = $category;$/;"	variable	line:105
+language	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $this->language = $language;$/;"	variable	line:106
+cart	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $this->cart = $cart;$/;"	variable	line:107
+bundle	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $this->bundle = $bundle;$/;"	variable	line:108
+index	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    public function index()$/;"	function	line:115
+bookBestsellers	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^       $bookBestsellers = $this->book->bestsellerBook()->get();$/;"	variable	line:117
+bookfeatures	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^       $bookfeatures = $this->book->featureBook()->get();$/;"	variable	line:118
+categories	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^       $categories = $this->category->all();$/;"	variable	line:120
+languages	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^       $languages = $this->language->all();$/;"	variable	line:121
+test	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    public function test()$/;"	function	line:126
+searchCateAndLang	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    public function searchCateAndLang($cateid, $langid)$/;"	function	line:137
+categories	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $categories = $this->category->all();$/;"	variable	line:139
+languages	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $languages = $this->language->all();$/;"	variable	line:140
+category	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $category = null;$/;"	variable	line:142
+book	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $book = null;$/;"	variable	line:143
+language	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^        $language = null;$/;"	variable	line:144
+books	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^           $books = DB::table('books')->paginate(8);$/;"	variable	line:147
+category	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^           $category = $this->category->find($cateid);$/;"	variable	line:150
+books	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^           $books = DB::table('books')->join('book_category', 'book_category.book_id','=','books.id')$/;"	variable	line:151
+language	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^           $language = $this->language->find($langid);$/;"	variable	line:155
+books	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^           $books = DB::table('books')->where('language_id', $langid)->paginate(8);$/;"	variable	line:156
+category	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^           $category = $this->category->find($cateid);$/;"	variable	line:159
+language	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^           $language = $this->language->find($langid);$/;"	variable	line:160
+books	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^           $books = DB::table('books')->join('book_category', 'book_category.book_id', '=', 'books.id')$/;"	variable	line:161
+bestSellingBook	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    public function bestSellingBook($filter, $cateid, $langid) {$/;"	function	line:173
+categories	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $categories = $this->category->all();$/;"	variable	line:174
+languages	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $languages = $this->language->all();$/;"	variable	line:175
+category	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $category = $this->category->findOrNull($cateid);$/;"	variable	line:177
+language	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $language = $this->language->findOrNull($langid);$/;"	variable	line:178
+books	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $books = $this->book->chooseFilter($filter)$/;"	variable	line:180
+bookFilter	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $bookFilter = array($/;"	variable	line:184
+bestSellingBundle	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    public function bestSellingBundle($filter) {$/;"	function	line:201
+bundles	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $bundles = $this->bundle->chooseFilter($filter)$/;"	variable	line:203
+bookFilter	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $bookFilter = array($/;"	variable	line:206
+showPageSearch	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^    public function showPageSearch(Request $request)$/;"	function	line:223
+keyword	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $keyword = $request->input('search');$/;"	variable	line:225
+categories	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $categories = $this->category->all();$/;"	variable	line:226
+languages	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $languages = $this->language->all();$/;"	variable	line:227
+books	/var/www/html/elearnpub/app/Http/Controllers/HomeController.php	/^      $books = DB::table('books')$/;"	variable	line:228
+avatars	/var/www/html/elearnpub/resources/views/frontend/home/bestselling_bundle.blade.php	/^                        $avatars = json_decode($bundle->avatar);$/;"	variable	line:30
+responsive	/var/www/html/elearnpub/resources/views/frontend/header.blade.php	/^	function responsive()$/;"	function	line:30
+imageUser	/var/www/html/elearnpub/app/Helpers/helpers.php	/^function imageUser($name) {$/;"	function	line:8
+imageBook	/var/www/html/elearnpub/app/Helpers/helpers.php	/^function imageBook($url) {$/;"	function	line:21
+generateRandomString	/var/www/html/elearnpub/app/Helpers/helpers.php	/^function generateRandomString($length = 10) {$/;"	function	line:34
+characters	/var/www/html/elearnpub/app/Helpers/helpers.php	/^	$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';$/;"	variable	line:35
+charactersLength	/var/www/html/elearnpub/app/Helpers/helpers.php	/^	$charactersLength = strlen($characters);$/;"	variable	line:36
+randomString	/var/www/html/elearnpub/app/Helpers/helpers.php	/^	$randomString = '';$/;"	variable	line:37
+Book	/var/www/html/elearnpub/app/Models/Book.php	/^class Book extends Model {$/;"	class	line:14
+table	/var/www/html/elearnpub/app/Models/Book.php	/^	protected $table = 'books';$/;"	variable	line:18
+fillable	/var/www/html/elearnpub/app/Models/Book.php	/^	protected $fillable = [$/;"	variable	line:20
+author	/var/www/html/elearnpub/app/Models/Book.php	/^	public function author() {$/;"	function	line:51
+main_author	/var/www/html/elearnpub/app/Models/Book.php	/^	public function main_author() {$/;"	function	line:60
+collaborator_author	/var/www/html/elearnpub/app/Models/Book.php	/^	public function collaborator_author() {$/;"	function	line:69
+bundles	/var/www/html/elearnpub/app/Models/Book.php	/^	public function bundles() {$/;"	function	line:79
+category	/var/www/html/elearnpub/app/Models/Book.php	/^	public function category() {$/;"	function	line:88
+filebooks	/var/www/html/elearnpub/app/Models/Book.php	/^	public function filebooks() {$/;"	function	line:96
+getMainAuthor	/var/www/html/elearnpub/app/Models/Book.php	/^	public function getMainAuthor($bookId)$/;"	function	line:105
+item	/var/www/html/elearnpub/app/Models/Book.php	/^		$item = DB::table('book_author')->where('book_id', $bookId)->where('is_main', 1)$/;"	variable	line:107
+getFileFromBook	/var/www/html/elearnpub/app/Models/Book.php	/^	public function getFileFromBook($bookId)$/;"	function	line:117
+files	/var/www/html/elearnpub/app/Models/Book.php	/^		$files = Filebook::where('book_id', $bookId)->get();$/;"	variable	line:119
+content	/var/www/html/elearnpub/app/Models/Book.php	/^			$content = "#Hello , This is a text sample";$/;"	variable	line:147
+file1	/var/www/html/elearnpub/app/Models/Book.php	/^			$file1 = base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $bookId . DIRECTORY_SEPARATOR . 'sample1.txt';$/;"	variable	line:153
+file2	/var/www/html/elearnpub/app/Models/Book.php	/^			$file2 = base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $bookId . DIRECTORY_SEPARATOR . 'sample2.txt';$/;"	variable	line:154
+file3	/var/www/html/elearnpub/app/Models/Book.php	/^			$file3 = base_path() . DIRECTORY_SEPARATOR . 'book' . DIRECTORY_SEPARATOR . $bookId . DIRECTORY_SEPARATOR . 'sample3.txt';$/;"	variable	line:155
+files	/var/www/html/elearnpub/app/Models/Book.php	/^			$files = Filebook::where('book_id',$bookId)->get();$/;"	variable	line:161
+getContentByName	/var/www/html/elearnpub/app/Models/Book.php	/^	public function getContentByName($name,$default)$/;"	function	line:173
+name	/var/www/html/elearnpub/app/Models/Book.php	/^			$name = $default;$/;"	variable	line:177
+getBookPublished	/var/www/html/elearnpub/app/Models/Book.php	/^	public function getBookPublished()$/;"	function	line:186
+user_id	/var/www/html/elearnpub/app/Models/Book.php	/^		$user_id = Auth::user()->id;$/;"	variable	line:188
+book_publist	/var/www/html/elearnpub/app/Models/Book.php	/^		$book_publist = DB::table('books')->where('is_published',1)$/;"	variable	line:189
+getBookUnPublished	/var/www/html/elearnpub/app/Models/Book.php	/^	public function getBookUnPublished()$/;"	function	line:199
+user_id	/var/www/html/elearnpub/app/Models/Book.php	/^		$user_id = Auth::user()->id;$/;"	variable	line:201
+book_publist	/var/www/html/elearnpub/app/Models/Book.php	/^		$book_publist = DB::table('books')->where('is_published',0)$/;"	variable	line:202
+getCategory	/var/www/html/elearnpub/app/Models/Book.php	/^	public function getCategory($book_id)$/;"	function	line:213
+categories	/var/www/html/elearnpub/app/Models/Book.php	/^		$categories = DB::table('category')->join('book_category', 'book_category.category_id', '=', 'category.id')$/;"	variable	line:215
+findCoAuthor	/var/www/html/elearnpub/app/Models/Book.php	/^	public function findCoAuthor($book_id)$/;"	function	line:226
+coauthor	/var/www/html/elearnpub/app/Models/Book.php	/^		$coauthor = DB::table('book_author')->where('book_id',$book_id)->where('is_main','!=',2)->get();$/;"	variable	line:228
+user	/var/www/html/elearnpub/app/Models/Book.php	/^			$user = User::find($value->author_id);$/;"	variable	line:230
+deleteCoAuthor	/var/www/html/elearnpub/app/Models/Book.php	/^	public function deleteCoAuthor($book_id, $author_id)$/;"	function	line:242
+addContributorByUsername	/var/www/html/elearnpub/app/Models/Book.php	/^	public function addContributorByUsername($book_id, $username)$/;"	function	line:254
+user	/var/www/html/elearnpub/app/Models/Book.php	/^		$user = User::where('username', $username)->first();$/;"	variable	line:256
+getContributorOfBook	/var/www/html/elearnpub/app/Models/Book.php	/^	public function getContributorOfBook($book_id)$/;"	function	line:276
+editContributorByUsername	/var/www/html/elearnpub/app/Models/Book.php	/^	public function editContributorByUsername($book_id, $author_id, $username)$/;"	function	line:292
+user	/var/www/html/elearnpub/app/Models/Book.php	/^		$user = User::where('username', $username)->first();$/;"	variable	line:294
+getPackageBelongBook	/var/www/html/elearnpub/app/Models/Book.php	/^	public static function getPackageBelongBook($book_id)$/;"	function	line:316
+packages	/var/www/html/elearnpub/app/Models/Book.php	/^		$packages = Package::where('book_id','=',$book_id)->get();$/;"	variable	line:318
+addNewBook	/var/www/html/elearnpub/app/Models/Book.php	/^	public function addNewBook($data)$/;"	function	line:327
+book	/var/www/html/elearnpub/app/Models/Book.php	/^		$book = Book::create([$/;"	variable	line:329
+isBookBelongUser	/var/www/html/elearnpub/app/Models/Book.php	/^	public function isBookBelongUser($book_id,$user_id)$/;"	function	line:359
+bookauthor	/var/www/html/elearnpub/app/Models/Book.php	/^		$bookauthor = DB::table('book_author')->where('book_id', $book_id)$/;"	variable	line:361
+getBookLibraryBelongUser	/var/www/html/elearnpub/app/Models/Book.php	/^	public function getBookLibraryBelongUser($user_id)$/;"	function	line:371
+bookYouWrite	/var/www/html/elearnpub/app/Models/Book.php	/^		$bookYouWrite = User::find($user_id)->books()->get();$/;"	variable	line:373
+bills	/var/www/html/elearnpub/app/Models/Book.php	/^		$bills = User::find($user_id)->bills()->get();$/;"	variable	line:374
+carts	/var/www/html/elearnpub/app/Models/Book.php	/^			$carts = $bill->carts()->get();$/;"	variable	line:377
+books	/var/www/html/elearnpub/app/Models/Book.php	/^				$books = $valCart->book()->get();$/;"	variable	line:379
+scopeFeatureBook	/var/www/html/elearnpub/app/Models/Book.php	/^	public function scopeFeatureBook($query) {$/;"	function	line:393
+scopeBestsellerBook	/var/www/html/elearnpub/app/Models/Book.php	/^	public function scopeBestsellerBook($query) {$/;"	function	line:409
+scopeBestsellerBookInWeek	/var/www/html/elearnpub/app/Models/Book.php	/^	public function scopeBestsellerBookInWeek($query) {$/;"	function	line:430
+dateNow	/var/www/html/elearnpub/app/Models/Book.php	/^		$dateNow = Carbon::now();$/;"	variable	line:431
+monday	/var/www/html/elearnpub/app/Models/Book.php	/^		$monday = $dateNow->startOfWeek()->toDateTimeString();$/;"	variable	line:432
+sunday	/var/www/html/elearnpub/app/Models/Book.php	/^		$sunday = $dateNow->endOfWeek()->toDateTimeString();$/;"	variable	line:433
+scopePopularBookInWeek	/var/www/html/elearnpub/app/Models/Book.php	/^	public function scopePopularBookInWeek($query) {$/;"	function	line:459
+dateNow	/var/www/html/elearnpub/app/Models/Book.php	/^		$dateNow = Carbon::now();$/;"	variable	line:460
+monday	/var/www/html/elearnpub/app/Models/Book.php	/^		$monday = $dateNow->startOfWeek()->toDateTimeString();$/;"	variable	line:461
+sunday	/var/www/html/elearnpub/app/Models/Book.php	/^		$sunday = $dateNow->endOfWeek()->toDateTimeString();$/;"	variable	line:462
+scopePopularBookLifetime	/var/www/html/elearnpub/app/Models/Book.php	/^	public function scopePopularBookLifetime($query) {$/;"	function	line:486
+scopeBookRecentlyUpdated	/var/www/html/elearnpub/app/Models/Book.php	/^	public function scopeBookRecentlyUpdated($query) {$/;"	function	line:508
+scopeBookRecentlyIsPublished	/var/www/html/elearnpub/app/Models/Book.php	/^	public function scopeBookRecentlyIsPublished($query) {$/;"	function	line:527
+scopeBookWithLanguageAndCategory	/var/www/html/elearnpub/app/Models/Book.php	/^	public function scopeBookWithLanguageAndCategory($query, $languageId, $categoryId) {$/;"	function	line:546
+scopeChooseFilter	/var/www/html/elearnpub/app/Models/Book.php	/^	public function scopeChooseFilter($query, $filter) {$/;"	function	line:571
+BundleController	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^class BundleController extends Controller$/;"	class	line:18
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    protected $book;$/;"	variable	line:26
+bookbundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    protected $bookbundle;$/;"	variable	line:33
+user	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    protected $user;$/;"	variable	line:40
+bookauthor	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    protected $bookauthor;$/;"	variable	line:47
+bundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    protected $bundle;$/;"	variable	line:54
+__construct	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    public function __construct(Book $book, BookBundle $bookbundle, User $user, BookAuthor $bookauthor, Bundle $bundle)$/;"	function	line:63
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^        $this->book = $book;$/;"	variable	line:65
+user	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^        $this->user = $user;$/;"	variable	line:66
+bookbundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^        $this->bookbundle = $bookbundle;$/;"	variable	line:67
+bookauthor	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^        $this->bookauthor = $bookauthor;$/;"	variable	line:68
+bundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^        $this->bundle = $bundle;$/;"	variable	line:69
+bundles	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    public function bundles() {$/;"	function	line:76
+bundles	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^        $bundles = $this->user->find(Auth::user()->id)->bundles()->get();$/;"	variable	line:77
+new_bundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    public function new_bundle() {$/;"	function	line:85
+postNewBundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    public function postNewBundle(Request $request) {$/;"	function	line:94
+validator	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    	$validator = Validator::make($request->all(),[$/;"	variable	line:95
+bundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^        $bundle = $this->bundle->addNewBundle($request->all());$/;"	variable	line:106
+editBundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    public function editBundle($id) {$/;"	function	line:114
+bundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    	$bundle = $this->bundle->find($id);$/;"	variable	line:115
+bookbundles	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    	$bookbundles = $this->bookbundle->where('bundle_id',$id)->get();$/;"	variable	line:116
+postUpdateBundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    public function postUpdateBundle(Request $request,$id) {$/;"	function	line:126
+validator	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    	$validator = Validator::make($request->all(),[$/;"	variable	line:127
+bundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^        $bundle = $this->bookbundle->updateBundle($request->all(),$id);$/;"	variable	line:138
+addNewBookToBundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    public function addNewBookToBundle(Request $request, $bundleid) {$/;"	function	line:147
+validator	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    	$validator = Validator::make($request->all(),[$/;"	variable	line:148
+bookid	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    	$bookid = $this->book->where('bookurl', $request->input('bookurl'))->first()->id;$/;"	variable	line:158
+accepted	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    	$accepted = 0;$/;"	variable	line:159
+accepted	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    		$accepted = 1;$/;"	variable	line:162
+deleteBookFromBundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    public function deleteBookFromBundle(Request $request, $bundleid, $bookBundleId) {$/;"	function	line:180
+deleteBundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    public function deleteBundle(Request $request, $bundleid) {$/;"	function	line:191
+publishBundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    public function publishBundle(Request $request, $bundleid) {$/;"	function	line:202
+bundleDetail	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^    public function bundleDetail($bundleUrl) {$/;"	function	line:215
+bundle	/var/www/html/elearnpub/app/Http/Controllers/Front/BundleController.php	/^       $bundle = $this->bundle->bundleDetail($bundleUrl);$/;"	variable	line:216
+Bundle	/var/www/html/elearnpub/app/Models/Bundle.php	/^class Bundle extends Model {$/;"	class	line:12
+table	/var/www/html/elearnpub/app/Models/Bundle.php	/^	protected $table = 'bundles';$/;"	variable	line:16
+fillable	/var/www/html/elearnpub/app/Models/Bundle.php	/^	protected $fillable = [$/;"	variable	line:25
+statebundle	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function statebundle() {$/;"	function	line:39
+user	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function user() {$/;"	function	line:47
+price	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function price() {$/;"	function	line:55
+books	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function books() {$/;"	function	line:63
+addNewBundle	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function addNewBundle(array $data) {$/;"	function	line:71
+updateBundle	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function updateBundle(array $data, $id) {$/;"	function	line:80
+deleteBundleAndRelation	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function deleteBundleAndRelation($bundleid) {$/;"	function	line:89
+checkOweBundle	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function checkOweBundle($authorId, $bundleId) {$/;"	function	line:100
+countBundle	/var/www/html/elearnpub/app/Models/Bundle.php	/^		$countBundle = $this->bundle->find($bundleId)->where('user_id', $authorId)->count();$/;"	variable	line:101
+scopeBestsellerBundleInWeek	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function scopeBestsellerBundleInWeek($query) {$/;"	function	line:114
+dateNow	/var/www/html/elearnpub/app/Models/Bundle.php	/^		$dateNow = Carbon::now();$/;"	variable	line:116
+monday	/var/www/html/elearnpub/app/Models/Bundle.php	/^		$monday = $dateNow->startOfWeek()->toDateTimeString();$/;"	variable	line:117
+sunday	/var/www/html/elearnpub/app/Models/Bundle.php	/^		$sunday = $dateNow->endOfWeek()->toDateTimeString();$/;"	variable	line:118
+scopeBestsellerBundle	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function scopeBestsellerBundle($query) {$/;"	function	line:147
+dateNow	/var/www/html/elearnpub/app/Models/Bundle.php	/^		$dateNow = Carbon::now();$/;"	variable	line:149
+monday	/var/www/html/elearnpub/app/Models/Bundle.php	/^		$monday = $dateNow->startOfWeek()->toDateTimeString();$/;"	variable	line:150
+sunday	/var/www/html/elearnpub/app/Models/Bundle.php	/^		$sunday = $dateNow->endOfWeek()->toDateTimeString();$/;"	variable	line:151
+scopePopularBundleInWeek	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function scopePopularBundleInWeek($query) {$/;"	function	line:178
+dateNow	/var/www/html/elearnpub/app/Models/Bundle.php	/^		$dateNow = Carbon::now();$/;"	variable	line:179
+monday	/var/www/html/elearnpub/app/Models/Bundle.php	/^		$monday = $dateNow->startOfWeek()->toDateTimeString();$/;"	variable	line:180
+sunday	/var/www/html/elearnpub/app/Models/Bundle.php	/^		$sunday = $dateNow->endOfWeek()->toDateTimeString();$/;"	variable	line:181
+scopePopularBundleLifetime	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function scopePopularBundleLifetime($query) {$/;"	function	line:209
+scopeBundleRecentlyUpdated	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function scopeBundleRecentlyUpdated($query) {$/;"	function	line:235
+scopeBundleRecentlyIsPublished	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function scopeBundleRecentlyIsPublished($query) {$/;"	function	line:261
+scopeChooseFilter	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function scopeChooseFilter($query, $filter) {$/;"	function	line:288
+bundleDetail	/var/www/html/elearnpub/app/Models/Bundle.php	/^	public function bundleDetail($bundleUrl){$/;"	function	line:322
+div.pagination	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^div.pagination{$/;"	function	line:4
+div.content-wrapper	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^div.content-wrapper{$/;"	function	line:9
+#below-header	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	#below-header{$/;"	function	line:10
+.inner-below-header	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	  .inner-below-header{$/;"	function	line:14
+.title_header	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	    .title_header{$/;"	function	line:19
+h3	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	      h3{$/;"	function	line:23
+div.wrap_filter	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	      div.wrap_filter{$/;"	function	line:30
+div.dropdown	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	        div.dropdown{$/;"	function	line:36
+p.dropdown-toggle	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	          p.dropdown-toggle{$/;"	function	line:38
+.caret	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	          .caret{$/;"	function	line:43
+div#filterDropdown	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	          div#filterDropdown{$/;"	function	line:47
+ul	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	            ul{$/;"	function	line:48
+li	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	              li{$/;"	function	line:50
+a	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	                a {$/;"	function	line:54
+a.active	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	                a.active {$/;"	function	line:58
+.inner-content-wrapper	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	.inner-content-wrapper{$/;"	function	line:71
+.content	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^			 .content {$/;"	function	line:74
+.row	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^				 .row {$/;"	function	line:75
+.item	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^					 .item {$/;"	function	line:76
+.avatar-wrapper	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^						 .avatar-wrapper {$/;"	function	line:81
+div.cover-image	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^							 div.cover-image {$/;"	function	line:88
+a	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^								 a {$/;"	function	line:91
+img	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^									 img {$/;"	function	line:92
+&:first-child	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^								 &:first-child {$/;"	function	line:100
+.count-2	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^						 .count-2 {$/;"	function	line:106
+div.cover-image	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^							 div.cover-image {$/;"	function	line:107
+.count-3	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^						 .count-3 {$/;"	function	line:115
+div.cover-image	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^							 div.cover-image {$/;"	function	line:116
+.count-4	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^						 .count-4 {$/;"	function	line:124
+div.cover-image	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^							 div.cover-image {$/;"	function	line:125
+.count-5	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^						 .count-5 {$/;"	function	line:133
+div.cover-image	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^							 div.cover-image {$/;"	function	line:134
+.content-more	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^						 .content-more {$/;"	function	line:143
+p.title	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^							 p.title {$/;"	function	line:145
+span.countbook	/var/www/html/elearnpub/public/lesscss/less/bestselling_bundle.less	/^	             span.countbook{$/;"	function	line:155
+.haft-width	/var/www/html/elearnpub/public/lesscss/less/general.less	/^.haft-width{$/;"	function	line:3
+.width-270px	/var/www/html/elearnpub/public/lesscss/less/general.less	/^.width-270px{$/;"	function	line:8
+.clearfix	/var/www/html/elearnpub/public/lesscss/less/general.less	/^.clearfix {$/;"	function	line:13
+&:after	/var/www/html/elearnpub/public/lesscss/less/general.less	/^	&:after {$/;"	function	line:14
+.large-container	/var/www/html/elearnpub/public/lesscss/less/general.less	/^.large-container {$/;"	function	line:24
+#footer	/var/www/html/elearnpub/public/lesscss/less/general.less	/^#footer {$/;"	function	line:28
+html, body	/var/www/html/elearnpub/public/lesscss/less/general.less	/^html, body {$/;"	function	line:33
+div.wrapper	/var/www/html/elearnpub/public/lesscss/less/general.less	/^div.wrapper {$/;"	function	line:37
+section.view	/var/www/html/elearnpub/public/lesscss/less/general.less	/^section.view {$/;"	function	line:41
+fontFamilyHeader	/var/www/html/elearnpub/public/lesscss/less/general.less	/^@fontFamilyHeader: "Archer SSm A", "Archer SSm B", Palatino, "Palatino Linotype", "Hoefler Text", Times, "Times New Roman";$/;"	function	line:48
+fontFamilyText	/var/www/html/elearnpub/public/lesscss/less/general.less	/^@fontFamilyText: "Whitney SSm A", "Whitney SSm B";$/;"	function	line:50
+.content-wrapper	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^.content-wrapper{$/;"	function	line:4
+.large-container	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^	.large-container{$/;"	function	line:5
+.header	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^	   .header {$/;"	function	line:7
+h4	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^       h4{$/;"	function	line:10
+.inner-col-left	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^		.inner-col-left{$/;"	function	line:19
+.wrap-avatar	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^			.wrap-avatar{$/;"	function	line:20
+div.cover-image	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^          div.cover-image{$/;"	function	line:27
+a	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^            a {$/;"	function	line:28
+img	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^              img{$/;"	function	line:29
+&:first-child	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^            &:first-child {$/;"	function	line:38
+.count-2	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^      .count-2 {$/;"	function	line:44
+div.cover-image	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^        div.cover-image {$/;"	function	line:45
+.count-3	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^      .count-3 {$/;"	function	line:53
+div.cover-image	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^        div.cover-image {$/;"	function	line:54
+.count-4	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^      .count-4 {$/;"	function	line:62
+div.cover-image	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^        div.cover-image {$/;"	function	line:63
+.count-5	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^      .count-5 {$/;"	function	line:71
+div.cover-image	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^        div.cover-image {$/;"	function	line:72
+.inner-col-right	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^		.inner-col-right{$/;"	function	line:82
+.group-header	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^				.group-header{$/;"	function	line:83
+h4	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^					h4{$/;"	function	line:84
+.line-author	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^					.line-author{$/;"	function	line:89
+.avatar	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^						.avatar{$/;"	function	line:95
+img	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							img{$/;"	function	line:98
+.author	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^						.author{$/;"	function	line:106
+p	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							p{$/;"	function	line:111
+.group-price	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^			.group-price{$/;"	function	line:117
+.inner-group-price	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^				.inner-group-price{$/;"	function	line:118
+header	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^					header{$/;"	function	line:119
+.minimum	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^						.minimum{$/;"	function	line:121
+.number	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							.number{$/;"	function	line:125
+.suffix	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							.suffix{$/;"	function	line:131
+.maximum	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^						.maximum{$/;"	function	line:135
+.number	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							.number{$/;"	function	line:139
+.suffix	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							.suffix{$/;"	function	line:145
+.content-slider-price	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^					.content-slider-price{$/;"	function	line:150
+.label-message	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^						.label-message{$/;"	function	line:151
+.slider-range-you-pay	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^						.slider-range-you-pay{$/;"	function	line:157
+.ui-slider-handle	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							.ui-slider-handle{$/;"	function	line:160
+.slider-range-author-earn	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^						.slider-range-author-earn{$/;"	function	line:164
+.ui-slider-handle	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							.ui-slider-handle{$/;"	function	line:167
+.add-ebook-to-cart	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^					.add-ebook-to-cart{$/;"	function	line:173
+button	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							button{$/;"	function	line:178
+&:hover	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^  								&:hover {$/;"	function	line:204
+&:active	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^  								&:active {$/;"	function	line:214
+.about-bundle	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^.about-bundle{$/;"	function	line:227
+.inner-about-bundle	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^	.inner-about-bundle{$/;"	function	line:232
+>header	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^		>header{$/;"	function	line:234
+h3	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^			h3{$/;"	function	line:238
+.content	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^		.content{$/;"	function	line:243
+.wrap-content	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^			.wrap-content{$/;"	function	line:244
+.text-content	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^				.text-content{$/;"	function	line:245
+.content-control	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^				.content-control{$/;"	function	line:251
+div.feedback	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^					div.feedback{$/;"	function	line:252
+div.share	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^					div.share{$/;"	function	line:255
+h4	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^						h4{$/;"	function	line:256
+ul	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^						ul{$/;"	function	line:259
+li	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							li{$/;"	function	line:260
+i	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^								i{$/;"	function	line:265
+li.facebook	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							li.facebook{$/;"	function	line:271
+li.twitter	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							li.twitter{$/;"	function	line:274
+li.google	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^							li.google{$/;"	function	line:277
+.about-books	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^.about-books{$/;"	function	line:288
+.inner-about-books	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^  .inner-about-books{$/;"	function	line:292
+header	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^    header{$/;"	function	line:293
+h3	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^      h3{$/;"	function	line:294
+.wrap-list-book	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^    .wrap-list-book {$/;"	function	line:301
+.item-book	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^      .item-book{$/;"	function	line:302
+.col-md-2	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^        .col-md-2{$/;"	function	line:308
+.wrapper-avatar	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^          .wrapper-avatar{$/;"	function	line:309
+img	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^            img{$/;"	function	line:311
+.col-md-10	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^        .col-md-10{$/;"	function	line:319
+.bundle-book	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^          .bundle-book{$/;"	function	line:320
+.book-title	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^            .book-title{$/;"	function	line:321
+h3	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^              h3{$/;"	function	line:322
+.avatar-and-name	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^            .avatar-and-name{$/;"	function	line:328
+a	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^              a{$/;"	function	line:335
+img	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^                img{$/;"	function	line:340
+div.description	/var/www/html/elearnpub/public/lesscss/less/bundle_detail.less	/^            div.description{$/;"	function	line:351
+books	/var/www/html/elearnpub/resources/views/frontend/bundle/bundle_detail.blade.php	/^                  $books = $bundle->books;$/;"	variable	line:29
+books	/var/www/html/elearnpub/resources/views/frontend/bundle/bundle_detail.blade.php	/^            $books = $bundle->books;$/;"	variable	line:146
+change	/var/www/html/elearnpub/resources/views/frontend/bundle/bundle_detail.blade.php	/^              change: function( event, ui ) {$/;"	jsfunction	line:229
+slide	/var/www/html/elearnpub/resources/views/frontend/bundle/bundle_detail.blade.php	/^              slide: function( event, ui ) {$/;"	jsfunction	line:232
+change	/var/www/html/elearnpub/resources/views/frontend/bundle/bundle_detail.blade.php	/^              change: function( event, ui ) {$/;"	jsfunction	line:249
+slide	/var/www/html/elearnpub/resources/views/frontend/bundle/bundle_detail.blade.php	/^              slide: function( event, ui ) {$/;"	jsfunction	line:252
+UserReadBook	/var/www/html/elearnpub/app/Models/UserReadBook.php	/^class UserReadBook extends Model {$/;"	class	line:6
+table	/var/www/html/elearnpub/app/Models/UserReadBook.php	/^	protected $table = 'user_read_book';$/;"	variable	line:11
+fillable	/var/www/html/elearnpub/app/Models/UserReadBook.php	/^	protected $fillable = [$/;"	variable	line:13
+LibraryController	/var/www/html/elearnpub/app/Http/Controllers/Front/LibraryController.php	/^class LibraryController extends Controller$/;"	class	line:15
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/LibraryController.php	/^    protected $book;$/;"	variable	line:22
+__construct	/var/www/html/elearnpub/app/Http/Controllers/Front/LibraryController.php	/^    public function __construct(Book $book)$/;"	function	line:31
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/LibraryController.php	/^        $this->book = $book;$/;"	variable	line:33
+yourLibrary	/var/www/html/elearnpub/app/Http/Controllers/Front/LibraryController.php	/^    public function yourLibrary() {$/;"	function	line:40
+bookLibrarys	/var/www/html/elearnpub/app/Http/Controllers/Front/LibraryController.php	/^        $bookLibrarys = $this->book->getBookLibraryBelongUser(Auth::user()->id);$/;"	variable	line:41
+Popularity	/var/www/html/elearnpub/app/Models/Popularity.php	/^class Popularity extends Model {$/;"	class	line:6
+table	/var/www/html/elearnpub/app/Models/Popularity.php	/^	protected $table = 'popularity';$/;"	variable	line:11
+fillable	/var/www/html/elearnpub/app/Models/Popularity.php	/^	protected $fillable = [$/;"	variable	line:13
+ReadBookController	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^class ReadBookController extends Controller$/;"	class	line:17
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^    protected $book;$/;"	variable	line:24
+userReadBook	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^    protected $userReadBook;$/;"	variable	line:31
+__construct	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^    public function __construct(Book $book, UserReadBook $userReadBook)$/;"	function	line:40
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^        $this->book = $book;$/;"	variable	line:42
+userReadBook	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^        $this->userReadBook = $userReadBook;$/;"	variable	line:43
+readbook	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^    public function readbook($id) {$/;"	function	line:50
+book	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^        $book = $this->book->find($id);$/;"	variable	line:57
+filebooks	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^        $filebooks = $book->filebooks()->get();$/;"	variable	line:58
+contentCombile	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^        $contentCombile = '';$/;"	variable	line:59
+checkUserCanReadBook	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^    private function checkUserCanReadBook($bookId) {$/;"	function	line:73
+userId	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^      $userId = Auth::user()->id;$/;"	variable	line:74
+check	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^      $check = $this->userReadBook->where('book_id', $bookId)$/;"	variable	line:75

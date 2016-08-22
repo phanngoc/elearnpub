@@ -1,8 +1,10 @@
 .content-wrapper .large-container .book-list-wrapper {
   width: 100%;
-  border-top: 1px solid #b7b7b7;
-  box-shadow: -2px -5px 57px #C3BFBF;
-  height: 485px;
+  border-top: 1px solid rgba(174, 174, 174, 0.41);
+  box-shadow: -2px -5px 57px rgba(195, 191, 191, 0.46);
+  height: auto;
+  max-height: 650px;
+  padding-bottom: 37px;
 }
 .content-wrapper .large-container .book-list-wrapper .list-header {
   height: 76px;
@@ -16,9 +18,7 @@
 }
 .content-wrapper .large-container .book-list-wrapper .list-header .list-title {
   display: block;
-  /* width: 65%; */
   float: left;
-  /* margin-top: -30px; */
   height: 76px;
 }
 .content-wrapper .large-container .book-list-wrapper .list-header .list-title h3 a {

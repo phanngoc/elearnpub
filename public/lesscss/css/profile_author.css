@@ -1,0 +1,223 @@
+.haft-width {
+  display: block;
+  width: 50% !important;
+}
+.width-270px {
+  display: block;
+  width: 270px;
+}
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+.large-container {
+  padding-top: 20px;
+}
+#footer:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+html,
+body {
+  height: 100%;
+}
+div.wrapper {
+  height: 100%;
+}
+section.view {
+  display: block;
+  min-height: 90%;
+}
+.content-wrapper .large-container .sec-intro {
+  padding-bottom: 45px;
+}
+.content-wrapper .large-container .sec-intro div.row div.col-md-5 div.in-wr-left {
+  display: block;
+  width: 260px;
+  margin: 20px auto;
+}
+.content-wrapper .large-container .sec-intro div.row div.col-md-5 div.in-wr-left div.img-ava {
+  display: block;
+  width: 160px;
+  margin: 0px auto;
+}
+.content-wrapper .large-container .sec-intro div.row div.col-md-5 div.in-wr-left div.img-ava img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+.content-wrapper .large-container .sec-intro div.row div.col-md-5 div.in-wr-left div.social {
+  display: block;
+  width: 106px;
+  height: 30px;
+  margin: 5px auto;
+}
+.content-wrapper .large-container .sec-intro div.row div.col-md-5 div.in-wr-left div.social a {
+  display: block;
+  width: 35px;
+  height: 35px;
+  float: left;
+  text-decoration: none;
+  text-align: center;
+}
+.content-wrapper .large-container .sec-intro div.row div.col-md-5 div.in-wr-left div.social a i {
+  font-size: 24px;
+  color: black;
+}
+.content-wrapper .large-container .sec-intro div.row div.col-md-7 div.name-author {
+  display: block;
+  border-bottom: 1px solid #C0C0C0;
+  font-family: "Archer SSm A", "Archer SSm B";
+}
+.content-wrapper .large-container .sec-intro div.row div.col-md-7 div.blurb {
+  padding-top: 10px;
+  font-size: 17px;
+  font-family: "Archer SSm A", "Archer SSm B";
+}
+.content-wrapper .large-container .book_item header {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 7px;
+  padding-bottom: 11px;
+}
+.content-wrapper .large-container .book_item div.book-grid {
+  padding-left: 20px;
+}
+.content-wrapper .large-container .book_item div.book-grid .book-list-item .in-bo-li-it {
+  display: block;
+  width: 80%;
+  max-height: 300px;
+  margin: 2px auto;
+}
+.content-wrapper .large-container .book_item div.book-grid .book-list-item .in-bo-li-it div.conver-image-book a {
+  display: block;
+}
+.content-wrapper .large-container .book_item div.book-grid .book-list-item .in-bo-li-it div.conver-image-book a img {
+  display: block;
+  margin: 0px auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.33);
+}
+.content-wrapper .large-container .book_item div.book-grid .book-list-item .in-bo-li-it div.list-item-meta {
+  padding-top: 14px;
+}
+.content-wrapper .large-container .book_item div.book-grid .book-list-item .in-bo-li-it div.list-item-meta p.list-item-title {
+  text-align: center;
+  font-family: "Whitney SSm A", "Whitney SSm B";
+}
+.content-wrapper .large-container .book_item div.book-grid .book-list-item .in-bo-li-it div.list-item-meta p.list-item-title a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.content-wrapper .large-container .sec-publish-book {
+  display: block;
+  box-shadow: 0 7px 40px -20px rgba(0, 0, 0, 0.4), 0 -7px 40px -20px rgba(0, 0, 0, 0.4);
+  padding-bottom: 45px;
+}
+.content-wrapper .large-container .sec-publish-book:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+.content-wrapper .large-container .sec-publish-book div.in-pub header {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 7px;
+  padding-bottom: 11px;
+}
+.content-wrapper .large-container .sec-publish-book div.in-pub div.book-grid {
+  padding-left: 20px;
+}
+.content-wrapper .large-container .sec-publish-book div.in-pub div.book-grid .book-list-item .in-bo-li-it {
+  display: block;
+  width: 80%;
+  max-height: 300px;
+  margin: 2px auto;
+}
+.content-wrapper .large-container .sec-publish-book div.in-pub div.book-grid .book-list-item .in-bo-li-it div.conver-image-book a {
+  display: block;
+}
+.content-wrapper .large-container .sec-publish-book div.in-pub div.book-grid .book-list-item .in-bo-li-it div.conver-image-book a img {
+  display: block;
+  margin: 0px auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.33);
+}
+.content-wrapper .large-container .sec-publish-book div.in-pub div.book-grid .book-list-item .in-bo-li-it div.list-item-meta {
+  padding-top: 14px;
+}
+.content-wrapper .large-container .sec-publish-book div.in-pub div.book-grid .book-list-item .in-bo-li-it div.list-item-meta p.list-item-title {
+  text-align: center;
+  font-family: "Whitney SSm A", "Whitney SSm B";
+}
+.content-wrapper .large-container .sec-publish-book div.in-pub div.book-grid .book-list-item .in-bo-li-it div.list-item-meta p.list-item-title a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.content-wrapper .large-container .sec-unpublish-book {
+  display: block;
+  padding-bottom: 45px;
+}
+.content-wrapper .large-container .sec-unpublish-book:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+.content-wrapper .large-container .sec-unpublish-book div.in-unpub header {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 7px;
+  padding-bottom: 11px;
+}
+.content-wrapper .large-container .sec-unpublish-book div.in-unpub div.book-grid {
+  padding-left: 20px;
+}
+.content-wrapper .large-container .sec-unpublish-book div.in-unpub div.book-grid .book-list-item .in-bo-li-it {
+  display: block;
+  width: 80%;
+  max-height: 300px;
+  margin: 2px auto;
+}
+.content-wrapper .large-container .sec-unpublish-book div.in-unpub div.book-grid .book-list-item .in-bo-li-it div.conver-image-book a {
+  display: block;
+}
+.content-wrapper .large-container .sec-unpublish-book div.in-unpub div.book-grid .book-list-item .in-bo-li-it div.conver-image-book a img {
+  display: block;
+  margin: 0px auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.33);
+}
+.content-wrapper .large-container .sec-unpublish-book div.in-unpub div.book-grid .book-list-item .in-bo-li-it div.list-item-meta {
+  padding-top: 14px;
+}
+.content-wrapper .large-container .sec-unpublish-book div.in-unpub div.book-grid .book-list-item .in-bo-li-it div.list-item-meta p.list-item-title {
+  text-align: center;
+  font-family: "Whitney SSm A", "Whitney SSm B";
+}
+.content-wrapper .large-container .sec-unpublish-book div.in-unpub div.book-grid .book-list-item .in-bo-li-it div.list-item-meta p.list-item-title a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}

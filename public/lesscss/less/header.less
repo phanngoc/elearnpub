@@ -1,4 +1,7 @@
 // out: ../css/header.css, compress: false, strictMath: true
+
+@import "general.less";
+
 @heightHeader: 195px;
 @borderInput : 1px solid #848484;
 
@@ -12,7 +15,7 @@
 section.header{
 		display : block;
 		height: 90px;
-		box-shadow: -2px -5px 57px #c3bfbf inset;
+		box-shadow: -21px 0px 57px #e6e6e6 inset;
 		.logo{
 			display : block;
 			float : left;
@@ -31,12 +34,13 @@ section.header{
 			display : block;
 			float : left;
 			width: 52%;
-			.responsive(1246px, {
+			  .responsive(1246px, {
 		        width: 40%;
 		    });
 		    .responsive(1000px, {
 		        width: 10%;
 		    });
+        
 			ul.navigation{
 			  display: block;
 			  height: 90px;
@@ -52,20 +56,16 @@ section.header{
 					padding-top: 27px;
 					.responsive(1100px, {
 				        width: 29%;
-				    });
+				  });
 
 					a{
-						// font-family: "Archer SSm A","Archer SSm B",Palatino,"Palatino Linotype","Hoefler Text",Times,"Times New Roman";
-		  		// 		font-style: normal;
-		  		// 		font-weight: 700;
-		  				font-family: 'Univers_CE_Medium',Georgia, serif;
+		  			font-family: 'Univers_CE_Medium',Georgia, serif;
 						font-size: 27px;
 						color : black;
 
-		  				font-size: 24px;
-		  				color : black;
-		  				display: block;
-		  				// text-decoration: none;
+	  				font-size: 24px;
+	  				color : black;
+	  				display: block;
 					}
 					#main-menu{
 						margin-top: -5px;
@@ -81,7 +81,7 @@ section.header{
 				}/* end li */
 
 				.responsive(1000px, {
-			          height: 151px;
+			      height: 151px;
 					  width: 116px;
 					  background-color: white;
 					  border : 1px solid #898989;
@@ -103,27 +103,27 @@ section.header{
 			float : right;
 			width: 393px;
 			height: 90px;
+
 			.shopping-cart-button{
 				display: block;
-			  	float: left;
+			  float: left;
 			 	width: 76px;
-			  	height: 39px;
-				/* padding-left: 15px; */
+			  height: 39px;
 			 	background-color: white;
 			 	border-radius: 20px;
-			  	border : @borderInput;
-			  	/* margin-top: -5px; */
+			  border : @borderInput;
 				padding-top: 8px;
 			 	padding-left: 15px;
 
 			 	margin-top: 23px;
-  				margin-left: 21px;
+  			margin-left: 21px;
 
-  				#shopping-cart{
-  					color: black;
-  					font-size: 20px;
-  				}
+				#shopping-cart{
+					color: black;
+					font-size: 20px;
+				}
 			}
+
 			.area-login{
 				display : block;
 				float : left;
@@ -135,6 +135,7 @@ section.header{
 
 				}
 			}
+
 			.profile{
 				display: block;
 				float : right;
@@ -154,34 +155,35 @@ section.header{
 							border-radius: 50%;
 						}
 					}
-					.dropdown{
-						display: block;
-						width: 392px;
-						height: 296px;
-						position: absolute;
-						right: 0px;
-						background-color : white;
+					.dropdown {
+  						display: block;
+  						width: 392px;
+  						height: 296px;
+  						position: absolute;
+  						right: 0px;
+  						background-color : white;
   						z-index : 1000;
   						padding : 13px;
-  						border: 1px solid #898989;
-  						border-top-left-radius: 12px;
-  						border-bottom-left-radius: 12px;
-  						border-bottom-right-radius: 12px;
-  						box-shadow : 0px 1px 40px -13px #898989 inset;
-						.inner-dropdown{
-							.column{
+  						border: 1px solid #CBCBCB;
+  						border-top-left-radius: 5px;
+  						border-bottom-left-radius: 5px;
+  						border-bottom-right-radius: 5px;
+  						box-shadow : 0px 1px 40px -13px #D7D1D1 inset;
+						.inner-dropdown {
+              .clearfix();
+							.column {
 								display : block;
 								float : left;
 								width: 180px;
-								h4{
+								h4 {
 									font-family: 'FonoCompressed', Impact, sans-serif;
 									font-size: 23px;
 								}
-								ul{
+								ul {
 									display: block;
 									margin : 0px;
 									padding : 0px;
-									li{
+									li {
 										list-style: none;
 										margin-bottom: 12px;
 										a{
@@ -193,6 +195,15 @@ section.header{
 								}
 							}
 						}
+            .footer{
+              .in-footer {
+                p{
+                  text-align: right;
+                  font-size: 16px;
+                }
+              }
+            }
+
 					}
 				}
 			}

@@ -8,9 +8,9 @@ class Package extends Model {
 	protected $table = 'package';
 
 	protected $fillable = [
-		'name',
-		'minimumprice',
-		'suggestedprice',
+			'name',
+			'minimumprice',
+			'suggestedprice',
 	    'description',
 	    'url',
 	    'quantity',
@@ -19,10 +19,10 @@ class Package extends Model {
 
 	/**
 	 * Delete package.
-	 * @param  [type] $package_id [description]
+	 * @param  [int] $package_id [description]
 	 * @return [type]             [description]
 	 */
-	public static function deletePackage($package_id)
+	public function deletePackage($package_id)
 	{
 		$extras = Extra::where('package_id',$package_id)->get();
 		foreach ($extras as $key => $value) {

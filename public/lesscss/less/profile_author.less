@@ -1,0 +1,134 @@
+// out: ../css/profile_author.css, compress: false, strictMath: true
+@import "general.less";
+
+.content-wrapper {
+  .large-container{
+    .sec-intro{
+      div.row {
+        div.col-md-5 {
+          div.in-wr-left {
+            display: block;
+            width : 260px;
+            margin : 20px auto;
+            div.img-ava{
+              display: block;
+              width : 160px;
+              margin : 0px auto;
+              img {
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+              }
+            }
+            div.social{
+              display: block;
+              width: 106px;
+              height: 30px;
+              margin : 5px auto;
+              a {
+                display: block;
+                width: 35px;
+                height: 35px;
+                float : left;
+                text-decoration: none;
+                text-align: center;
+                i {
+                  font-size: 24px;
+                  color : black;
+                }
+              }
+            }
+          }
+        }
+
+        div.col-md-7{
+          div.name-author{
+            display: block;
+            border-bottom: 1px solid #C0C0C0;
+            font-family: "Archer SSm A", "Archer SSm B";
+            h3 {
+
+            }
+          }
+          div.blurb {
+            padding-top: 10px;
+            font-size: 17px;
+            font-family: "Archer SSm A", "Archer SSm B";
+          }
+        }
+      }
+      padding-bottom: 45px;
+    }
+
+    .book_item {
+      header{
+        text-align: left;
+        padding-left : 20px;
+        padding-top: 7px;
+        padding-bottom: 11px;
+        h3{
+
+        }
+      }
+      div.book-grid{
+        padding-left: 20px;
+        .book-list-item {
+          .in-bo-li-it{
+            display: block;
+            width: 80%;
+            max-height: 300px;
+            margin : 2px auto;
+            div.conver-image-book{
+              a {
+                display: block;
+
+                img {
+                  display: block;
+                  margin: 0px auto;
+                  max-width: 100%;
+                  height: auto;
+                  max-height: 250px;
+                  box-shadow: 0 2px 3px rgba(0,0,0,0.33);
+                  //position: relative;
+                }
+              }
+            }
+            div.list-item-meta{
+              padding-top: 14px;
+              p.list-item-title{
+                text-align: center;
+                font-family: "Whitney SSm A", "Whitney SSm B";
+                a{
+                  color : black;
+                  text-decoration: none;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sec-publish-book{
+      display: block;
+      box-shadow: 0 7px 40px -20px rgba(0,0,0,0.4),0 -7px 40px -20px rgba(0,0,0,0.4);
+      padding-bottom: 45px;
+      .clearfix();
+
+      div.in-pub{
+        .book_item();
+      }
+    }
+    .sec-unpublish-book{
+      display: block;
+      //box-shadow: 0 7px 40px -20px rgba(0,0,0,0.4),0 -7px 40px -20px rgba(0,0,0,0.4);
+      padding-bottom: 45px;
+      .clearfix();
+
+      div.in-unpub{
+        .book_item();
+      }
+    }
+  }
+}

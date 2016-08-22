@@ -5,34 +5,71 @@ use App\User;
 use App\Models\Book;
 use App\Models\Price;
 use App\Models\Package;
-use DB;
-use App\Models\Extrafile;
-use File;
-use App\Models\Extra;
-use \Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Language;
+use App\Models\Extrafile;
+use App\Models\Extra;
+
+use \Illuminate\Http\Request;
+use File;
+use DB;
+
 
 class SettingmoreController extends Controller
 {
 
   /**
-   * [category description]
+   * Book model.
+   *
+   * @var User class
+   */
+  protected $book;
+
+  /**
+   * Category model.
+   *
+   * @var Category class
+   */
+  protected $category;
+
+  /**
+   * Language model.
+   *
+   * @var Language class
+   */
+  protected $language;
+
+  /**
+   * Construct
+   *
+   * @param Book $book
+   * @param Category $category
+   * @param Language $language
+   */
+  public function __construct(Book $book, Language $language, Category $category)
+  {
+      $this->book = $book;
+      $this->language = $language;
+      $this->category = $category;
+  }
+
+  /**
+   * Category.
    * @param  [type] $book_id [description]
    * @return [type]          [description]
    */
   public function category($book_id)
   {
     $linkfilecss = 'settingmore.css';
-    $book = Book::find($book_id);
-    $categories = Category::all();
+    $book = $this->book->find($book_id);
+    $categories = $this->category->all();
 
-    $categoriesBelongBook = Book::getCategory($book_id);
+    $categoriesBelongBook = $this->book->getCategory($book_id);
     $cateSelect = array();
     foreach ($categoriesBelongBook as $key => $value) {
       array_push($cateSelect,$value->id);
     }
-    return view('frontend.settingmore.category',compact('book','categories','cateSelect','linkfilecss'));
+    return view('frontend.settingmore.category', compact('book', 'categories', 'cateSelect', 'linkfilecss'));
   }
 
   /**
@@ -41,24 +78,35 @@ class SettingmoreController extends Controller
    * @param  Request $request [description]
    * @return [type]           [description]
    */
-  public function updateCategory($book_id,Request $request)
+  public function updateCategory($book_id, Request $request)
   {
     $categories = $request->input('category');
-    Book::find($book_id)->category()->sync($categories);
+    $this->book->find($book_id)->category()->sync($categories);
     return redirect()->route('category',$book_id);
   }
 
+  /**
+   * Show page setting language.
+   * @param  [type] $book_id [description]
+   * @return [type]          [description]
+   */
   public function language($book_id)
   {
     $linkfilecss = 'language.css';
-    $book = Book::find($book_id);
-    $languages = Language::all();
+    $book = $this->book->find($book_id);
+    $languages = $this->language->all();
     return view('frontend.settingmore.language',compact('book','languages','linkfilecss'));
   }
 
-  public function updateLanguage($book_id,Request $request)
+  /**
+   * Update language.
+   * @param  [int]  $book_id [description]
+   * @param  Request $request [description]
+   * @return [type]           [description]
+   */
+  public function updateLanguage($book_id, Request $request)
   {
-    $book = Book::find($book_id);
+    $book = $this->book->find($book_id);
     $book->update(['language_id'=>$request->input('language')]);
     return redirect()->route('language',$book_id);
   }

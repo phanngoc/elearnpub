@@ -7,14 +7,14 @@
 @section ('body.content')
 
 <link href="{!!Asset('lesscss/css/dashboardbook.css')!!}" rel="stylesheet" type="text/css" />
-<link href="{!!Asset('lesscss/css/list_bundle.css')!!}" rel="stylesheet" type="text/css" />
+<link href="{!!Asset('lesscss/css/edit_bundle.css')!!}" rel="stylesheet" type="text/css" />
 
 <div class="content-wrapper">
     <section class="large-container">
         <div id="inner-wrapper-listbook" class="row">
 
           @include('frontend.author_dashboard')
-          
+
           <div class="col-md-9">
             <div class="inner-content">
               <section class="info-top">
@@ -31,7 +31,7 @@
                         <input name="title" class="form-control" value="{{ empty(old('title')) ? $bundle->title : old('title') }}">
                         <p class="errors">{{ $errors->bundle->first('title') }}</p>
                       </div>
-                      
+
                       <div class="form-group">
                          <label for="title">BUNDLE URL</label>
                          <div class="input-group">
@@ -40,7 +40,7 @@
                            <p class="errors">{{ $errors->bundle->first('bundleurl') }}</p>
                          </div>
                       </div>
-        
+
                       <div class="form-group">
                         <label for="title">DESCRIPTION</label>
                         <textarea name="description" class="form-control">{{ empty(old('description')) ? $bundle->description : old('description') }}</textarea>
@@ -78,7 +78,7 @@
                         <input type="number" class="form-control" name="royalty" />
                         <p class="errors">{{ $errors->book->first('royalty') }}</p>
                       </div>
-                      
+
                       <button class="btn btn-primary">Submit</button>
                   </form>
                 </div>
@@ -107,8 +107,14 @@
                       @endforeach
                     </table>
                   </div>
-                </div>
+                </div> <!-- .list_book_bundle -->
 
+                <div class="area_publish_bundle">
+                  <h3>Publish your bundle</h3>
+                  <div class="wrap-btn-pub">
+                    <a class="btn btn-primary" href="{{route('publish_bundle', $bundle->id)}}">Publish</a>
+                  </div>
+                </div>
               </section>
             </div> <!-- .inner-content -->
           </div> <!-- .col-md-9 -->

@@ -30,7 +30,6 @@
 	function responsive()
 	{
 	  var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-	  console.log(width);
 	  if(width < 1000)
 	  {
 	  	$('.list-menu').css({'position':'relative'});
@@ -67,7 +66,6 @@
 	}
 
 </script>
-		<!-- <div class="col-md-1"></div> -->
 
 		<div class="area-right">
 				<div class="search-bar">
@@ -89,11 +87,12 @@
 								<span id="cart-total">{{count(Session::get('carts',array()))}}</span>
 							</div>
 						</a>
-				</div>
+				</div> <!-- .shopping-cart-button -->
+
 				<?php if(null !==Auth::user()) { ?>
 					<div class="profile">
 						<div class="wrapper-profile">
-							<div class="img-avatar"><img src="<?php echo showImage(Auth::user()->avatar); ?>"/> </div>
+							<div class="img-avatar"><img src="<?php echo imageUser(Auth::user()->avatar); ?>"/> </div>
 							<div class="dropdown">
 								<div class="inner-dropdown">
 										<div class="column">
@@ -114,14 +113,21 @@
 												<li><a href="{{ route('profile') }}">Profile</a></li>
 											</ul>
 										</div>
+								</div> <!-- .inner-dropdown -->
+								<div class="footer">
+									<div class="in-footer">
+										<p>
+											{{ Auth::user()->email }} (<a href="{{route('logout')}}">Logout</a>)
+										</p>
+									</div>
 								</div>
-							</div>
+							</div> <!-- .dropdown -->
 						</div>
 					</div>
 				<?php } else { ?>
 					<div class="area-login">
 						<div class="inner-area-login">
-							<a href="auth/login" class="btn btn-primary">Sign in</a>
+							<a href="{{ route('getlogin') }}" class="btn btn-primary">Sign in</a>
 						</div>
 					</div>
 				<?php } ?>

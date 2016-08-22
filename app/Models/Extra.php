@@ -6,7 +6,7 @@ use DB;
 
 class Extra extends Model {
 
-	protected $table = 'extra';
+	protected $table = 'extras';
 
 	protected $fillable = [
 		'name',
@@ -14,7 +14,7 @@ class Extra extends Model {
 		'package_id',
 	];
 
-  public static function getExtraByPackageId($pack_id)
+  public function getExtraByPackageId($pack_id)
   {
       return DB::table('extra')->where('package_id',$pack_id)->get();
   }

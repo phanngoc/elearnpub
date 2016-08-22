@@ -14,26 +14,26 @@
     <section class="large-container">
         <div id="inner-wrapper-library">
             <header>
-              <h3>Your library</h3>    
+              <h3>Your library</h3>
             </header>
             <div class="content">
               <div class="inner-content">
                <?php
-                foreach ($bookLibrarys as $key => $value) {
+                foreach ($bookLibrarys as $book) {
                   ?>
                     <div class="item-library">
                         <div class="row">
                           <div class="col-md-3">
                             <div class="wrap-avatar">
-                              <img src="{{ Asset('resourcebook/'.$value->diravatar) }}">
+                              <a href="{{ route('readbook', $book->id) }}"><img src="{{ Asset('resourcebook/'.$book->diravatar) }}"/></a>
                             </div>
                           </div>
                           <div class="col-md-9">
                             <div class="wrap-content">
-                              <h4>{{ $value->title }}</h4>
-                              <p>{{ $value->teaser }}</p>
+                              <h4>{{ $book->title }}</h4>
+                              <p>{{ $book->teaser }}</p>
                               <div class="author">
-                                <?php $authors = $value->author()->get();?>
+                                <?php $authors = $book->author()->get();?>
                                 @foreach($authors as $author)
                                     <span><a href="">{{ $author->lastname.' '.$author->firstname }}</a></span>
                                 @endforeach
@@ -46,7 +46,7 @@
                 }
                ?>
                </div>
-            </div>  
+            </div>
         </div>
     </section>
 </div>

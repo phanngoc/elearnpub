@@ -9,42 +9,44 @@
     <?php echo $__env->make('frontend.below_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <!-- Main content -->
     <section class="large-container">
+
         <!-- Best seller -->
         <div class="row">
         	<div class="book-list-wrapper">
-                <div class="list-header">
-                    <header class="list-title">
-                      <h3><a href="#">Best Seller</a></h3>
-                    </header>
-                    <div class="list-controls">
-                        <a href="#" class="view_all">View All</a>
-                    </div>
+
+            <div class="list-header">
+                <header class="list-title">
+                  <h3><a href="#">Best Seller</a></h3>
+                </header>
+                <div class="list-controls">
+                    <a href="<?php echo e(route('bestselling', array('filter' => 'this_week_best_seller', 'cate_id' => 'all', 'language_id' => 'all'))); ?>" class="view_all">View All</a>
                 </div>
+            </div> <!-- .list-header -->
 
         		<div class="list-content">
-                    <div class="list-content-wrapper">
-                        <div class="owl-carousel">
-        				  	<?php foreach($books as $book): ?>
-							    <div class="item-book">
-							    	<div class="avatar-wrapper">
-							    		<a href="<?php echo e(route('bookhome',$book['bookurl'])); ?>"><img src="<?php echo e(Asset('resourcebook/'.$book['diravatar'])); ?>"/></a>
-							    	</div>
-                                    <div class="info-name">
-                                        <span><?php echo e($book['title']); ?></span>
-                                    </div>
-                                    <div class="info-author">
-                                        <span>
-                                            <?php
-                                               echo $book['meta']->lastname." ".$book['meta']->firstname;
-                                            ?>
-                                        </span>
-                                    </div>
-							    </div>
-							<?php endforeach; ?>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
+                <div class="list-content-wrapper">
+                    <div class="owl-carousel">
+            				  	<?php foreach($bookBestsellers as $book): ?>
+        							    <div class="item-book">
+        							    	<div class="avatar-wrapper">
+        							    		<a href="<?php echo e(route('bookhome', $book['bookurl'])); ?>"><img src="<?php echo e(Asset('resourcebook/'. $book['diravatar'])); ?>"/></a>
+        							    	</div>
+                            <div class="info-name">
+                                <span><?php echo e($book['title']); ?></span>
+                            </div>
+                            <div class="info-author">
+                                <span>
+                                    <?php
+                                       echo $book['lastname']." ".$book['firstname'];
+                                    ?>
+                                </span>
+                            </div>
+        							    </div>
+          							<?php endforeach; ?>
+    				       </div> <!-- .owl-carousel -->
+    			      </div><!-- .list-content-wrapper -->
+        		</div> <!-- .list-content -->
+        	</div> <!-- .book-list-wrapper -->
         </div>
         <!-- End Best seller -->
 
@@ -57,25 +59,25 @@
                       <h3><a href="#">Feature book</a></h3>
                     </header>
                     <div class="list-controls">
-                        <a href="#" class="view-all">View All</a>
+                        <a href="<?php echo e(route('bestselling_bundle', 'this_week_best_seller')); ?>" class="view-all">View All</a>
                     </div>
                 </div>
 
                 <div class="list-content">
                     <div class="list-content-wrapper">
                         <div class="owl-carousel">
-                            <?php foreach($bookfeatures as $bofea): ?>
+                            <?php foreach($bookfeatures as $book): ?>
                                 <div class="item-book">
                                     <div class="avatar-wrapper">
-                                        <a href="<?php echo e(route('bookhome',$bofea['bookurl'])); ?>"><img src="<?php echo e(Asset('resourcebook/'.$bofea['diravatar'])); ?>"/></a>
+                                        <a href="<?php echo e(route('bookhome',$book['bookurl'])); ?>"><img src="<?php echo e(Asset('resourcebook/'.$book['diravatar'])); ?>"/></a>
                                     </div>
                                     <div class="info-name">
-                                        <span><?php echo e($bofea['title']); ?></span>
+                                        <span><?php echo e($book['title']); ?></span>
                                     </div>
                                     <div class="info-author">
                                         <span>
                                             <?php
-                                               echo $bofea['meta']->lastname." ".$bofea['meta']->firstname;
+                                               echo $book['lastname']." ".$book['firstname'];
                                             ?>
                                         </span>
                                     </div>
@@ -84,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- .book-list-wrapper -->
         </div>
         <!-- End feature book -->
 
@@ -119,8 +121,6 @@
              console.log('da next');
              owl.trigger('next.owl.carousel');
        });
-
-
 
     });
 

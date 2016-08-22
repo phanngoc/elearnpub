@@ -1,0 +1,152 @@
+#below-header {
+  display: block;
+  height: 95px;
+  width: 100%;
+}
+#below-header .inner-below-header {
+  margin: 0px auto;
+  width: 95%;
+  height: 100%;
+}
+#below-header .inner-below-header .language {
+  display: block;
+  height: 95px;
+  float: right;
+  position: relative;
+}
+#below-header .inner-below-header .language h4 {
+  margin-top: 39px;
+  color: #587B9B;
+}
+#below-header .inner-below-header .language h4:after {
+  font-family: FontAwesome;
+  content: "\f107";
+  margin-left: 0.75em;
+}
+#below-header .inner-below-header .language h4:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+#below-header .inner-below-header .language .sub-language {
+  display: none;
+  position: absolute;
+  top: 78px;
+  left: -60px;
+  z-index: 1000;
+  height: 320px;
+  overflow-y: scroll;
+  padding: 3px;
+  border-radius: 2px;
+  border: 1px solid #e0e0e0;
+  -webkit-box-shadow: 0px 0px 5px 0px #d3d3d3;
+  -moz-box-shadow: 0px 0px 5px 0px #d3d3d3;
+  box-shadow: 0px 0px 5px 0px #d3d3d3;
+  background-color: #FBFBFB;
+}
+#below-header .inner-below-header .language .sub-language .inner-sub-language ul {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  width: 200px;
+}
+#below-header .inner-below-header .language .sub-language .inner-sub-language ul li {
+  list-style: none;
+  padding-left: 13px;
+}
+#below-header .inner-below-header .language .sub-language .inner-sub-language ul li a {
+  display: block;
+  text-decoration: none;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  font-size: 16px;
+}
+#below-header .inner-below-header .category {
+  display: block;
+  height: 95px;
+  float: right;
+  position: relative;
+  margin-right: 50px;
+}
+#below-header .inner-below-header .category h4 {
+  margin-top: 39px;
+  color: #587B9B;
+}
+#below-header .inner-below-header .category h4:after {
+  font-family: FontAwesome;
+  content: "\f107";
+  margin-left: 0.75em;
+}
+#below-header .inner-below-header .category h4:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+#below-header .inner-below-header .category .sub-category {
+  display: none;
+  position: absolute;
+  top: 78px;
+  left: -68px;
+  z-index: 1000;
+  height: 320px;
+  overflow-y: scroll;
+  padding: 3px;
+  border-radius: 2px;
+  border: 1px solid #e0e0e0;
+  -webkit-box-shadow: 0px 0px 5px 0px #d3d3d3;
+  -moz-box-shadow: 0px 0px 5px 0px #d3d3d3;
+  box-shadow: 0px 0px 5px 0px #d3d3d3;
+  background-color: #FBFBFB;
+}
+#below-header .inner-below-header .category .sub-category .inner-sub-category ul {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  width: 230px;
+}
+#below-header .inner-below-header .category .sub-category .inner-sub-category ul li {
+  list-style: none;
+  padding-left: 13px;
+}
+#below-header .inner-below-header .category .sub-category .inner-sub-category ul li a {
+  display: block;
+  text-decoration: none;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  font-size: 16px;
+}
+#below-header .inner-below-header .title_header {
+  display: block;
+  float: left;
+  height: 95px;
+}
+#below-header .inner-below-header .title_header h3 {
+  display: block;
+  float: left;
+  height: 95px;
+  margin-top: 35px;
+}
+#below-header .inner-below-header .title_header div.wrap_filter {
+  display: block;
+  float: left;
+  height: 95px;
+  margin-top: 38px;
+  margin-left: 12px;
+}
+#below-header .inner-below-header .title_header div.wrap_filter div.dropdown p.dropdown-toggle {
+  display: inline-block;
+  font-size: 17px;
+}
+#below-header .inner-below-header .title_header div.wrap_filter div.dropdown div#filterDropdown ul {
+  padding-left: 0px;
+}
+#below-header .inner-below-header .title_header div.wrap_filter div.dropdown div#filterDropdown ul li {
+  list-style: none;
+  padding: 6px 5px 6px 12px;
+  border-bottom: 1px solid #E2DFDC;
+}
+#below-header .inner-below-header .title_header div.wrap_filter div.dropdown div#filterDropdown ul li a {
+  text-decoration: none;
+  color: black;
+}
+#below-header .inner-below-header .title_header div.wrap_filter div.dropdown div#filterDropdown ul li a.active {
+  color: #1385b2;
+}

@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Validator;
 
 class Language extends Model {
 
+	use TrailFindEloquent;
+	
 	protected $table = 'languages';
 
 	protected $fillable = [

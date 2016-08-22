@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Validator;
 
 class Category extends Model {
 
-	protected $table = 'category';
+	use TrailFindEloquent;
+	
+	protected $table = 'categories';
 
 	protected $fillable = [
 		'name',
