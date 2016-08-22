@@ -85,6 +85,11 @@ class SettingmoreController extends Controller
     return redirect()->route('category',$book_id);
   }
 
+  /**
+   * Show page setting language.
+   * @param  [type] $book_id [description]
+   * @return [type]          [description]
+   */
   public function language($book_id)
   {
     $linkfilecss = 'language.css';
@@ -93,6 +98,12 @@ class SettingmoreController extends Controller
     return view('frontend.settingmore.language',compact('book','languages','linkfilecss'));
   }
 
+  /**
+   * Update language.
+   * @param  [int]  $book_id [description]
+   * @param  Request $request [description]
+   * @return [type]           [description]
+   */
   public function updateLanguage($book_id, Request $request)
   {
     $book = $this->book->find($book_id);

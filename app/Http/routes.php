@@ -25,8 +25,8 @@ Route::post('auth/register', ['as' => 'register' ,'uses' => 'Auth\AuthController
 Route::group(['middleware' => 'auth'], function () {
 
 	/*---------------------write file------------------------*/
-    Route::get('write/{id}/{namefile?}',['as' => 'writebook', 'uses' => 'BookController@write'])->where('id', '[0-9]+');
-    Route::post('ajax_renamefile',['as' => 'renamefile', 'uses' => 'BookController@ajax_renamefile']);
+  	Route::get('write/{id}/{namefile?}',['as' => 'writebook', 'uses' => 'BookController@write'])->where('id', '[0-9]+');
+  	Route::post('ajax_renamefile',['as' => 'renamefile', 'uses' => 'BookController@ajax_renamefile']);
 		Route::post('ajax_removefile',['as' => 'removefile', 'uses' => 'BookController@ajax_removefile']);
 		Route::post('ajax_newfile/{id}',['as' => 'newfile', 'uses' => 'BookController@ajax_newfile'])->where('id', '[0-9]+');
 		Route::post('ajax_issample',['as' => 'issamplefile', 'uses' => 'BookController@ajax_issample']);
@@ -37,10 +37,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('cart', ['as' => 'addItemToCart','uses' => 'Front\CartController@addItemToCart']);
 	Route::get('cart', ['as' => 'getCart','uses' => 'Front\CartController@getCart']);
 	Route::get('ajax_getCart', ['as' => 'ajax_getCart','uses' => 'Front\CartController@ajax_getCart']);
+	Route::post('updateCart', ['as' => 'updateCart','uses' => 'Front\CartController@updateCart']);
 
 	// Process checkout page
-	Route::get('checkout', ['as'=>'checkout','uses' => 'Front\CartController@showCheckout']);
-	Route::post('checkout', ['as'=>'postcheckout','uses' => 'Front\CartController@postShowCheckout']);
+	Route::get('checkout', ['as'=>'checkout', 'uses' => 'Front\CartController@showCheckout']);
+	Route::post('checkout', ['as'=>'postcheckout', 'uses' => 'Front\CartController@postShowCheckout']);
+
 	// Process thank you page
 	Route::get('checkoutcomplete',['as'=>'checkoutcomplete','uses' => 'Front\CartController@checkoutComplete']);
 
@@ -52,8 +54,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('settingbook/{id}',['as'=>'settingbook','uses'=>'SettingbookController@index']);
 	Route::post('settingbook/{id}',['as'=>'postsettingbook','uses'=>'SettingbookController@saveSettingbook']);
 
-	Route::get('settingbook/{id}/publish_book',['as'=>'publish_book','uses'=>'SettingbookController@publish_book']);
-	Route::post('settingbook/{id}/publish_book',['as'=>'post_publish_book','uses'=>'SettingbookController@post_publish_book']);
+	Route::get('settingbook/{id}/publish_book',['as'=>'publish_book','uses'=>'SettingbookController@publishBook']);
+	Route::post('settingbook/{id}/publish_book',['as'=>'post_publish_book','uses'=>'SettingbookController@postPublishBook']);
 
 	Route::get('settingbook/{id}/publish_sample_book',['as'=>'publish_sample_book','uses'=>'SettingbookController@publish_sample_book']);
 	Route::post('settingbook/{id}/publish_sample_book',['as'=>'post_publish_sample_book','uses'=>'SettingbookController@post_publish_sample_book']);
@@ -148,6 +150,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('edit_bundle/{id}/deletebook/{book_bundle_id}',['as'=>'delete_book_from_bundle','uses' => 'Front\BundleController@deleteBookFromBundle']);
 
+	Route::get('publish_bundle/{id}',['as' => 'publish_bundle','uses' => 'Front\BundleController@publishBundle']);
+
 	Route::get('profile',['as'=>'profile','uses' => 'Front\ProfileController@index']);
 
 	Route::post('profile',['as'=>'postprofile','uses' => 'Front\ProfileController@postProfile']);
@@ -168,10 +172,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 /*-----------------------End middleware auth----------------------------------*/
 
-Route::get('/','HomeController@index');
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 /*-------------------------Route frontend detail book---------------------------*/
-Route::get('bo/{param}',['as' => 'bookhome', 'uses' => 'BookController@book']);
+
+Route::get('bo/{param}', ['as' => 'bookhome', 'uses' => 'BookController@book']);
 Route::get('downloadSample/{id}',['as'=>'downloadSample','uses'=>'Front\DetailBookController@downloadSample']);
 /*-------------------------------------------------------------------------------*/
 Route::get('test','HomeController@test');
@@ -185,5 +190,10 @@ Route::post('search',['as'=> 'search','uses'=>'HomeController@showPageSearch']);
 // Watch profile of user.
 Route::get('u/{profile}', ['as' => 'userprofile','uses'=>'Front\ProfileController@profileAuthor']);
 
-// Bestselling page.
+// Bestselling book page.
 Route::get('fi/{filter}/cate/{cate_id}/lang/{language_id}', ['as' => 'bestselling', 'uses'=>'HomeController@bestSellingBook']);
+
+// Bestselling bundle page.
+Route::get('bundles/fi/{filter}', ['as' => 'bestselling_bundle', 'uses'=>'HomeController@bestSellingBundle']);
+
+Route::get('bundle/{bundleurl}', ['as' => 'bundle_detail', 'uses'=>'Front\BundleController@bundleDetail']);

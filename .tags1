@@ -4,34 +4,3 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-CartController	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^class CartController extends Controller$/;"	class	line:20
-book	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  protected $book;$/;"	variable	line:28
-cart	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  protected $cart;$/;"	variable	line:35
-user	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  protected $user;$/;"	variable	line:42
-price	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  protected $price;$/;"	variable	line:49
-bill	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  protected $bill;$/;"	variable	line:56
-__construct	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function __construct(Book $book, User $user, Cart $cart, Price $price, Bill $bill)$/;"	function	line:66
-book	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $this->book = $book;$/;"	variable	line:68
-user	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $this->user = $user;$/;"	variable	line:69
-cart	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $this->cart = $cart;$/;"	variable	line:70
-getCart	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function getCart(Request $request)$/;"	function	line:80
-ajax_getCart	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function ajax_getCart(Request $request)$/;"	function	line:90
-carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $carts = $request->session()->get('carts', 'default');$/;"	variable	line:92
-carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $carts = array();$/;"	variable	line:96
-listItem	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $listItem = array();$/;"	variable	line:99
-book	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^        $book = $this->book->find($cart['bookid']);$/;"	variable	line:102
-listItem	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $listItem = json_encode($listItem);$/;"	variable	line:108
-addItemToCart	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function addItemToCart(Request $request)$/;"	function	line:117
-item	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $item = array('bookid' => $request->bookid, 'amount' => $request->amountYouPay, 'quantity' => 1);$/;"	variable	line:119
-carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $carts = $request->session()->get('carts', 'default');$/;"	variable	line:120
-carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $carts = array();$/;"	variable	line:124
-isAdd	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $isAdd = false;$/;"	variable	line:128
-isAdd	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^        $isAdd = true;$/;"	variable	line:133
-showCheckout	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function showCheckout()$/;"	function	line:150
-postShowCheckout	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function postShowCheckout(Request $request)$/;"	function	line:169
-validator	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $validator = Validator::make($request->all(),[$/;"	variable	line:171
-date	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $date = date('Y-m-d H:i:s');$/;"	variable	line:180
-bill	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $bill = $this->bill->create([$/;"	variable	line:182
-carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^    $carts = $request->session()->get('carts', 'default');$/;"	variable	line:190
-carts	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^      $carts = array();$/;"	variable	line:194
-checkoutComplete	/var/www/html/elearnpub/app/Http/Controllers/Front/CartController.php	/^  public function checkoutComplete()$/;"	function	line:213

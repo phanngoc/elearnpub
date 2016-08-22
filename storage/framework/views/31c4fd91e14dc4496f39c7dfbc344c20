@@ -29,7 +29,7 @@
             				  	<?php foreach($bookBestsellers as $book): ?>
         							    <div class="item-book">
         							    	<div class="avatar-wrapper">
-        							    		<a href="<?php echo e(route('bookhome', $book['bookurl'])); ?>"><img src="<?php echo e(Asset('resourcebook/' . $book['diravatar'])); ?>"/></a>
+        							    		<a href="<?php echo e(route('bookhome', $book['bookurl'])); ?>"><img src="<?php echo e(Asset('resourcebook/'. $book['diravatar'])); ?>"/></a>
         							    	</div>
                             <div class="info-name">
                                 <span><?php echo e($book['title']); ?></span>
@@ -59,7 +59,7 @@
                       <h3><a href="#">Feature book</a></h3>
                     </header>
                     <div class="list-controls">
-                        <a href="#" class="view-all">View All</a>
+                        <a href="<?php echo e(route('bestselling_bundle', 'this_week_best_seller')); ?>" class="view-all">View All</a>
                     </div>
                 </div>
 

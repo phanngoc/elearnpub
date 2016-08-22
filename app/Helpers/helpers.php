@@ -5,11 +5,24 @@
  * @param  [string] $name
  * @return [string] full link to image
  */
-function showImage($name) {
-	if (File::exists(base_path().'/public/avatar/'.$name)) {
+function imageUser($name) {
+	if (File::exists(base_path() . '/public/avatar/' . $name)) {
 		return Asset('avatar/'.$name);
 	} else {
 		return Asset('images/default-avatar.png');
+	}
+}
+
+/**
+ * Show full url of book image.
+ * @param  [string] $name
+ * @return [string] full link to image
+ */
+function imageBook($url) {
+	if (File::exists(base_path() . '/public/resourcebook/' . $url)) {
+		return Asset('resourcebook/' . $url);
+	} else {
+		return Asset('resourcebook/question-mark.png');
 	}
 }
 

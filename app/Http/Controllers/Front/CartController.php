@@ -10,6 +10,7 @@ use Zipper;
 use Auth;
 use DB;
 use URL;
+use Session;
 
 use App\User;
 use App\Models\Book;
@@ -68,8 +69,8 @@ class CartController extends Controller
       $this->book = $book;
       $this->user = $user;
       $this->cart = $cart;
-      $this->$price = $price;
-      $this->$bill = $bill;
+      $this->price = $price;
+      $this->bill = $bill;
   }
 
   /**
@@ -99,9 +100,8 @@ class CartController extends Controller
     $listItem = array();
 
     foreach ($carts as $cart) {
-        $book = $this->book->find($cart['bookid']);
+        $book = $this->cart->findItem($cart['item_id'], $cart['type']);
         $book->meta = $cart;
-        $book->price = $this->price->getPriceByBookId($book->id);
         array_push($listItem, $book);
     }
 
@@ -111,36 +111,62 @@ class CartController extends Controller
 
   /**
    * Post data from cart into session.
-   * @param  Request $request [description]
+   * @param  Request $request
    * @return Illuminate\Http\Response
    */
   public function addItemToCart(Request $request)
   {
-    $item = array('bookid' => $request->bookid, 'amount' => $request->amountYouPay, 'quantity' => 1);
-    $carts = $request->session()->get('carts', 'default');
+    $item = array('item_id' => $request->item_id, 'type' => $request->type,
+                  'amount' => $request->amountYouPay, 'quantity' => 1);
+
+    $this->addItemCartSession($item);
+
+    return view('frontend.cart');
+  }
+
+  /**
+   * Add item into cart session.
+   * @param [array] $item [description]
+   */
+  private function addItemCartSession($item) {
+    $carts = request()->session()->get('carts', 'default');
 
     if ($carts == 'default')
     {
       $carts = array();
     }
 
-    // if item exist in array cart , only need increment
     $isAdd = false;
+
     foreach ($carts as $key => $cart) {
-      if($cart['bookid'] == $item['bookid'])
+      if($cart['item_id'] == $item['item_id'] && $cart['type'] == $item['type'])
       {
-        $carts[$key]['quantity'] = $carts[$key]['quantity'] + 1;
+        $carts[$key]['quantity'] = $item['quantity'];
+        $carts[$key]['amount'] = $item['amount'];
         $isAdd = true;
       }
     }
 
     if (!$isAdd)
     {
-      array_push($carts,$item);
+      array_push($carts, $item);
     }
 
-    $request->session()->put('carts', $carts);
-    return view('frontend.cart');
+    request()->session()->put('carts', $carts);
+  }
+
+  /**
+   * Ajax update cart.
+   * @param  Request $request
+   * @return Illuminate\Http\Response
+   */
+  public function updateCart(Request $request)
+  {
+    $data = $request->data;
+    $carts = array_pluck($data, 'meta');
+    foreach ($carts as $cart) {
+      $this->addItemCartSession($cart);
+    }
   }
 
   /**
@@ -174,7 +200,7 @@ class CartController extends Controller
 
     if ($validator->fails())
     {
-      return redirect()->route('checkout')->withErrors($validator,'checkout')->withInput();
+      return redirect()->route('checkout')->withErrors($validator, 'checkout')->withInput();
     }
 
     $date = date('Y-m-d H:i:s');
@@ -196,7 +222,8 @@ class CartController extends Controller
 
     foreach ($carts as $cart) {
       $this->cart->create([
-        'book_id' => $cart['bookid'],
+        'type' => $cart['type'],
+        'item_id' => $cart['item_id'],
         'count'  => $cart['quantity'],
         'bill_id' => $bill->id,
         'unit_price' => $cart['amount']

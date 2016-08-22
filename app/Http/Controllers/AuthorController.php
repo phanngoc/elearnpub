@@ -136,7 +136,7 @@ class AuthorController extends Controller
   {
     $book = $this->book->find($book_id);
     $linkfilecss = 'edit_coauthor.css';
-    $infoCoAuthor = Book::findCoAuthor($book_id);
+    $infoCoAuthor = $this->book->findCoAuthor($book_id);
     return view('frontend.author.edit_coauthor', compact('book', 'infoCoAuthor', 'linkfilecss'));
   }
 
@@ -249,7 +249,7 @@ class AuthorController extends Controller
   {
     if ($request->input('username') != '')
     {
-      $this->book->editContributorByUsername($book_id,$author_id,$request->input('username'));
+      $this->book->editContributorByUsername($book_id, $author_id, $request->input('username'));
     }
     else
     {
@@ -263,7 +263,8 @@ class AuthorController extends Controller
 
       if ($validator->fails())
       {
-        return redirect()->route('show_edit_contributor',array('book_id'=>$book_id,'author_id'=>$author_id))->withErrors($validator,'cocontributor')->withInput();
+        return redirect()->route('show_edit_contributor',array('book_id'=>$book_id, 'author_id'=>$author_id))
+                                  ->withErrors($validator, 'cocontributor')->withInput();
       }
 
       if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
@@ -281,7 +282,7 @@ class AuthorController extends Controller
       {
         $fileName = 'default-avatar.png';
       }
-      User::updateContributorAndConnectBook($author_id,$request->all(),$fileName);
+      $this->user->updateContributorAndConnectBook($author_id,$request->all(),$fileName);
     }
     return redirect()->route('show_edit_contributor',array('book_id'=>$book_id,'author_id'=>$author_id));
   }

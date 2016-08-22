@@ -50,7 +50,7 @@
          </div>
        </div> <!-- .dropdown -->
       </div> <!-- .wrap_filter -->
-    </div>
+    </div> <!-- .title_header -->
 
 	</div> <!-- .inner-below-header -->
 </div> <!-- #below-header -->

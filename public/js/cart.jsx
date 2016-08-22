@@ -24,21 +24,23 @@ var RowTable = React.createClass({
         <td>{this.props.item.meta['quantity']}</td>
         <td>{this.props.item.meta['amount']}</td>
         <td>{this.props.item.meta['quantity']*this.props.item.meta['amount']}</td>
-        <td><a href="#" onClick={this.props.handleClick.bind(this,this.props.item)} ><i className="fa fa-pencil-square-o"></i></a></td>
-        <td><a href="#" onClick={this.props.handleDelete.bind(this,this.props.item)}><i className="fa fa-times"></i></a></td>
+        <td><a href="#" onClick={this.props.handleClick.bind(null, this.props.item)} ><i className="fa fa-pencil-square-o"></i></a></td>
+        <td><a href="#" onClick={this.props.handleDelete.bind(null, this.props.item)}><i className="fa fa-times"></i></a></td>
       </tr>
     );
   },
 });
 var ShoppingCart = React.createClass({
   getInitialState : function(){
-    return { items : [] , isOpen : false , item : {title:'',teaser:'',avatar : '',meta : {quantity:1},price : {minimumprice:0,suggestedprice:0}}};
+    return { items : [] , isOpen : false ,
+             item : {id : '', title : '', teaser : '', minimumprice : 0, suggestedprice : 0,
+                      type : 1, avatar : '', meta : {item_id : 0, type : 1, amount : 0, quantity: 1}
+                    }};
   },
 
   componentDidMount: function() {
     $.get(ROUTE_GET_CART, function(result) {
       var resultJson = jQuery.parseJSON(result);
-      console.log(resultJson);
       if (this.isMounted()) {
         this.setState({
           items: resultJson,
@@ -49,38 +51,51 @@ var ShoppingCart = React.createClass({
 
   handleClick : function(item)
   {
-    console.log(item);
-    this.setState({item:item,isOpen : true});
+    this.setState({item:item, isOpen : true});
   },
 
   handleDelete : function(item)
   {
     if(confirm("Are you delete ?"))
     {
-      var newItems = _.filter(this.state.items, function(it){ return it.id != item.id; });
-      console.log(newItems);
-      this.setState({items : newItems,isOpen : false});
+      var newItems = _.filter(this.state.items, function(it){
+                          return (it.meta.item_id != item.meta.item_id) && (it.meta.type != item.meta.type);
+                      });
+      this.setState({items : newItems, isOpen : false});
     }
   },
 
   update : function(item)
   {
     var newItems = this.state.items;
-    $.each(newItems, function(key,value){
-      if(value.id == item.id)
+    $.each(newItems, function(key, value){
+      if(value.meta.item_id == item.meta.type)
       {
         newItems[key] = item;
       }
     });
-    this.setState({ items : newItems,isOpen : false});
+    this.setState({items : newItems, isOpen : false});
+  },
+
+  updateCartServer : function() {
+    $.post(ROUTE_UPDATE_CART, {data : this.state.items, _token : TOKEN}, function(data, status){
+      window.location.href = ROUTE_CHECKOUT;
+    });
   },
 
   render : function(){
     var itemNotExist = (<p></p>);
+
     if (this.state.items.length == 0)
     {
         itemNotExist = (<p>You don't have item in cart</p>)
     }
+
+    var rowItem = function (item, i) {
+       return (
+         <RowTable key={i} item={item} handleClick={this.handleClick} handleDelete={this.handleDelete}/>
+       );
+    };
 
     return (
       <div className="area-cart">
@@ -102,16 +117,12 @@ var ShoppingCart = React.createClass({
             <tbody>
               { itemNotExist }
               {
-                   this.state.items.map(function (item) {
-                      return (
-                        <RowTable item={item} handleClick={this.handleClick} handleDelete={this.handleDelete}/>
-                      );
-                   },this)
+                  this.state.items.map(rowItem.bind(this))
               }
             </tbody>
           </table>
         </div>
-        <a className="btn btn-primary continue" href={ROUTE_CHECKOUT} >Continue</a>
+        <p className="btn btn-primary continue" onClick={this.updateCartServer}>Continue</p>
       </div>
     );
   },
@@ -125,19 +136,21 @@ var ContentModal = React.createClass({
   },
 
   componentDidMount: function() {
-    $("#amount-you-pay").numeric('.',{negative : false, decimalPlaces : 1});
-    $("#amount-author-earn").numeric('.',{negative : false, decimalPlaces : 1});
+    $("#amount-you-pay").numeric('.', {negative : false, decimalPlaces : 1});
+    $("#amount-author-earn").numeric('.', {negative : false, decimalPlaces : 1});
     $("#quantity").numeric(false);
   },
-  // componentWillMount : function(){
-  //    // this.setState({item : this.props.item});
-  // },
+
   componentWillReceiveProps : function(nextProps){
      this.setState({item : nextProps.item});
+     if (nextProps.item.avatar != "" && !Array.isArray(nextProps.item.avatar)) {
+       var newItem = nextProps.item;
+       newItem.avatar = JSON.parse(nextProps.item.avatar);
+       this.setState({item : newItem});
+     }
   },
 
   shouldComponentUpdate: function(nextProps, nextState) {
-    console.log(nextProps);
     return true;
   },
 
@@ -162,12 +175,11 @@ var ContentModal = React.createClass({
   },
 
   render : function(){
-
     return (
       <div className="wrapper-content">
         <div className="row">
           <div className="col-md-3">
-             <img src={ LINK_ASSET_RESOURCE_BOOK + '/' + this.state.item.avatar }/>
+             <img src={ LINK_ASSET_RESOURCE_BOOK + '/' + this.state.item.avatar[0] }/>
           </div>
           <div className="col-md-9">
              <h3>{ this.state.item.title }</h3>
@@ -177,9 +189,12 @@ var ContentModal = React.createClass({
         <div className="row">
           <div className="inner-price">
             <div className="header-price">
-              <div className="quantity"><span>Copies</span><input type="text" className="form-control" onChange={this.handleChangeQuantity} placeholder="00" value={this.state.item.meta.quantity} id="quantity"/></div>
-              <span className="minimumprice">$ { this.state.item.price.minimumprice } MINIMUM</span>
-              <span className="suggestedprice">$ { this.state.item.price.suggestedprice } SUGGESTED</span>
+              <div className="quantity">
+                  <span>Copies</span>
+                  <input type="text" className="form-control" onChange={this.handleChangeQuantity} placeholder="00" value={this.state.item.meta.quantity} id="quantity"/>
+              </div>
+              <span className="minimumprice">$ { this.state.item.minimumprice } MINIMUM</span>
+              <span className="suggestedprice">$ { this.state.item.suggestedprice } SUGGESTED</span>
             </div>
             <div className="pick-price">
               <div className="row">
@@ -211,7 +226,7 @@ var ContentModal = React.createClass({
         </div>
 
         <div className="modal-footer">
-            <button type="button" className="update pull-right btn btn-default" onClick={this.props.update.bind(this,this.state.item,false)} data-dismiss="modal">Update</button>
+            <button type="button" className="update pull-right btn btn-default" onClick={this.props.update.bind(null, this.state.item, false)} data-dismiss="modal">Update</button>
         </div>
       </div>
     );
@@ -226,7 +241,6 @@ var ModalEdit = React.createClass({
 
   componentWillReceiveProps : function(nextProps)
   {
-    console.log(nextProps);
     if(nextProps.isOpen == true)
     {
       $('#myModal').modal('show');

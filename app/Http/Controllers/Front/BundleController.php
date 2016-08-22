@@ -14,16 +14,78 @@ use Auth;
 use App\Models\Bundle;
 use App\Models\BookBundle;
 use App\Models\BookAuthor;
+use App\Models\Popularity;
 
 class BundleController extends Controller
 {
+
+    /**
+     * Book model.
+     *
+     * @var Book class
+     */
+    protected $book;
+
+    /**
+     * BookBundle model.
+     *
+     * @var Price class
+     */
+    protected $bookbundle;
+
+    /**
+     * User model.
+     *
+     * @var User class
+     */
+    protected $user;
+
+    /**
+     * Bookauthor model.
+     *
+     * @var Bookauthor class
+     */
+    protected $bookauthor;
+
+    /**
+     * Bundle model.
+     *
+     * @var Bundle class
+     */
+    protected $bundle;
+
+    /**
+     * Popularity model.
+     *
+     * @var Popularity class
+     */
+    protected $popularity;
+
+    /**
+     * Construct
+     *
+     * @param Book $book
+     * @param User $user
+     * @param FileBook $filebook
+     */
+    public function __construct(Book $book, BookBundle $bookbundle, User $user,
+                                BookAuthor $bookauthor, Bundle $bundle, Popularity $popularity)
+    {
+        $this->book = $book;
+        $this->user = $user;
+        $this->bookbundle = $bookbundle;
+        $this->bookauthor = $bookauthor;
+        $this->bundle = $bundle;
+        $this->popularity = $popularity;
+    }
+
     /**
      * Show page list bundle.
      * @return [type] [description]
      */
     public function bundles() {
-        $bundles = User::find(Auth::user()->id)->bundles()->get();
-        return view('frontend.bundle.list_bundle',compact('bundles'));
+        $bundles = $this->user->find(Auth::user()->id)->bundles()->get();
+        return view('frontend.bundle.list_bundle', compact('bundles'));
     }
 
     /**
@@ -48,22 +110,22 @@ class BundleController extends Controller
 
         if($validator->fails())
         {
-          return redirect()->route('new_bundle')->withErrors($validator,'newbundle')->withInput();  
+          return redirect()->route('new_bundle')->withErrors($validator, 'newbundle')->withInput();
         }
 
-        $bundle = Bundle::addNewBundle($request->all());
+        $bundle = $this->bundle->addNewBundle($request->all());
         return redirect()->route('bundles');
     }
 
     /**
-     * Edit bundle 
+     * Edit bundle
      * @return [type] [description]
      */
     public function editBundle($id) {
-    	$bundle = Bundle::find($id);
-    	$bookbundles = BookBundle::where('bundle_id',$id)->get();
+    	$bundle = $this->bundle->find($id);
+    	$bookbundles = $this->bookbundle->where('bundle_id',$id)->get();
 
-    	return view('frontend.bundle.edit_bundle',compact('bundle','bookbundles'));
+    	return view('frontend.bundle.edit_bundle', compact('bundle', 'bookbundles'));
     }
 
     /**
@@ -80,10 +142,10 @@ class BundleController extends Controller
 
         if($validator->fails())
         {
-          return redirect()->route('edit_bundle',$id)->withErrors($validator,'bundle')->withInput();  
+          return redirect()->route('edit_bundle', $id)->withErrors($validator, 'bundle')->withInput();
         }
 
-        $bundle = Bundle::updateBundle($request->all(),$id);
+        $bundle = $this->bookbundle->updateBundle($request->all(),$id);
         return redirect()->route('edit_bundle',$id);
     }
 
@@ -100,44 +162,93 @@ class BundleController extends Controller
 
         if($validator->fails())
         {
-          return redirect()->route('edit_bundle',$bundleid)->withErrors($validator,'bundle')->withInput();  
+          return redirect()->route('edit_bundle', $bundleid)->withErrors($validator, 'bundle')->withInput();
         }
 
-    	$bookid = Book::where('bookurl',$request->input('bookurl'))->first()->id;
+    	$bookid = $this->book->where('bookurl', $request->input('bookurl'))->first()->id;
     	$accepted = 0;
 
-    	if (BookAuthor::checkAuthorAndMain(Auth::user()->id, $bookid)) {
+    	if ($this->bookauthor->checkAuthorAndMain(Auth::user()->id, $bookid)) {
     		$accepted = 1;
     	}
 
-    	BookBundle::create([
+    	$this->bookbundle->create([
     		'book_id' => $bookid,
     		'bundle_id' => $bundleid,
     		'royalty' => $request->input('royalty'),
     		'accepted' => $accepted
     	]);
-    	return redirect()->route('edit_bundle',$bundleid);
+    	return redirect()->route('edit_bundle', $bundleid);
     }
 
     /**
-     * [deleteBookFromBundle description]
+     * Delete book from bundle.
      * @param  Request $request  [description]
      * @param  [type]  $bundleid [description]
      * @return [type]            [description]
      */
     public function deleteBookFromBundle(Request $request, $bundleid, $bookBundleId) {
-        BookBundle::find($bookBundleId)->delete();
-        return redirect()->route('edit_bundle',$bundleid);
+        $this->bookbundle->find($bookBundleId)->delete();
+        return redirect()->route('edit_bundle', $bundleid);
     }
 
     /**
-     * [deleteBundle description]
+     * Delete bundle.
      * @param  Request $request [description]
      * @param  [type]  $bundleid  Bundle need delete
      * @return [type]           [description]
      */
     public function deleteBundle(Request $request, $bundleid) {
-        Bundle::deleteBundleAndRelation($bundleid);
+        $this->bundle->deleteBundleAndRelation($bundleid);
         return redirect()->route('bundles');
+    }
+
+    /**
+     * Publish bundle.
+     * @param  Request $request  [description]
+     * @param  [type]  $bundleid [description]
+     * @return [type]            [description]
+     */
+    public function publishBundle(Request $request, $bundleid) {
+        $this->bundle->find($bundleid)->update([
+          'is_published' => 1,
+          'published_at' => date('Y-m-d H:i:s')
+        ]);
+        return redirect()->route('bundles');
+    }
+
+    /**
+     * Bundle detail.
+     * @param  [string] $bundleUrl Short url of bundle.
+     * @return [type]
+     */
+    public function bundleDetail($bundleUrl) {
+       $bundle = $this->bundle->bundleDetail($bundleUrl);
+       $this->countViewBundle($bundle->id);
+       return view('frontend.bundle.bundle_detail', compact('bundle'));
+    }
+
+    /**
+     * Count view bundle.
+     * @param  int $bundleId Id of bundle.
+     * @return [type]         [description]
+     */
+    public function countViewBundle($bundleId) {
+        $user = Auth::user();
+        if ($user) {
+          $this->popularity->create([
+            'identity' => $user->id,
+            'action' => 1,
+            'item_id' => $bundleId,
+            'type' => Popularity::TYPE_BUNDLE
+          ]);
+        } else {
+          $this->popularity->create([
+            'identity' => \Request::ip(),
+            'action' => 1,
+            'item_id' => $bundleId,
+            'type' => Popularity::TYPE_BUNDLE
+          ]);
+        }
     }
 }

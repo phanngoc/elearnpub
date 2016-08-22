@@ -92,7 +92,7 @@
 				<?php if(null !==Auth::user()) { ?>
 					<div class="profile">
 						<div class="wrapper-profile">
-							<div class="img-avatar"><img src="<?php echo showImage(Auth::user()->avatar); ?>"/> </div>
+							<div class="img-avatar"><img src="<?php echo imageUser(Auth::user()->avatar); ?>"/> </div>
 							<div class="dropdown">
 								<div class="inner-dropdown">
 										<div class="column">
@@ -127,7 +127,7 @@
 				<?php } else { ?>
 					<div class="area-login">
 						<div class="inner-area-login">
-							<a href="auth/login" class="btn btn-primary">Sign in</a>
+							<a href="<?php echo e(route('getlogin')); ?>" class="btn btn-primary">Sign in</a>
 						</div>
 					</div>
 				<?php } ?>

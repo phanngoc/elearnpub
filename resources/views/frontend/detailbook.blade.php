@@ -61,8 +61,9 @@
                                  <div class="maximum"><p class="number">${{ $book->price->suggestedprice }}</p><span class="suffix">SUGGESTED</span></div>
                              </header>
                              <form action="{{ route('addItemToCart')}}" method="POST">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input type="hidden" name="bookid" value="{{ $book->id }}">
+                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                 <input type="hidden" name="item_id" value="{{ $book->id }}">
+                                 <input type="hidden" name="type" value="1">
                                  <div class="content-slider-price">
                                      <p class="label-message">You pay</p>
                                      <div class="row">
@@ -181,9 +182,6 @@
         </div>
     </div>
 </section>
-<!-- <link href="http://cdn.jsdelivr.net/jquery.owlcarousel/1.31/owl.carousel.css" rel="stylesheet" />
-<link href="http://cdn.jsdelivr.net/jquery.owlcarousel/1.31/owl.theme.css" rel="stylesheet" />
-<script src="http://cdn.jsdelivr.net/jquery.owlcarousel/1.31/owl.carousel.min.js"></script> -->
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -197,11 +195,11 @@
                var valmax = $( ".slider-range-you-pay" ).slider('option','max');
                if(val < valmax)
                {
-                $( ".slider-range-you-pay" ).slider('option','value',val);
+                $( ".slider-range-you-pay" ).slider('option','value', val);
                }
                else
                {
-                $( ".slider-range-you-pay" ).slider('option','value',valmax);
+                $( ".slider-range-you-pay" ).slider('option','value', valmax);
                }
             }
         });
@@ -209,14 +207,14 @@
         $("#amount-author-earn").keyup(function(event){
             if(event.keyCode == 13){
                var val = $(this).val();
-               var valmax = $( ".slider-range-author-earn" ).slider('option','max');
+               var valmax = $( ".slider-range-author-earn" ).slider('option', 'max');
                if(val < valmax)
                {
-                $( ".slider-range-author-earn" ).slider('option','value',val);
+                $( ".slider-range-author-earn" ).slider('option', 'value', val);
                }
                else
                {
-                $( ".slider-range-author-earn" ).slider('option','value',valmax);
+                $( ".slider-range-author-earn" ).slider('option', 'value', valmax);
                }
             }
         });

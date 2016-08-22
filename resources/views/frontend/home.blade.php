@@ -31,7 +31,7 @@
             				  	@foreach ($bookBestsellers as $book)
         							    <div class="item-book">
         							    	<div class="avatar-wrapper">
-        							    		<a href="{{ route('bookhome', $book['bookurl']) }}"><img src="{{ Asset('resourcebook/' . $book['diravatar']) }}"/></a>
+        							    		<a href="{{ route('bookhome', $book['bookurl']) }}"><img src="{{ Asset('resourcebook/'. $book['diravatar']) }}"/></a>
         							    	</div>
                             <div class="info-name">
                                 <span>{{ $book['title'] }}</span>
@@ -61,7 +61,7 @@
                       <h3><a href="#">Feature book</a></h3>
                     </header>
                     <div class="list-controls">
-                        <a href="#" class="view-all">View All</a>
+                        <a href="{{ route('bestselling_bundle', 'this_week_best_seller') }}" class="view-all">View All</a>
                     </div>
                 </div>
 

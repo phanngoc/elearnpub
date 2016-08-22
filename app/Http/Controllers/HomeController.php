@@ -10,6 +10,7 @@ use App\Models\Filebook;
 use App\Models\Category;
 use App\Models\Language;
 use App\Models\Bill;
+use App\Models\Bundle;
 use App\User;
 use Markdown;
 use Illuminate\Http\Request;
@@ -80,6 +81,13 @@ class HomeController extends Controller
     protected $cart;
 
     /**
+     * Bundle model.
+     *
+     * @var Bundle class
+     */
+    protected $bundle;
+
+    /**
      * Construct
      *
      * @param Book $book
@@ -87,7 +95,7 @@ class HomeController extends Controller
      * @param FileBook $filebook
      */
     public function __construct(Book $book, User $user, FileBook $filebook, Price $price, Resource $resource,
-                                Category $category, Language $language, Cart $cart)
+                                Category $category, Language $language, Cart $cart, Bundle $bundle)
     {
         $this->book = $book;
         $this->user = $user;
@@ -97,6 +105,7 @@ class HomeController extends Controller
         $this->category = $category;
         $this->language = $language;
         $this->cart = $cart;
+        $this->bundle = $bundle;
     }
 
     /**
@@ -189,28 +198,21 @@ class HomeController extends Controller
      * Show best selling bundle.
      * @return [type] [description]
      */
-    public function bestSellingBundle($filter, $cateid, $langid) {
-      $categories = $this->category->all();
-      $languages = $this->language->all();
+    public function bestSellingBundle($filter) {
 
-      $category = $this->category->findOrNull($cateid);
-      $language = $this->language->findOrNull($langid);
-
-      $books = $this->book->chooseFilter($filter)
-                          ->bookWithLanguageAndCategory($cateid, $langid)
+      $bundles = $this->bundle->chooseFilter($filter)
                           ->paginate(8);
 
-      $bookFilter = array(
+      $bundleFilter = array(
         'this_week_best_seller' => 'This Week\'s Best Sellers',
         'lifetime_best_seller' => 'Lifetime Best Sellers',
-        'this_week_popular_book' => 'This Week\'s Popular Books.',
-        'lifetime_popular_book' => 'Lifetime Popular Books.',
+        'this_week_popular_bundle' => 'This Week\'s Popular Bundles.',
+        'lifetime_popular_bundle' => 'Lifetime Popular Bundles.',
         'recently_updated' => 'Recently Updated',
         'first_published' => 'First Published'
       );
 
-      return view('frontend.home.bestselling', compact('books', 'categories', 'languages',
-                                                       'category', 'language', 'bookFilter', 'filter'));
+      return view('frontend.home.bestselling_bundle', compact('bundles', 'bundleFilter', 'filter'));
     }
 
     /**

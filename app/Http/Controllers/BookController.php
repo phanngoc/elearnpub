@@ -47,7 +47,7 @@ class BookController extends Controller
     /**
      * Resource model.
      *
-     * @var Price class
+     * @var Resource class
      */
     protected $resource;
 
@@ -84,7 +84,7 @@ class BookController extends Controller
     {
         $bookpublish = $this->book->getBookPublished();
         $bookunpublish = $this->book->getBookUnPublished();
-        return view('frontend.book', compact('bookpublish','bookunpublish'));
+        return view('frontend.book', compact('bookpublish', 'bookunpublish'));
     }
 
     /**
@@ -94,16 +94,16 @@ class BookController extends Controller
      */
     public function book($param)
     {
-      $book = $this->book->where('bookurl', $param)->first();
-      $book->meta = $this->book->getMainAuthor($book->id);
-      $book->price = $this->price->getPriceByBookId($book->id);
-      $sample = $this->resource->getSampleByBook($book->id);
-      $this->countViewBook($book->id);
-      return view('frontend.detailbook', compact('book', 'sample'));
+        $book = $this->book->where('bookurl', $param)->first();
+        $book->meta = $this->book->getMainAuthor($book->id);
+        $book->price = $this->price->getPriceByBookId($book->id);
+        $sample = $this->resource->getSampleByBook($book->id);
+        $this->countViewBook($book->id);
+        return view('frontend.detailbook', compact('book', 'sample'));
     }
 
     /**
-     * Count vuew book.
+     * Count view book.
      * @param  int $bookId If of book.
      * @return [type]         [description]
      */
@@ -113,13 +113,15 @@ class BookController extends Controller
           $this->popularity->create([
             'identity' => $user->id,
             'action' => 1,
-            'book_id' => $bookId
+            'item_id' => $bookId,
+            'type' => Popularity::TYPE_BOOK
           ]);
         } else {
           $this->popularity->create([
             'identity' => \Request::ip(),
             'action' => 1,
-            'book_id' => $bookId
+            'book_id' => $bookId,
+            'type' => Popularity::TYPE_BOOK
           ]);
         }
     }

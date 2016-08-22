@@ -84,7 +84,7 @@ class SettingbookController extends Controller
      * @param [int] $book_id [[Description]]
      * @return [[Type]] [[Description]]
      */
-    public function publish_book($book_id)
+    public function publishBook($book_id)
     {
         $book = $this->book->find($book_id);
         $linkfilecss = 'publish_book.css';
@@ -94,12 +94,19 @@ class SettingbookController extends Controller
 
     /**
      * Save setting publish book
-     * @param [int] $book_id [[Description]]
-     * @return integer [[Description]]
+     * @param [int] $book_id
+     * @return integer
      */
-    public function post_publish_book($book_id)
+    public function postPublishBook(Request $request, $bookId)
     {
+      $book = $this->book->find($bookId);
+      $book->update([
+          'release_note' => $request->release_note,
+          'is_published' => 1,
+      ]);
 
+      $linkfilecss = 'publish_book.css';
+      return view('frontend.publishbook',compact('book', 'linkfilecss'));
     }
 
     /**

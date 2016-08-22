@@ -24,6 +24,8 @@
   var ROUTE_GET_CART = '<?php echo e(route("ajax_getCart")); ?>';
   var LINK_ASSET_RESOURCE_BOOK = '<?php echo e(Asset("resourcebook")); ?>';
   var ROUTE_CHECKOUT = '<?php echo e(route("checkout")); ?>';
+  var ROUTE_UPDATE_CART = '<?php echo e(route("updateCart")); ?>';
+  var TOKEN = '<?php echo e(csrf_token()); ?>';
 </script>
 
 <script type="text/jsx" src="<?php echo e(Asset('js/cart.jsx')); ?>"></script>

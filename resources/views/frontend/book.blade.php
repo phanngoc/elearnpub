@@ -7,11 +7,6 @@
 @section ('body.content')
 
 <link href="{!!Asset('lesscss/css/dashboardbook.css')!!}" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="{{ Asset('react/react.js') }}"></script>
-<script type="text/javascript" src="{{ Asset('react/react-with-addons.js') }}"></script>
-<script type="text/javascript" src="{{ Asset('react/JSXTransformer.js') }}"></script>
-<script type="text/javascript" src="{{ Asset('jquery.numeric.js') }}"></script>
-<script type="text/javascript" src="{{ Asset('underscore.js') }}"></script>
 
 <div class="content-wrapper">
     <section class="large-container">
