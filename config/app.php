@@ -148,6 +148,7 @@ return [
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         Chumper\Zipper\ZipperServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
     ],
 
     /*

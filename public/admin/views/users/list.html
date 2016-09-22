@@ -1,0 +1,41 @@
+<div id="list-user">
+  <h4><i class="fa fa-user" aria-hidden="true"></i>List user</h4>
+  <div class="content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th data-field="firstname">Firstname</th>
+          <th data-field="lastname">Lastname</th>
+          <th data-field="email">Email</th>
+          <th data-field="avatar">Avatar</th>
+          <th data-field="is_locked">Is Locked</th>
+          <th data-field="action">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key, user) in users">
+          <td ng-show="false">
+            {{user.id}}
+          </td>
+          <td>{{user.firstname}}</td>
+          <td>{{user.lastname}}</td>
+          <td>{{user.email}}</td>
+          <td><img src="{{user.avatar | avatarImage}}" alt="" class="avatar" width="50" height="50"/></td>
+          <td>
+            <md-checkbox ng-model="user.is_locked" aria-label="Is locked?">
+            </md-checkbox>
+          </td>
+          <td>
+            <a class="btn-floating btn-medium blue" ng-click="editUser(user.id)">
+              <i class="large material-icons">mode_edit</i>
+            </a>
+            <a class="btn-floating btn-medium red-text" ng-click="deleteUser(user.id)">
+              <i class="large material-icons">delete</i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" items-per-page="3"></ul>
+  </div> <!-- .content -->
+</div>

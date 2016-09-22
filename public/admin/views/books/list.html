@@ -1,0 +1,37 @@
+<div id="list-user">
+  <h4><i class="fa fa-book" aria-hidden="true"></i>List books.</h4>
+  <div class="content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th data-field="title">Title</th>
+          <th data-field="avatar">Avatar</th>
+          <th data-field="bundles">Bundles</th>
+          <th data-field="package">Packages</th>
+          <th data-field="allow_published">Allow published</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key, book) in books">
+          <td>{{book.title}}</td>
+          <td>{{user.avatar | avatarImage}}</td>
+          <td></td>
+          <td><img src="{{user.avatar | avatarImage}}" alt="" class="avatar" width="50" height="50"/></td>
+          <td>
+            <md-checkbox ng-model="user.is_locked" aria-label="Is locked?">
+            </md-checkbox>
+          </td>
+          <td>
+            <a class="btn-floating btn-medium blue" ng-click="editUser(user.id)">
+              <i class="large material-icons">mode_edit</i>
+            </a>
+            <a class="btn-floating btn-medium red-text" ng-click="deleteUser(user.id)">
+              <i class="large material-icons">delete</i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" items-per-page="3"></ul>
+  </div> <!-- .content -->
+</div>

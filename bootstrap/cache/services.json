@@ -30,7 +30,8 @@
         "MaxHoffmann\\Parsedown\\ParsedownServiceProvider",
         "Greggilbert\\Recaptcha\\RecaptchaServiceProvider",
         "Chumper\\Zipper\\ZipperServiceProvider",
-        "App\\Providers\\HelperServiceProvider"
+        "App\\Providers\\HelperServiceProvider",
+        "Prettus\\Repository\\Providers\\RepositoryServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -51,7 +52,8 @@
         "MaxHoffmann\\Parsedown\\ParsedownServiceProvider",
         "Greggilbert\\Recaptcha\\RecaptchaServiceProvider",
         "Chumper\\Zipper\\ZipperServiceProvider",
-        "App\\Providers\\HelperServiceProvider"
+        "App\\Providers\\HelperServiceProvider",
+        "Prettus\\Repository\\Providers\\RepositoryServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

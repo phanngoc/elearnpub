@@ -288,11 +288,11 @@ class AuthorController extends Controller
   }
 
 
-  public function addCoupon($book_id)
+  public function addCoupon($bookId)
   {
-    $book = Book::find($book_id);
+    $book = $this->book->find($bookId);
     $linkfilecss = 'add_coupon.css';
-    $packages = Package::getPackageBelongBook($book_id);
+    $packages = Package::getPackageBelongBook($bookId);
     return view('frontend.author.add_coupon',compact('book','linkfilecss','packages'));
   }
 }

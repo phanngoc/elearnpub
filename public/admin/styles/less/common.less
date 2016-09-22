@@ -1,0 +1,56 @@
+// out: ../css/common.css, compress: false, strictMath: true
+.clearfix {
+  &:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    clear: both;
+    height: 0;
+    font-size: 0;
+  }
+}
+
+@minHeightWrap : 700px;
+body{
+  .clearfix;
+  min-height: @minHeightWrap;
+  .wrapper {
+    .clearfix;
+    #page-content-wrapper{
+      display: block;
+      float: left;
+      min-height: @minHeightWrap;
+      min-width: 980px;
+    }
+
+    #sidebar-wrapper {
+      float: left;
+      width: 250px;
+      background-color: black;
+      min-height: @minHeightWrap;
+
+      ul.sidebar-nav{
+        padding-left: 0px;
+        li.sidebar-brand{
+          padding: 10px 5px 15px 18px;
+          a{
+            font-weight: bold;
+            font-size: 25px;
+            text-decoration: none;
+            color : white;
+          }
+        }
+        li{
+          &:not(.sidebar-brand){
+            list-style: none;
+            padding: 5px 12px 15px 17px;
+            a{
+              color : white;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

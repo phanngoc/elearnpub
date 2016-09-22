@@ -1,0 +1,59 @@
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+body {
+  min-height: 700px;
+}
+body:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+body .wrapper:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+body .wrapper #page-content-wrapper {
+  display: block;
+  float: left;
+  min-height: 700px;
+  min-width: 980px;
+}
+body .wrapper #sidebar-wrapper {
+  float: left;
+  width: 250px;
+  background-color: black;
+  min-height: 700px;
+}
+body .wrapper #sidebar-wrapper ul.sidebar-nav {
+  padding-left: 0px;
+}
+body .wrapper #sidebar-wrapper ul.sidebar-nav li.sidebar-brand {
+  padding: 10px 5px 15px 18px;
+}
+body .wrapper #sidebar-wrapper ul.sidebar-nav li.sidebar-brand a {
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+body .wrapper #sidebar-wrapper ul.sidebar-nav li:not(.sidebar-brand) {
+  list-style: none;
+  padding: 5px 12px 15px 17px;
+}
+body .wrapper #sidebar-wrapper ul.sidebar-nav li:not(.sidebar-brand) a {
+  color: white;
+  text-decoration: none;
+}

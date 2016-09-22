@@ -197,3 +197,15 @@ Route::get('fi/{filter}/cate/{cate_id}/lang/{language_id}', ['as' => 'bestsellin
 Route::get('bundles/fi/{filter}', ['as' => 'bestselling_bundle', 'uses'=>'HomeController@bestSellingBundle']);
 
 Route::get('bundle/{bundleurl}', ['as' => 'bundle_detail', 'uses'=>'Front\BundleController@bundleDetail']);
+
+// Route for admin.
+
+Route::group(['prefix' => 'admin'], function() {
+		Route::get('v', ['as' => 'admin.home', 'uses' => 'Admin\AdminController@homeAdmin']);
+		Route::get('user/list', ['as' => 'admin.list.user', 'uses' => 'Admin\UserController@listUsers']);
+		Route::get('user/edit/{id}', ['as' => 'admin.list.edit', 'uses' => 'Admin\UserController@edit']);
+		Route::post('user/update/{id}', ['as' => 'admin.list.update', 'uses' => 'Admin\UserController@update']);
+		Route::get('role/list', ['as' => 'admin.role.list', 'uses' => 'Admin\UserController@listRoles']);
+		Route::post('uploads', ['as' => 'admin.uploads', 'uses' => 'Admin\AdminController@uploads']);
+		Route::get('book/list', ['as' => 'admin.book.list', 'uses' => 'Admin\BookController@listBooks']);
+});

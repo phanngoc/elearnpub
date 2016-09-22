@@ -28,7 +28,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['username', 'firstname', 'lastname','email','role_id','avatar','blurb','twitter_id','github','googleplus','remember_token'];
+    protected $fillable = ['username', 'firstname', 'lastname', 'email', 'role_id', 'avatar',
+                          'blurb', 'twitter_id', 'github', 'googleplus', 'remember_token'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -38,19 +39,27 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $hidden = ['password', 'remember_token'];
 
     /**
-     * Relation one to many
+     * Relation one to many.
      * @return [type] [description]
      */
     public function bills() {
-        return $this->hasMany('App\Models\Bill','user_id','id');
+        return $this->hasMany('App\Models\Bill', 'user_id', 'id');
     }
 
     /**
-     * Relation one to many
+     * Relation one to many.
      * @return [type] [description]
      */
     public function bundles() {
-        return $this->hasMany('App\Models\Bundle','user_id','id');
+        return $this->hasMany('App\Models\Bundle', 'user_id', 'id');
+    }
+
+    /**
+     * Relation many to one.
+     * @return [type] [description]
+     */
+    public function role() {
+      return $this->belongsTo('App\Models\Role', 'role_id', 'id');
     }
 
     /**

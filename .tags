@@ -1076,9 +1076,6 @@ change	/var/www/html/elearnpub/resources/views/frontend/bundle/bundle_detail.bla
 slide	/var/www/html/elearnpub/resources/views/frontend/bundle/bundle_detail.blade.php	/^              slide: function( event, ui ) {$/;"	jsfunction	line:232
 change	/var/www/html/elearnpub/resources/views/frontend/bundle/bundle_detail.blade.php	/^              change: function( event, ui ) {$/;"	jsfunction	line:249
 slide	/var/www/html/elearnpub/resources/views/frontend/bundle/bundle_detail.blade.php	/^              slide: function( event, ui ) {$/;"	jsfunction	line:252
-UserReadBook	/var/www/html/elearnpub/app/Models/UserReadBook.php	/^class UserReadBook extends Model {$/;"	class	line:6
-table	/var/www/html/elearnpub/app/Models/UserReadBook.php	/^	protected $table = 'user_read_book';$/;"	variable	line:11
-fillable	/var/www/html/elearnpub/app/Models/UserReadBook.php	/^	protected $fillable = [$/;"	variable	line:13
 LibraryController	/var/www/html/elearnpub/app/Http/Controllers/Front/LibraryController.php	/^class LibraryController extends Controller$/;"	class	line:15
 book	/var/www/html/elearnpub/app/Http/Controllers/Front/LibraryController.php	/^    protected $book;$/;"	variable	line:22
 __construct	/var/www/html/elearnpub/app/Http/Controllers/Front/LibraryController.php	/^    public function __construct(Book $book)$/;"	function	line:31
@@ -1101,3 +1098,8 @@ contentCombile	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookContro
 checkUserCanReadBook	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^    private function checkUserCanReadBook($bookId) {$/;"	function	line:73
 userId	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^      $userId = Auth::user()->id;$/;"	variable	line:74
 check	/var/www/html/elearnpub/app/Http/Controllers/Front/ReadBookController.php	/^      $check = $this->userReadBook->where('book_id', $bookId)$/;"	variable	line:75
+UserReadBook	/var/www/html/elearnpub/app/Models/UserReadBook.php	/^class UserReadBook extends Model {$/;"	class	line:5
+table	/var/www/html/elearnpub/app/Models/UserReadBook.php	/^	protected $table = 'user_read_book';$/;"	variable	line:10
+fillable	/var/www/html/elearnpub/app/Models/UserReadBook.php	/^	protected $fillable = [$/;"	variable	line:12
+div	/var/www/html/elearnpub/public/admin/users/views/main.html	/^<div ui-view="header"><\/div>$/;"	function	line:1
+div	/var/www/html/elearnpub/public/admin/users/views/main.html	/^<div ui-view="content" style="padding-top: 20px;"><\/div>$/;"	function	line:3

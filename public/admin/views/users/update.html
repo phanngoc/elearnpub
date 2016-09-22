@@ -1,0 +1,71 @@
+<div id="edit-user">
+  <h4><i class="fa fa-user" aria-hidden="true"></i>Edit user</h4>
+  <div class="content">
+      <form class="col s12" ng-submit="submit()" name="updateUser">
+        <div class="row">
+          <md-input-container>
+            <label for="firstname">First Name</label>
+            <input id="firstname" name="firstname" type="text" class="validate" ng-model="user.firstname" required ng-minlength="3" />
+
+            <div ng-messages="updateUser.firstname.$error" ng-show="updateUser.firstname.$dirty" ng-messages-multiple>
+               <div ng-message="required">This is required.</div>
+               <div ng-message="minlength">The first name is at least 3 characters.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container>
+            <label for="lastname">Last Name</label>
+            <input id="lastname" name="lastname" type="text" class="validate" ng-model="user.lastname" required ng-minlength="3" />
+
+            <div ng-messages="updateUser.lastname.$error" ng-show="updateUser.lastname.$dirty">
+               <div ng-message="required">The last name is required.</div>
+               <div ng-message="minlength">The last name is at least 3 characters.</div>
+            </div>
+          </md-input-container>
+        </div>
+
+        <div class="row">
+          <md-input-container class="md-block">
+            <input ng-model="user.email" name="email" type="email" placeholder="Email (required)" ng-required="true" ng-minlength="3">
+            <div ng-messages="updateUser.email.$error" ng-show="updateUser.email.$dirty">
+               <div ng-message="required">The email is required.</div>
+               <div ng-message="minlength">The email is at least 3 characters.</div>
+               <div ng-message="email">The email is not valid</div>
+            </div>
+          </md-input-container>
+        </div>
+
+        <div class="row">
+          <md-input-container class="md-block">
+           <label>Blurb</label>
+           <textarea ng-model="user.blurb" md-maxlength="255" rows="5" md-select-on-focus></textarea>
+         </md-input-container>
+        </div>
+
+        <div class="row">
+          <md-input-container>
+            <label>Role</label>
+            <md-select ng-model="user.role_id">
+              <md-option ng-repeat="role in roles" ng-value="role.id" ng-select="role.id == user.role_id">
+                {{role.name}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+
+        <div class="row">
+          <md-checkbox ng-model="user.is_locked" aria-label="Is locked?">
+            Is locked
+          </md-checkbox>
+        </div>
+
+        <div class="row">
+          <md-input-container class="md-block">
+            <input name="avatar" type="file" custom-on-change="uploadAvatarFile">
+          </md-input-container>
+        </div>
+
+       <input type="submit" class="waves-effect waves-light btn" />
+      </form>
+  </div> <!-- .content -->
+</div>
