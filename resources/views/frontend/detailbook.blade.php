@@ -23,7 +23,7 @@
            <div class="col-md-5">
                <div class="inner-col-left">
                  <div class="wrap-avatar">
-                     <img src="{{ Asset('resourcebook/'.$book->avatar) }}" alt="">
+                     <img src="{{ imageBook($book->avatar) }}" alt="">
                  </div>
                </div>
            </div>
@@ -34,10 +34,10 @@
                         <p class="subtitle">{{ $book->subtitle }}</p>
                         <div class="line-author">
                             <div class="avatar">
-                                <img src="{{ Asset('avatar/'.$book->meta->avatar) }}" alt="">
+                                <img src="{{ Asset('uploads/'.$book->meta->avatar) }}" alt="">
                             </div>
                             <div class="author">
-                                <p>{{ $book->meta->lastname.' '.$book->meta->firstname }}</p>
+                                <p>{{ $book->meta->lastname . ' ' . $book->meta->firstname }}</p>
                             </div>
                         </div>
 
@@ -151,7 +151,7 @@
             <div class="col-md-5">
                 <div class="inner-left">
                     <div class="wrapper-avatar">
-                        <img src="{{ Asset('avatar/'.$book->meta->avatar) }}" alt="avatar">
+                        <img src="{{ imageUser($book->meta->avatar) }}" alt="avatar">
                     </div>
                     <div class="wrapper-social">
                         <ul class="list-social">

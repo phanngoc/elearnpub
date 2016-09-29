@@ -1,0 +1,30 @@
+<div id="package-belong-book">
+  <h4><i class="fa fa-book" aria-hidden="true"></i>Package of <b>{{book.title}}</b> book</h4>
+  <div class="content">
+    <md-card>
+      <md-card-content>
+        <div class="bundles-in-book">
+          <h4>Package of books</h4>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Minimum price</th>
+                <th>Suggested price</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="(key, package) in book.packages" ng-click="pageToPackage(package.id)">
+                <td>{{package.name}}</td>
+                <td>{{package.minimumprice}}</td>
+                <td>{{package.suggestedprice}}</td>
+                <td>{{package.quantity}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div> <!-- .books-in-bundle -->
+      </md-card-content>
+    </md-card>
+  </div> <!-- .content -->
+</div>

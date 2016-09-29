@@ -17,6 +17,16 @@ body:after {
   height: 0;
   font-size: 0;
 }
+body div#wr-header {
+  margin-bottom: 0px;
+}
+body div#wr-header div#header ul.navbar-nav {
+  float: right;
+}
+body div#wr-header div#header ul.navbar-nav li.dropdown a.dropdown-toggle img.profile-image {
+  width: 35px;
+  height: 35px;
+}
 body .wrapper:after {
   content: ".";
   visibility: hidden;

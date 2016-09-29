@@ -16,27 +16,27 @@
     </thead>
     <tbody>
         <?php
-        foreach ($infoCoAuthor as $key => $value) {
+        foreach ($book->authors as $key => $author) {
           ?>
             <tr>
-              <td>{{$value->objAuthor->lastname." ".$value->objAuthor->firstname}}</td>
-              <td>{{$value->objAuthor->username}}</td>
-              <td>{{$value->royalty}}</td>
-              <td>@if ($value->is_main) 
+              <td>{{$author->lastname . " " . $author->firstname}}</td>
+              <td>{{$author->username}}</td>
+              <td>{{$author->pivot->royalty}}</td>
+              <td>@if ($author->pivot->is_main)
                     Yes
-                  @else 
-                    No 
-                  @endif  
+                  @else
+                    No
+                  @endif
               </td>
-              <td>@if ($value->is_accepted) 
+              <td>@if ($author->pivot->is_accepted)
                     Accepted
-                  @else 
-                    Pending 
-                  @endif  
+                  @else
+                    Pending
+                  @endif
               </td>
               <td>
-                @if (!$value->is_main)
-                  <a href="{{route('delete_coauthor',array('id'=>$book->id,'author_id'=>$value->author_id))}}" class="remove">Remove Co-Author</a>
+                @if (!$author->pivot->is_main)
+                  <a href="{{route('delete_coauthor', array('id' => $book->id, 'author_id' => $author->id))}}" class="remove">Remove Co-Author</a>
                 @endif
               </td>
             </tr>

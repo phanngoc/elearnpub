@@ -81,7 +81,7 @@ class ProfileController extends Controller
       $fileAvatar = $request->file('avatar');
 
 	    if ($fileAvatar->isValid()) {
-	    	$destinationPath = 'avatar';
+	    	$destinationPath = config('common.url_upload');
 	     	$filename = str_random(10).md5(time()).'.'.$fileAvatar->getClientOriginalExtension();
 
       	$fileAvatar->move($destinationPath, $filename);

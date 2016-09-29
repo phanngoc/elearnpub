@@ -4,7 +4,7 @@
     <h3>Upload Title Page</h3>
     <h4>Title Page</h4>
     <?php if(strcmp($book->avatar,"") != 0) { ?>
-        <img src="{{Asset('resourcebook/'.$book->diravatar)}}" class="wrap-avatar"/>
+        <img src="{{ imageBook($book->diravatar) }}" class="wrap-avatar"/>
     <?php } else { ?>
         <img src="{{Asset('images/question-mark.png')}}" class="wrap-avatar"/>
     <?php } ?>

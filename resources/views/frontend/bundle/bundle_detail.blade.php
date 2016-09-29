@@ -33,7 +33,7 @@
                      @foreach($books as $book)
                        <div class="cover-image">
                          <a href="#" title="{{ $book->title }}">
-                             <img src="{{ Asset('resourcebook/' . $book->diravatar) }}" alt="">
+                             <img src="{{ imageBook($book->diravatar) }}" alt="">
                          </a>
                        </div>
 

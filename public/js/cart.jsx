@@ -179,7 +179,7 @@ var ContentModal = React.createClass({
       <div className="wrapper-content">
         <div className="row">
           <div className="col-md-3">
-             <img src={ LINK_ASSET_RESOURCE_BOOK + '/' + this.state.item.avatar[0] }/>
+             <img src={ LINK_ASSET_RESOURCE_BOOK + this.state.item.avatar[0] }/>
           </div>
           <div className="col-md-9">
              <h3>{ this.state.item.title }</h3>

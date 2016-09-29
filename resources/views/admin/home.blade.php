@@ -36,6 +36,12 @@
     <link rel="stylesheet" href="{{ Asset('bower_resources/ngprogress/ngProgress.css') }}">
     <!-- Ng-message -->
     <script src="{{ Asset('bower_resources/angular-messages/angular-messages.js') }}"></script>
+    <!-- Underscore -->
+    <script src="{{ Asset('bower_resources/underscore/underscore.js') }}"></script>
+
+    <script type="text/javascript">
+        var TOKEN = '{{ csrf_token() }}';
+    </script>
 
     <script type="text/javascript" src="{{ Asset('admin/app.js') }}"></script>
     <script type="text/javascript" src="{{ Asset('admin/main.js') }}"></script>
@@ -45,11 +51,24 @@
     <!-- Services -->
     <script type="text/javascript" src="{{ Asset('admin/services/generalService.js') }}"></script>
     <script type="text/javascript" src="{{ Asset('admin/services/userService.js') }}"></script>
+    <script type="text/javascript" src="{{ Asset('admin/services/bookService.js') }}"></script>
+    <script type="text/javascript" src="{{ Asset('admin/services/bundleService.js') }}"></script>
+    <script type="text/javascript" src="{{ Asset('admin/services/packageService.js') }}"></script>
 
     <!-- Controller -->
+    <script src="{{Asset('admin/controllers/loginController.js')}}" type="text/javascript"></script>
+    <script src="{{Asset('admin/controllers/headerController.js')}}" type="text/javascript"></script>
+
     <script src="{{Asset('admin/controllers/listUserController.js')}}" type="text/javascript"></script>
     <script src="{{Asset('admin/controllers/updateUserController.js')}}" type="text/javascript"></script>
     <script src="{{Asset('admin/controllers/homeController.js')}}" type="text/javascript"></script>
+    <script src="{{Asset('admin/controllers/listBookController.js')}}" type="text/javascript"></script>
+
+    <script src="{{Asset('admin/controllers/bundleController.js')}}" type="text/javascript"></script>
+    <script src="{{Asset('admin/controllers/bookBundleController.js')}}" type="text/javascript"></script>
+
+    <script src="{{Asset('admin/controllers/packageController.js')}}" type="text/javascript"></script>
+    <script src="{{Asset('admin/controllers/bookPackageController.js')}}" type="text/javascript"></script>
 
     <!-- My code -->
     <!-- <link rel="stylesheet" href="{{Asset('admin/styles/css/simple-sidebar.css')}}" media="screen" title="no title"> -->

@@ -14,9 +14,11 @@
         <label for="category">Categories</label><br/>
         <select class="category form-control haft-width" name="category[]" multiple="multiple">
             <?php
+              $categoriesBook = $book->categories->pluck(['id'])->toArray();
+
               foreach ($categories as $key => $value) {
                 ?>
-                  <option value="<?php echo $value->id ?>" <?php if(in_array($value->id,$cateSelect)) echo 'selected'; ?> ><?php echo $value->name ?></option>
+                  <option value="<?php echo $value->id ?>" <?php if(in_array($value->id, $categoriesBook)) echo 'selected'; ?> ><?php echo $value->name ?></option>
                 <?php
               }
             ?>

@@ -5,6 +5,9 @@
 @stop
 
 @section ('body.content')
+<!-- Angular -->
+<script type="text/javascript" src="{{ Asset('bower_resources/angular/angular.min.js') }}"></script>
+<script type="text/javascript" src="{{ Asset('bower_resources/angular-messages/angular-messages.js') }}"></script>
 
 <link href="{!!Asset('lesscss/css/settingbook.css')!!}" rel="stylesheet" type="text/css" />
 <link href="{!!Asset('lesscss/css/'.$linkfilecss)!!}" rel="stylesheet" type="text/css" />
@@ -53,9 +56,17 @@
                 <li>
                     <a  class="parent">Author<i class="fa fa-plus"></i></a>
                     <ul>
-                      <li><a href="{{route('custom_author_name',$book->id)}}">Custom Author Name Display</a></li>
-                      <li><a href="{{route('add_coauthor',$book->id)}}">Add Co-Author</a></li>
-                      <li><a href="{{route('edit_coauthor',$book->id)}}">Edit Co-Author</a></li>
+                      <li><a href="{{route('custom_author_name', $book->id)}}">Custom Author Name Display</a></li>
+                      <li><a href="{{route('add_coauthor', $book->id)}}">Add Co-Author</a></li>
+                      <li><a href="{{route('edit_coauthor', $book->id)}}">Edit Co-Author</a></li>
+                      <li><a href="{{route('add_contributor', $book->id)}}">Add Contributor</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="parent">Coupon<i class="fa fa-plus"></i></a>
+                    <ul>
+                      <li><a href="{{route('list_coupon', $book->id)}}">List coupon</a></li>
+                      <li><a href="{{route('add_coupon', $book->id)}}">Add coupon</a></li>
                     </ul>
                 </li>
               </ul>

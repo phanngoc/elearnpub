@@ -17,14 +17,34 @@ use App\Models\Language;
 use App\Models\Filebook;
 use App\Models\Resource;
 
+use App\Repositories\BookAuthorRepository;
+use App\Repositories\BookRepository;
+use App\Repositories\CouponRepository;
+
+use App\Services\BookService;
+
+use App\Http\Requests\CreateCouponRequest;
+
 class AuthorController extends Controller
 {
   /**
-   * Book model.
+   * Book repository model.
    *
-   * @var Book class
+   * @var BookRepository class
    */
-  protected $book;
+  protected $bookRepository;
+
+  /**
+   * Book service.
+   * @var BookService class
+   */
+  protected $bookService;
+
+  /**
+   * Coupon repository model.
+   * @var CouponRepository class
+   */
+  protected $couponRepository;
 
   /**
    * Filebook model.
@@ -55,19 +75,34 @@ class AuthorController extends Controller
   protected $resource;
 
   /**
+   * Book author Repository.
+   *
+   * @var BookAuthorRepository class
+   */
+  protected $bookAuthorRepository;
+
+  /**
    * Construct
    *
    * @param Book $book
    * @param User $user
    * @param FileBook $filebook
    */
-  public function __construct(Book $book, User $user, FileBook $filebook, Price $price, Resource $resource)
+  public function __construct(BookRepository $bookRepository,
+                              CouponRepository $couponRepository,
+                              BookService $bookService,
+                              BookAuthorRepository $bookAuthorRepository,
+                              User $user, FileBook $filebook, Price $price,
+                              Resource $resource)
   {
-      $this->book = $book;
+      $this->bookRepository = $bookRepository;
       $this->user = $user;
       $this->filebook = $filebook;
       $this->price = $price;
       $this->resource = $resource;
+      $this->bookAuthorRepository = $bookAuthorRepository;
+      $this->bookService = $bookService;
+      $this->couponRepository = $couponRepository;
   }
 
   /**
@@ -75,11 +110,10 @@ class AuthorController extends Controller
    * @param  [int] $book_id [description]
    * @return [type]          [description]
    */
-  public function customAuthorName($book_id)
+  public function customAuthorName($bookId)
   {
-    $linkfilecss = 'custom_author_name.css';
-    $book = $this->book->find($book_id);
-    return view('frontend.author.custom_author',compact('book','linkfilecss'));
+    $book = $this->bookRepository->find($bookId);
+    return view('frontend.author.custom_author', compact('book'));
   }
 
   /**
@@ -87,10 +121,10 @@ class AuthorController extends Controller
    * @param  [int] $book_id Id of book.
    * @return [Illuminate\Http\RedirectResponse] response
    */
-  public function updateCustomAuthorName($book_id, Request $request)
+  public function updateCustomAuthorName($bookId, Request $request)
   {
-    $this->book->find($book_id)->update(['custom_author_name' => $request->input('custom_author_name')]);
-    return redirect()->route('custom_author_name',$book_id);
+    $this->bookRepository->update(['custom_author_name' => $request->input('custom_author_name')], $bookId);
+    return redirect()->route('custom_author_name', $bookId);
   }
 
   /**
@@ -98,11 +132,10 @@ class AuthorController extends Controller
    * @param [int] $book_id [description]
    * @return [Illuminate\Http\Response] response
    */
-  public function addCoAuthor($book_id)
+  public function addCoAuthor($bookId)
   {
-    $book = $this->book->find($book_id);
-    $linkfilecss = 'add_coauthor.css';
-    return view('frontend.author.add_coauthor',compact('book','linkfilecss'));
+    $book = $this->bookRepository->find($bookId);
+    return view('frontend.author.add_coauthor',compact('book'));
   }
 
   /**
@@ -110,7 +143,7 @@ class AuthorController extends Controller
    * @param  [int] $book_id Id of book.
    * @return [Illuminate\Http\RedirectResponse] response
    */
-  public function postAddCoAuthor($book_id, Request $request)
+  public function postAddCoAuthor($bookId, Request $request)
   {
     $validator = Validator::make($request->all(),[
         'username' => 'required|max:255|exists:users,username',
@@ -119,12 +152,12 @@ class AuthorController extends Controller
 
     if($validator->fails())
     {
-      return redirect()->route('add_coauthor',$book_id)->withErrors($validator,'coauthor')->withInput();
+      return redirect()->route('add_coauthor',$bookId)
+              ->withErrors($validator, 'coauthor')->withInput();
     }
 
-    $book = $this->book->find($book_id);
-    $this->user->connectCoAuthor($request->all(),$book_id);
-    return redirect()->route('add_coauthor',$book_id);
+    $this->bookService->addCoAuthorToBook($request->all(), $bookId);
+    return redirect()->route('add_coauthor', $bookId);
   }
 
   /**
@@ -132,12 +165,10 @@ class AuthorController extends Controller
    * @param  [int] $book_id
    * @return [Illuminate\Http\Response] response
    */
-  public function editCoAuthor($book_id)
+  public function editCoAuthor($bookId)
   {
-    $book = $this->book->find($book_id);
-    $linkfilecss = 'edit_coauthor.css';
-    $infoCoAuthor = $this->book->findCoAuthor($book_id);
-    return view('frontend.author.edit_coauthor', compact('book', 'infoCoAuthor', 'linkfilecss'));
+    $book = $this->bookRepository->findBookWithMainAndCoAuthor($bookId);
+    return view('frontend.author.edit_coauthor', compact('book'));
   }
 
   /**
@@ -146,9 +177,9 @@ class AuthorController extends Controller
    * @param  [type] $author_id [description]
    * @return [type]            [description]
    */
-  public function deleteCoAuthor($book_id, $author_id)
+  public function deleteCoAuthor($bookId, $authorId)
   {
-    $this->book->deleteCoAuthor($book_id, $author_id);
+    $this->bookAuthorRepository->deleteCoAuthor($book_id, $author_id);
     return redirect()->route('edit_coauthor', $book_id);
   }
 
@@ -156,11 +187,10 @@ class AuthorController extends Controller
    * Show view add contributor to book.
    * @param [int] $book_id [description]
    */
-  public function addContributor($book_id)
+  public function addContributor($bookId)
   {
-    $book = $this->book->find($book_id);
-    $linkfilecss = 'add_contributor.css';
-    return view('frontend.author.add_contributor', compact('book','linkfilecss'));
+    $book = $this->bookRepository->find($bookId);
+    return view('frontend.author.add_contributor', compact('book'));
   }
 
   /**
@@ -169,15 +199,16 @@ class AuthorController extends Controller
    * @param  Request $request [description]
    * @return [type]           [description]
    */
-  public function postAddContributor($book_id, Request $request)
+  public function postAddContributor($bookId, Request $request)
   {
-    if ($request->input('username') != '')
+    $input = $request->all();
+    if ($input['username'] != '')
     {
-      $this->book->addContributorByUsername($book_id, $request->input('username'));
+      $this->bookService->createContributorByUsername($bookId, $input['username']);
     }
     else
     {
-      $validator = Validator::make($request->all(),[
+      $validator = Validator::make($input, [
           'name' => 'required|max:50',
           'blurb' => 'required',
           'email' => 'required|email|unique:users,email',
@@ -187,11 +218,11 @@ class AuthorController extends Controller
 
       if ($validator->fails())
       {
-        return redirect()->route('add_contributor', $book_id)->withErrors($validator, 'cocontributor')->withInput();
+        return redirect()->route('add_contributor', $bookId)->withErrors($validator, 'cocontributor')->withInput();
       }
 
       if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
-          $destinationPath = public_path().'/avatar/';
+          $destinationPath = config('common.url_upload');
           $fileName = generateRandomString(12);
           $original_name = $request->file('avatar')->getClientOriginalName();
           $extension = '';
@@ -206,9 +237,10 @@ class AuthorController extends Controller
       {
         $fileName = 'default-avatar.png';
       }
-      $this->user->createContributorAndConnectBook($book_id,$request->all(),$fileName);
+      $input['avatar'] = $fileName;
+      $this->bookService->createContributorAndConnectBook($bookId, $input);
     }
-    return redirect()->route('add_contributor',$book_id);
+    return redirect()->route('add_contributor', $bookId);
   }
 
   /**
@@ -219,9 +251,8 @@ class AuthorController extends Controller
   public function listContributor($book_id)
   {
     $book = $this->book->find($book_id);
-    $linkfilecss = 'list_contributor.css';
     $contributors = $this->book->getContributorOfBook($book_id);
-    return view('frontend.author.list_contributor',compact('book', 'linkfilecss', 'contributors'));
+    return view('frontend.author.list_contributor',compact('book', 'contributors'));
   }
 
   /**
@@ -230,30 +261,31 @@ class AuthorController extends Controller
    * @param  [int] $author_id [description]
    * @return [type]            [description]
    */
-  public function showEditContributor($book_id, $author_id)
+  public function showEditContributor($bookId, $authorId)
   {
-    $book = $this->book->find($book_id);
-    $linkfilecss = 'show_edit_contributor.css';
-    $contributor = $this->user->find($author_id);
-    return view('frontend.author.show_edit_contributor', compact('book','linkfilecss','contributor'));
+    $book = $this->book->find($bookId);
+    $contributor = $this->user->find($authorId);
+    return view('frontend.author.show_edit_contributor', compact('book', 'contributor'));
   }
 
   /**
-   * [postShowEditContributor description]
+   * Edit contributor page.
    * @param  [type]  $book_id [description]
    * @param  [type]  $author_id [description]
    * @param  Request $request [description]
    * @return [type]           [description]
    */
-  public function postShowEditContributor($book_id,$author_id,Request $request)
+  public function postShowEditContributor($bookId, $authorId, Request $request)
   {
-    if ($request->input('username') != '')
+    $input = $request->all();
+
+    if ($input['username'] != '')
     {
-      $this->book->editContributorByUsername($book_id, $author_id, $request->input('username'));
+      $this->bookService->createContributorByUsername($bookId, $input['username']);
     }
     else
     {
-      $validator = Validator::make($request->all(),[
+      $validator = Validator::make($input, [
           'name' => 'required|max:50',
           'blurb' => 'required',
           'email' => 'required|email',
@@ -263,12 +295,15 @@ class AuthorController extends Controller
 
       if ($validator->fails())
       {
-        return redirect()->route('show_edit_contributor',array('book_id'=>$book_id, 'author_id'=>$author_id))
+        return redirect()->route('show_edit_contributor',
+                                  array('book_id' => $bookId,
+                                        'author_id' => $authorId
+                                ))
                                   ->withErrors($validator, 'cocontributor')->withInput();
       }
 
       if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
-          $destinationPath = public_path().'/avatar/';
+          $destinationPath = config('common.url_upload');
           $fileName = $this->generateRandomString(12);
           $original_name = $request->file('avatar')->getClientOriginalName();
           $extension = '';
@@ -282,17 +317,11 @@ class AuthorController extends Controller
       {
         $fileName = 'default-avatar.png';
       }
-      $this->user->updateContributorAndConnectBook($author_id,$request->all(),$fileName);
+
+      $input['filename'] = $fileName;
+
+      $this->bookService->updateContributorAndConnectBook($bookId, $authorId, $input);
     }
-    return redirect()->route('show_edit_contributor',array('book_id'=>$book_id,'author_id'=>$author_id));
-  }
-
-
-  public function addCoupon($bookId)
-  {
-    $book = $this->book->find($bookId);
-    $linkfilecss = 'add_coupon.css';
-    $packages = Package::getPackageBelongBook($bookId);
-    return view('frontend.author.add_coupon',compact('book','linkfilecss','packages'));
+    return redirect()->route('show_edit_contributor', array('book_id' => $bookId, 'author_id' => $authorId));
   }
 }

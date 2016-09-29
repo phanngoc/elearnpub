@@ -1,5 +1,5 @@
 
-angular.module('learnPubApp').controller('listBookController', function($scope, $state, BookService){
+angular.module('learnPubApp').controller('listBookController', function($scope, $state, BookService, Notification) {
 
   $scope.books = [];
 
@@ -10,7 +10,11 @@ angular.module('learnPubApp').controller('listBookController', function($scope, 
   $scope.pageChanged = function() {
     BookService.fetchBooks($scope.currentPage).then(function(response) {
       if (response.data.status == true) {
-        $scope.books = response.data.result.items;
+        $scope.books = _.map(response.data.result.items, function(item){
+              item.allow_published = (item.allow_published == "1") ? true : false;
+              return item;
+        });
+
         $scope.currentPage = response.data.result.currentPage;
         $scope.totalItems = response.data.result.total;
       }
@@ -19,10 +23,26 @@ angular.module('learnPubApp').controller('listBookController', function($scope, 
 
   BookService.fetchBooks($scope.currentPage).then(function(response) {
     if (response.data.status == true) {
-      $scope.books = response.data.result.items;
+      $scope.books = _.map(response.data.result.items, function(item){
+            item.allow_published = (item.allow_published == "1") ? true : false;
+            return item;
+      });
+
       $scope.currentPage = response.data.result.currentPage;
       $scope.totalItems = response.data.result.total;
     }
   });
+
+  $scope.allowPublishBook = function(bookId, isAllowed) {
+    BookService.changePublishBook(bookId, isAllowed).then(function(response){
+      if (response.data.status == true) {
+        Notification.success("Update successfully");
+      }
+    });
+  }
+
+  $scope.pageBundle = function(bookId) {
+    $state.go("admin.books.bundle", {id : bookId});
+  }
 
 });

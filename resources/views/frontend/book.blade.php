@@ -13,7 +13,7 @@
         <div id="inner-wrapper-listbook" class="row">
 
           @include('frontend.author_dashboard')
-    
+
           <div class="col-md-9">
             <div class="inner-content">
               <section class="info-top">
@@ -29,51 +29,51 @@
                   <h3>Published(0)</h3>
                   <div class="list-book">
                     <ul>
-                      <?php  
+                      <?php
                         foreach ($bookpublish as $key => $value) {
                           ?>
                             <li>
                                <div class="wrapper-avatar">
                                 <!-- $value->id is only id in book_author table not id book, $value->book_id is thing we need -->
                                  <a href="{{route('settingbook',$value->book_id)}}">
-                                    <img src="{{ Asset('resourcebook/'.$value->diravatar) }}" />  
-                                 </a>  
+                                    <img src="{{ imageBook($value->diravatar) }}" />
+                                 </a>
                                </div>
                                <div class="title">
                                  {{ $value->title }}
-                               </div>  
+                               </div>
                             </li>
                           <?php
                         }
                       ?>
                     </ul>
                   </div>
-              </section>  
+              </section>
               <section class="info-publish">
                   <h3>Unpublished(0)</h3>
                   <div class="list-book">
                     <ul>
-                        <?php  
+                        <?php
                           foreach ($bookunpublish as $key => $value) {
                             ?>
                               <li>
                                  <div class="wrapper-avatar">
                                    <a href="{{route('settingbook',$value->id)}}">
-                                      <img src="{{ Asset('resourcebook/'.$value->diravatar) }}" />  
-                                   </a>  
+                                      <img src="{{ imageBook($value->diravatar) }}" />
+                                   </a>
                                  </div>
                                  <div class="title">
                                    {{ $value->title }}
-                                 </div>  
+                                 </div>
                               </li>
                             <?php
                           }
                         ?>
                     </ul>
                   </div>
-              </section> 
+              </section>
             </div>
-          </div> 
+          </div>
         </div>
     </section>
 </div>

@@ -136,7 +136,7 @@ class ExtraController extends Controller
    * @param  [type] $book_id [description]
    * @return [type]          [description]
    */
-  public function ajax_getFileExtra($book_id)
+  public function ajaxGetFileExtra($book_id)
   {
     $fileIsUploaded = $this->extrafile->getFileIsUploaded($book_id);
     $result = array();
@@ -162,7 +162,7 @@ class ExtraController extends Controller
     $namefilesave = $this->generateRandomString();
     $extension = pathinfo($namefileinital)['extension'];
 
-    $dirFile  = public_path() . DIRECTORY_SEPARATOR . 'resourcebook' . DIRECTORY_SEPARATOR;
+    $dirFile  = config('common.url_upload');
     $filename = $namefilesave . '.' . $extension;
     $request->file('file')->move($dirFile, $filename);
 
@@ -184,7 +184,7 @@ class ExtraController extends Controller
   {
     $filename = $request->input('filename');
     $identityFile = $this->getIdentityByName($filename);
-    $dirFile = public_path() . DIRECTORY_SEPARATOR . 'resourcebook' . DIRECTORY_SEPARATOR . $identityFile;
+    $dirFile = config('common.url_upload') . $identityFile;
 
     if(File::exists($dirFile))
     {
@@ -212,7 +212,7 @@ class ExtraController extends Controller
     foreach ($t_packages as $key => $value) {
       $packages += array($value->id => $value->name);
     }
-    return view('frontend.extra.edit_extra',compact('extra','book','packages','linkfilecss'));
+    return view('frontend.extra.edit_extra', compact('extra','book','packages','linkfilecss'));
   }
 
   /**
@@ -252,7 +252,7 @@ class ExtraController extends Controller
 
     $extension = pathinfo($namefileinital)['extension'];
 
-    $dirFile  = public_path() . DIRECTORY_SEPARATOR . 'resourcebook' . DIRECTORY_SEPARATOR;
+    $dirFile  = config('common.url_upload');
     $filename = $namefilesave.'.'.$extension;
     $request->file('file')->move($dirFile,$filename);
 
@@ -295,7 +295,7 @@ class ExtraController extends Controller
   {
     $filename = $request->input('filename');
     $identityFile = $this->extrafile->getIdentityByNameAndExtra($filename,$extra_id);
-    $dirFile = public_path() . DIRECTORY_SEPARATOR . 'resourcebook' . DIRECTORY_SEPARATOR . $identityFile;
+    $dirFile = config('common.url_upload') . $identityFile;
 
     if(File::exists($dirFile))
     {

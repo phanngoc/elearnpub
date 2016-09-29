@@ -5,6 +5,7 @@ use \Illuminate\Http\Request;
 use DB;
 use File;
 use Validator;
+use Auth;
 use App\Http\Controllers\Controller;
 use App\Repositories\UserRepository;
 use App\Repositories\RoleRepository;
@@ -31,7 +32,7 @@ class UserController extends AdminController
       'currentPage' => $pagiListUsers->currentPage(),
       'total' => $pagiListUsers->total()
     );
-    return $this->responeSuccess(200, $results);
+    return $this->responseSuccess(200, $results);
   }
 
   /**
@@ -41,7 +42,7 @@ class UserController extends AdminController
    */
   public function edit($id) {
     $results = $this->userRepository->with(['role'])->find($id);
-    return $this->responeSuccess(200, $results);
+    return $this->responseSuccess(200, $results);
   }
 
   /**
@@ -55,7 +56,7 @@ class UserController extends AdminController
     unset($input['created_at']);
     unset($input['updated_at']);
     $results = $this->userRepository->update($input, $id);
-    return $this->responeSuccess(200, $results);
+    return $this->responseSuccess(200, $results);
   }
 
   /**
@@ -65,6 +66,45 @@ class UserController extends AdminController
    */
   public function listRoles() {
     $results = $this->roleRepository->all();
-    return $this->responeSuccess(200, $results);
+    return $this->responseSuccess(200, $results);
+  }
+
+  /**
+   * Identity user.
+   * @param  [int] $id.
+   * @return [type]     [description]
+   */
+  public function identity() {
+    $results = $this->userRepository->authUser();
+    if ($results == null) {
+      $this->responseError(403, $results);
+    } else {
+      $this->responseSuccess(200, $results);
+    }
+  }
+
+  /**
+   * Login user.
+   * @param  [int] $id.
+   * @return [type]     [description]
+   */
+  public function login(Request $request) {
+    $results = false;
+    if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
+      $results = $this->userRepository->authUser();
+      return $this->responseSuccess(200, $results);
+    }
+    return $this->responseError(403, $results);
+  }
+
+  /**
+   * Login user.
+   * @param  [int] $id.
+   * @return [type]     [description]
+   */
+  public function logout(Request $request) {
+    $results = true;
+    Auth::logout();
+    return $this->responseSuccess(200, $results);
   }
 }

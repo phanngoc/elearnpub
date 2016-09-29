@@ -17,7 +17,7 @@ class BookController extends AdminController
   }
 
   /**
-   * Return list user.
+   * Return list book.
    * @return [type] [description]
    */
   public function listBooks() {
@@ -28,6 +28,19 @@ class BookController extends AdminController
       'currentPage' => $pagiListBooks->currentPage(),
       'total' => $pagiListBooks->total()
     );
-    return $this->responeSuccess(200, $results);
+
+    return $this->responseSuccess(200, $results);
+  }
+
+  /**
+   * Change status publish of book.
+   * @param  Request $request [description]
+   * @return [type]           [description]
+   */
+  public function publishBook(Request $request) {
+    $bookId = $request->input('book_id');
+    $isAllowed = $request->input('is_allowed') == "true" ? "1" : "0" ;
+    $results = $this->bookRepository->update(['allow_published' => $isAllowed], $bookId);
+    return $this->responseSuccess(200, $results);
   }
 }

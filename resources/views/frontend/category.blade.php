@@ -21,7 +21,7 @@
 
                   <div class="item col-md-2">
                       <div class="avatar-wrapper">
-                          <a href="{{route('bookhome', $book->bookurl)}}"><img src="{{Asset('resourcebook/'.$book->diravatar)}}" /> </a>
+                          <a href="{{route('bookhome', $book->bookurl)}}"><img src="{{imageBook($book->diravatar)}}" /> </a>
                       </div>
                       <div class="content-more">
                           <p class="title">{{$book->title}}</p>

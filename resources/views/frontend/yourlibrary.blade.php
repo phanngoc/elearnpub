@@ -25,7 +25,7 @@
                         <div class="row">
                           <div class="col-md-3">
                             <div class="wrap-avatar">
-                              <a href="{{ route('readbook', $book->id) }}"><img src="{{ Asset('resourcebook/'.$book->diravatar) }}"/></a>
+                              <a href="{{ route('readbook', $book->id) }}"><img src="{{ Asset('uploads/'.$book->diravatar) }}"/></a>
                             </div>
                           </div>
                           <div class="col-md-9">
@@ -33,9 +33,9 @@
                               <h4>{{ $book->title }}</h4>
                               <p>{{ $book->teaser }}</p>
                               <div class="author">
-                                <?php $authors = $book->author()->get();?>
+                                <?php $authors = $book->main_and_accepted_collaborator_author;?>
                                 @foreach($authors as $author)
-                                    <span><a href="">{{ $author->lastname.' '.$author->firstname }}</a></span>
+                                    <span><a href="">{{ $author->lastname . ' ' . $author->firstname }}</a></span>
                                 @endforeach
                               </div>
                             </div>

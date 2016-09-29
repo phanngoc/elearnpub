@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Validator;
 
 class Package extends Model {
 
-	protected $table = 'package';
+	protected $table = 'packages';
 
 	protected $fillable = [
 			'name',
@@ -16,6 +16,22 @@ class Package extends Model {
 	    'quantity',
 	    'book_id'
 	];
+
+	/**
+	 * Have many extras.
+	 * @return [type] [description]
+	 */
+	public function extras() {
+			return $this->hasMany('App\Models\Extra', 'package_id', 'id');
+	}
+
+	/**
+	 * Relation many to one.
+	 * @return [type] [description]
+	 */
+	public function book() {
+		return $this->belongsTo('App\Models\Book', 'book_id', 'id');
+	}
 
 	/**
 	 * Delete package.

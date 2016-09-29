@@ -28,4 +28,16 @@ class UserRepository extends BaseRepository
     public function listUser() {
         return $this->model->with('role')->paginate(3);
     }
+
+    /**
+     * Get auth user.
+     * @return [type] [description]
+     */
+    public function authUser() {
+        if (Auth::user() == null) {
+          return null;
+        } else {
+          return $this->model->with('role')->find(Auth::user()->id);
+        }
+    }
 }

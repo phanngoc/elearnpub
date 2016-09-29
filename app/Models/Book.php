@@ -11,6 +11,7 @@ use App\User;
 use Carbon\Carbon;
 use App\Models\Filebook;
 use App\Models\Popularity;
+use App\Models\Common;
 
 class Book extends Model {
 
@@ -38,7 +39,8 @@ class Book extends Model {
 		'avatar',
 		'diravatar',
 		'copyright',
-		'published_at'
+		'published_at',
+		'allow_published'
 	];
 
 	const NOPUBLISH = 0;
@@ -49,9 +51,26 @@ class Book extends Model {
 	 * Many to many author.
 	 * @return [type] [description]
 	 */
-	public function author() {
+	public function authors() {
 		return $this->belongsToMany('App\User', 'book_author', 'book_id', 'author_id')
-								->where('is_accepted', 1);
+								->withPivot('is_main', 'is_accepted', 'royalty');
+								// ->where('is_accepted', Common::AUTHOR_ACCEPT);
+	}
+
+	/**
+	 * Many to many author.
+	 * @return [type] [description]
+	 */
+	public function authors_initial() {
+		return $this->belongsToMany('App\User', 'book_author', 'book_id', 'author_id');
+	}
+
+	/**
+	 * One to many package.
+	 * @return [type] [description]
+	 */
+	public function packages() {
+		return $this->hasMany('App\Models\Package', 'book_id');
 	}
 
 	/**
@@ -60,7 +79,7 @@ class Book extends Model {
 	 */
 	public function main_author() {
 		return $this->belongsToMany('App\User', 'book_author', 'book_id', 'author_id')
-								->where('is_main', 1);
+								->where('is_main', Common::AUTHOR_MAIN);
 	}
 
 	/**
@@ -69,8 +88,17 @@ class Book extends Model {
 	 */
 	public function collaborator_author() {
 		return $this->belongsToMany('App\User', 'book_author', 'book_id', 'author_id')
-								->where('is_main', 0)
-								->where('is_accepted', 1);
+								->where('is_main', Common::AUTHOR_MAIN)
+								->where('is_accepted', Common::AUTHOR_ACCEPT);
+	}
+
+	/**
+	 * Many to many collaborator author.
+	 * @return [type] [description]
+	 */
+	public function main_and_accepted_collaborator_author() {
+		return $this->belongsToMany('App\User', 'book_author', 'book_id', 'author_id')
+								->where('is_accepted', Common::AUTHOR_ACCEPT);
 	}
 
 	/**
@@ -86,7 +114,7 @@ class Book extends Model {
 	 *
 	 * @return Illuminate\Database\Eloquent\Relations\belongsToMany
 	 */
-	public function category() {
+	public function categories() {
 		return $this->belongsToMany('\App\Models\Category', 'book_category');
 	}
 
@@ -207,19 +235,6 @@ class Book extends Model {
 	}
 
 	/**
-	 * get all category of book
-	 * @param  [type] $book_id [description]
-	 * @return [type]          [description]
-	 */
-	public function getCategory($book_id)
-	{
-		$categories = DB::table('category')->join('book_category', 'book_category.category_id', '=', 'category.id')
-									->where('book_id',$book_id)
-									->get();
-		return $categories;
-	}
-
-	/**
 	 * find all author who write book with book_id
 	 * @param  [type] $book_id [description]
 	 * @return [type]          [description]
@@ -232,19 +247,6 @@ class Book extends Model {
 			$coauthor[$key]->objAuthor = $user;
 		}
 		return $coauthor;
-	}
-
-	/**
-	 * Detete collaborator.
-	 * @param  [type] $book_id   [description]
-	 * @param  [type] $author_id [description]
-	 * @return [type]            [description]
-	 */
-	public function deleteCoAuthor($book_id, $author_id)
-	{
-		 DB::table('book_author')->where('book_id', $book_id)
-		 												->where('author_id', $author_id)
-		 												->where('is_main', 0)->delete();
 	}
 
 	/**
@@ -369,18 +371,17 @@ class Book extends Model {
 	 * @param  [type] $user_id [description]
 	 * @return [type]          [description]
 	 */
-	public function getBookLibraryBelongUser($user_id)
+	public function getBookLibraryBelongUser($userId)
 	{
-		$bookYouWrite = User::find($user_id)->books()->get();
-		$bills = User::find($user_id)->bills()->get();
+		$bookYouWrite = User::find($userId)->books()->get();
+		$bills = User::find($userId)->bills()->get();
 
 		foreach ($bills as $key => $bill) {
-			$carts = $bill->carts()->get();
-			foreach ($carts as $keyCart => $valCart) {
-				$books = $valCart->book()->get();
-				foreach ($books as $keyBook => $valBook) {
-					$bookYouWrite->push($valBook);
-				}
+			$carts = $bill->carts()->where('type', Cart::TYPE_BOOK)
+							 ->with(['book', 'book.main_and_accepted_collaborator_author'])->get();
+
+			foreach ($carts as $cart) {
+					$bookYouWrite->push($cart->book);
 			}
 		}
 		return $bookYouWrite;

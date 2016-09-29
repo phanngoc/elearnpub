@@ -31,7 +31,7 @@
             				  	@foreach ($bookBestsellers as $book)
         							    <div class="item-book">
         							    	<div class="avatar-wrapper">
-        							    		<a href="{{ route('bookhome', $book['bookurl']) }}"><img src="{{ Asset('resourcebook/'. $book['diravatar']) }}"/></a>
+        							    		<a href="{{ route('bookhome', $book['bookurl']) }}"><img src="{{ imageBook($book['diravatar']) }}"/></a>
         							    	</div>
                             <div class="info-name">
                                 <span>{{ $book['title'] }}</span>
@@ -71,7 +71,7 @@
                             @foreach ($bookfeatures as $book)
                                 <div class="item-book">
                                     <div class="avatar-wrapper">
-                                        <a href="{{ route('bookhome',$book['bookurl']) }}"><img src="{{ Asset('resourcebook/'.$book['diravatar']) }}"/></a>
+                                        <a href="{{ route('bookhome',$book['bookurl']) }}"><img src="{{ imageBook($book['diravatar']) }}"/></a>
                                     </div>
                                     <div class="info-name">
                                         <span>{{ $book['title'] }}</span>

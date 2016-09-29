@@ -56,7 +56,7 @@
                               ?>
                                 <div class="cover-image">
                                   <a href="{{ route('bundle_detail', $bundle->bundleurl) }}">
-                                    <img src="{{ Asset('resourcebook/' . $avatar) }}"/>
+                                    <img src="{{ imageBook($avatar) }}"/>
                                   </a>
                                 </div>
                               <?php

@@ -32,7 +32,7 @@ If someone buys you a book from your wish list, we will send you an email at leq
                         <div class="row">
                           <div class="col-md-3">
                             <div class="wrap-avatar">
-                              <img src="{{ Asset('resourcebook/'.$value->avatar) }}">
+                              <img src="{{ Asset('uploads/'.$value->avatar) }}">
                             </div>
                           </div>
                           <div class="col-md-9">
@@ -50,7 +50,7 @@ If someone buys you a book from your wish list, we will send you an email at leq
                 }
                ?>
                </div>
-            </div>  
+            </div>
         </div>
     </section>
 </div>

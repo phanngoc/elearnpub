@@ -19,7 +19,6 @@ angular.module('learnPubApp').controller('updateUserController', function($scope
   });
 
   $scope.uploadAvatarFile = function (event) {
-     console.log("uploadAvatarFile");
      var files = event.target.files;
      var extension = files[0].name.split('.').pop();
      var newName = "temp" + UploadFileService.ID() + '.' + extension;

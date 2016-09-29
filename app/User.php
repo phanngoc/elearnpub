@@ -124,61 +124,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-     * Connect collaborator to book.
-     * @param  [array] $data
-     * @param  [int] $book_id  [description]
-     * @return [bool]           [description]
-     */
-    public function connectCoAuthor($data, $book_id)
-    {
-        $coAuthor = User::where('username', $data['username'])->first();
-        if($coAuthor != null)
-        {
-            DB::table('book_author')->insert([
-                'author_id' => $coAuthor->id,
-                'book_id' => $book_id,
-                'is_main' => 0,
-                'royalty' => $data['royalty'],
-                'is_accepted' => 0,
-                'message' => $data['message']
-            ]);
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    /**
-     * Create contributor and connect to book.
-     * @param  [int] $book_id Id of book.
-     * @param  [type] $data    [description]
-     * @param  [type] $avatar  [description]
-     * @return [type]          [description]
-     */
-    public function createContributorAndConnectBook($book_id, $data, $avatar)
-    {
-        $user = self::create([
-            'lastname' => $data['name'],
-            'blurb' => $data['blurb'],
-            'email' => $data['email'],
-            'twitter_id' => $data['twitter_id'],
-            'github' => $data['github'],
-            'avatar' => $avatar
-        ]);
-
-        DB::table('book_author')->insert([
-            'author_id' => $user->id,
-            'book_id' => $book_id,
-            'is_main' => 2,
-            'royalty' => 0,
-            'is_accepted' => 1,
-            'message' => ''
-        ]);
-    }
-
-    /**
      * Update contributor of book.
      * @param  [int] $book_id [description]
      * @param  [array] $data    [description]

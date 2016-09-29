@@ -23,6 +23,14 @@ class Cart extends Model {
 	];
 
 	/**
+	 * Many to one book.
+	 * @return [type] [description]
+	 */
+	public function book() {
+		return $this->belongsTo('App\Models\Book', 'item_id');
+	}
+
+	/**
 	 * Find item in cart,
 	 * @param $id
 	 * @param $type

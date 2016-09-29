@@ -14,9 +14,4 @@ class Extra extends Model {
 		'package_id',
 	];
 
-  public function getExtraByPackageId($pack_id)
-  {
-      return DB::table('extra')->where('package_id',$pack_id)->get();
-  }
-
 }

@@ -52,6 +52,7 @@
             </thead>
             <tbody>
               <?php
+                $extras = $package->extras;  
                 foreach ($extras as $key => $value) {
                   ?>
                     <tr>

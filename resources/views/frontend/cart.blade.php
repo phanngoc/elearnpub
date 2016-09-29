@@ -24,7 +24,7 @@
 
 <script type="text/javascript">
   var ROUTE_GET_CART = '{{ route("ajax_getCart") }}';
-  var LINK_ASSET_RESOURCE_BOOK = '{{ Asset("resourcebook") }}';
+  var LINK_ASSET_RESOURCE_BOOK = '{{ config("common.url_upload") }}';
   var ROUTE_CHECKOUT = '{{ route("checkout") }}';
   var ROUTE_UPDATE_CART = '{{ route("updateCart") }}';
   var TOKEN = '{{ csrf_token() }}';

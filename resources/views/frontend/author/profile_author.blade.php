@@ -61,7 +61,7 @@
               <div class="in-bo-li-it">
                 <div class="conver-image-book">
                   <a href="{{route('bookhome', $book->bookurl)}}">
-                    <img src="{{Asset('resourcebook/'.$book->diravatar)}}">
+                    <img src="{{ imageBook($book->diravatar) }}">
                   </a>
                 </div> <!-- .conver-image-book -->
                 <div class="list-item-meta">
@@ -87,7 +87,7 @@
                 <div class="in-bo-li-it">
                   <div class="conver-image-book">
                     <a href="{{route('bookhome', $book->bookurl)}}">
-                      <img src="{{Asset('resourcebook/'.$book->diravatar)}}">
+                      <img src="{{ imageBook($book->diravatar) }}">
                     </a>
                   </div> <!-- .conver-image-book -->
                   <div class="list-item-meta">

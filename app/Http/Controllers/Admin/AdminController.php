@@ -89,7 +89,7 @@ class AdminController extends Controller
    *
    * @return Illuminate\Http\Response response data json
    */
-  public function responeSuccess($statusCode, $data)
+  public function responseSuccess($statusCode, $data)
   {
       $jsonOut = [
           'status' => true,
@@ -108,7 +108,7 @@ class AdminController extends Controller
    *
    * @return Illuminate\Http\Response response data json
    */
-  public function reponseError($statusCode = Response::HTTP_NOT_FOUND, $message = '', $errors = null)
+  public function responseError($statusCode = Response::HTTP_NOT_FOUND, $message = '', $errors = null)
   {
       $jsonOut = [
           'status' => false,
@@ -119,12 +119,13 @@ class AdminController extends Controller
       ];
       return response()->json($jsonOut, $statusCode);
   }
+  
   /**
    * Json response with pagination
    *
    * @param Collection $items          items for response
    * @param string     $collectionName name of root response object
-   * @param int        $total          tatal item
+   * @param int        $total          total item
    * @param int        $perPage        item per page
    * @param booleam    $hasNextPage    has next page
    * @param array      $param          param
@@ -139,7 +140,7 @@ class AdminController extends Controller
               'has_next_page' => $hasNextPage,
               $collectionName => $items,
           ];
-      return $this->responeSuccess(Response::HTTP_OK, array_merge($param, $data));
+      return $this->responseSuccess(Response::HTTP_OK, array_merge($param, $data));
   }
 
   /**
@@ -163,6 +164,6 @@ class AdminController extends Controller
       }
     }
 
-    return $this->responeSuccess(200, $newNames);
+    return $this->responseSuccess(200, $newNames);
   }
 }

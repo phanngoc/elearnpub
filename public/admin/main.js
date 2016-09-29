@@ -2,12 +2,27 @@
 angular.module('learnPubApp').config(['$stateProvider', function($stateProvider){
 
     $stateProvider
+          .state('signin', {
+              views: {
+                  'main': {
+                      controller: 'loginController',
+                      templateUrl: BASE_URL + '/admin/views/login.html'
+                  }
+              }
+          })
          .state('masterAdmin', {
              abstract: true,
+             resolve: {
+                authorize: ['authorization',
+                  function(authorization) {
+                    return authorization.authorize();
+                  }
+                ]
+             },
              views: {
                  'main': {
                      templateUrl: BASE_URL + '/admin/views/main.html'
-                 }
+                 },
              }
          })
         .state('admin', {
@@ -15,6 +30,7 @@ angular.module('learnPubApp').config(['$stateProvider', function($stateProvider)
             url: '/home',
             views: {
                 'header': {
+                    controller: 'headerController',
                     templateUrl: BASE_URL + '/admin/views/partial/header.html'
                 },
                 'content': {
@@ -38,17 +54,11 @@ angular.module('learnPubApp').config(['$stateProvider', function($stateProvider)
                 },
                 'sidebar' : {
                     templateUrl: BASE_URL + '/admin/views/partial/sidebar.html'
-                }
-            }
-        })
-        .state('admin.users.create', {
-            parent: 'masterAdmin',
-            url: '/users/create',
-            views: {
-                'content': {
-                    controller: 'createUserController',
-                    templateUrl: '/public/admin/views/users/create.html'
-                }
+                },
+                'header': {
+                    controller: 'headerController',
+                    templateUrl: BASE_URL + '/admin/views/partial/header.html'
+                },
             }
         })
         .state('admin.users.update', {
@@ -61,7 +71,98 @@ angular.module('learnPubApp').config(['$stateProvider', function($stateProvider)
                 },
                 'sidebar' : {
                     templateUrl: BASE_URL + '/admin/views/partial/sidebar.html'
-                }
+                },
+                'header': {
+                    controller: 'headerController',
+                    templateUrl: BASE_URL + '/admin/views/partial/header.html'
+                },
+            }
+        })
+        .state('admin.books', {
+            parent: 'masterAdmin',
+            url: '/books/list',
+            views: {
+                'content': {
+                    controller: 'listBookController',
+                    templateUrl: BASE_URL + '/admin/views/books/list.html'
+                },
+                'sidebar' : {
+                    templateUrl: BASE_URL + '/admin/views/partial/sidebar.html'
+                },
+                'header': {
+                    controller: 'headerController',
+                    templateUrl: BASE_URL + '/admin/views/partial/header.html'
+                },
+            }
+        })
+        .state('admin.bundle', {
+            parent: 'masterAdmin',
+            url: '/bundle/:id',
+            views: {
+                'content': {
+                    controller: 'bundleController',
+                    templateUrl: BASE_URL + '/admin/views/books/bundle.html'
+                },
+                'sidebar' : {
+                    templateUrl: BASE_URL + '/admin/views/partial/sidebar.html'
+                },
+                'header': {
+                    controller: 'headerController',
+                    templateUrl: BASE_URL + '/admin/views/partial/header.html'
+                },
+            }
+        })
+        .state('admin.books.bundle', {
+            parent: 'masterAdmin',
+            url: '/book/:id/bundle',
+            params : { book: null },
+            views: {
+                'content': {
+                    controller: 'bookBundleController',
+                    templateUrl: BASE_URL + '/admin/views/books/book_bundle.html'
+                },
+                'sidebar' : {
+                    templateUrl: BASE_URL + '/admin/views/partial/sidebar.html'
+                },
+                'header': {
+                    controller: 'headerController',
+                    templateUrl: BASE_URL + '/admin/views/partial/header.html'
+                },
+            }
+        })
+        .state('admin.books.package', {
+            parent: 'masterAdmin',
+            url: '/book/:id/package',
+            params : { book: null },
+            views: {
+                'content': {
+                    controller: 'bookPackageController',
+                    templateUrl: BASE_URL + '/admin/views/books/book_package.html'
+                },
+                'sidebar' : {
+                    templateUrl: BASE_URL + '/admin/views/partial/sidebar.html'
+                },
+                'header': {
+                    controller: 'headerController',
+                    templateUrl: BASE_URL + '/admin/views/partial/header.html'
+                },
+            }
+        })
+        .state('admin.package', {
+            parent: 'masterAdmin',
+            url: '/package/:id',
+            views: {
+                'content': {
+                    controller: 'packageController',
+                    templateUrl: BASE_URL + '/admin/views/books/package.html'
+                },
+                'sidebar' : {
+                    templateUrl: BASE_URL + '/admin/views/partial/sidebar.html'
+                },
+                'header': {
+                    controller: 'headerController',
+                    templateUrl: BASE_URL + '/admin/views/partial/header.html'
+                },
             }
         })
 }]);

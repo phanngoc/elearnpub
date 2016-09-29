@@ -6,8 +6,8 @@
  * @return [string] full link to image
  */
 function imageUser($name) {
-	if (File::exists(base_path() . '/public/avatar/' . $name)) {
-		return Asset('avatar/'.$name);
+	if (File::exists(base_path() . '/public/uploads/' . $name)) {
+		return Asset('uploads/'.$name);
 	} else {
 		return Asset('images/default-avatar.png');
 	}
@@ -18,11 +18,11 @@ function imageUser($name) {
  * @param  [string] $name
  * @return [string] full link to image
  */
-function imageBook($url) {
-	if (File::exists(base_path() . '/public/resourcebook/' . $url)) {
-		return Asset('resourcebook/' . $url);
+function imageBook($name) {
+	if (File::exists(base_path() . '/public/uploads/' . $name)) {
+		return Asset('uploads/' . $name);
 	} else {
-		return Asset('resourcebook/question-mark.png');
+		return Asset('uploads/question-mark.png');
 	}
 }
 

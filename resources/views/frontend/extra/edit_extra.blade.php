@@ -46,7 +46,7 @@
   $("#packages").select2();
   Dropzone.autoDiscover = false;
   var myDropzone = new Dropzone("div#area-upload-file", {
-    url: "{{route('edit_upload_file_extra',array('id'=>$book->id,'extra_id'=>$extra->id))}}",
+    url: "{{route('edit_upload_file_extra', array('id' => $book->id, 'extra_id' => $extra->id))}}",
     addRemoveLinks: true,
     sending: function(file, xhr, formData) {
         // Pass token. You can use the same method to pass any other values as well such as a id to associate the image with for example.
@@ -57,7 +57,7 @@
     {
       console.log(file);
       $.ajax({
-        url : "{{route('edit_delete_file_extra',array('id'=>$book->id,'extra_id'=>$extra->id))}}",
+        url : "{{route('edit_delete_file_extra', array('id' => $book->id, 'extra_id' => $extra->id))}}",
         method : "GET",
         data : {filename : file.name},
         success : function(data)
@@ -74,7 +74,8 @@
     },
     init : function(){
       thisDropzone = this;
-       $.get('{{route("edit_get_file_upload",array('id'=>$book->id,'extra_id'=>$extra->id))}}', function(data) {
+
+      $.get("{{route('edit_get_file_upload', array('id' => $book->id, 'extra_id' => $extra->id))}}", function(data) {
          var result = jQuery.parseJSON(data);
          console.log(result);
            $.each(result, function(key,value){

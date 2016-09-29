@@ -3,11 +3,11 @@
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Auth;
 use App\Models\BookBundle;
 use App\Models\Bundle;
 use Carbon\Carbon;
 use DB;
+use Auth;
 
 class Bundle extends Model {
 
@@ -61,7 +61,8 @@ class Bundle extends Model {
 	 * @return [type] [description]
 	 */
 	public function books() {
-		return $this->belongsToMany('App\Models\Book', 'book_bundle', 'bundle_id', 'book_id');
+		return $this->belongsToMany('App\Models\Book', 'book_bundle', 'bundle_id', 'book_id')
+								->withPivot('royalty', 'accepted');
 	}
 
 	/**

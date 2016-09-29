@@ -8,6 +8,8 @@ use App\Models\Package;
 use App\Models\Extrafile;
 use App\Models\Extra;
 use App\Http\Requests\SaveSettingBookRequest;
+use App\Repositories\BookRepository;
+use App\Repositories\PackageRepository;
 
 use DB;
 use File;
@@ -21,6 +23,20 @@ class SettingbookController extends Controller
      * @var Book class
      */
     protected $book;
+
+    /**
+     * Book repository.
+     *
+     * @var BookRepository class
+     */
+    protected $bookRepository;
+
+    /**
+     * Package repository.
+     *
+     * @var PackageRepository class
+     */
+    protected $packageRepository;
 
     /**
      * Package model.
@@ -49,9 +65,13 @@ class SettingbookController extends Controller
      * @param Package  $package  [description]
      * @param Extra    $extra    [description]
      */
-    public function __construct(Book $book, Package $package, Extra $extra, Price $price)
+    public function __construct(Book $book, BookRepository $bookRepository,
+                                PackageRepository $packageRepository,
+                                Package $package, Extra $extra, Price $price)
     {
         $this->book = $book;
+        $this->bookRepository = $bookRepository;
+        $this->packageRepository = $packageRepository;
         $this->package = $package;
         $this->extra = $extra;
         $this->price = $price;
@@ -113,7 +133,7 @@ class SettingbookController extends Controller
      *
      * @param [int] $book_id If of book.
      */
-    public function publish_sample_book($book_id)
+    public function publishSampleBook($book_id)
     {
         $book = $this->book->find($book_id);
         $linkfilecss = 'uploadtitlebook.css';
@@ -124,7 +144,7 @@ class SettingbookController extends Controller
      * Post publish sample book.
      * @param [int] $book_id
      */
-    public function post_publish_sample_book($book_id)
+    public function postPublishSampleBook($book_id)
     {
         $book = $this->book->find($book_id);
         $book->is_publish_sample = ($book->is_publish_sample == 0) ? 1 : 0;
@@ -137,7 +157,7 @@ class SettingbookController extends Controller
      * @param  [[Type]] $book_id [[Description]]
      * @return [[Type]] [[Description]]
      */
-    public function upload_new_title($book_id)
+    public function uploadNewTitle($book_id)
     {
         $book = $this->book->find($book_id);
         $linkfilecss = 'uploadtitlebook.css';
@@ -149,14 +169,14 @@ class SettingbookController extends Controller
      * @param  [int] $book_id [description]
      * @return [type]          [description]
      */
-    public function post_upload_new_title($book_id, Request $request)
+    public function postUploadNewTitle($book_id, Request $request)
     {
         $file = $request->file('avatar');
         $namefileinital = $file->getClientOriginalName();
         $namefilesave = generateRandomString();
 
         $extension = pathinfo($namefileinital)['extension'];
-        $dirFile  = public_path() . DIRECTORY_SEPARATOR . 'resourcebook' . DIRECTORY_SEPARATOR;
+        $dirFile  = config('common.url_upload');
         $filename = $namefilesave.'.'.$extension;
         $request->file('avatar')->move($dirFile, $filename);
 
@@ -210,7 +230,7 @@ class SettingbookController extends Controller
      * @param  [type] $book_id [description]
      * @return [type]          [description]
      */
-    public function post_package($book_id, Request $request)
+    public function postPackage($book_id, Request $request)
     {
         $packages = $this->package->create($request->all());
         return redirect()->route('package', $book_id);
@@ -222,13 +242,12 @@ class SettingbookController extends Controller
      * @param  [type] $pack_id [description]
      * @return [type]          [description]
      */
-    public function editPackage($book_id, $pack_id)
+    public function editPackage($bookId, $packageId)
     {
       $linkfilecss = 'package.css';
-      $book = $this->book->find($book_id);
-      $package = $this->package->find($pack_id);
-      $extras = $this->extra->getExtraByPackageId($pack_id);
-      return view('frontend.package.edit_package',compact('book','package','linkfilecss','extras'));
+      $book = $this->bookRepository->find($bookId);
+      $package = $this->packageRepository->getPackageWithExtras($packageId);
+      return view('frontend.package.edit_package',compact('book', 'package', 'linkfilecss'));
     }
 
     /**

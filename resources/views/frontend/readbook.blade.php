@@ -17,20 +17,20 @@
           <div class="row">
             <header>
                 <div class="wrap-avatar">
-                  <img src="{{ Asset('resourcebook/'.$book->diravatar) }}" alt="">
+                  <img src="{{ imageBook($book->diravatar) }}" alt="">
                 </div>
                 <div class="wrap-title">
-                  <h3>{{ $book->title }}</h3>  
+                  <h3>{{ $book->title }}</h3>
                 </div>
             </header>
-           </div> <!-- .row --> 
-            
+           </div> <!-- .row -->
+
             <div class="content">
               <div class="inner-content">
-                 <div id="content-book"></div> 
+                 <div id="content-book"></div>
                  <div class="hidden" id="content-book-orignal">{{ $contentCombile }}</div>
               </div>
-            </div>  
+            </div>
 
         </div> <!-- #inner-wrapper-readbook -->
     </section>

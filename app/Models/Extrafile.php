@@ -22,7 +22,7 @@ class Extrafile extends Model {
 	 */
 	public function getFileIsUploaded($book_id)
 	{
-	  $extras = DB::table('extrafile')->where('is_attached', 0)->where('extra_id', $book_id)->get();
+	  $extras = DB::table('extrafiles')->where('is_attached', 0)->where('extra_id', $book_id)->get();
 		return $extras;
 	}
 
@@ -34,7 +34,7 @@ class Extrafile extends Model {
 	 */
 	public function deleteFileInCreateExtra($book_id, $filename)
 	{
-		$extra = DB::table('extrafile')->where('is_attached', 0)->where('extra_id', $book_id)->where('name', $filename)->delete();
+		$extra = DB::table('extrafiles')->where('is_attached', 0)->where('extra_id', $book_id)->where('name', $filename)->delete();
 	}
 
 	/**
@@ -44,7 +44,7 @@ class Extrafile extends Model {
 	 */
 	public function getIdentityByName($filename)
 	{
-			return DB::table('extrafile')->where('name', $filename)->first()->link;
+			return DB::table('extrafiles')->where('name', $filename)->first()->link;
 	}
 
 	/**
@@ -68,7 +68,7 @@ class Extrafile extends Model {
 	 */
 	public function getFileIsUploadedToExtra($extra_id)
 	{
-		$extras = DB::table('extrafile')->where('is_attached', 1)->where('extra_id', $extra_id)->get();
+		$extras = DB::table('extrafiles')->where('is_attached', 1)->where('extra_id', $extra_id)->get();
 		return $extras;
 	}
 
@@ -80,7 +80,7 @@ class Extrafile extends Model {
 	 */
 	public function deleteFileInEditExtra($extra_id, $filename)
 	{
-		$extra = DB::table('extrafile')->where('is_attached', 1)->where('extra_id', $extra_id)->where('name', $filename)->delete();
+		$extra = DB::table('extrafiles')->where('is_attached', 1)->where('extra_id', $extra_id)->where('name', $filename)->delete();
 	}
 
 	/**
@@ -91,6 +91,6 @@ class Extrafile extends Model {
 	 */
 	public function getIdentityByNameAndExtra($filename,$extra_id)
 	{
-			return DB::table('extrafile')->where('name',$filename)->where('extra_id',$extra_id)->first()->link;
+			return DB::table('extrafiles')->where('name',$filename)->where('extra_id', $extra_id)->first()->link;
 	}
 }

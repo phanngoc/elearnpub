@@ -57,17 +57,17 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('settingbook/{id}/publish_book',['as'=>'publish_book','uses'=>'SettingbookController@publishBook']);
 	Route::post('settingbook/{id}/publish_book',['as'=>'post_publish_book','uses'=>'SettingbookController@postPublishBook']);
 
-	Route::get('settingbook/{id}/publish_sample_book',['as'=>'publish_sample_book','uses'=>'SettingbookController@publish_sample_book']);
-	Route::post('settingbook/{id}/publish_sample_book',['as'=>'post_publish_sample_book','uses'=>'SettingbookController@post_publish_sample_book']);
+	Route::get('settingbook/{id}/publish_sample_book',['as'=>'publish_sample_book','uses'=>'SettingbookController@publishSampleBook']);
+	Route::post('settingbook/{id}/publish_sample_book',['as'=>'post_publish_sample_book','uses'=>'SettingbookController@postPublishSampleBook']);
 
-	Route::get('settingbook/{id}/upload_new_title',['as'=>'upload_new_title','uses'=>'SettingbookController@upload_new_title']);
-	Route::post('settingbook/{id}/upload_new_title',['as'=>'post_upload_new_title','uses'=>'SettingbookController@post_upload_new_title']);
+	Route::get('settingbook/{id}/upload_new_title',['as'=>'upload_new_title','uses'=>'SettingbookController@uploadNewTitle']);
+	Route::post('settingbook/{id}/upload_new_title',['as'=>'post_upload_new_title','uses'=>'SettingbookController@postUploadNewTitle']);
 
 	Route::get('settingbook/{id}/pricing',['as'=>'pricing','uses'=>'SettingbookController@pricing']);
 	Route::post('settingbook/{id}/pricing',['as'=>'post_pricing','uses'=>'SettingbookController@post_pricing']);
 
 	Route::get('settingbook/{id}/package',['as'=>'package','uses'=>'SettingbookController@package']);
-	Route::post('settingbook/{id}/package',['as'=>'post_package','uses'=>'SettingbookController@post_package']);
+	Route::post('settingbook/{id}/package',['as'=>'post_package','uses'=>'SettingbookController@postPackage']);
 	Route::get('settingbook/{id}/edit_package/{package_id}',['as'=>'edit_package','uses'=>'SettingbookController@editPackage']);
 	Route::post('settingbook/{id}/update_package/{package_id}',['as'=>'update_package','uses'=>'SettingbookController@updatePackage']);
 	Route::get('settingbook/{id}/list_package',['as'=>'list_package','uses'=>'SettingbookController@listPackage']);
@@ -75,16 +75,16 @@ Route::group(['middleware' => 'auth'], function () {
 
 	// create extra
 	Route::get('settingbook/{id}/extras',['as'=>'extras','uses'=>'ExtraController@extras']);
-	Route::post('settingbook/{id}/add_extra',['as'=>'add_extra','uses'=>'ExtraController@addExtras']);
-	Route::post('settingbook/{id}/upload_file_extra',['as'=>'upload_file_extra','uses'=>'ExtraController@uploadFileExtra']);
-	Route::get('settingbook/{id}/get_file_upload',['as'=>'get_file_upload','uses'=>'ExtraController@ajax_getFileExtra']);
-	Route::get('settingbook/{id}/delete_file_extra',['as'=>'delete_file_extra','uses'=>'ExtraController@deleteFileExtra']);
+	Route::post('settingbook/{id}/add_extra',['as' => 'add_extra','uses'=>'ExtraController@addExtras']);
+	Route::post('settingbook/{id}/upload_file_extra',['as' => 'upload_file_extra','uses'=>'ExtraController@uploadFileExtra']);
+	Route::get('settingbook/{id}/get_file_upload',['as' => 'get_file_upload','uses'=>'ExtraController@ajaxGetFileExtra']);
+	Route::get('settingbook/{id}/delete_file_extra',['as' => 'delete_file_extra','uses'=>'ExtraController@deleteFileExtra']);
 
 	// edit extra
 	Route::get('settingbook/{id}/edit_extra/{extra_id}',['as'=>'edit_extra','uses'=>'ExtraController@editExtra']);
 	Route::post('settingbook/{id}/update_extra/{extra_id}',['as'=>'update_extra','uses'=>'ExtraController@updateExtra']);
-	Route::post('settingbook/{id}/edit_upload_file_extra/{extra_id}',['as'=>'edit_upload_file_extra','uses'=>'ExtraController@editUploadFileExtra']);
-	Route::get('settingbook/{id}/edit_get_file_upload/{extra_id}',['as'=>'edit_get_file_upload','uses'=>'ExtraController@editGetFileExtra']);
+	Route::post('settingbook/{id}/edit_upload_file_extra/{extra_id}',['as'=>'edit_upload_file_extra','uses' => 'ExtraController@editUploadFileExtra']);
+	Route::get('settingbook/{id}/edit_get_file_upload/{extra_id}',['as'=>'edit_get_file_upload','uses' => 'ExtraController@editGetFileExtra']);
 	Route::get('settingbook/{id}/edit_delete_file_extra/{extra_id}',['as'=>'edit_delete_file_extra','uses'=>'ExtraController@editDeleteFileExtra']);
 	Route::get('settingbook/{id}/package/{package_id}/delete_extra/{extra_id}',['as'=>'delete_extra','uses'=>'ExtraController@deleteExtraInPackage']);
 
@@ -124,9 +124,13 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('settingbook/{id}/delete_contributor/{author_id}',['as'=>'delete_contributor','uses'=>'AuthorController@deleteContributor']);
 
-	// add and edit coupon
-	Route::get('settingbook/{id}/add_coupon',['as'=>'add_coupon','uses'=>'AuthorController@addCoupon']);
-	Route::post('settingbook/{id}/post_add_coupon',['as'=>'post_add_coupon','uses'=>'AuthorController@postAddCoupon']);
+	// Manage coupon.
+	Route::get('settingbook/{id}/coupons',['as' => 'list_coupon', 'uses'=>'CouponController@coupons']);
+	Route::get('settingbook/{id}/add_coupon',['as'=>'add_coupon', 'uses'=>'CouponController@createCoupon']);
+	Route::post('settingbook/{id}/add_coupon',['as'=>'post_add_coupon', 'uses'=>'CouponController@storeCoupon']);
+	Route::get('settingbook/{id}/edit_coupon/{coupon_id}',['as'=>'edit_coupon', 'uses'=>'CouponController@editCoupon']);
+	Route::post('settingbook/{id}/edit_coupon/{coupon_id}',['as'=>'post_edit_coupon', 'uses'=>'CouponController@updateCoupon']);
+	Route::post('settingbook/{id}/delete_coupon/{coupon_id}',['as'=>'post_delete_coupon', 'uses'=>'CouponController@deleteCoupon']);
 
 	// create new book
 	Route::get('new_book',['as'=>'new_book','uses' => 'BookController@newBook']);
@@ -198,14 +202,4 @@ Route::get('bundles/fi/{filter}', ['as' => 'bestselling_bundle', 'uses'=>'HomeCo
 
 Route::get('bundle/{bundleurl}', ['as' => 'bundle_detail', 'uses'=>'Front\BundleController@bundleDetail']);
 
-// Route for admin.
-
-Route::group(['prefix' => 'admin'], function() {
-		Route::get('v', ['as' => 'admin.home', 'uses' => 'Admin\AdminController@homeAdmin']);
-		Route::get('user/list', ['as' => 'admin.list.user', 'uses' => 'Admin\UserController@listUsers']);
-		Route::get('user/edit/{id}', ['as' => 'admin.list.edit', 'uses' => 'Admin\UserController@edit']);
-		Route::post('user/update/{id}', ['as' => 'admin.list.update', 'uses' => 'Admin\UserController@update']);
-		Route::get('role/list', ['as' => 'admin.role.list', 'uses' => 'Admin\UserController@listRoles']);
-		Route::post('uploads', ['as' => 'admin.uploads', 'uses' => 'Admin\AdminController@uploads']);
-		Route::get('book/list', ['as' => 'admin.book.list', 'uses' => 'Admin\BookController@listBooks']);
-});
+require_once "routes_admin.php";

@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Language;
 use App\Models\Extrafile;
 use App\Models\Extra;
+use App\Repositories\BookRepository;
 
 use \Illuminate\Http\Request;
 use File;
@@ -24,6 +25,13 @@ class SettingmoreController extends Controller
    * @var User class
    */
   protected $book;
+
+  /**
+   * Book repository.
+   *
+   * @var Book class
+   */
+  protected $bookRepository;
 
   /**
    * Category model.
@@ -46,11 +54,12 @@ class SettingmoreController extends Controller
    * @param Category $category
    * @param Language $language
    */
-  public function __construct(Book $book, Language $language, Category $category)
+  public function __construct(Book $book, BookRepository $bookRepository, Language $language, Category $category)
   {
       $this->book = $book;
       $this->language = $language;
       $this->category = $category;
+      $this->bookRepository = $bookRepository;
   }
 
   /**
@@ -58,18 +67,12 @@ class SettingmoreController extends Controller
    * @param  [type] $book_id [description]
    * @return [type]          [description]
    */
-  public function category($book_id)
+  public function category($bookId)
   {
-    $linkfilecss = 'settingmore.css';
-    $book = $this->book->find($book_id);
+    $book = $this->bookRepository->findBookWithCategories($bookId);
     $categories = $this->category->all();
 
-    $categoriesBelongBook = $this->book->getCategory($book_id);
-    $cateSelect = array();
-    foreach ($categoriesBelongBook as $key => $value) {
-      array_push($cateSelect,$value->id);
-    }
-    return view('frontend.settingmore.category', compact('book', 'categories', 'cateSelect', 'linkfilecss'));
+    return view('frontend.settingmore.category', compact('book', 'categories'));
   }
 
   /**
@@ -78,11 +81,11 @@ class SettingmoreController extends Controller
    * @param  Request $request [description]
    * @return [type]           [description]
    */
-  public function updateCategory($book_id, Request $request)
+  public function updateCategory($bookId, Request $request)
   {
     $categories = $request->input('category');
-    $this->book->find($book_id)->category()->sync($categories);
-    return redirect()->route('category',$book_id);
+    $this->bookRepository->syncCategories($bookId, $categories);
+    return redirect()->route('category', $bookId);
   }
 
   /**
@@ -90,12 +93,11 @@ class SettingmoreController extends Controller
    * @param  [type] $book_id [description]
    * @return [type]          [description]
    */
-  public function language($book_id)
+  public function language($bookId)
   {
-    $linkfilecss = 'language.css';
-    $book = $this->book->find($book_id);
+    $book = $this->bookRepository->find($bookId);
     $languages = $this->language->all();
-    return view('frontend.settingmore.language',compact('book','languages','linkfilecss'));
+    return view('frontend.settingmore.language',compact('book', 'languages'));
   }
 
   /**
@@ -104,10 +106,9 @@ class SettingmoreController extends Controller
    * @param  Request $request [description]
    * @return [type]           [description]
    */
-  public function updateLanguage($book_id, Request $request)
+  public function updateLanguage($bookId, Request $request)
   {
-    $book = $this->book->find($book_id);
-    $book->update(['language_id'=>$request->input('language')]);
-    return redirect()->route('language',$book_id);
+    $this->bookRepository->update(['language_id' => $request->input('language')], $bookId);
+    return redirect()->route('language', $bookId);
   }
 }

@@ -10,7 +10,7 @@
    .inner-content-wrapper{
         border-top: 1px solid #b7b7b7;
         box-shadow: -2px -5px 57px #c3bfbf;
-   } 
+   }
    .inner-content-wrapper .content .row .item{
         height: 280px;
         margin-top: 20px;
@@ -41,17 +41,17 @@
 
                     <div class="item col-md-2">
                         <div class="avatar-wrapper">
-                            <a href="{{route('bookhome',$book->bookurl)}}"><img src="{{Asset('resourcebook/'.$book->diravatar)}}" width="178" height="235" /> </a>
+                            <a href="{{route('bookhome',$book->bookurl)}}"><img src="{{imageBook($book->diravatar)}}" width="178" height="235" /> </a>
                         </div>
                         <div class="content-more">
                             <p class="title">{{$book->title}}</p>
                             <span class="author"></span>
-                        </div>    
+                        </div>
                     </div>
 
-                    <?php if($index%6==0 || $index==count($books)) : ?>       
+                    <?php if($index%6==0 || $index==count($books)) : ?>
                         </div>
-                    <?php endif; ?>    
+                    <?php endif; ?>
 
                     <?php $index++; ?>
                 @endforeach
