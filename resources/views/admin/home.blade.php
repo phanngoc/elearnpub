@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="{{ Asset('bower_resources/components-font-awesome/css/font-awesome.css') }}" media="screen" title="no title">
     <!-- Material+Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Material Design Typography Specification -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <!-- Angular ui notification -->
     <link rel="stylesheet" href="{{ Asset('bower_resources/angular-ui-notification/dist/angular-ui-notification.min.css') }}" />
     <script src="{{ Asset('bower_resources/angular-ui-notification/dist/angular-ui-notification.min.js') }}"></script>
@@ -38,6 +40,17 @@
     <script src="{{ Asset('bower_resources/angular-messages/angular-messages.js') }}"></script>
     <!-- Underscore -->
     <script src="{{ Asset('bower_resources/underscore/underscore.js') }}"></script>
+    <!-- Chart.js -->
+    <script src="{{ Asset('bower_resources/chart.js/dist/Chart.js') }}"></script>
+    <!-- Angular char.js -->
+    <script src="{{ Asset('bower_resources/angular-chart.js/dist/angular-chart.js') }}"></script>
+    <!-- Moment js -->
+    <script src="{{ Asset('bower_resources/moment/moment.js') }}"></script>
+
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="{{ Asset('bower_resources/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ Asset('bower_resources/bootstrap-daterangepicker/daterangepicker.css') }}" />
+
 
     <script type="text/javascript">
         var TOKEN = '{{ csrf_token() }}';
@@ -54,6 +67,7 @@
     <script type="text/javascript" src="{{ Asset('admin/services/bookService.js') }}"></script>
     <script type="text/javascript" src="{{ Asset('admin/services/bundleService.js') }}"></script>
     <script type="text/javascript" src="{{ Asset('admin/services/packageService.js') }}"></script>
+    <script type="text/javascript" src="{{ Asset('admin/services/billService.js') }}"></script>
 
     <!-- Controller -->
     <script src="{{Asset('admin/controllers/loginController.js')}}" type="text/javascript"></script>
@@ -69,6 +83,9 @@
 
     <script src="{{Asset('admin/controllers/packageController.js')}}" type="text/javascript"></script>
     <script src="{{Asset('admin/controllers/bookPackageController.js')}}" type="text/javascript"></script>
+    <script src="{{Asset('admin/controllers/billController.js')}}" type="text/javascript"></script>
+    <script src="{{Asset('admin/controllers/billCartController.js')}}" type="text/javascript"></script>
+    <script src="{{Asset('admin/controllers/bookController.js')}}" type="text/javascript"></script>
 
     <!-- My code -->
     <!-- <link rel="stylesheet" href="{{Asset('admin/styles/css/simple-sidebar.css')}}" media="screen" title="no title"> -->
@@ -76,6 +93,7 @@
     <link rel="stylesheet" href="{{Asset('admin/styles/css/home.css')}}" media="screen" title="no title">
     <link rel="stylesheet" href="{{Asset('admin/styles/css/listuser.css')}}" media="screen" title="no title">
     <link rel="stylesheet" href="{{Asset('admin/styles/css/edituser.css')}}" media="screen" title="no title">
+    <link rel="stylesheet" href="{{Asset('admin/styles/css/list-bill.css')}}" media="screen" title="no title">
     <!-- End my code -->
 
   </head>

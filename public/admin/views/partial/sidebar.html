@@ -1,23 +1,14 @@
 <ul class="sidebar-nav">
-    <li>
+    <li ui-sref-active="active" ng-class="{active: $state.includes('admin')}">
         <a ui-sref="admin">Dashboard</a>
     </li>
-    <li>
+    <li ui-sref-active="active" ng-class="{active: $state.includes('admin.users')}">
         <a ui-sref="admin.users">User Management</a>
     </li>
-    <li>
+    <li ui-sref-active="active" ng-class="{active: $state.includes('admin.books')}">
         <a ui-sref="admin.books">Book Management</a>
     </li>
-    <li>
-        <a href="#">Events</a>
-    </li>
-    <li>
-        <a href="#">About</a>
-    </li>
-    <li>
-        <a href="#">Services</a>
-    </li>
-    <li>
-        <a href="#">Contact</a>
+    <li ui-sref-active="active" ng-class="{active: $state.is('admin.bills.*')}">
+        <a ui-sref="admin.bills">Bill Management</a>
     </li>
 </ul>

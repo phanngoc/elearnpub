@@ -10,6 +10,7 @@ use App\Models\Extra;
 use App\Http\Requests\SaveSettingBookRequest;
 use App\Repositories\BookRepository;
 use App\Repositories\PackageRepository;
+use App\Repositories\PriceRepository;
 
 use DB;
 use File;
@@ -37,6 +38,13 @@ class SettingbookController extends Controller
      * @var PackageRepository class
      */
     protected $packageRepository;
+
+    /**
+     * Price repository.
+     *
+     * @var PriceRepository class
+     */
+    protected $priceRepository;
 
     /**
      * Package model.
@@ -67,11 +75,13 @@ class SettingbookController extends Controller
      */
     public function __construct(Book $book, BookRepository $bookRepository,
                                 PackageRepository $packageRepository,
-                                Package $package, Extra $extra, Price $price)
+                                Package $package, Extra $extra, Price $price,
+                                PriceRepository $priceRepository)
     {
         $this->book = $book;
         $this->bookRepository = $bookRepository;
         $this->packageRepository = $packageRepository;
+        $this->priceRepository = $priceRepository;
         $this->package = $package;
         $this->extra = $extra;
         $this->price = $price;
@@ -104,11 +114,9 @@ class SettingbookController extends Controller
      * @param [int] $book_id [[Description]]
      * @return [[Type]] [[Description]]
      */
-    public function publishBook($book_id)
+    public function publishBook($bookId)
     {
-        $book = $this->book->find($book_id);
-        $linkfilecss = 'publish_book.css';
-        return view('frontend.publishbook',compact('book', 'linkfilecss'));
+        return view('frontend.publishbook');
     }
 
 
@@ -125,19 +133,16 @@ class SettingbookController extends Controller
           'is_published' => 1,
       ]);
 
-      $linkfilecss = 'publish_book.css';
-      return view('frontend.publishbook',compact('book', 'linkfilecss'));
+      return view('frontend.publishbook');
     }
 
     /**
-     *
+     * Show page allow user publish sample book.
      * @param [int] $book_id If of book.
      */
-    public function publishSampleBook($book_id)
+    public function publishSampleBook($bookId)
     {
-        $book = $this->book->find($book_id);
-        $linkfilecss = 'uploadtitlebook.css';
-        return view('frontend.publishsamplebook', compact('book', 'linkfilecss'));
+        return view('frontend.publishsamplebook');
     }
 
     /**
@@ -157,11 +162,9 @@ class SettingbookController extends Controller
      * @param  [[Type]] $book_id [[Description]]
      * @return [[Type]] [[Description]]
      */
-    public function uploadNewTitle($book_id)
+    public function uploadNewTitle($bookId)
     {
-        $book = $this->book->find($book_id);
-        $linkfilecss = 'uploadtitlebook.css';
-        return view('frontend.uploadtitlebook', compact('book', 'linkfilecss'));
+        return view('frontend.uploadtitlebook');
     }
 
     /**
@@ -189,7 +192,7 @@ class SettingbookController extends Controller
     }
 
     /**
-     * [pricing description]
+     * Page update price.
      * @param  [type] $book_id [description]
      * @return [type]          [description]
      */
@@ -206,23 +209,22 @@ class SettingbookController extends Controller
      * @param  [type] $book_id [description]
      * @return [type]          [description]
      */
-    public function post_pricing($book_id)
+    public function post_pricing($bookId, Request $request)
     {
-      $key = 'bo|'.$book_id;
-      DB::table('prices')->where('item_id',$key)->update(['minimumprice' => Request::input('minimumprice'),'suggestedprice' => Request::input('suggestedprice')]);
-      return redirect()->route('pricing',$book_id);
+      $params = $request->all();
+      unset($params['_token']);
+      $this->priceRepository->updatePriceBook($bookId, $params);
+      return redirect()->route('pricing', $bookId);
     }
 
     /**
-     * [package description]
+     * Page show package of book.
      * @param  [type] $book_id [description]
      * @return [type]          [description]
      */
     public function package($book_id)
     {
-      $linkfilecss = 'package.css';
-      $book = $this->book->find($book_id);
-      return view('frontend.package.package',compact('linkfilecss','book'));
+      return view('frontend.package.package');
     }
 
     /**
@@ -244,10 +246,9 @@ class SettingbookController extends Controller
      */
     public function editPackage($bookId, $packageId)
     {
-      $linkfilecss = 'package.css';
       $book = $this->bookRepository->find($bookId);
       $package = $this->packageRepository->getPackageWithExtras($packageId);
-      return view('frontend.package.edit_package',compact('book', 'package', 'linkfilecss'));
+      return view('frontend.package.edit_package',compact('book', 'package'));
     }
 
     /**
@@ -260,7 +261,8 @@ class SettingbookController extends Controller
     public function updatePackage($book_id, $package_id, Request $request)
     {
       $this->package->find($package_id)->update($request->all());
-      return redirect()->route('edit_package', array('id'=>$book_id, 'package_id'=>$package_id));
+      return redirect()->route('edit_package', array('id' => $book_id,
+                                                      'package_id' => $package_id));
     }
 
     /**
@@ -272,8 +274,7 @@ class SettingbookController extends Controller
     {
       $book = $this->book->find($book_id);
       $packages = $this->package->all();
-      $linkfilecss = 'list_package.css';
-      return view('frontend.package.list_package', compact('book','packages','linkfilecss'));
+      return view('frontend.package.list_package', compact('book','packages'));
     }
 
     /**

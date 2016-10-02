@@ -17,7 +17,13 @@ class CssViewComposer
         'frontend.author.show_edit_contributor' => 'show_edit_contributor.css',
         'frontend.coupon.add_coupon' => 'add_coupon.css',
         'frontend.coupon.list_coupon' => 'list_coupon.css',
-        'frontend.coupon.edit_coupon' => 'edit_coupon.css'
+        'frontend.coupon.edit_coupon' => 'edit_coupon.css',
+        'frontend.publishbook' => 'publish_book.css',
+        'frontend.publishsamplebook' => 'uploadtitlebook.css',
+        'frontend.uploadtitlebook' => 'uploadtitlebook.css',
+        'frontend.package.package' => 'package.css',
+        'frontend.package.edit_package' => 'package.css',
+        'frontend.package.list_package' => 'list_package.css'
     ];
 
     /**

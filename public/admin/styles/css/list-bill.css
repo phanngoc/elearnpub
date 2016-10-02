@@ -1,0 +1,10 @@
+#chartSell .wr-control .wr-info-choose {
+  margin-bottom: 10px;
+}
+#chartSell .wr-control .wr-info-choose label {
+  display: inline-block;
+}
+#chartSell .wr-control .wr-info-choose span {
+  display: inline-block;
+  margin-right: 10px;
+}

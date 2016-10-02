@@ -23,4 +23,12 @@ class Bill extends Model {
 	public function carts() {
 		return $this->hasMany('App\Models\Cart', 'bill_id', 'id');
 	}
+
+	/**
+	 * Relation many to one.
+	 * @return [type] [description]
+	 */
+	public function user() {
+		return $this->belongsTo('App\User', 'user_id', 'id');
+	}
 }

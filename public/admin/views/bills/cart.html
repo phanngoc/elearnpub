@@ -1,0 +1,28 @@
+<div id="list-bill">
+  <h4><i class="fa fa-book" aria-hidden="true"></i>List bill</h4>
+  <div class="content">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th data-field="name">Name</th>
+          <th data-field="type">Type</th>
+          <th data-field="phone">Count</th>
+          <th data-field="unit_price">Unit price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key, cart) in carts">
+          <td><a ng-click="pageItem(cart.item_id, cart.type)">{{cart.title}}</a></td>
+          <td ng-bind-html="cart.type | typeItem"></td>
+          <td>
+            {{cart.count}}
+          </td>
+          <td>
+            {{cart.unit_price}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div> <!-- .content -->
+
+</div>

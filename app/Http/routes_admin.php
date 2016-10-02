@@ -9,6 +9,8 @@ Route::group(['prefix' => 'admin'], function() {
 		Route::get('role/list', ['as' => 'admin.role.list', 'uses' => 'Admin\UserController@listRoles']);
 		Route::post('uploads', ['as' => 'admin.uploads', 'uses' => 'Admin\AdminController@uploads']);
 		Route::get('book/list', ['as' => 'admin.book.list', 'uses' => 'Admin\BookController@listBooks']);
+		Route::get('book/{id}', ['as' => 'admin.book.detail', 'uses' => 'Admin\BookController@findBook']);
+
 		Route::post('book/publish', ['as' => 'admin.book.publish', 'uses' => 'Admin\BookController@publishBook']);
 		Route::get('bundle/{id}', ['as' => 'admin.book.bundle', 'uses' => 'Admin\BundleController@find']);
 		Route::post('bundle/{id}', ['as' => 'admin.book.bundle.update', 'uses' => 'Admin\BundleController@update']);
@@ -19,4 +21,9 @@ Route::group(['prefix' => 'admin'], function() {
 		Route::post('account/login', ['as' => 'admin.account.login', 'uses' => 'Admin\UserController@login']);
 		Route::get('account/logout', ['as' => 'admin.account.logout', 'uses' => 'Admin\UserController@logout']);
 
+		Route::get('bill/list', ['as' => 'admin.bill.list', 'uses' => 'Admin\BillController@listBills']);
+		Route::get('bill/{id}/cart', ['as' => 'admin.bill.cart', 'uses' => 'Admin\BillController@listCartInBill']);
+
+		Route::get('bill/chart-by-month', ['as' => 'admin.bill.chart.month', 'uses' => 'Admin\BillController@billChartMonth']);
+		Route::get('bill/chart-top-seller', ['as' => 'admin.bill.chart.topsell', 'uses' => 'Admin\BillController@chartTopSell']);
 });

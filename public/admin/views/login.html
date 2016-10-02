@@ -103,9 +103,17 @@
   </style>
 
   <div class="form" ng-controller="loginController">
-    <form class="login-form" ng-submit="loginForm()">
-      <input type="text" placeholder="ab@example.com" ng-model="email"/>
-      <input type="password" placeholder="password" ng-model="password"/>
+    <form class="login-form" ng-submit="loginForm()" name="loginFormName">
+      <input type="email" name="email" placeholder="ab@example.com" ng-model="email" required ng-minlength="3"/>
+      <div ng-messages="loginFormName.email.$error" ng-show="loginFormName.email.$dirty" ng-messages-multiple>
+         <div ng-message="required">This is required.</div>
+         <div ng-message="minlength">The first name is at least 3 characters.</div>
+         <div ng-message="email">The email is invalid.</div>
+      </div>
+      <input type="password" name="password" placeholder="password" ng-model="password" />
+      <div ng-messages="loginFormName.password.$error" ng-show="loginFormName.password.$dirty" ng-messages-multiple>
+         <div ng-message="required">This is required.</div>
+      </div>
       <button type="submit">login</button>
     </form>
   </div> <!-- .form -->

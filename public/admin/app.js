@@ -2,7 +2,7 @@
 
 var BASE_URL = 'http://localhost/elearnpub/public';
 var App = angular.module('learnPubApp', ['ui.router', 'ngMaterial', 'ui.bootstrap',
-                        'ngProgress', 'ui-notification', 'ngMessages']);
+                        'ngProgress', 'ui-notification', 'ngMessages', 'chart.js']);
 
 App.config(function(NotificationProvider) {
     NotificationProvider.setOptions({
@@ -128,9 +128,14 @@ App.config(['$httpProvider', '$urlRouterProvider', function($httpProvider, $urlR
     $httpProvider.defaults.withCredentials = true;
 
     $urlRouterProvider.when('', '/home');
-
 }])
 
-.run(function($rootScope) {
-
+.run(function($rootScope, ngProgressFactory, $timeout) {
+  $rootScope.progressbar = ngProgressFactory.createInstance();
+  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, options) {
+      $rootScope.progressbar.start();
+  });
+  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+      $rootScope.progressbar.complete();
+  });
 });

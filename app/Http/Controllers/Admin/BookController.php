@@ -43,4 +43,15 @@ class BookController extends AdminController
     $results = $this->bookRepository->update(['allow_published' => $isAllowed], $bookId);
     return $this->responseSuccess(200, $results);
   }
+
+  /**
+   * Get book detail.
+   * @param  Request $request [description]
+   * @return [type]           [description]
+   */
+  public function findBook($bookId, Request $request) {
+    $results = $this->bookRepository->find($bookId);
+    return $this->responseSuccess(200, $results);
+  }
+
 }

@@ -45,4 +45,8 @@ angular.module('learnPubApp').controller('listBookController', function($scope, 
     $state.go("admin.books.bundle", {id : bookId});
   }
 
+  $scope.editBook = function(bookId) {
+    $state.go("admin.books.detail", {id : bookId});
+  }
+
 });

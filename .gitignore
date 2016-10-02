@@ -1,0 +1,6 @@
+.idea
+vendor
+public/bower_resources
+.tags*
+tags
+storage

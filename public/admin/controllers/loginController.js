@@ -13,7 +13,8 @@ angular.module('learnPubApp').controller('loginController', ['$scope', '$state',
            }
          })
          .error(function () {
-           console.log("Error login form");
+           console.log($scope.loginFormName.email.$error);
+           $scope.loginFormName.email.$error.wrongUsernamePassword = true;
          });
   }
 }]);

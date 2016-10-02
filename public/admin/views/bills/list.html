@@ -1,0 +1,77 @@
+<div id="list-bill">
+  <h4><i class="fa fa-book" aria-hidden="true"></i>List bill</h4>
+  <div class="content">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th data-field="username">User name</th>
+          <th data-field="avatar">Avatar</th>
+          <th data-field="phone">Phone</th>
+          <th data-field="address">Address</th>
+          <th data-field="date_purchased">Date purchased</th>
+          <th data-field="is_complete">Transaction complete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key, bill) in bills" ng-click="goCart(bill.id)">
+          <td><a ui-sref="admin.users.update({id : bill.user.id})">{{bill.user.lastname + " " + bill.user.firstname}}</a></td>
+          <td><img src="{{bill.user.avatar | avatarImage}}" alt="" class="avatar" width="50" height="50"/></td>
+          <td>
+            {{bill.phone}}
+          </td>
+          <td>
+            {{bill.address}}
+          </td>
+          <td>{{bill.date_purchased}}</td>
+          <td ng-bind-html="bill.transaction_complete | labelYesNo"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" items-per-page="3"></ul>
+
+    <md-content layout-padding>
+      <span class="md-headline">Amount bill in month</span>
+      <div id="charMonth" ng-controller="chartMonthController">
+        <div class="wr-control">
+          <md-datepicker ng-model="chartMonth.startMonth" ng-change="updateChart()"></md-datepicker>
+          <md-datepicker ng-model="chartMonth.endMonth" md-min-date="chartMonth.startMonth" ng-change="updateChart()"></md-datepicker>
+        </div>
+        <canvas id="line" class="chart chart-line" chart-data="data"
+          chart-labels="labels" chart-series="series">
+        </canvas>
+      </div>
+    </md-content>
+
+    <md-content layout-padding>
+      <span class="md-headline">Top sell item</span>
+      <div id="chartSell" ng-controller="chartTopSellController">
+        <div class="wr-control">
+          <md-input-container>
+            <label>Time range</label>
+            <input ng-model="mdaterange" name="daterange">
+          </md-input-container>
+          
+          <div class="wr-info-choose md-subhead">
+            <label for="">Title:</label>
+            <span class="label-item">{{itemChoose.title}}</span>
+            <label for="">Type:</label>
+            <span class="label-item" ng-bind-html="itemChoose.type | typeItem"></span>
+            <label for="">Amount:</label>
+            <span class="label-item">{{itemChoose.num_item}}</span>
+          </div>
+        </div>
+
+        <canvas id="base" class="chart-bubble" chart-data="data"
+          chart-options="options"
+          chart-series="series"
+          chart-labels="labels"
+          chart-click="clickBubble"
+          chart-hover="hoverBubble"
+          >
+        </canvas>
+      </div>
+    </md-content>
+
+  </div> <!-- .content -->
+</div>

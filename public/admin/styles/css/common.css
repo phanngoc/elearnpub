@@ -59,9 +59,13 @@ body .wrapper #sidebar-wrapper ul.sidebar-nav li.sidebar-brand a {
   text-decoration: none;
   color: white;
 }
+body .wrapper #sidebar-wrapper ul.sidebar-nav li.active {
+  background-color: #a5a5a5;
+}
 body .wrapper #sidebar-wrapper ul.sidebar-nav li:not(.sidebar-brand) {
+  border-bottom: 1px dotted #a5a5a5;
   list-style: none;
-  padding: 5px 12px 15px 17px;
+  padding: 12px 12px 15px 17px;
 }
 body .wrapper #sidebar-wrapper ul.sidebar-nav li:not(.sidebar-brand) a {
   color: white;

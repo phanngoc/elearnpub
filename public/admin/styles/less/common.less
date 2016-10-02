@@ -63,10 +63,14 @@ body{
             color : white;
           }
         }
+        li.active {
+          background-color: #a5a5a5;
+        }
         li{
           &:not(.sidebar-brand){
+            border-bottom: 1px dotted #a5a5a5;
             list-style: none;
-            padding: 5px 12px 15px 17px;
+            padding: 12px 12px 15px 17px;
             a{
               color : white;
               text-decoration: none;

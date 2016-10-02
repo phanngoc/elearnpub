@@ -95,6 +95,23 @@ angular.module('learnPubApp').config(['$stateProvider', function($stateProvider)
                 },
             }
         })
+        .state('admin.books.detail', {
+            parent: 'masterAdmin',
+            url: '/book/:id',
+            views: {
+                'content': {
+                    controller: 'bookController',
+                    templateUrl: BASE_URL + '/admin/views/books/book.html'
+                },
+                'sidebar' : {
+                    templateUrl: BASE_URL + '/admin/views/partial/sidebar.html'
+                },
+                'header': {
+                    controller: 'headerController',
+                    templateUrl: BASE_URL + '/admin/views/partial/header.html'
+                },
+            }
+        })
         .state('admin.bundle', {
             parent: 'masterAdmin',
             url: '/bundle/:id',
@@ -155,6 +172,40 @@ angular.module('learnPubApp').config(['$stateProvider', function($stateProvider)
                 'content': {
                     controller: 'packageController',
                     templateUrl: BASE_URL + '/admin/views/books/package.html'
+                },
+                'sidebar' : {
+                    templateUrl: BASE_URL + '/admin/views/partial/sidebar.html'
+                },
+                'header': {
+                    controller: 'headerController',
+                    templateUrl: BASE_URL + '/admin/views/partial/header.html'
+                },
+            }
+        })
+        .state('admin.bills', {
+            parent: 'masterAdmin',
+            url: '/bills',
+            views: {
+                'content': {
+                    controller: 'billController',
+                    templateUrl: BASE_URL + '/admin/views/bills/list.html'
+                },
+                'sidebar' : {
+                    templateUrl: BASE_URL + '/admin/views/partial/sidebar.html'
+                },
+                'header': {
+                    controller: 'headerController',
+                    templateUrl: BASE_URL + '/admin/views/partial/header.html'
+                },
+            }
+        })
+        .state('admin.bills.carts', {
+            parent: 'masterAdmin',
+            url: '/bills/{id}/carts',
+            views: {
+                'content': {
+                    controller: 'billCartController',
+                    templateUrl: BASE_URL + '/admin/views/bills/cart.html'
                 },
                 'sidebar' : {
                     templateUrl: BASE_URL + '/admin/views/partial/sidebar.html'
