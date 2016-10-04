@@ -52,7 +52,8 @@ class BillRepository extends BaseRepository
       $results = $this->model->join('carts', 'carts.bill_id', '=', 'bills.id')
                   ->leftJoin('books', 'books.id', '=', 'carts.item_id')
                   ->leftJoin('bundles', 'bundles.id', '=', 'carts.item_id')
-                  ->select([DB::raw('SUM(carts.count) as num_item'),
+                  ->select(['carts.item_id',
+                            DB::raw('SUM(carts.count) as num_item'),
                             'carts.type',
                             DB::raw('if(type='.Cart::TYPE_BOOK.', books.title, bundles.title) as title')])
                   ->whereRaw('DATE(date_purchased) >= "'. $start.'" and DATE(date_purchased) <= "'.$end.'"')

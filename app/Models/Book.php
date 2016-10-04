@@ -29,7 +29,6 @@ class Book extends Model {
 		'language_id',
 		'google_analytic',
 		'teaser',
-		'is_published',
 		'meta_description',
 		'custom_about_author',
 		'youtube_url',
@@ -40,6 +39,8 @@ class Book extends Model {
 		'diravatar',
 		'copyright',
 		'published_at',
+		'is_published',
+		'is_publish_sample',
 		'allow_published'
 	];
 

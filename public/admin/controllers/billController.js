@@ -161,7 +161,13 @@ angular.module('learnPubApp').controller('chartTopSellController', function($sco
       var chartElem = $scope.getItemGeometry(point, event);
       $scope.itemChoose = $scope.data[chartElem._datasetIndex][0].item;
       $scope.$apply();
-    } else {
+
+      if ($scope.itemChoose.type == "1") {
+        $state.go('admin.books.detail', {id: $scope.itemChoose.item_id});
+      } else {
+        $state.go('admin.bundle', {id: $scope.itemChoose.item_id});
+      }
+
     }
   }
 

@@ -10,6 +10,7 @@ Route::group(['prefix' => 'admin'], function() {
 		Route::post('uploads', ['as' => 'admin.uploads', 'uses' => 'Admin\AdminController@uploads']);
 		Route::get('book/list', ['as' => 'admin.book.list', 'uses' => 'Admin\BookController@listBooks']);
 		Route::get('book/{id}', ['as' => 'admin.book.detail', 'uses' => 'Admin\BookController@findBook']);
+		Route::post('book/{id}', ['as' => 'admin.book.update', 'uses' => 'Admin\BookController@update']);
 
 		Route::post('book/publish', ['as' => 'admin.book.publish', 'uses' => 'Admin\BookController@publishBook']);
 		Route::get('bundle/{id}', ['as' => 'admin.book.bundle', 'uses' => 'Admin\BundleController@find']);

@@ -61,6 +61,8 @@
 
     <!-- Filter -->
     <script type="text/javascript" src="{{ Asset('admin/filters/generalFilter.js') }}"></script>
+    <!-- Directive-->
+    <script type="text/javascript" src="{{ Asset('admin/directives/generalDirective.js') }}"></script>
     <!-- Services -->
     <script type="text/javascript" src="{{ Asset('admin/services/generalService.js') }}"></script>
     <script type="text/javascript" src="{{ Asset('admin/services/userService.js') }}"></script>

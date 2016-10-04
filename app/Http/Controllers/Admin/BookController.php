@@ -7,13 +7,18 @@ use File;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Repositories\BookRepository;
+use App\Repositories\LanguageRepository;
+use App\Http\Requests\UpdateBookRequest;
 
 class BookController extends AdminController
 {
   private $bookRepository;
 
-  function __construct(BookRepository $bookRepository) {
+  private $languageRepository;
+
+  function __construct(BookRepository $bookRepository, LanguageRepository $languageRepository) {
     $this->bookRepository = $bookRepository;
+    $this->languageRepository = $languageRepository;
   }
 
   /**
@@ -51,7 +56,17 @@ class BookController extends AdminController
    */
   public function findBook($bookId, Request $request) {
     $results = $this->bookRepository->find($bookId);
+    $results->languages = $this->languageRepository->all();
     return $this->responseSuccess(200, $results);
   }
 
+  /**
+   * Update book detail.
+   * @param  Request $request
+   * @return [type]           [description]
+   */
+  public function update($bookId, UpdateBookRequest $request) {
+    $results = $this->bookRepository->update($request->all(), $bookId);
+    return $this->responseSuccess(200, $results);
+  }
 }

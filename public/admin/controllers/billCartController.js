@@ -18,7 +18,7 @@ angular.module('learnPubApp').controller('billCartController', function($scope, 
 
   $scope.pageItem = function(itemId, type) {
     if (type == "1") {
-      $state.go('admin.book', {id : itemId});
+      $state.go('admin.books.detail', {id : itemId});
     } else if (type == "2") {
       $state.go('admin.bundle', {id : itemId});
     }

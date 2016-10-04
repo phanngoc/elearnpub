@@ -62,7 +62,7 @@
           <div class="row">
             <md-input-container>
               <label>Url</label>
-              <input type="text" name="bookurl" ng-model="book.bookurl" required ng-minlength="5"/>
+              <input type="text" name="bookurl" ng-model="book.bookurl" required ng-minlength="5" slugurl-m="book.title"/>
               <div ng-messages="book.bookurl.$error" role="alert">
                <div ng-message="required">Please enter a value for this field.</div>
                <div ng-message="minlength">This field can be at least 5 characters long.</div>
@@ -74,7 +74,7 @@
             <md-input-container>
               <label>Language</label>
               <md-select ng-model="book.language_id">
-                <md-option ng-repeat="language in languages" ng-value="language.id" ng-select="language.id == book.language_id">
+                <md-option ng-repeat="language in book.languages" ng-value="language.id" ng-select="language.id == book.language_id">
                   {{language.language_name}}
                 </md-option>
               </md-select>
@@ -84,7 +84,7 @@
           <div class="row">
             <md-input-container>
               <label>Google Analytic</label>
-              <input type="text" name="google_analytic" ng-model="book.google_analytic" required ng-minlength="5"/>
+              <input type="text" name="google_analytic" ng-model="book.google_analytic" ng-minlength="5"/>
               <div ng-messages="book.google_analytic.$error" role="alert">
                <div ng-message="required">Please enter a value for this field.</div>
                <div ng-message="minlength">This field can be at least 5 characters long.</div>
@@ -92,37 +92,29 @@
             </md-input-container>
           </div>
 
-          <!-- <div class="row">
-            <md-input-container>
-              <label>Number page</label>
-              <input type="number" name="page" ng-model="book.page" required ng-minlength="5"/>
-              <div ng-messages="book.page.$error" role="alert">
-               <div ng-message="required">Please enter a value for this field.</div>
-               <div ng-message="numeric">This field must be numeric.</div>
+          <md-card>
+            <md-card-content>
+              <div class="row">
+                <md-input-container>
+                  <md-checkbox ng-model="book.is_published" aria-label="Is author published" checkbox-m check="book.is_published">
+                    Is author published
+                  </md-checkbox>
+                </md-input-container>
+                <md-input-container>
+                  <md-checkbox ng-model="book.is_publish_sample" aria-label="Is author published sample" checkbox-m check="book.is_publish_sample">
+                    Is author published sample
+                  </md-checkbox>
+                </md-input-container>
+                <md-input-container>
+                  <md-checkbox ng-model="book.allow_published" aria-label="Allow publish" checkbox-m check="book.allow_published">
+                    Allow publish
+                  </md-checkbox>
+                </md-input-container>
               </div>
-            </md-input-container>
-          </div> -->
-
-          <div class="row">
-            <md-input-container>
-              <md-checkbox ng-model="book.is_published" aria-label="Is author published" checkbox-m>
-                Is author published
-              </md-checkbox>
-            </md-input-container>
-            <md-input-container>
-              <md-checkbox ng-model="book.is_publish_sample" aria-label="Is author published sample" checkbox-m>
-                Is author published sample
-              </md-checkbox>
-            </md-input-container>
-            <md-input-container>
-              <md-checkbox ng-model="book.allow_published" aria-label="Allow publish" checkbox-m>
-                Allow publish
-              </md-checkbox>
-            </md-input-container>
-          </div>
+            </md-card-content>
+          </md-card>
 
           <md-button type="submit" class="md-raised md-cornered md-accent">Save</md-button>
-
         </form>
       </md-card-content>
     </md-card>
